@@ -18,6 +18,7 @@ function App() {
           Learn React
         </a>
         <h2>지홍 왔다감</h2>
+        <h1> 아아 </h1>
       </header>
     </div>
   );

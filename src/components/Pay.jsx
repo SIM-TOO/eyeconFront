@@ -9,6 +9,7 @@ function Pay() {
         <div>
             <p>가</p>
             <h1>Test</h1>
+            <h2>믱</h2>
         </div>
     )
     

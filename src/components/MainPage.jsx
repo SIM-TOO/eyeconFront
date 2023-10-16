@@ -1,12 +1,13 @@
 import React from 'react'
 import { useSelector } from "react-redux"
-
-function Join() {
+import Header from './Header'
+function MainPage() {
 
     let test = useSelector((state) => { return state } )
 
     return (
     <div>
+    <Header/>
     <p>--------------</p>
     <p>메인</p>
     <h1 className="text-5xl font-bold underline">
@@ -19,4 +20,4 @@ function Join() {
   )
 }
 
-export default Join
+export default MainPage

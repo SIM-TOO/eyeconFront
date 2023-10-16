@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Join() {
+function Header() {
   return (
     <div>
         <p>--------------</p>
@@ -11,4 +11,4 @@ function Join() {
   )
 }
 
-export default Join
+export default Header

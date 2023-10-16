@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux"
+import MainPage from './components/MainPage'
+
 
 function App() {
+  let test = useSelector((state) => { return state } )
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +20,6 @@ function App() {
           Learn React
         </a>
         <h2>지홍 왔다감</h2>
-        <h1> 아아 </h1>
       </header>
     </div>
   );

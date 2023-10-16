@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux"
-import MainPage from './components/MainPage'
 
+import MainPage from './components/MainPage'
+import Header from './components/Header'
 
 function App() {
-  let test = useSelector((state) => { return state } )
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +20,6 @@ function App() {
           Learn React
         </a>
         <h2>지홍 왔다감</h2>
-        <h2>Test</h2>
       </header>
     </div>
   );

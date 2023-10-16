@@ -1,8 +1,18 @@
 import React from 'react'
+import { useSelector } from "react-redux"
 
 function Join() {
-  return (
-    <div>메인페이지</div>
+
+    let test = useSelector((state) => { return state } )
+
+    return (
+    <div>
+    <p>--------------</p>
+    <p>메인</p>
+    <p>{test.title}</p>
+    <p>우리팀은 : {test.user}</p>
+    <p>--------------</p>
+    </div>
   )
 }
 

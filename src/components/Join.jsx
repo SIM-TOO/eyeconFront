@@ -95,7 +95,7 @@ function Join() {
     // fetch 또는 유사한 메서드를 사용하여 서버에 폼 데이터를 제출할 수도 있습니다.
 
     // 예시 로직 (실제 로직으로 대체하세요):
-    if (isEmail && isPassword && isPasswordConfirm && isStoreName ) {
+    if (isEmail && isPassword && isPasswordConfirm && isStoreName && isPlace1 && isPlace2 && isStore) {
       // 모든 필드가 유효하면 추가적인 작업을 진행할 수 있습니다.
       console.log("폼이 성공적으로 제출되었습니다!");
     } else {
@@ -141,8 +141,8 @@ function Join() {
                 </div>
               </div>
               <p className="message" style={{ color: 'red', fontSize: 7 }}>
-                  {emailMessage}
-                </p>
+                {emailMessage}
+              </p>
 
               {/* 비밀번호 */}
               <div className="mb-4 flex items-center">
@@ -163,8 +163,8 @@ function Join() {
               </div>
 
               <p className="message" style={{ color: 'red', fontSize: 7 }}>
-                  {passwordMessage}
-                </p>
+                {passwordMessage}
+              </p>
 
               {/* 비밀번호 재확인 */}
               <div className="mb-4 flex items-center">
@@ -184,8 +184,8 @@ function Join() {
                 />
               </div>
               <p className="message" style={{ color: 'red', fontSize: 7 }}>
-                  {passwordConfirmMessage}
-                </p>
+                {passwordConfirmMessage}
+              </p>
 
 
               {/* 업종 */}

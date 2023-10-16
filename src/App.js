@@ -20,6 +20,7 @@ function App() {
           Learn React
         </a>
         <h2>지홍 왔다감</h2>
+        <h2>Test</h2>
       </header>
     </div>
   );

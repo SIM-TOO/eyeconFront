@@ -1,6 +1,6 @@
 import {Routes, Route } from 'react-router-dom';
 import MainPage from './components/MainPage'
-import UserJoin from './components/UserJoin'
+import Join from './components/Join'
 import Pay from './components/Pay'
 import './index.css';
 
@@ -11,7 +11,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/join" element={<UserJoin />} />
+          <Route path="/join" element={<Join />} />
           <Route path="/pay" element={<Pay />} />
        </Routes>
 

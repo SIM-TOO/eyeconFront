@@ -11,6 +11,8 @@ import useUserPWCK from '../hook/userPage/useUserPWCK';
 import useUserPWCKM from '../hook/userPage/useUserPWCKM';
 import useUserJoin from '../hook/userPage/useUserJoin';
 
+import Place from '../methodes/Place';
+
 function Join() {
 
   //**************************************************************/
@@ -112,12 +114,16 @@ function Join() {
               <div className="mb-4">
                 <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
                   <input
-                    type="place1"
+                    type="text"
                     name="place1"
                     placeholder="Store Place"
                     className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+
+                    // onClick={() => Place()}
+                    
                   />
                 </div>
+                
               </div>
 
               {/* 가게 주소 2 */}

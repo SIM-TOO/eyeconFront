@@ -3,29 +3,31 @@ import MainPage from './components/MainPage'
 import Join from './components/Join'
 import Pay from './components/Pay'
 import Login from './components/Login'
+import Join22 from './components/Join22'
 import './index.css';
 import { useState } from 'react';
-// import { AddressContext } from './context/AddressContext';
+import { AddressContext } from './context/AddressContext';
 
 function App() {
-// const [company, setCompany] = useState({})  
-// // postContext에 담길 데이터  
-// const AddressContext={
-//   // 주소
-//   company : company,
-//   setCompany:setCompany
-// }
+const [company, setCompany] = useState({})  
+// postContext에 담길 데이터  
+const inAddressContext={
+  // 주소
+  company : company,
+  setCompany:setCompany
+}
 
   return (
       <div className="App">
-      {/* <AddressContext.Provider value={AddressContext}> */}
+      <AddressContext.Provider value={inAddressContext}>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/join" element={<Join />} />
           <Route path="/pay" element={<Pay />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/join22" element={<Join22/>}/>
        </Routes>
-      {/* </AddressContext.Provider> */}
+      </AddressContext.Provider>
 
       </div>
   );

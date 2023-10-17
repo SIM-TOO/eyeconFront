@@ -1,9 +1,9 @@
 import DaumPostcode from "react-daum-postcode";
-// import { AddressContext } from "../context/AddressContext";
+import { AddressContext } from "../context/AddressContext";
 import React, { useContext, useEffect, useState } from "react";
 const Place = (props) => {
-    // const {company, setCompany} = useContext(AddressContext);
-
+    
+    const {setCompany} = useContext(AddressContext);
     const complete = (data) =>{
         let fullAddress = data.address;
         let extraAddress = '';
@@ -21,7 +21,7 @@ const Place = (props) => {
         console.log("fullAddress",fullAddress)
         console.log("zoneCode",data.zonecode)
 
-        props.setCompany({
+        setCompany({
             ...props.company,
             address:fullAddress,
         })

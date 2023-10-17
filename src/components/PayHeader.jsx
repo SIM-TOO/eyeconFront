@@ -20,13 +20,14 @@ const Header = () => {
             <div class="text-center">
                 <h3 class="text-[#001d6c] font-bold text-xl">PRICING</h3>
                 <h1 class="text-[42px] font-bold self-stretch">서비스 플랜</h1>
-                <p className="text-center p-4 font-semibold">eyecon은 소비자의 데이터를 정밀하게 분석해 매대의 시선 배치를 정확히 분석합니다.
+                <p className="text-center p-4 font-semibold">eyecon은 소비자의 데이터를 정밀하게 분석해 매대의 시선 배치를 정확히 분석합니다.효과적인 
                 <br/>
-                    효과적인 마케팅 방법을 고민 중인 소매업자를 위한 다양한 플랜이 준비되어 있습니다.
+                마케팅 방법을 고민 중인 소매업자를 위한 다양한 플랜이 준비되어 있습니다.
                 </p>
             </div>
-        </div><div>
-
+        </div>
+        <div>
+        <p className="w-[1045.29px] h-[195.71px] text-[220px] font-bold text-left uppercase font-[33E0C4]">price</p>;
             </div></>
     )
 }

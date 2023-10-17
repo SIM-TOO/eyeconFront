@@ -127,7 +127,6 @@ function Join() {
                 </button>
                 {isModalOpen && (
                   <div className="modal">
-                    <Post></Post>
 
                   </div>
                 )}
@@ -150,7 +149,7 @@ function Join() {
                 <button
                   type="submit"
                   className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
-                  Login
+                  Join
                 </button>
               </div>
 

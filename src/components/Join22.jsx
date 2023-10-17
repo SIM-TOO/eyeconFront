@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import React from "react";
 
-
 import DaumPostcode from 'react-daum-postcode';
 
 import UserHeader from './userPage/UserHeader';
@@ -9,7 +8,7 @@ import UserImage from './userPage/UserImage';
 
 import useUserIdCK from '../hook/userPage/useUserIdCK';
 
-function Join() {
+function Join22() {
 
   //**************************************************************/
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,6 +95,12 @@ function Join() {
 
             {/* 가게 주소 1 */}
             <div className="mb-4">
+            {/* 주소API 버튼 */}
+            <button
+                type="submit"
+                className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
+                주소입력
+              </button>
               <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
                 <input
                   type="place1"
@@ -135,4 +140,4 @@ function Join() {
   )
 }
 
-export default Join
+export default Join22

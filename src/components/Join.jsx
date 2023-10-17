@@ -1,12 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
-
+import Post from "../methodes/post";
+import DaumPostcode from 'react-daum-postcode';
 function Join() {
-
-
-
-
-
 
 
 
@@ -111,8 +107,12 @@ function Join() {
       console.error("폼 제출 실패. 필수 필드를 모두 입력하세요.");
     }
   };
+//************ */
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-
+  const handleButtonClick = () => {
+      setIsModalOpen(true);
+  };
 
 
 
@@ -226,6 +226,20 @@ function Join() {
                     placeholder="주소를 입력해주세요"
                     className="bg-[#f3fffd] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]" />
                 </div>
+
+                <button
+                  onClick={handleButtonClick}
+                  formAction=''
+                  className="rounded-lg bg-[#15c3a7] p-2 text-base font-medium text-white w-full hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in"
+                >
+                  주소입력
+                </button>
+                {isModalOpen && (
+                <div className="modal">
+                    <Post></Post>
+
+                </div>
+            )}
               </div>
 
 
@@ -235,7 +249,7 @@ function Join() {
               {/* 가게 주소 2 */}
               <div className="mb-4">
                 <div className=" bg-[#f3fffd] rounded-lg p-2">
-                  <input type="place2"
+                  <input type="place2" 
                     defaultValue={place2}
 
                     placeholder="상세 주소를 입력해주세요" className="bg-[#f3fffd] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]" />
@@ -255,8 +269,8 @@ function Join() {
                   Register
                 </button>
               </div>
-
-            </form>
+                  
+            </form> 
 
           </div>
         </div>

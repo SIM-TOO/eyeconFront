@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import React from "react";
 
-
 import DaumPostcode from 'react-daum-postcode';
 
 import UserHeader from './userPage/UserHeader';
@@ -119,6 +118,19 @@ function Join() {
                     className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
                   />
                 </div>
+                <button
+                  onClick={handleButtonClick}
+                  formAction=''
+                  className="rounded-lg bg-[#15c3a7] p-2 text-base font-medium text-white w-full hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in"
+                >
+                  주소입력
+                </button>
+                {isModalOpen && (
+                  <div className="modal">
+                    <Post></Post>
+
+                  </div>
+                )}
               </div>
 
               {/* 가게 주소 2 */}

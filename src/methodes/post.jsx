@@ -3,7 +3,7 @@ import DaumPostcode from "react-daum-postcode";
 
 
 const Post = (props) => {
-    const [company, setcompany] = useState({})
+
 
     const complete = (data) =>{
         let fullAddress = data.address;

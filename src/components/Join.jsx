@@ -4,7 +4,7 @@ import Post from "../methodes/post";
 import DaumPostcode from 'react-daum-postcode';
 function Join() {
 
-
+  const [company, setCompany] = useState({});
 
 
   // 초기값 세팅하기
@@ -236,7 +236,7 @@ function Join() {
                 </button>
                 {isModalOpen && (
                 <div className="modal">
-                    <Post></Post>
+                    <Post company={company} setCompany={setCompany} />
 
                 </div>
             )}

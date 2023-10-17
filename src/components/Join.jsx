@@ -269,8 +269,8 @@ function Join() {
                   Register
                 </button>
               </div>
-
-            </form>
+                  
+            </form> 
 
           </div>
         </div>

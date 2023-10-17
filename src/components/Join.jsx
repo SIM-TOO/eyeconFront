@@ -11,6 +11,8 @@ import useUserPWCK from '../hook/userPage/useUserPWCK';
 import useUserPWCKM from '../hook/userPage/useUserPWCKM';
 import useUserJoin from '../hook/userPage/useUserJoin';
 
+import Place from '../methodes/Place';
+
 function Join() {
 
   //**************************************************************/
@@ -42,7 +44,7 @@ function Join() {
               {/* 아이디 입력 */}
               <div className="mb-4">
                 <div className="bg-[#f3fffd] rounded-lg p-3 w-[340px]">
-                  <input type="email" name="email" placeholder="Enter Email" className="bg-[#f3fffd] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]" />
+                  <input type="email" name="email" placeholder="Email" className="bg-[#f3fffd] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]" />
                 </div>
                 <p className="message" style={{ color: 'red', fontSize: 10 }}>
                   {IdErrorMessage}
@@ -88,7 +90,7 @@ function Join() {
                     defaultValue="" // Use defaultValue here
                   >
                     <option value="" disabled>
-                      선택하세요
+                      Select
                     </option>
                     <option value="편의점">편의점</option>
                     <option value="마트">마트</option>
@@ -112,25 +114,16 @@ function Join() {
               <div className="mb-4">
                 <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
                   <input
-                    type="place1"
+                    type="text"
                     name="place1"
                     placeholder="Store Place"
                     className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+
+                    // onClick={() => Place()}
+                    
                   />
                 </div>
-                <button
-                  onClick={handleButtonClick}
-                  formAction=''
-                  className="rounded-lg bg-[#15c3a7] p-2 text-base font-medium text-white w-full hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in"
-                >
-                  주소입력
-                </button>
-                {isModalOpen && (
-                  <div className="modal">
-
-
-                  </div>
-                )}
+                
               </div>
 
               {/* 가게 주소 2 */}
@@ -150,7 +143,7 @@ function Join() {
                 <button
                   type="submit"
                   className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
-                  Login
+                  Join
                 </button>
               </div>
 

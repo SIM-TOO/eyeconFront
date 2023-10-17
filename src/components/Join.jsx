@@ -8,6 +8,7 @@ import UserHeader from './userPage/UserHeader';
 import UserImage from './userPage/UserImage';
 
 import useUserIdCK from '../hook/userPage/useUserIdCK';
+import useUserPWCK from '../hook/userPage/useUserPWCK';
 
 function Join() {
 
@@ -20,6 +21,7 @@ function Join() {
   //**************************************************************/
 
   const IdErrorMessage = useUserIdCK();
+  const PWErrorMessage = useUserPWCK();
 
   return (
     <div>
@@ -51,7 +53,7 @@ function Join() {
                 />
               </div>
               <p className="message" style={{ color: 'red', fontSize: 10 }}>
-                확인용 메세지 입니다.^^
+              {PWErrorMessage}
               </p>
             </div>
 

@@ -27,7 +27,6 @@ const Header = () => {
             </div>
         </div>
         <div>
-        <p className="w-[1045.29px] h-[195.71px] text-[220px] font-bold text-left uppercase font-[33E0C4]">price</p>;
             </div></>
     )
 }

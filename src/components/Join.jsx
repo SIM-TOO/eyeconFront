@@ -3,6 +3,14 @@ import React from "react";
 
 function Join() {
 
+
+
+
+
+
+
+
+
   // 초기값 세팅하기
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -220,6 +228,10 @@ function Join() {
                 </div>
               </div>
 
+
+
+
+
               {/* 가게 주소 2 */}
               <div className="mb-4">
                 <div className=" bg-[#f3fffd] rounded-lg p-2">
@@ -229,6 +241,10 @@ function Join() {
                     placeholder="상세 주소를 입력해주세요" className="bg-[#f3fffd] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]" />
                 </div>
               </div>
+
+
+
+
 
               {/* 보내기 버튼 */}
               <div className="mb-4">

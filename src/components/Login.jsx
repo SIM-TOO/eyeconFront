@@ -22,7 +22,7 @@ const Login = () => {
                             {/* 아이디 입력 */}
                             <div className="mb-4">
                                 <div className="bg-[#f3fffd] rounded-lg p-3 w-[340px]">
-                                    <input type="email" name="email" placeholder="Enter Email" className="bg-[#f3fffd] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]" />
+                                    <input type="email" name="email" placeholder="Enter Email" className="bg-[#f3fffd] placeholder-[#15c3a7] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7] text-[#15c3a7]::placeholder" />
                                 </div>
                             </div>
 
@@ -33,7 +33,7 @@ const Login = () => {
                                         type="password"
                                         name="password"
                                         placeholder="Password"
-                                        className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+                                        className="placeholder-[#15c3a7] bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
                                     />
                                 </div>
                             </div>

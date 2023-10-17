@@ -127,7 +127,7 @@ function Join() {
                 </button>
                 {isModalOpen && (
                   <div className="modal">
-                    <Post></Post>
+
 
                   </div>
                 )}

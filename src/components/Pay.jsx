@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Pay() {
 
     return (
@@ -24,29 +25,6 @@ function Pay() {
          <p className="text-center p-4 font-semibold">eyecon은 소비자의 데이터를 정밀하게 분석해 매대의 시선 배치를 정확히 분석합니다.
             효과적인 마케팅 방법을 고민 중인 소매업자를 위한 다양한 플랜이 준비되어 있습니다.
         </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="w-36 h-25">
-        <i>BASIC</i>
-        <span>\25,000</span>
-        <p>5 Coins</p>
-        <p>10 Shares</p>
-        <p>Custom Domains</p>
-        </div>
-        <div className="w-36 h-25 bg-green-500">
-        <i>PREMIUM</i>
-        <span>\75,000</span>
-        <p>15 Coins</p>
-        <p>125 Shares</p>
-        <p>Analytics</p>
-        </div>
-        <div className="w-36 h-25 bg-red-400">
-        <i>PRO</i>
-        <span>\150,000</span>
-        <p>30 Coins</p>
-        <p>Unlimited</p>
-        <p>Custom Brand</p>
-        </div>
         </div>
         </div>
     )   

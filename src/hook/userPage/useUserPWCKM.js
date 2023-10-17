@@ -11,7 +11,7 @@ const useUserPWCKM = () => {
     const passwordCheck = passwordCheckInput.value;
 
     if (passwordCheck && password === passwordCheck) {
-      setPWErrorMessage('비밀번호가 일치합니다.');
+      setPWErrorMessage('');
     } else {
       setPWErrorMessage('비밀번호가 일치하지 않습니다.');
     }

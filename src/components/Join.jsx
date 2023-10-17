@@ -83,12 +83,17 @@ function Join() {
               {/* 업종 */}
               <div className="mb-4">
                 <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
-                  <input
-                    type="category"
+                  <select
                     name="category"
-                    placeholder="Category"
                     className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
-                  />
+                    defaultValue="" // Use defaultValue here
+                  >
+                    <option value="" disabled>
+                      선택하세요
+                    </option>
+                    <option value="편의점">편의점</option>
+                    <option value="마트">마트</option>
+                  </select>
                 </div>
               </div>
 

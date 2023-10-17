@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import React from "react";
-import Post from "../methodes/post";
+// import Place from "../methodes/Place";
 import DaumPostcode from 'react-daum-postcode';
+
 function Join() {
 
-  const [company, setCompany] = useState({});
+  // const {company, setCompany} = useContext(AddressContext);
 
 
   // 초기값 세팅하기
@@ -236,7 +237,8 @@ function Join() {
                 </button>
                 {isModalOpen && (
                 <div className="modal">
-                    <Post company={company} setCompany={setCompany} />
+                  {/* <Place/> */}
+                    {/* <Place company={company} setCompany={setCompany} /> */}
 
                 </div>
             )}

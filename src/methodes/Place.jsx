@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
 import DaumPostcode from "react-daum-postcode";
-
-
-const Post = (props) => {
-
+// import { AddressContext } from "../context/AddressContext";
+import React, { useContext, useEffect, useState } from "react";
+const Place = (props) => {
+    // const {company, setCompany} = useContext(AddressContext);
 
     const complete = (data) =>{
         let fullAddress = data.address;
@@ -22,7 +21,7 @@ const Post = (props) => {
         console.log("fullAddress",fullAddress)
         console.log("zoneCode",data.zonecode)
 
-        props.setcompany({
+        props.setCompany({
             ...props.company,
             address:fullAddress,
         })
@@ -37,4 +36,4 @@ const Post = (props) => {
     );
 };
 
-export default Post;
+export default Place

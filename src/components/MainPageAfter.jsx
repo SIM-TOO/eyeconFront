@@ -1,6 +1,7 @@
 //import React from 'react';
 import React, { useState } from 'react';
 import Header from './Header';
+import HeaderAfter from './HeaderAfter';
 
 import Component1 from './testPage/Component1';
 import Component2 from './testPage/Component2';
@@ -25,7 +26,7 @@ function MainPageAfter() {
       }}>
 
       {/* 헤더 */}
-      <Header />
+      <HeaderAfter />
 
       {/* 내부박스 */}
       <div className='flex flex-col items-center' style={{ height: 'calc(100vh - 120px)' }}>

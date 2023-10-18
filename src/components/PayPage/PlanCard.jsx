@@ -5,10 +5,16 @@ function PlanCard() {
   const [hoveredBox, setHoveredBox] = useState(null);
   const image1 = "https://i.ibb.co/pRDck3F/Feature.jpg"; // 초록색 체크표시
   const image2 = "https://i.ibb.co/b1xHdYc/icon.png"; // 흰색 체크표시
+  const [submit, setSubmit] = useState("");
+
 
   const handleMouseEnter = (box) => {
     setHoveredBox(box);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
 
   return (
 
@@ -31,6 +37,7 @@ function PlanCard() {
           </div>
           <p className="flex-grow-0 flex-shrink-0 text-5xl font-bold text-left text-black">￦25,000</p>
         </div>
+        <form onSubmit={handleSubmit}>
         <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 overflow-hidden gap-2.5 p-2.5">
           <div className="flex justify-center items-center flex-grow-0 flex-shrink-0 h-[38px] relative gap-2.5">
             <img src={hoveredBox === "basic" ? image2 : image1} alt="Feature" border="0" />
@@ -50,7 +57,9 @@ function PlanCard() {
               Custom Domains
             </p>
           </div>
+        <button type="submit"> 보내기 </button>
         </div>
+        </form>
       </div>
 
 

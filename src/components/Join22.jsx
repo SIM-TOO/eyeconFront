@@ -25,7 +25,7 @@ function Join22() {
     return (
         <div>
             <UserHeader />
-            <main className="container my-10 p-5 mx-auto">
+            <main className="container my-10 p-5 mx-auto font-Pretendard">
                 <div className="grid md:grid-cols-2 gap-8">
                     <UserImage />
                     <div className="mx-auto lg:p-12 lg:min-w-[600px] p-0 min-w-[300px]">

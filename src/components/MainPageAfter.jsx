@@ -1,7 +1,19 @@
-import React from 'react';
+//import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 
+import Component1 from './testPage/Component1';
+import Component2 from './testPage/Component2';
+import Component3 from './testPage/Component3';
+
 function MainPageAfter() {
+
+  const [currentComponent, setCurrentComponent] = useState(1);
+
+  const handleButtonClick = (componentNumber) => {
+    setCurrentComponent(componentNumber);
+  };
+
   return (
     // 배경화면 설정
     <div
@@ -11,7 +23,7 @@ function MainPageAfter() {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
       }}>
-        
+
       {/* 헤더 */}
       <Header />
 
@@ -25,11 +37,16 @@ function MainPageAfter() {
             boxShadow: '0px 4px 30px 0 rgba(190,190,190,0.47)',
           }}>
 
-            {/* 여기에 컴포넌트 실행 해야됨!!!! 
+          {/* 여기에 컴포넌트 실행 해야됨!!!! 
                 ex) div 2층으로 만들것
                     div 2층 왼쪽 AI 모델 / 오른쪽 채팅창(70~80% 높이)
                     div 1층 채팅입력창 (20~30% 높이)
             */}
+
+          {currentComponent === 1 && <Component1 handleButtonClick={handleButtonClick} />}
+          {currentComponent === 2 && <Component2 handleButtonClick={handleButtonClick} />}
+          {currentComponent === 3 && <Component3 handleButtonClick={handleButtonClick} />}
+
 
         </div>
 

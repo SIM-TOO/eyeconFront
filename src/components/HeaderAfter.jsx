@@ -11,7 +11,7 @@ function HeaderAfter() {
 
   return (
     <div>
-      <header className=" text-white p-5">
+      <header className=" text-white p-5 font-Pretendard">
         <nav>
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
             {/* 로고 */}

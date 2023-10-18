@@ -97,7 +97,7 @@ function Join() {
               </div>
 
               {/* 가게 이름 */}
-              <div className="mb-4">
+              <div className="mb-4 font-Pretendard">
                 <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
                   <input
                     type="storeName"

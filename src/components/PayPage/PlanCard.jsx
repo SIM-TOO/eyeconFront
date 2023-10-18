@@ -5,10 +5,16 @@ function PlanCard() {
   const [hoveredBox, setHoveredBox] = useState(null);
   const image1 = "https://i.ibb.co/pRDck3F/Feature.jpg"; // 초록색 체크표시
   const image2 = "https://i.ibb.co/b1xHdYc/icon.png"; // 흰색 체크표시
+  const [submit, setSubmit] = useState("");
+
 
   const handleMouseEnter = (box) => {
     setHoveredBox(box);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
 
   return (
 
@@ -17,11 +23,11 @@ function PlanCard() {
 
       {/* BASIC 시작 부분 */}
       {/* ↓↓↓ 마우스 올렸을때 호버 배경색 변경되는 이벤트 ↓↓↓ */}
-      <div
-        className={`flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[260px] 
-        overflow-hidden gap-2.5 p-2.5 rounded-lg border border-[#d9d9d9] ${hoveredBox === "basic" ? "hover:bg-[#15c3a7]" : ""}`}
+      <div className={`flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[260px] overflow-hidden gap-2.5 p-2.5 rounded-lg border border-[#d9d9d9]
+       ${hoveredBox === "basic" ? "hover:bg-[#15c3a7]" : ""}`}
         onMouseEnter={() => handleMouseEnter("basic")}
         onMouseLeave={() => handleMouseEnter(null)}
+      
       >
         <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-2.5">
           <div className="flex justify-center items-center flex-grow-0 flex-shrink-0 relative gap-2.5 px-3 pt-1 rounded-lg border border-[#5d6a85]">
@@ -31,6 +37,7 @@ function PlanCard() {
           </div>
           <p className="flex-grow-0 flex-shrink-0 text-5xl font-bold text-left text-black">￦25,000</p>
         </div>
+        <form onSubmit={handleSubmit}>
         <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 overflow-hidden gap-2.5 p-2.5">
           <div className="flex justify-center items-center flex-grow-0 flex-shrink-0 h-[38px] relative gap-2.5">
             <img src={hoveredBox === "basic" ? image2 : image1} alt="Feature" border="0" />
@@ -50,7 +57,9 @@ function PlanCard() {
               Custom Domains
             </p>
           </div>
+        <button type="submit"> 보내기 </button>
         </div>
+        </form>
       </div>
 
 

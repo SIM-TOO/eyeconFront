@@ -1,7 +1,5 @@
-import React from 'react'
-import Header from './Header'
-import AfterHeader from './AfterHeader'
-
+import React from 'react';
+import Header from './Header';
 
 function MainPageAfter() {
   return (
@@ -13,10 +11,6 @@ function MainPageAfter() {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
       }}>
-        <AfterHeader />
-        MainPageAfter</div>
-  
-
         
       {/* 헤더 */}
       <Header />

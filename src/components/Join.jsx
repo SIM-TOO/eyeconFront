@@ -24,7 +24,6 @@ function Join() {
 
   // 전송 버튼 클릭시 로컬스토리지 데이터 삭제 기능
   const handleClearLocalStorage = () => {
-    setAddress('');
     localStorage.clear('');
   };
 

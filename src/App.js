@@ -8,6 +8,7 @@ import Place from './methodes/Place'
 import './index.css';
 import { useState } from 'react';
 import { AddressContext } from './context/AddressContext';
+import MainPageAfter from './components/MainPageAfter';
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -23,6 +24,7 @@ const inAddressContext={
       <AddressContext.Provider value={inAddressContext}>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/main" element={<MainPageAfter />} />
           <Route path="/join" element={<Join />} />
           <Route path="/pay" element={<Pay />} />
           <Route path="/login" element={<Login />} />

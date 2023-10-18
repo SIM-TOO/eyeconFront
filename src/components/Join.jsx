@@ -1,4 +1,3 @@
-import { useContext, useEffect, useState } from "react";
 import React from "react";
 
 import UserHeader from './userPage/UserHeader';
@@ -8,36 +7,25 @@ import useUserIdCK from '../hook/userPage/useUserIdCK';
 import useUserPWCK from '../hook/userPage/useUserPWCK';
 import useUserPWCKM from '../hook/userPage/useUserPWCKM';
 import useUserJoin from '../hook/userPage/useUserJoin';
+import useUserAddress from '../hook/userPage/useUserAddress';
 
 function Join() {
 
+  const { address, setAddress } = useUserAddress();
+  const IdErrorMessage = useUserIdCK();
+  const PWErrorMessage = useUserPWCK();
+  const PWMErrorMessage = useUserPWCKM();
+  const { formRef, handleSubmit } = useUserJoin();
 
-
-  const [address, setAddress] = useState(localStorage.getItem('address') || '');
-
-  const handleInputChange = (e) => {
-    setAddress(e.target.value);
-  };
-
+  // 주소 검색 새로운 창여는 코드
   const handleButtonClick = () => {
     window.open('/place', 'AddressPopup', 'width=650,height=500');
   };
 
+  // 전송 버튼 클릭시 로컬스토리지 데이터 삭제 기능
   const handleClearLocalStorage = () => {
-
-    localStorage.removeItem('address');
-    setAddress(''); // Clear the address in the component state as well
+    localStorage.clear();
   };
-
-  //**************************************************************/
-
-  //**************************************************************/
-
-  const IdErrorMessage = useUserIdCK();
-  const PWErrorMessage = useUserPWCK();
-  const PWMErrorMessage = useUserPWCKM();
-
-  const { formRef, handleSubmit } = useUserJoin();
 
   return (
     <div>
@@ -129,7 +117,7 @@ function Join() {
                     placeholder="Store Place"
                     className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
                     value={address}
-                    onChange={handleInputChange}
+                    onChange={(e) => setAddress(e.target.value)}
                   />
                 </div>
                 <div

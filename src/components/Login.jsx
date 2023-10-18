@@ -11,7 +11,7 @@ const Login = () => {
         <div>
             <UserHeader />
             <main>
-                <div className="container my-10 p-5 mx-auto grid md:grid-cols-2 gap-8">
+                <div className="container my-10 p-5 mx-auto grid md:grid-cols-2 gap-8 font-Pretendard">
                     <UserImage />
                     <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
                         <p className="text-3xl font-medium text-left text-black p-3">Sign in</p>

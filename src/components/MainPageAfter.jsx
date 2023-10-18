@@ -35,7 +35,8 @@ function MainPageAfter() {
           style={{
             background: 'linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)',
             boxShadow: '0px 4px 30px 0 rgba(190,190,190,0.47)',
-          }}>
+          }}
+        >
 
           {currentComponent === 1 && <Component1 handleButtonClick={handleButtonClick} />}
           {currentComponent === 2 && <Component2 handleButtonClick={handleButtonClick} />}

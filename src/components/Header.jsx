@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,12 +10,10 @@ function Header() {
   };
 
   return (
-
     <div>
       <header className=" text-white p-5 font-Pretendard">
         <nav>
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
-
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/#" className="flex items-center">
@@ -30,18 +27,28 @@ function Header() {
 
             {/* 메뉴바 */}
             <div className="col-span-4 flex items-center hidden md:flex">
-              <Link to="/#" className="text-black hover:underline">About</Link>
-              <Link to="/#" className="ml-4 text-black hover:underline">Pricing</Link>
+              <Link to="/#" className="text-black hover:underline">
+                About
+              </Link>
+              <Link to="/#" className="ml-4 text-black hover:underline">
+                Pricing
+              </Link>
               {/* 추가 버튼 시 "ml-4" 넣기 */}
             </div>
 
             {/* 서비스 시작 버튼 & 회원 가입 */}
             <div className="col-span-6 flex items-center justify-end hidden md:flex">
               <div className="flex flex-wrap">
-                <Link to="/login" className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0">
+                <Link
+                  to="/login"
+                  className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                >
                   서비스 시작하기
                 </Link>
-                <Link to="/join" className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0">
+                <Link
+                  to="/join"
+                  className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0"
+                >
                   회원가입
                 </Link>
               </div>
@@ -51,9 +58,8 @@ function Header() {
             <div className="col-span-2 relative md:hidden">
               <button
                 onClick={toggleMenu}
-                className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-
-
+                className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              >
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -78,26 +84,32 @@ function Header() {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-
               </button>
             </div>
             <div>
-            {menuOpen && (
-              <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden">
-                <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-light w-full">
-                  <li className="block py-2 pr-4 pl-3 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
-                    aria-current="page">About</li>
-                  <li className="block py-2 pr-4 pl-3 text-white rounded bg-[#BBBBBB] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
-                    aria-current="page">Pricing</li>
-                </ul>
-              </div>
-            )}
+              {menuOpen && (
+                <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden">
+                  <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-light w-full">
+                    <li
+                      className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                      aria-current="page"
+                    >
+                      <Link to="/">About</Link>
+                    </li>
+                    <li
+                      className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#BBBBBB] lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                      aria-current="page"
+                    >
+                      <Link to="/pay">Pricing</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
-
-        </div>
-      </nav>
-    </header>
-    </div >
+        </nav>
+      </header>
+    </div>
   );
 }
 

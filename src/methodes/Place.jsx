@@ -21,10 +21,9 @@ const Place = (props) => {
         console.log("fullAddress",fullAddress)
         console.log("zoneCode",data.zonecode)
 
-        setCompany({
-            ...props.company,
-            address:fullAddress,
-        })
+       
+        localStorage.setItem('address', fullAddress);
+
     }
 
     return (

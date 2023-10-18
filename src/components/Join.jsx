@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import React from "react";
 
-import DaumPostcode from 'react-daum-postcode';
-
 import UserHeader from './userPage/UserHeader';
 import UserImage from './userPage/UserImage';
 
@@ -11,16 +9,28 @@ import useUserPWCK from '../hook/userPage/useUserPWCK';
 import useUserPWCKM from '../hook/userPage/useUserPWCKM';
 import useUserJoin from '../hook/userPage/useUserJoin';
 
-import Place from '../methodes/Place';
-
 function Join() {
 
-  //**************************************************************/
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+  const [address, setAddress] = useState(localStorage.getItem('address') || '');
+
+  const handleInputChange = (e) => {
+    setAddress(e.target.value);
+  };
 
   const handleButtonClick = () => {
-    setIsModalOpen(true);
+    window.open('/place', 'AddressPopup', 'width=650,height=500');
   };
+
+  const handleClearLocalStorage = () => {
+
+    localStorage.removeItem('address');
+    setAddress(''); // Clear the address in the component state as well
+  };
+
+  //**************************************************************/
+
   //**************************************************************/
 
   const IdErrorMessage = useUserIdCK();
@@ -118,12 +128,16 @@ function Join() {
                     name="place1"
                     placeholder="Store Place"
                     className="bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
-
-                    // onClick={() => Place()}
-                    
+                    value={address}
+                    onChange={handleInputChange}
                   />
                 </div>
-                
+                <div
+                  onClick={handleButtonClick}
+                  className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center justify-center cursor-default"
+                >
+                  Search Address
+                </div>
               </div>
 
               {/* 가게 주소 2 */}
@@ -141,6 +155,7 @@ function Join() {
               {/* 버튼 */}
               <div className="mb-4">
                 <button
+                  onClick={handleClearLocalStorage}
                   type="submit"
                   className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
                   Join

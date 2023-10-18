@@ -1,5 +1,8 @@
 import React from 'react'
 import Header from './Header'
+import AfterHeader from './AfterHeader'
+
+
 function MainPageAfter() {
   return (
     <div 
@@ -9,7 +12,7 @@ function MainPageAfter() {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'auto',
       }}>
-        <Header />
+        <AfterHeader />
         MainPageAfter</div>
   )
 }

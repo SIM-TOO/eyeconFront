@@ -18,7 +18,7 @@ function Pay() {
             <PlanCard></PlanCard>
         </div>
         </div>
-    )
+    );
 
 }
 

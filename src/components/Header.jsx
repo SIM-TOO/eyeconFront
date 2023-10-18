@@ -14,8 +14,8 @@ function Header() {
 
     <div>
       <header className=" text-white p-5">
-        <nav class="container mx-auto">
-          <div className="grid grid-cols-12 gap-4 max-w-screen-xl">
+        <nav>
+          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
 
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
@@ -83,11 +83,11 @@ function Header() {
             </div>
             <div>
             {menuOpen && (
-              <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1">
+              <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden">
                 <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-light w-full">
                   <li className="block py-2 pr-4 pl-3 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
                     aria-current="page">About</li>
-                  <li className="block py-2 pr-4 pl-3 text-white rounded bg-[#999999] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                  <li className="block py-2 pr-4 pl-3 text-white rounded bg-[#BBBBBB] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
                     aria-current="page">Pricing</li>
                 </ul>
               </div>

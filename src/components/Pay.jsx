@@ -1,6 +1,6 @@
 import React from "react";
-import PayHeader from "./PayHeader";
-import PlanCard from "./PlanCard";
+import PayHeader from "./PayPage/PayHeader";
+import PlanCard from "./PayPage/PlanCard";
 
 function Pay() {
 

@@ -25,6 +25,9 @@ const useUserJoin = () => {
     // console.log(place1);
     // console.log(place2);
 
+    // 
+
+    // json 묶는  로직 + axios 방식
     // 여기서 DB확인용 로직 작성하면 될듯? ^^
   };
 

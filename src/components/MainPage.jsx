@@ -10,7 +10,7 @@ function MainPage() {
       <Header />
       <main className="mx auto">
         <p className="w-[1045.29px] h-[195.71px] text-[220px] font-bold text-left uppercase text-stroke-1 text-[#33E0C4] fill-[#ffffff]">
-          테스트
+          ??? 로그인 전 페이지
         </p>
         ;<div className="container mx-11 p-5 mx auto"></div>
       </main>

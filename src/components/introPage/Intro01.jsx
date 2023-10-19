@@ -3,7 +3,7 @@ import React from "react";
 const Intro01 = () => {
   return (
     <div className="font-Pretendard">
-      <div className="w-64 md:w-auto">
+      <div className="w-6 md:w-auto">
         <img
           src="https://i.ibb.co/0YBkn3z/service.png"
           alt="intro1"
@@ -17,13 +17,13 @@ const Intro01 = () => {
             <p className="text-5xl md:text-7xl font-bold">WELCOME TO <br/>
             EYECON</p>
             <p className="relative">
-              <span className="relative z-10 text-5xl md:text-7xl font-bold">with AI CHATBOT</span>
-              <div className="absolute w-[50px] md:w-[550px] h-[20px] bg-[#15c3a7] top-[50px] rounded-full md:block hidden"></div>
+              <span className="relative z-10 text-5xl md:text-6xl font-bold">with AI CHATBOT</span>
+              <div className="absolute w-[50px] md:w-[470px] h-[20px] bg-[#15c3a7] top-[44px] rounded-full md:block hidden"></div>
             </p>
           </div>
 
           {/* 두번째 줄 내용 겹치는 박스 */}
-          <div class="py-3 md:py-36 p-6 sm:p-3 text-base sm:text-xl">
+          <div class="py-3 md:py-36 p-6 sm:p-6 text-base sm:text-lg">
     시선 분석 AI를 통해 매대를 정밀하게 분석하고 <br/> 소비자의 시선을
     예측해보세요. <br/> 소비자의 시선이 향하는 곳에 매출이 있습니다. <br/> Where the
     eyes go, sales are there <br/>우리는 챗봇을 통해 이용자들의 요구사항을

@@ -10,7 +10,7 @@ function Pay() {
         <div>
             <Header></Header>
             <PayImg></PayImg>
-            {/* <PlanCard></PlanCard> */}
+            <PlanCard></PlanCard>
         </div>
     );
 

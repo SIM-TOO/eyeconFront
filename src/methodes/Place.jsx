@@ -25,7 +25,7 @@ const Place = (props) => {
         localStorage.setItem('address', fullAddress);
         window.close()
     }
-
+  
     return (
         <div >
             <DaumPostcode

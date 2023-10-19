@@ -10,16 +10,10 @@ function List() {
                 <p className='absolute left-[100px] top-[25px] text-2xl font-bold text-left text-neutral-100'>A마트</p>
             </div>
         </div>
-        <div>
-            <div>
-                <p></p>
-            </div>
-        </div>
         <div className='w-[1000px] h-[950px] rounded-[35px] bg-white' style={{boxShadow : "1px 1px 1px 0 rgba(0,0,0,0.1", backgroundColor : "PALEGOLDENROD"}}>
             <p className='text-5xl font-bold text-center text-black '>시선 분석 결과</p>
         </div>
-        <div className='w-[850px] h-[350px] relative overflow-hidden rounded-3x1 bg-[#f9f9f9]/[0.84] border-2 border-black/10'>
-        <p className='absolute left-14 top-[-483px] text-2xl font-bold text-left text-black'>결과 확인 페이지</p>
+        <div className='w-[850px] h-[350px] relative overflow-hidden rounded-3x1 bg-[#f9f9f9]/[0.84] border-2 border-black/10' style={{top:'520px'}}>
         </div>
     </div>
   )

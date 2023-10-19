@@ -23,7 +23,7 @@ const Intro01 = () => {
           </div>
 
           {/* 두번째 줄 내용 겹치는 박스 */}
-          <div className="py-36 md:px-2 ">
+          <div className="py-6 md:py-36 p-3">
             시선 분석 AI를 통해 매대를 정밀하게 분석하고 소비자의 시선을
             예측해보세요 소비자의 시선이 향하는 곳에 매출이 있습니다. Where the
             eyes go, sales are there 우리는 챗봇을 통해 이용자들의 요구사항을
@@ -34,11 +34,12 @@ const Intro01 = () => {
           </div>
 
           {/* 버튼 만드는 자리 */}
-          <div className="container mx-auto grid grid-cols-6">
-            <div className="col-span-4 whitespace-nowrap"></div>
-            <button className="col-span-2 text-xl text-center text-white justify-center items-center relative gap-2.5 px-[35px] py-[13px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
+          <div className="container mx-auto grid grid-cols-12">
+            <div className="col-span-3 md:col-span-7  whitespace-nowrap"></div>
+            <button className="col-span-6 md:col-span-5 text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
               Get strated
             </button>
+            <div className="col-span-3 md:col-span-0 " />
           </div>
         </div>
         {/* 모바일이 사리짐 */}

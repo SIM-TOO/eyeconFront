@@ -24,7 +24,15 @@ function Join() {
 
   // 전송 버튼 클릭시 로컬스토리지 데이터 삭제 기능
   const handleClearLocalStorage = () => {
-    localStorage.clear('');
+
+
+    if (IdErrorMessage === "") {
+      if (IdErrorMessage !== "" || PWErrorMessage !== "" || PWMErrorMessage !== "") {
+        alert("가입 정보를 확인 후 입력해주세요");
+      } else {
+        localStorage.clear();
+      }
+    }
   };
 
   return (

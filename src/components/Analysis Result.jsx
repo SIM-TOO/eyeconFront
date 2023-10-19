@@ -1,5 +1,5 @@
 import React from 'react'
-import List from './resultList/List';
+import List from './resultList/ListSet';
 import Header from './Header';
 
 function Analtsisresult()  {

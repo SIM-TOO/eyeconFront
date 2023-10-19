@@ -25,11 +25,11 @@ function List() {
               <p className='text-base text-[#313131] text-center'>광주 북구 공장단지 상권 40대 남성을 타겟으로 한 메대 시선분석 결과입니다.</p>
             </div>
           </div>
-        </div>
         <div className="">
           <button className="text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
             다운로드
           </button>
+        </div>
         </div>
       </div>
       <div className='col-span-3' />

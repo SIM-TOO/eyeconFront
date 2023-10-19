@@ -1,13 +1,17 @@
 import React from 'react'
+import Lottie from "react-lottie-player";
+import lottieJson from "../../lottie/mini_robot.json";
 
 const Intro02 = () => {
     return (
         <div className="font-Pretendard">
             {/* 색깔있는 박스 위치 */}
             <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
-                <div className="col-span-2" />
-                <div className="col-span-10 w-[70px] h-[60px] bg-[#d9d9d9] md:w-[200px] md:h-[180px]" />
-
+                <div className="col-span-4" />
+              
+                <div className="col-span-8 w-[70px] h-[60px] md:w-[200px] md:h-[180px]">    < Robot/></div>
+                
+            
             </div>
 
             <div className="flex flex-row-reverse items-center ">
@@ -32,5 +36,16 @@ const Intro02 = () => {
         </div>
     )
 }
+function Robot() {
+    return (
+      <Lottie
+        loop
+        animationData={lottieJson}
+        play
+        style={{ width: 200, height: 200 }}
+      />
+    );
+  }
+  
 
 export default Intro02

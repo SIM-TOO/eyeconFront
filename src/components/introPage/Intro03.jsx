@@ -13,6 +13,7 @@ const Intro03 = () => {
                 </div>
                 <div className="col-span-3 md:col-span-5" />
 
+                {/* 글씨칸*/}
                 <div className="col-span-2" />
                 <div className="col-span-8">
                     <p className="text-2xl md:text-7xl font-bold text-center text-[#37383c] p-3 whitespace-nowrap ">
@@ -21,28 +22,30 @@ const Intro03 = () => {
                 </div>
                 <div className="col-span-2" />
 
-                <div className='col-span-12 md:col-span-6'>
+                
+                {/* 박스칸*/}
+                <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         AA {/* 제목작성하셈 */}
                     </p>
                     AA {/* 내용작성하셈 */}
                 </div>
-                <div className='col-span-12 md:col-span-6'>
+                <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         BB {/* 제목작성하셈 */}
                     </p>
                     BB {/* 내용작성하셈 */}
                 </div>
-                <div className='col-span-12 md:col-span-6'>
+                <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         CC {/* 제목작성하셈 */}
                     </p>
                     CC {/* 내용작성하셈 */}
                 </div>
-                <div className='col-span-12 md:col-span-6'>
+                <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         DD {/* 제목작성하셈 */}

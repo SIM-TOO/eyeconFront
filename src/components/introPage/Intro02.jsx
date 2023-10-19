@@ -2,7 +2,7 @@ import React from 'react'
 
 const Intro02 = () => {
     return (
-        <div>
+        <div className="font-Pretendard">
             {/* 색깔있는 박스 위치 */}
             <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
                 <div className="col-span-2" />
@@ -18,17 +18,16 @@ const Intro02 = () => {
 
             {/* 글자 크기에 따라 col 위치 변경 할것 */}
             <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
-                <div className="col-span-9" />
-                <div className="col-span-3">
+                <div className="col-span-6" />
+                <div className="col-span-6">
 
                     {/* 텍스트 밑줄 둥근 박스 */}
-                    <p className="relative">
-                        <span className="relative z-10">Our Service Process that</span>
-                        <div className="absolute w-[0px] md:w-[200px] h-[10px] bg-[#d9d9d9] top-[15px] rounded-full"></div>
+                    <p className="relative text-right">
+                        <p className="relative z-10 text-2xl md:text-7xl font-bold">Our Service <br/> Process that</p>
+                        <div className="absolute w-[0px] md:w-[450px] h-[20px] bg-[#15c3a7] right-[0px] top-[50px] rounded-full md:block hidden"></div>
+                        <p className="relative z-10 text-2xl md:text-7xl font-bold">we apply</p>
                     </p>
-                    <p>we apply</p>
                 </div>
-
             </div>
         </div>
     )

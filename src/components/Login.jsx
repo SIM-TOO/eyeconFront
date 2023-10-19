@@ -2,8 +2,11 @@ import React from 'react';
 import UserHeader from './userPage/UserHeader';
 import UserImage from './userPage/UserImage';
 import useUserLogin from '../hook/userPage/useUserLogin';
+import Lottie from 'react-lottie-player';
+import lottieJson from '../lottie/login.json';
 
 const Login = () => {
+    
 
     const { formRef, handleSubmit } = useUserLogin();
 

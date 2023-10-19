@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import PlanCard from "./PayPage/PlanCard";
-import Img from "./PayPage/img";
+import PlanCard from "./payPage/PlanCard";
+import PayImg from "./payPage/PayImg";
 
 function Pay() {
 
@@ -12,7 +12,7 @@ function Pay() {
             <Header></Header>
         </div>
         <div>
-            <Img></Img>
+            <PayImg></PayImg>
         </div>
         <div>
             <PlanCard></PlanCard>

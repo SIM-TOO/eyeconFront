@@ -27,7 +27,7 @@ const Intro01 = () => {
     시선 분석 AI를 통해 매대를 정밀하게 분석하고 <br/> 소비자의 시선을
     예측해보세요. <br/> 소비자의 시선이 향하는 곳에 매출이 있습니다. <br/> Where the
     eyes go, sales are there <br/>우리는 챗봇을 통해 이용자들의 요구사항을
-    확인합니다.  <br/>서비스에 필요한 정보들을 챗봇과 해결해보세요. <br/>상권, 성별, 연령대를 바탕으로 최적의 시선배치를
+    확인합니다.  <br/>서비스에 필요한 정보들을 챗봇과 해결해보세요. <br/>상권, 성별, 연령을 바탕으로 최적의 시선배치를
     도와줍니다. <br/> 우리는 챗봇 AI를 통해 더욱 정확해지고,
     빨라졌습니다.
 </div>
@@ -41,7 +41,7 @@ const Intro01 = () => {
             <div className="col-span-3 md:col-span-0 " />
           </div>
         </div>
-        {/* 모바일이 사리짐 */}
+        {/* 모바일이 사라짐 */}
         <div className="col-span-6 md:block hidden">
           <img
             src="https://i.ibb.co/CBj6Kn6/Group-624891.png"

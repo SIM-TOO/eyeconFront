@@ -7,8 +7,6 @@ function MainPage() {
   return (
     <div>
       <Header />
-  
-      {/* 첫번째  */}
       <Intro01/>
       <Intro02/>
 

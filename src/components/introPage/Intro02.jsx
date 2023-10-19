@@ -17,14 +17,14 @@ const Intro02 = () => {
             </div>
 
             {/* 글자 크기에 따라 col 위치 변경 할것 */}
-            <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl  p-3">
+            <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
                 <div className="col-span-9" />
                 <div className="col-span-3">
 
                     {/* 텍스트 밑줄 둥근 박스 */}
                     <p className="relative">
                         <span className="relative z-10">Our Service Process that</span>
-                        <div className="absolute w-[50px] md:w-[200px] h-[10px] bg-[#d9d9d9] top-[15px] rounded-full"></div>
+                        <div className="absolute w-[0px] md:w-[200px] h-[10px] bg-[#d9d9d9] top-[15px] rounded-full"></div>
                     </p>
                     <p>we apply</p>
                 </div>

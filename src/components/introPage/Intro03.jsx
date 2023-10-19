@@ -27,21 +27,21 @@ const Intro03 = () => {
                 <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
-                        AA {/* 제목작성하셈 */}
+                        시선분석AI {/* 제목작성하셈 */}
                     </p>
-                    AA {/* 내용작성하셈 */}
+                    소매업 {/* 내용작성하셈 */}
                 </div>
                 <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
-                        BB {/* 제목작성하셈 */}
+                        chatbot {/* 제목작성하셈 */}
                     </p>
                     BB {/* 내용작성하셈 */}
                 </div>
                 <div className='text-center md:text-left col-span-12 md:col-span-6'>
                     이미지 넣는곳
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
-                        CC {/* 제목작성하셈 */}
+                        매대 분석 {/* 제목작성하셈 */}
                     </p>
                     CC {/* 내용작성하셈 */}
                 </div>

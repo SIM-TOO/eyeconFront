@@ -10,6 +10,7 @@ import { AddressContext } from './context/AddressContext';
 import MainPageAfter from './components/MainPageAfter';
 import ResultPage from './components/ResultPage';
 import MainPageAfterTest from './components/MainPageAfterTest';
+import MainPageAfterPay from './components/MainPageAfterPay';
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -32,6 +33,7 @@ const inAddressContext={
           <Route path="/login" element={<Login />} />
           <Route path="/place" element={<Place/>}/>
           <Route path='/ResultPage' element={<ResultPage/>} />
+          <Route path='/mainpay' element={<MainPageAfterPay/>} />
        </Routes>
       </AddressContext.Provider>
 

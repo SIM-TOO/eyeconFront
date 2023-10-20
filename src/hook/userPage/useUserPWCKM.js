@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useUserPWCKM = () => {
-  const [PWErrorMessage, setPWErrorMessage] = useState('');
+  const [PWErrorMessage, setPWErrorMessage] = useState(' ');
 
   const handlePasswordMatch = () => {
     const passwordInput = document.querySelector('input[name="password"]');

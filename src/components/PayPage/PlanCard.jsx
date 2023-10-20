@@ -1,4 +1,5 @@
 import React, {useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function PlanCard() {
@@ -6,15 +7,19 @@ function PlanCard() {
   const image1 = "https://i.ibb.co/pRDck3F/Feature.jpg"; // 초록색 체크표시
   const image2 = "https://i.ibb.co/b1xHdYc/icon.png"; // 흰색 체크표시
   const [submit, setSubmit] = useState("");
+  
 
 
   const handleMouseEnter = (box) => {
     setHoveredBox(box);
+    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
   }
+
+ 
 
   return (
 
@@ -57,6 +62,7 @@ function PlanCard() {
               Custom Domains
             </p>
           </div>
+        {/* 여기가 버튼 */}
         <button type="submit"> 보내기 </button>
         </div>
         </form>

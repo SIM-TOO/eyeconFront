@@ -25,9 +25,12 @@ const Intro03 = () => {
                 
                 {/* 박스칸*/}
                 <div className='text-center md:text-left col-span-12 md:col-span-6'>
+             
                 <img
             src="https://i.ibb.co/g6B2pn5/icon1.png"
             alt="green1"
+            className="mx-auto md:mx-0" 
+        
           />
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         시선분석AI {/* 제목작성하셈 */}
@@ -38,6 +41,7 @@ const Intro03 = () => {
                 <img
             src="https://i.ibb.co/JmsQV3x/icon2.png"
             alt="green2"
+            className="mx-auto md:mx-0" 
           />
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         소매업 {/* 제목작성하셈 */}
@@ -48,6 +52,7 @@ const Intro03 = () => {
                 <img
             src="https://i.ibb.co/qyfG3bk/logo3.png"
             alt="green3"
+            className="mx-auto md:mx-0" 
           />
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         chatbot {/* 제목작성하셈 */}
@@ -58,6 +63,7 @@ const Intro03 = () => {
                 <img
             src="https://i.ibb.co/CbP0kXr/logo4.png"
             alt="green4"
+            className="mx-auto md:mx-0" 
           />
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3">
                         매대분석 {/* 제목작성하셈 */}

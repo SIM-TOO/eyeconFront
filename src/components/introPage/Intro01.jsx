@@ -17,12 +17,12 @@ const Intro01 = () => {
         <div className="col-span-12 md:col-span-6">
           {/* 첫번째 줄 내용 겹치는 박스 */}
           <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5">
-            <p className="text-4xl md:text-6xl font-bold">WELCOME TO <br />
-              EYECON</p>
-            <p className="relative">
-              <span className="relative z-10 text-4xl md:text-6xl font-bold">with AI CHATBOT</span>
+            <span className="text-4xl md:text-6xl font-bold">WELCOME TO <br />
+              EYECON</span>
+            <span className="relative">
+              <span className="relative z-10 text-4xl md:text-6xl font-bold"> with AI CHATBOT</span>
               <div className="absolute w-[50px] md:w-[470px] h-[20px] bg-[#15c3a7] top-[42px] rounded-full md:block hidden"></div>
-            </p>
+            </span>
           </div>
 
           {/* 두번째 줄 내용 겹치는 박스 */}
@@ -39,11 +39,10 @@ const Intro01 = () => {
           <div className="container mx-auto grid grid-cols-12">
             <div className="col-span-4 md:col-span-8  whitespace-nowrap"></div>
             <Link to="/login">
-            <button className="col-span-6 md:col-span-4 text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
-              Get started
-            </button>
+              <button className="col-span-6 md:col-span-4 text-sm md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap z-10">
+                Get started
+              </button>
             </Link>
-            <div className="col-span-2 md:col-span-0 " />
           </div>
         </div>
         {/* 모바일이 사라짐 */}

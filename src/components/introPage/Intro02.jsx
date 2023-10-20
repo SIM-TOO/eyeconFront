@@ -29,7 +29,7 @@ const Intro02 = () => {
                         <p className="relative z-10 text-4xl md:text-6xl font-bold">
                             Our Service <br /> Process that
                         </p>
-                        <div className="absolute w-[0px] sm:w-[100px] md:w-[350px] h-[20px] bg-[#15c3a7] right-[0px] top-[60px] rounded-full md:block hidden"></div>
+                        <div className="absolute w-[0px] sm:w-[100px] md:w-[350px] h-[20px] bg-[#15c3a7] left-[280px] top-[80px] rounded-full md:block hidden"></div>
                         <p className="relative z-10 text-4xl md:text-6xl font-bold">we apply</p>
                     </span>
                 </div>

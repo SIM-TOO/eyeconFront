@@ -20,8 +20,8 @@ const Intro01 = () => {
             <span className="text-4xl md:text-6xl font-bold">WELCOME TO <br />
               EYECON</span>
             <span className="relative">
-              <span className="relative z-10 text-4xl md:text-6xl font-bold"> with AI CHATBOT</span>
-              <div className="absolute w-[50px] md:w-[470px] h-[20px] bg-[#15c3a7] top-[42px] rounded-full md:block hidden"></div>
+              <p className="relative z-10 text-4xl md:text-6xl font-bold"> with AI CHATBOT</p>
+              <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
             </span>
           </div>
 

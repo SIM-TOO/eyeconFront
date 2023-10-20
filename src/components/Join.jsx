@@ -117,7 +117,8 @@ function Join() {
               </div>
 
               {/* 가게 주소 1 */}
-              <div className="mb-4">
+              <div className="mb-4"
+                onClick={handleButtonClick}>
                 <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
                   <input
                     type="text"
@@ -129,7 +130,7 @@ function Join() {
                   />
                 </div>
                 <div
-                  onClick={handleButtonClick}
+
                   className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center justify-center cursor-default"
                 >
                   Search Address

@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderAfter from "./HeaderAfter";
-import PlanCard from "./payPage/PlanCard";
 import MainPay from "./payPage/MainPay";
 
 function MainPageAfterPay() {
@@ -35,7 +34,6 @@ function MainPageAfterPay() {
                     }}
                 >
                     <MainPay />
-                    <PlanCard></PlanCard>
                 </div>
             </div>
         </div>

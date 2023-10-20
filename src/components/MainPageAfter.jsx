@@ -1,16 +1,32 @@
 //import React from 'react';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeaderAfter from "./HeaderAfter";
 import Component1 from "./testPage/Component1";
 import Component2 from "./testPage/Component2";
 import Component3 from "./testPage/Component3";
+import LoadingComponent01 from "./testPage/LoadingComponent01";
 
 function MainPageAfter() {
   const [currentComponent, setCurrentComponent] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleButtonClick = (componentNumber) => {
-    setCurrentComponent(componentNumber);
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      setCurrentComponent(componentNumber);
+    }, 2000);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // 로딩 애니메이션 시간
+
+    return () => clearTimeout(timer);
+  }, []);
+
 
   return (
     // 배경화면 설정
@@ -39,13 +55,14 @@ function MainPageAfter() {
             boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
           }}
         >
-          {currentComponent === 1 && (
+          {isLoading && <LoadingComponent01 />}
+          {!isLoading && currentComponent === 1 && (
             <Component1 handleButtonClick={handleButtonClick} />
           )}
-          {currentComponent === 2 && (
+          {!isLoading && currentComponent === 2 && (
             <Component2 handleButtonClick={handleButtonClick} />
           )}
-          {currentComponent === 3 && (
+          {!isLoading && currentComponent === 3 && (
             <Component3 handleButtonClick={handleButtonClick} />
           )}
         </div>

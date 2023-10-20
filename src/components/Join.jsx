@@ -24,13 +24,21 @@ function Join() {
 
   // 전송 버튼 클릭시 로컬스토리지 데이터 삭제 기능
   const handleClearLocalStorage = () => {
-    localStorage.clear('');
+
+
+    if (IdErrorMessage === "") {
+      if (IdErrorMessage !== "" || PWErrorMessage !== "" || PWMErrorMessage !== "") {
+        alert("가입 정보를 확인 후 입력해주세요");
+      } else {
+        localStorage.clear();
+      }
+    }
   };
 
   return (
     <div>
       <UserHeader />
-      <main className="container my-10 p-5 mx-auto">
+      <main className="container my-10 p-5 mx-auto font-Pretendard">
         <div className="grid md:grid-cols-2 gap-8">
           <UserImage />
           <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
@@ -97,7 +105,7 @@ function Join() {
               </div>
 
               {/* 가게 이름 */}
-              <div className="mb-4">
+              <div className="mb-4 font-Pretendard">
                 <div className="bg-[#f3fffd] rounded-lg w-[340px] p-3 relative flex justify-between">
                   <input
                     type="storeName"

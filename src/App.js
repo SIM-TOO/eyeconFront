@@ -3,13 +3,14 @@ import MainPage from './components/MainPage'
 import Join from './components/Join'
 import Pay from './components/Pay'
 import Login from './components/Login'
-import Join22 from './components/Join22'
 import Place from './methodes/Place'
 import './index.css';
 import { useState } from 'react';
 import { AddressContext } from './context/AddressContext';
 import MainPageAfter from './components/MainPageAfter';
 import Payment from './components/PayPage/Payment';
+import Analtsisresult from './components/Analysis Result';
+import Gpttest1 from './components/testPage/Gpttest1';
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -29,9 +30,10 @@ const inAddressContext={
           <Route path="/join" element={<Join />} />
           <Route path="/pay" element={<Pay />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/join22" element={<Join22/>}/>
           <Route path="/place" element={<Place/>}/>
           <Route path="/payment" element={<Payment/>}/>
+          <Route path='/Analysis' element={<Analtsisresult/>} />
+          <Route path='/gpttest' element={<Gpttest1/>}/>
        </Routes>
       </AddressContext.Provider>
 

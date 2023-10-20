@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Header() {
+function HeaderAfter() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -27,29 +27,40 @@ function Header() {
 
             {/* 메뉴바 */}
             <div className="col-span-4 flex items-center hidden md:flex">
-              <Link to="/#" className="text-black hover:underline">
-                About
+              <Link to="/#" className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500">
+                시선 분석
               </Link>
-              <Link to="/#" className="ml-4 text-black hover:underline">
-                Pricing
+              <Link
+                to="/#"
+                className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
+              >
+                서비스결제
               </Link>
-              {/* 추가 버튼 시 "ml-4" 넣기 */}
+              <Link
+                to="/#"
+                className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
+              >
+                마이페이지
+              </Link>
+              <Link
+                to="/#"
+                className="ml-4  whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
+              >
+                결과페이지
+              </Link>
             </div>
 
-            {/* 서비스 시작 버튼 & 회원 가입 */}
+            {/* 잔여코인 확인 & 로그아웃 버튼 */}
             <div className="col-span-6 flex items-center justify-end hidden md:flex">
               <div className="flex flex-wrap">
+                <p className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0">
+                  잔여코인 3개
+                </p>
                 <Link
-                  to="/login"
-                  className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
-                >
-                  서비스 시작하기
-                </Link>
-                <Link
-                  to="/join"
+                  to="/"
                   className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0"
                 >
-                  회원가입
+                  로그아웃
                 </Link>
               </div>
             </div>
@@ -87,20 +98,32 @@ function Header() {
               </button>
             </div>
             <div>
-              {menuOpen && (
-                <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">
+            {menuOpen && (
+                <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden">
                   <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-light w-full">
                     <li
                       className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
                       aria-current="page"
                     >
-                      <Link to="/">About</Link>
+                      <Link to="/">시선 분석</Link>
                     </li>
                     <li
                       className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#BBBBBB] lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
                       aria-current="page"
                     >
-                      <Link to="/pay">Pricing</Link>
+                      <Link to="/pay">서비스결제</Link>
+                    </li>
+                    <li
+                      className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                      aria-current="page"
+                    >
+                      <Link to="/">마이페이지</Link>
+                    </li>
+                    <li
+                      className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#BBBBBB] lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                      aria-current="page"
+                    >
+                      <Link to="/pay">결과페이지</Link>
                     </li>
                   </ul>
                 </div>
@@ -113,4 +136,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderAfter;

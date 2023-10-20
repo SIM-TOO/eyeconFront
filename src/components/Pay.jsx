@@ -1,24 +1,18 @@
 import React from "react";
 import Header from "./Header";
-import PlanCard from "./PayPage/PlanCard";
-import Img from "./PayPage/img";
+import PlanCard from "./payPage/PlanCard";
+import PayImg from "./payPage/PayImg";
 
 function Pay() {
 
-    
+
     return (
         <div>
-        <div>
             <Header></Header>
-        </div>
-        <div>
-            <Img></Img>
-        </div>
-        <div>
+            <PayImg></PayImg>
             <PlanCard></PlanCard>
         </div>
-        </div>
-    )
+    );
 
 }
 

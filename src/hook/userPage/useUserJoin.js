@@ -19,10 +19,11 @@ const useUserJoin = () => {
       place2: formData.get('place2')
     };
 
+    console.log("회원가입 정보 확인", dataToSend);
+
     // POST 요청 방식
     try {
-      const response = axios.post(`${url}/join`, dataToSend);
-      console.log(response.data);
+      axios.post(`${url}join`, dataToSend);
     } catch (error) {
       console.error("전송을 실패 했습니다 에러 내용 :", error);
     }

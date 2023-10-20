@@ -1,6 +1,6 @@
 import React from 'react'
 
-const C04Pay = () => {
+const C02Pay = () => {
   return (
     <div>
 결제하는 컴포넌트
@@ -8,4 +8,4 @@ const C04Pay = () => {
   )
 }
 
-export default C04Pay
+export default C02Pay

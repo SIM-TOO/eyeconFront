@@ -1,35 +1,31 @@
-//import React from 'react';
-import React, { useState, useEffect } from "react";
+//import React from 'react'
+import React, { useState } from "react";
 import HeaderAfter from "./HeaderAfter";
-import Component1 from "./testPage/Component1";
-import Component2 from "./testPage/Component2";
-import Component3 from "./testPage/Component3";
-import LoadingComponent01 from "./testPage/LoadingComponent01";
 
-function MainPageAfter() {
+import Component0 from "./mainPage/C00Loading";
+import Component1 from "./mainPage/C01Start";
+import Component2 from "./mainPage/C02Pay";
+
+
+import useMainLoading from "../hook/mainPage/useMainLoading";
+
+
+
+const MainPageAfter = () => {
+
   const [currentComponent, setCurrentComponent] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading, startLoading, endLoading } = useMainLoading();
 
+  // 페이지 이동시 로딩 페이지
   const handleButtonClick = (componentNumber) => {
-    setIsLoading(true);
-
+    startLoading();
     setTimeout(() => {
-      setIsLoading(false);
+      endLoading();
       setCurrentComponent(componentNumber);
-    }, 2000);
+    }, 1000); // 로딩 시간
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500); // 로딩 애니메이션 시간
-
-    return () => clearTimeout(timer);
-  }, []);
-
-
   return (
-    // 배경화면 설정
     <div
       className="h-screen"
       style={{
@@ -55,20 +51,20 @@ function MainPageAfter() {
             boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
           }}
         >
-          {isLoading && <LoadingComponent01 />}
+
+          {isLoading && <Component0 />}
           {!isLoading && currentComponent === 1 && (
             <Component1 handleButtonClick={handleButtonClick} />
           )}
           {!isLoading && currentComponent === 2 && (
             <Component2 handleButtonClick={handleButtonClick} />
           )}
-          {!isLoading && currentComponent === 3 && (
-            <Component3 handleButtonClick={handleButtonClick} />
-          )}
+
+
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default MainPageAfter;
+export default MainPageAfter

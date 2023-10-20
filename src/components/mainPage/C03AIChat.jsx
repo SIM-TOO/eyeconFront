@@ -1,6 +1,6 @@
 import React from 'react'
 
-const C03AIChat = () => {
+const C03AIChat = ({ handleButtonClick }) => {
   return (
     <div>C03AIChat</div>
   )

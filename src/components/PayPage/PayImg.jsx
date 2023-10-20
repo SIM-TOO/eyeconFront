@@ -2,26 +2,43 @@ import React from "react";
 
 const img = () => {
     return (
-        <div className="grid grid-cols-12 gap-4">
-            <div class="">
-                <div class="">
-                    <img src="https://i.ibb.co/5TcWgzd/price.png" alt="price" border="0" class="" />
-                    <img src="https://i.ibb.co/XsRtS66/REASONABLE-GOOD-PRICE.jpg" alt="REASONABLE-GOOD-PRICE" border="0" class="" />
-                </div>
-                <div class="">
-                    <img src="https://i.ibb.co/vmWSTyD/content-inside.jpg" alt="content-inside" border="0" class="" />
-                </div>
+        <div>
+            <div className="w-64 md:w-auto">
+                <img
+                    src="https://i.ibb.co/5TcWgzd/price.png"
+                    alt="pay1"
+                    className="h-auto pointer-events-none"
+                />
             </div>
-            <div class="">
-                <h3 class="text-[#001d6c] font-bold text-xl">PRICING</h3>
-                <h1 class="text-[auto] font-bold self-stretch">서비스 플랜</h1>
-                <p className="text-center p-4 font-semibold">eyecon은 소비자의 데이터를 정밀하게 분석해 매대의 시선 배치를 정확히 분석합니다.효과적인 
-                <br/>
-                마케팅 방법을 고민 중인 소매업자를 위한 다양한 플랜이 준비되어 있습니다.
-                </p>
+
+            <div className="container mx-auto grid grid-cols-12 max-w-screen-xl">
+                <div className="col-span-12 md:col-span-5">
+                    {/* 첫번째 줄 내용 겹치는 박스 */}
+                    <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5">
+                        <p className="text-4xl md:text-7xl font-bold">REASONABLE<br />
+                            GOOD<br />
+                            PRICE</p>
+                    </div>
+                </div>
+
+                <div className="md:col-span-7">
+                    <img
+                        src="https://i.ibb.co/vmWSTyD/content-inside.jpg"
+                        alt="content-inside"
+                        border="0"
+                        className={`hidden md:block`}
+                    />
+                </div>
+
+                {/* 나중에 글씨 폰트 디자인 넣을것 */}
+                <div className="col-span-12 md:col-span-5" />
+                <div className="col-span-12 md:col-span-2 text-center">
+                    <p>Pricing</p>
+                    <p>서비스 플랜</p>
+                </div>
+                <div className="col-span-12 md:col-span-5" />
             </div>
         </div>
-
     )
 }
 

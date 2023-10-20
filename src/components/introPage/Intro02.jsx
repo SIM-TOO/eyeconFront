@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie-player';
-import lottieJson from '../../lottie/mini_robot.json';
+import lottieJson from '../../lottie/miniRobot.json';
 
 const Intro02 = () => {
   return (
@@ -38,6 +38,8 @@ const Intro02 = () => {
   );
 };
 
+
+  {/* 메인화면 내 움직이는 미니 로봇 */}
 function MiniRobot() {
   return (
     <Lottie

@@ -1,10 +1,17 @@
 import React from 'react'
+import Lottie from 'react-lottie-player';
+import lottieJson from '../../lottie/login.json';
 
 function UserImage() {
     return (
         <div>
             <div className="hidden md:flex items-center ml-40">
-                <img src="https://i.ibb.co/MPqWSS5/Group-624890.png" alt="image" border="0"></img>
+                <Lottie
+                    loop
+                    animationData={lottieJson}
+                    play
+                    style={{ width: '100%', maxWidth: '1000px' }}
+                />
             </div>
         </div>
     )

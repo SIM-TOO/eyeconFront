@@ -19,8 +19,11 @@ const Gpttest1 = () => {
         }
 
         try {
+            console.time('시간');
             const res = await axios.post(`http://localhost:5000/consult`, chat); // 수정: 응답을 변수에 저장
+            
             setResponse(res.data); // 추가: 응답을 상태에 저장
+            console.timeEnd('시간')
             // .then((res)=>{
             //     console.log();
             // })

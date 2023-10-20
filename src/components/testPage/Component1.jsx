@@ -31,7 +31,8 @@ function Robot() {
       loop
       animationData={lottieJson}
       play
-      style={{ width: 500, height: 500 }}
+    
+      className="md:w-500 md:h-500 w-300 h-300" 
     />
   );
 }

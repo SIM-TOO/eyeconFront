@@ -27,11 +27,11 @@ function HeaderAfter() {
 
             {/* 메뉴바 */}
             <div className="col-span-4 flex items-center hidden md:flex">
-              <Link to="/#" className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500">
+              <Link to="/main" className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500">
                 시선 분석
               </Link>
               <Link
-                to="/#"
+                to="/mainpay"
                 className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
               >
                 서비스결제
@@ -111,7 +111,7 @@ function HeaderAfter() {
                       className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#BBBBBB] lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
                       aria-current="page"
                     >
-                      <Link to="/pay">서비스결제</Link>
+                      <Link to="/mainpay">서비스결제</Link>
                     </li>
                     <li
                       className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"

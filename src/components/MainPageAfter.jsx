@@ -16,13 +16,13 @@ function MainPageAfter() {
     setTimeout(() => {
       setIsLoading(false);
       setCurrentComponent(componentNumber);
-    }, 2000);
+    }, 1200);
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1600); // 로딩 애니메이션 시간
+    }, 1200); // 로딩 애니메이션 시간
 
     return () => clearTimeout(timer);
   }, []);

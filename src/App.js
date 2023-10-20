@@ -8,7 +8,7 @@ import './index.css';
 import { useState } from 'react';
 import { AddressContext } from './context/AddressContext';
 import MainPageAfter from './components/MainPageAfter';
-import Analtsisresult from './components/Analysis Result';
+import ResultPage from './components/ResultPage';
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -29,7 +29,7 @@ const inAddressContext={
           <Route path="/pay" element={<Pay />} />
           <Route path="/login" element={<Login />} />
           <Route path="/place" element={<Place/>}/>
-          <Route path='/Analysis' element={<Analtsisresult/>} />
+          <Route path='/ResultPage' element={<ResultPage/>} />
        </Routes>
       </AddressContext.Provider>
 

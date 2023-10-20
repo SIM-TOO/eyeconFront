@@ -2,7 +2,7 @@ import React from 'react'
 import List from './resultList/ListSet';
 import Header from './Header';
 
-function Analtsisresult()  {
+function ResultPage()  {
 
   return (
     <div>
@@ -17,4 +17,4 @@ function Analtsisresult()  {
   
 }
 
-export default Analtsisresult;
+export default ResultPage;

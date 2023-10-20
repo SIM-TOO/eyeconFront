@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { AddressContext } from './context/AddressContext';
 import MainPageAfter from './components/MainPageAfter';
 import Analtsisresult from './components/Analysis Result';
+import Gpttest1 from './components/testPage/Gpttest1';
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -30,6 +31,7 @@ const inAddressContext={
           <Route path="/login" element={<Login />} />
           <Route path="/place" element={<Place/>}/>
           <Route path='/Analysis' element={<Analtsisresult/>} />
+          <Route path='/gpttest' element={<Gpttest1/>}/>
        </Routes>
       </AddressContext.Provider>
 

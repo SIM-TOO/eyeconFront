@@ -5,18 +5,12 @@ import PayImg from "./payPage/PayImg";
 
 function Pay() {
 
-    
+
     return (
         <div>
-        <div>
             <Header></Header>
-        </div>
-        <div>
             <PayImg></PayImg>
-        </div>
-        <div>
             <PlanCard></PlanCard>
-        </div>
         </div>
     );
 

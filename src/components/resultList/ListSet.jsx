@@ -28,6 +28,7 @@ function List() {
         <div className="">
           <button className="text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
             다운로드
+          <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" border="0"/>
           </button>
         </div>
         </div>

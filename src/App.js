@@ -8,7 +8,7 @@ import './index.css';
 import { useState } from 'react';
 import { AddressContext } from './context/AddressContext';
 import MainPageAfter from './components/MainPageAfter';
-import Payment from './components/PayPage/Payment';
+import Payment from './components/payPage/Payment';
 import Analtsisresult from './components/Analysis Result';
 import Gpttest1 from './components/testPage/Gpttest1';
 

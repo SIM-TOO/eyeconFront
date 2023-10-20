@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const useUserPWCK = () => {
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('  ');
 
   const validatePassword = () => {
     const passwordInput = document.querySelector('input[name="password"]');

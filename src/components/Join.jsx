@@ -15,24 +15,11 @@ function Join() {
   const IdErrorMessage = useUserIdCK();
   const PWErrorMessage = useUserPWCK();
   const PWMErrorMessage = useUserPWCKM();
-  const { formRef, handleSubmit } = useUserJoin();
+  const { formRef, handleSubmit } = useUserJoin(IdErrorMessage, PWErrorMessage, PWMErrorMessage);
 
   // 주소 검색 새로운 창여는 코드
   const handleButtonClick = () => {
     window.open('/place', 'AddressPopup', 'width=650,height=500');
-  };
-
-  // 전송 버튼 클릭시 로컬스토리지 데이터 삭제 기능
-  const handleClearLocalStorage = () => {
-
-
-    if (IdErrorMessage === "") {
-      if (IdErrorMessage !== "" || PWErrorMessage !== "" || PWMErrorMessage !== "") {
-        alert("가입 정보를 확인 후 입력해주세요");
-      } else {
-        localStorage.clear();
-      }
-    }
   };
 
   return (
@@ -153,7 +140,6 @@ onClick={handleButtonClick}
               {/* 버튼 */}
               <div className="mb-4">
                 <button
-                  onClick={handleClearLocalStorage}
                   type="submit"
                   className="rounded-lg bg-[#15c3a7] p-3 text-base font-medium text-white w-[340px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
                   Join

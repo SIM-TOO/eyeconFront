@@ -18,10 +18,10 @@ const Intro04 = () => {
             {/* 컨테이너 박스 */}
             <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-3">
                 <div className="col-span-12 md:relative md:top-[-70px]">
-                    <p className="relative">
+                    <span className="relative">
                         <span className="relative z-10 text-4xl md:text-6xl font-bold">AI CHATBOT <br /> 그리고 시선분석</span>
                         <div className="absolute w-[50px] md:w-[350px] h-[20px] bg-[#15c3a7] top-[42px] rounded-full md:block hidden"></div>
-                    </p>
+                    </span>
                     <p className="col-span-12">
                         <br />
                         AI 챗봇을 활용해 우리는 서비스의 품질을 높입니다. 단순한 결과물이 아닌 인공지능이 분석한 <br />

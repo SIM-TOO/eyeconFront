@@ -12,18 +12,19 @@ const useUserJoin = () => {
     // 데이터 배열로 보관
     const dataToSend = {
       email: formData.get('email'),
-      password: formData.get('password'),
-      category: formData.get('category'),
-      storeName: formData.get('storeName'),
-      place1: formData.get('place1'),
-      place2: formData.get('place2')
+      pw: formData.get('password'),
+      // category: formData.get('category'),
+      // storeName: formData.get('storeName'),
+      // place1: formData.get('place1'),
+      // place2: formData.get('place2')
     };
 
     console.log("회원가입 정보 확인", dataToSend);
+    console.log("이메일 확인", formData.get('email'));
 
     // POST 요청 방식
     try {
-      axios.post(`${url}join`, dataToSend);
+      axios.post(`${url}/join.do`,dataToSend);
     } catch (error) {
       console.error("전송을 실패 했습니다 에러 내용 :", error);
     }

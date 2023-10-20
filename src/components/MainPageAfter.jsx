@@ -22,7 +22,7 @@ function MainPageAfter() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 500); // 로딩 애니메이션 시간
+    }, 1600); // 로딩 애니메이션 시간
 
     return () => clearTimeout(timer);
   }, []);

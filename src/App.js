@@ -9,6 +9,8 @@ import { useState } from 'react';
 import { AddressContext } from './context/AddressContext';
 import MainPageAfter from './components/MainPageAfter';
 import ResultPage from './components/ResultPage';
+import MainPageAfterTest from './components/MainPageAfterTest';
+import MainPageAfterPay from './components/MainPageAfterPay';
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -25,11 +27,13 @@ const inAddressContext={
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/main" element={<MainPageAfter />} />
+          <Route path="/maintest" element={<MainPageAfterTest />} />
           <Route path="/join" element={<Join />} />
           <Route path="/pay" element={<Pay />} />
           <Route path="/login" element={<Login />} />
           <Route path="/place" element={<Place/>}/>
           <Route path='/ResultPage' element={<ResultPage/>} />
+          <Route path='/mainpay' element={<MainPageAfterPay/>} />
        </Routes>
       </AddressContext.Provider>
 

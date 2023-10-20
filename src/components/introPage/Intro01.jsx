@@ -37,9 +37,9 @@ const Intro01 = () => {
 
           {/* 버튼 만드는 자리 */}
           <div className="container mx-auto grid grid-cols-12">
-            <div className="col-span-2 md:col-span-8  whitespace-nowrap"></div>
+            <div className="col-span-4 md:col-span-8  whitespace-nowrap"></div>
             <Link to="/login">
-            <button className="col-span-8 md:col-span-4 text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
+            <button className="col-span-6 md:col-span-4 text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
               Get started
             </button>
             </Link>

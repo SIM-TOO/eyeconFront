@@ -44,15 +44,15 @@ function List() {
 
           <div className='grid grid-cols-3 items-start'>
             <div className='col-span-1'>
-              <button className="text-sm md:text-2xl text-center text-white rounded-[10px] bg-[#15c3a7] whitespace-nowrap w-[65%] h-[auto] mb-4">
+              <button className="text-sm md:text-2xl text-center text-white rounded-[10px] bg-[#15c3a7] whitespace-nowrap w-[65%] h-[auto] mb-4 flex justify-center items-center">
                 다운로드
-                <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" border="0" className='w-[auto] h-[auto]' />
+                <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" border="0" className='w-[auto] h-[auto] flex items-center justify-center ' />
               </button>
             </div>
             <div className='col-span-1'>
-              <button className="text-sm md:text-2xl text-center text-white rounded-[10px] bg-[#15c3a7] whitespace-nowrap w-[65%] h-[auto]">
+              <button className="text-sm md:text-2xl text-center text-white rounded-[10px] bg-[#15c3a7] whitespace-nowrap w-[65%] h-[auto] flex justify-center items-center">
                 다운로드
-                <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" border="0" />
+                <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" border="0" className='w-[auto] h-[auto] flex items-center justify-center' />
               </button>
             </div>
             <div className='col-span-1' />

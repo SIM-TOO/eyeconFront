@@ -26,7 +26,7 @@ const Intro01 = () => {
           </div>
 
           {/* 두번째 줄 내용 겹치는 박스 */}
-          <div className="py-5 md:py-40 p-6 sm:p-3 text-base sm:text-lg">
+          <div class="py-5 md:py-40 p-6 sm:p-3 text-base sm:text-lg">
             시선 분석 AI를 통해 매대를 정밀하게 분석하고 <br /> 소비자의 시선을
             예측해보세요. <br /> 소비자의 시선이 향하는 곳에 매출이 있습니다. <br /> Where the
             eyes go, sales are there <br />우리는 챗봇을 통해 이용자들의 요구사항을
@@ -39,11 +39,10 @@ const Intro01 = () => {
           <div className="container mx-auto grid grid-cols-12">
             <div className="col-span-4 md:col-span-8  whitespace-nowrap"></div>
             <Link to="/login">
-            <button className="col-span-6 md:col-span-4 text-sm  md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap ">
-              Get started
-            </button>
+              <button className="col-span-6 md:col-span-4 text-sm md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap z-10">
+                Get started
+              </button>
             </Link>
-            <div className="col-span-2 md:col-span-0 " />
           </div>
         </div>
         {/* 모바일이 사라짐 */}

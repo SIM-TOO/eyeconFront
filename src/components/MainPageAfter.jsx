@@ -1,19 +1,31 @@
-//import React from 'react';
+//import React from 'react'
 import React, { useState } from "react";
 import HeaderAfter from "./HeaderAfter";
-import Component1 from "./testPage/Component1";
-import Component2 from "./testPage/Component2";
-import Component3 from "./testPage/Component3";
 
-function MainPageAfter() {
+import Component0 from "./mainPage/C00Loading";
+import Component1 from "./mainPage/C01Start";
+import Component2 from "./mainPage/C02Pay";
+
+
+import useMainLoading from "../hook/mainPage/useMainLoading";
+
+
+
+const MainPageAfter = () => {
+
   const [currentComponent, setCurrentComponent] = useState(1);
+  const { isLoading, startLoading, endLoading } = useMainLoading();
 
+  // 페이지 이동시 로딩 페이지
   const handleButtonClick = (componentNumber) => {
-    setCurrentComponent(componentNumber);
+    startLoading();
+    setTimeout(() => {
+      endLoading();
+      setCurrentComponent(componentNumber);
+    }, 1000); // 로딩 시간
   };
 
   return (
-    // 배경화면 설정
     <div
       className="h-screen"
       style={{
@@ -39,19 +51,20 @@ function MainPageAfter() {
             boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
           }}
         >
-          {currentComponent === 1 && (
+
+          {isLoading && <Component0 />}
+          {!isLoading && currentComponent === 1 && (
             <Component1 handleButtonClick={handleButtonClick} />
           )}
-          {currentComponent === 2 && (
+          {!isLoading && currentComponent === 2 && (
             <Component2 handleButtonClick={handleButtonClick} />
           )}
-          {currentComponent === 3 && (
-            <Component3 handleButtonClick={handleButtonClick} />
-          )}
+
+
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default MainPageAfter;
+export default MainPageAfter

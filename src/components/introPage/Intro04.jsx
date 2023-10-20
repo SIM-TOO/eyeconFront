@@ -20,7 +20,7 @@ const Intro04 = () => {
                 <div className="col-span-12 md:relative md:top-[-70px]">
                     <span className="relative">
                         <span className="relative z-10 text-4xl md:text-6xl font-bold">AI CHATBOT <br /> 그리고 시선분석</span>
-                        <div className="absolute w-[50px] md:w-[350px] h-[20px] bg-[#15c3a7] top-[42px] rounded-full md:block hidden"></div>
+                        <div className="absolute w-[50px] md:w-[400px] h-[20px] bg-[#15c3a7] top-[72px] rounded-full md:block hidden"></div>
                     </span>
                     <p className="col-span-12">
                         <br />
@@ -36,19 +36,19 @@ const Intro04 = () => {
                 <div className="col-span-12 md:col-span-6">
                     <div className=' grid grid-cols-4'>
                         {/* 첫번째 */}
-                        <div className="col-span-1">그림</div>
+                        <div className="col-span-1"><img src="https://i.ibb.co/dQGPp8B/pic1.png" alt="pic1" border="0" /></div>
                         <div className="col-span-3">
                             <p>Key Accessibility Choice</p>
                             <p>Lorem ipsum dolor sit amet, consectetur ad consectetur adipiscing elit ut aliquam, purus.</p>
                         </div>
                         {/* 두번째 */}
-                        <div className="col-span-1">그림</div>
+                        <div className="col-span-1"><img src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" /></div>
                         <div className="col-span-3">
                             <p>Key Accessibility Choice</p>
                             <p>Lorem ipsum dolor sit amet, consectetur ad consectetur adipiscing elit ut aliquam, purus.</p>
                         </div>
                         {/* 세번째 */}
-                        <div className="col-span-1">그림</div>
+                        <div className="col-span-1"><img src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" /></div>
                         <div className="col-span-3">
                             <p>Key Accessibility Choice</p>
                             <p>Lorem ipsum dolor sit amet, consectetur ad consectetur adipiscing elit ut aliquam, purus.</p>

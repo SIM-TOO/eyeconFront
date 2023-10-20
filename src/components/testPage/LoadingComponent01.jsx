@@ -11,9 +11,7 @@ const LoadingComponent01 = () => {
         loop
         animationData={lottieJson}
         play
-        option={{ speed: 0.5   ,rendererSettings: {
-          preserveAspectRatio: 'xMidYMid meet' 
-        }}}
+        option={{ speed: 0.5 }}
         style={{ width: '100%', maxWidth: '1400px', borderRadius: '1%', overflow: 'hidden' }}
       />
     </div>

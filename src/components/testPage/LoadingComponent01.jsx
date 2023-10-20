@@ -5,14 +5,16 @@ import lottieJson from '../../lottie/loading.json';
 const LoadingComponent01 = () => {
   return (
     <div>
+      {/* 반응형 화면 사이즈 수정 예정 */}
 
       <Lottie
         loop
         animationData={lottieJson}
         play
-        option={{ speed: 0.5 }}
+        option={{ speed: 0.5   ,rendererSettings: {
+          preserveAspectRatio: 'xMidYMid meet' 
+        }}}
         style={{ width: '100%', maxWidth: '1400px', borderRadius: '1%', overflow: 'hidden' }}
-        className='rounded-lg'
       />
     </div>
   )

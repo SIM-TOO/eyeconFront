@@ -34,6 +34,7 @@ const inAddressContext={
           <Route path='/gpttest' element={<Gpttest1/>} />
           <Route path="/main" element={<MainPageAfter />} />
           <Route path='/mainpay' element={<MainPageAfterPay/>} />
+
        </Routes>
       </AddressContext.Provider>
 

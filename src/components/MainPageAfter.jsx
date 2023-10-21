@@ -37,7 +37,7 @@ function MainPageAfter() {
         style={{ height: "calc(100vh - 120px)" }}
       >
         <div
-          className="w-[70%] h-[90%] rounded-2xl flex flex-col justify-center items-center"
+          className="w-[70%] h-[90%] rounded-2xl"
           style={{
             background:
               "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",
@@ -55,10 +55,10 @@ function MainPageAfter() {
             <Component3 handleButtonClick={handleButtonClick} />
           )}
           {!isLoading && currentComponent === 4 && (
-            <Component3 handleButtonClick={handleButtonClick} />
+            <Component4 handleButtonClick={handleButtonClick} />
           )}
           {!isLoading && currentComponent === 5 && (
-            <Component3 handleButtonClick={handleButtonClick} />
+            <Component5 handleButtonClick={handleButtonClick} />
           )}
         </div>
       </div>

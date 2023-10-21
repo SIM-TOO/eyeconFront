@@ -28,7 +28,7 @@ const C01Start = ({ handleButtonClick }) => {
 function Robot() {
   return (
     <Lottie
-    className='translate3d-25-0-0'
+    className='translate3d-15-0-0 md:translate3d-25-0-0'
       loop
       animationData={lottieJson}
       play

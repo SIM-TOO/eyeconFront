@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       translate3d: {
         '10-55-0': '10px, 55px, 0px',
+        '15-0-0': '15px, 0px, 0px',
         '25-0-0': '25px, 0px, 0px',
         // ... 다른 값들
       }

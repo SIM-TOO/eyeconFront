@@ -6,15 +6,15 @@ const MainPay = () => {
     return (
         <div>
             {/* 나중에 글씨 폰트 디자인 넣을것 */}
-            <div className="flex flex-col items-center justify-center text-center">
+            <div className="flex flex-col items-center justify-center text-center font-Pretendard ">
                 <img
-                    src="https://i.ibb.co/vmWSTyD/content-inside.jpg"
+                    src="https://i.ibb.co/BKYsFcQ/image.png"
                     alt="content-inside"
-                    className="mx-auto"
+                    className="mx-auto mt-8"
                 />
                 <br />
-                <p>Pricing</p>
-                <p>서비스 플랜</p>
+                <p className="text-2xl font-bold text-[#001D6C] ">Pricing</p>
+                <p className="text-4xl font-bold">서비스 플랜</p>
                 <br />
                 <p>eyecon은 소비자의 데이터를 정밀하게 분석해 매대의 시선 배치를 정확히 분석합니다. <br />
                     효과적인 마케팅 방법을 고민 중인 소매업자를 위한 다양한 플랜이 준비되어 있습니다.</p>
@@ -51,7 +51,7 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Custom Domains
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-[#15c3a7] border border-withe">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>
@@ -82,7 +82,7 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Analytics
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-[#15c3a7] border border-withe">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>
@@ -114,7 +114,7 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Custom Brand
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-[#15c3a7] border border-withe">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>

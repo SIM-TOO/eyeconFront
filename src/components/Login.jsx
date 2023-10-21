@@ -6,16 +6,19 @@ import Lottie from 'react-lottie-player';
 import lottieJson from '../lottie/login.json';
 
 const Login = () => {
-    
+
 
     const { formRef, handleSubmit } = useUserLogin();
 
     return (
         <div>
             <UserHeader />
-            <main>
-                <div className="container my-10 p-5 mx-auto grid md:grid-cols-2 gap-8 font-Pretendard">
-                    <UserImage />
+            <main className="container my-10 p-5 mx-auto font-Pretendard">
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div className="relative">
+                        <img src="https://i.ibb.co/BCP0xW5/join.png" className="absolute top-0 left-0 z-10 hidden md:block" />
+                        <UserImage />
+                    </div>
                     <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
                         <p className="text-3xl font-medium text-left text-black p-3">Sign in</p>
 

@@ -11,6 +11,8 @@ import MainPageAfter from './components/MainPageAfter';
 import ResultPage from './components/ResultPage';
 import Gpttest1 from './components/testPage/Gpttest1';
 import MainPageAfterPay from './components/MainPageAfterPay';
+import MyPage from './components/MyPage';
+
 
 function App() {
 const [company, setCompany] = useState({})  
@@ -34,6 +36,9 @@ const inAddressContext={
           <Route path='/gpttest' element={<Gpttest1/>} />
           <Route path="/main" element={<MainPageAfter />} />
           <Route path='/mainpay' element={<MainPageAfterPay/>} />
+          <Route path='/mypage' element={<MyPage/>}/>
+        
+
        </Routes>
       </AddressContext.Provider>
 

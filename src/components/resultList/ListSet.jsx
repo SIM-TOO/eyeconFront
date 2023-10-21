@@ -4,7 +4,7 @@ import React from 'react';
 // 다운로드 및 모든 데이터 함수
 const ListItem = ({ date, img1, img2, description }) => {
   return (
-    <div className='grid grid-cols-3 border-2 gap-4 p-4  rounded-3xl border-2 border-black/10 bg-[F9F9F9]' style={{marginBottom:"10px"}}>
+    <div className='grid grid-cols-3 border-2 gap-4 p-4  rounded-3xl border-2 border-black/10 bg-[F9F9F9]' style={{marginBottom:"45px"}}>
       <p className='col-span-3 text-2xl text-left text-black'>{date}</p>
 
       <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center m-3 p-3 rounded-[35px]' id="item1">

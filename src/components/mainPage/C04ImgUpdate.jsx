@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Lottie from "react-lottie-player";
+import lottieJson from "../../lottie/robot.json";
 
 const C04ImgUpdate = ({ handleButtonClick }) => {
   return (
-    <div>
+    <div className='container mx-auto grid grid-cols-12 p-3  gap-4 max-w-screen-xl md:h-[100%]'>
 
-      이미지 업로드 컴포넌트
+      {/* 로봇 */}
+      <div className="col-span-6 md:w-500 md:h-500 w-300 h-300">
+        <Robot />
+      </div>
 
 
       {/* 임시버튼 */}
@@ -18,5 +23,16 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
     </div>
   )
 }
+
+function Robot() {
+  return (
+    <Lottie
+      loop
+      animationData={lottieJson}
+      play
+    />
+  );
+}
+
 
 export default C04ImgUpdate

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DownloadButton() {
+const DownloadButton = () => {
   return (
     <div className='grid grid-cols-2 items-start'>
       <div className='col-span-1 p-2'>
@@ -11,26 +11,33 @@ function DownloadButton() {
       </div>
     </div>
   );
-}
+};
 
-function ListItem({ date, img1, img2, description }) {
+const ListItem = ({ date, img1, img2, description }) => {
   return (
     <div className='grid grid-cols-3 border-2 gap-4 p-4 rounded-3xl border-2 border-black/10 bg-[F9F9F9]'>
-      <p className='col-span-4 text-2xl text-left text-black'>{date}</p>
+      <p className='col-span-3 text-2xl text-left text-black'>{date}</p>
+      
       <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center m-3 p-3 rounded-[35px]' id="item1">
         <img src={img1} alt="image" className='object-contain w-[auto] h-[auto] justify-center items-center' />
       </div>
+
       <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center p-3 m-3 rounded-[35px]' id='item2'>
         <img src={img2} alt="heatmap" className='object-contain w-[auto] h-[auto] justify-center items-center' />
       </div>
+
       <div className='col-span-1'>
         <p className='text-base text-[#313131] text-center' style={{ marginTop: "65px" }}>{description}</p>
       </div>
+      
+      <button className='col-span-1'>버튼1</button>
+      <button className='col-span-1'>버튼2</button>
+      <div  className='col-span-1'/>
     </div>
   );
-}
+};
 
-function List() {
+const List = () => {
   const items = [
     {
       date: "2023-10-19",
@@ -45,11 +52,13 @@ function List() {
     <div className="container mx-auto grid grid-cols-12 max-w-screen-x">
       <div className='col-span-12 grid grid-cols-12 gap-4 flex items-center'>
         <div className='col-span-4' />
-        {["A마트", "B마트", "C마트", "D마트"].map(mart => (
-          <div className='col-span-1 rounded-t-[15px] bg-[#15c3a7]'>
-            <p className='text-2xl font-bold text-center text-neutral-700'>{mart}</p>
+        {["A마트", "B마트", "C마트", "D마트"].map((mart, index) => (
+          <div className={`col-span-1 rounded-t-[15px] ${index === 0 ? 'bg-[#15c3a7]' : 'bg-[#A9A9A9]'}`}>
+            <p className='text-2xl  font-bold text-center text-neutral-700' style={{ transform: 'scale(1.0)' }}>{mart}</p>
           </div>
         ))}
+
+
         <div className='col-span-3' />
       </div>
 
@@ -58,18 +67,19 @@ function List() {
         <div>
           <p className='text-5xl font-bold text-center text-black p-4'> 시선 분석 결과 </p>
           <p className='text-2xl font-bold text-right text-black p-4'>↓ 최신순</p>
+          
           {items.map(item => <ListItem {...item} />)}
-          <DownloadButton />
+          
         </div>
         <div>
-        {items.map(item => <ListItem {...item} />)}
-        <DownloadButton />
+          {items.map(item => <ListItem {...item} />)}
+          <DownloadButton />
         </div>
       </div>
 
       <div className='col-span-3' />
     </div>
   );
-}
+};
 
 export default List;

@@ -9,7 +9,10 @@ const C01Start = ({ handleButtonClick }) => {
       style={{ width: '100%', height: '100%' }}
     >
       {/* 로봇 */}
-      <Robot />
+      <div className="md:w-500 md:h-500 w-300 h-300">
+        <Robot />
+      </div>
+
       <button
         className="text-2xl md:text-5xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-5"
         style={{ width: '60%', maxWidth: '400px' }}
@@ -17,6 +20,7 @@ const C01Start = ({ handleButtonClick }) => {
       >
         START
       </button>
+
     </div>
   )
 }
@@ -27,9 +31,9 @@ function Robot() {
       loop
       animationData={lottieJson}
       play
-      style={{ width: 500, height: 500 }}
     />
   );
 }
+
 
 export default C01Start

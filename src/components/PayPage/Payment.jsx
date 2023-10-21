@@ -21,11 +21,11 @@ const Payment = () => {
   
       IMP.request_pay({
         pg : 'nice.iamport00m',   
-        pay_method : 'card',
+        pay_method : 'card', 
         merchant_uid: 'merchant_' + new Date().getTime(), //상점에서 생성한 고유 주문번호
         name : '주문명:결제테스트',
-        amount : 1004,
-        company : '상호명',//해당 파라미터 설정시 통합결제창에 해당 상호명이 노출됩니다.
+        amount : 1004, // 가격
+        company : '상호명',//해당 파라미터 설정시 통합결제창에 해당 상호명이 노출됩니다.  // 코인아이디/ 가격/ 상품명 / 개수
         buyer_email : 'test@portone.io',
         buyer_name : '구매자이름',
         buyer_tel : '010-1234-5678',
@@ -54,7 +54,7 @@ const Payment = () => {
             let timeString = hours + ':' + minutes  + ':' + seconds;
             let dateString = year + '-' + month  + '-' + day;
             axios.post("http://localhost:8087/verify/completed",{
-
+              // 코인아이디(식별키) + 개수
               impUid:rsp.imp_uid,
               amount:rsp.paid_amount,
               coinName:rsp.name,

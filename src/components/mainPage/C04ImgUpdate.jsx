@@ -9,13 +9,8 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
 
       {/* 로봇 */}
       <div className="col-span-5">
-       
-       
-        <div>
-         <br></br>
-        </div>
         <Robot />
-      </div>
+      </div>  
       <div className="h-[80%] col-span-7 grid grid-cols-12 flex items-center justify-center">
         <div className="col-span-6">
           여기에 이미지가 필요해!
@@ -43,6 +38,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
 function Robot() {
   return (
     <Lottie
+    className='translate3d-10-55-0'
       loop
       animationData={lottieJson}
       play

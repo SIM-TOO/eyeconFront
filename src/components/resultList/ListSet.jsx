@@ -25,7 +25,7 @@ function ListItem({ date, img1, img2, description }) {
         <img src={img2} alt="heatmap" border="0" className='object-contain w-[auto] h-[auto] justify-center items-center' />
       </div>
       <div className='col-span-1'>
-        <p className='text-base text-[#313131] text-center' style={{marginTop:"65px"}}>{description}</p>
+        <p className='text-base text-[#313131] text-center' style={{ marginTop: "65px" }}>{description}</p>
       </div>
     </div>
   );
@@ -43,17 +43,41 @@ function List() {
   ];
 
   return (
-    <div className='grid grid-cols-12 gap-4 bg-light-blue'>
-      <div className='col-span-3'/>
-        <div className='w-[25%] h-[auto] rounded-[35px] bg-[#15c3a7]' style={{ boxShadow: "1px 1px 1px 0 rgba(0,0,0,0.25)" }}>
+    <div className="container mx-auto grid grid-cols-12 max-w-screen-x">
+      <div className='col-span-12 grid grid-cols-12 gap-4'>
+        <div className='col-span-3' />
+        <div className='col-span-1 rounded-t-[15px] bg-[#15c3a7]  ' >
           <p className='text-2xl font-bold text-center text-neutral-700'>A마트</p>
         </div>
+        <div className='col-span-1  rounded-[35px] bg-[#15c3a7]'>
+          <p className='text-2xl font-bold text-center text-neutral-700'>B마트</p>
+        </div>
+        <div className='col-span-1 rounded-[35px] bg-[#15c3a7]' >
+          <p className='text-2xl font-bold text-center text-neutral-700'>C마트</p>
+        </div>
+        <div className='col-span-1  rounded-[35px] bg-[#15c3a7]'>
+          <p className='text-2xl font-bold text-center text-neutral-700'>D마트</p>
+        </div>
+        <div className='col-span-1 rounded-[35px] bg-[#15c3a7]' >
+          <p className='text-2xl font-bold text-center text-neutral-700'>F마트</p>
+        </div>
+        <div className='col-span-1  rounded-[35px] bg-[#15c3a7]' >
+          <p className='text-2xl font-bold text-center text-neutral-700'>G마트</p>
+        </div>
+        <div className='col-span-3' />
+      </div>
+
+
+
+
+
+      <div className='col-span-3' />
       <div className='col-span-6 flex flex-col justify-center items-center rounded-[25px] border' style={{ width: "100%", height: "100%", padding: "20px" }}>
         <div>
           <p className='text-5xl font-bold text-center text-black'> 시선 분석 결과 </p>
           <p className='text-2xl font-bold text-right text-black'>↓ 최신순</p>
           {items.map(item => <ListItem {...item} />)}
-          <DownloadButton/>    
+          <DownloadButton />
         </div>
       </div>
 

@@ -6,7 +6,7 @@ const MainPay = () => {
     return (
         <div>
             {/* 나중에 글씨 폰트 디자인 넣을것 */}
-            <div className="flex flex-col items-center justify-center text-center font-Pretendard">
+            <div className="flex flex-col items-center justify-center text-center font-Pretendard ">
                 <img
                     src="https://i.ibb.co/BKYsFcQ/image.png"
                     alt="content-inside"

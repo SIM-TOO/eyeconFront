@@ -1,6 +1,6 @@
 import DaumPostcode from "react-daum-postcode";
 import { AddressContext } from "../context/AddressContext";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 const Place = (props) => {
     
     const {setCompany} = useContext(AddressContext);

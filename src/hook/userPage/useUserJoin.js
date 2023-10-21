@@ -22,7 +22,7 @@ const useUserJoin = (IdErrorMessage, PWErrorMessage, PWMErrorMessage) => {
     // 데이터 배열로 보관
     const dataToSend = {
       email: formData.get('email'),
-      password: formData.get('password'),
+      pw : formData.get('password'),
       category: formData.get('category'),
       storeName: formData.get('storeName'),
       place1: formData.get('place1'),

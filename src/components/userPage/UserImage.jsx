@@ -10,6 +10,7 @@ function UserImage() {
                     loop
                     animationData={lottieJson}
                     play
+                    option={{ speed: 0.2 }}
                     style={{ width: '100%', maxWidth: '1000px' }}
                     className='absolute top-20 left-0'
                 />

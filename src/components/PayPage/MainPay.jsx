@@ -12,6 +12,7 @@ const MainPay = () => {
                 loop
                 animationData={lottieJson}
                 play
+                option={{ speed: 0.8 }}
                 style={{ width: '100%', maxWidth: '200px' }}
             />
         );

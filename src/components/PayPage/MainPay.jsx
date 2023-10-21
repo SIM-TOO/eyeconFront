@@ -51,7 +51,7 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Custom Domains
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-[#15c3a7] border border-withe">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>
@@ -82,7 +82,7 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Analytics
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-[#15c3a7] border border-withe">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>
@@ -114,7 +114,7 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Custom Brand
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-[#15c3a7] border border-withe">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>

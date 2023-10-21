@@ -1,20 +1,32 @@
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useCallback } from 'react';
+import axios from 'axios';
 
 function ImgDrop() {
   const onDrop = useCallback((acceptedFiles) => {
-    // 여기에서 파일을 처리하거나 업로드 할 수 있습니다.
-    // 예: acceptedFiles[0]은 첫 번째 파일입니다.
+    const url = process.env.REACT_APP_MASTER_URL;
+    console.log("이미지 업로드 시도");
+    console.log("이미지의 정보는 : ", acceptedFiles);
 
-    console.log("업로드 될까?")
+    // 이미지 서버로 업로드
+    const formData = new FormData();
+    formData.append('file', acceptedFiles[0]);
+
+    try {
+      axios.post(`${url}/test.do`, formData);
+    } catch (error) {
+      console.error("전송을 실패 했습니다 에러 내용 :", error);
+    }
+
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
+    multiple: false, // 한 번에 여러 파일을 받을 수 없도록 설정
     accept: {
       'image/*': ['.jpeg', '.jpg', '.png'],
-     },  // 이미지만 허용
+    },  // 이미지만 허용
   });
 
   return (

@@ -5,7 +5,6 @@ import Header from './Header';
 function ResultPage()  {
 
   return (
-    
       
     <div>
       <Header></Header>
@@ -13,6 +12,7 @@ function ResultPage()  {
         <List></List>
     </div>
     </div>
+    
     
   )
 

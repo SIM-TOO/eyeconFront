@@ -1,31 +1,20 @@
-//import React from 'react';
-import React, { useState, useEffect } from "react";
+import React from 'react';
 import HeaderAfter from "./HeaderAfter";
-import Component1 from "./testPage/Component1";
-import Component2 from "./testPage/Component2";
-import Component3 from "./testPage/Component3";
-import LoadingComponent01 from "./testPage/LoadingComponent01";
+import Component1 from "./mainPage/C01Start";
+import Component2 from "./mainPage/C02Pay";
+import Component3 from "./mainPage/C03AIChat";
+import Component4 from "./mainPage/C04ImgUpdate";
+import Component5 from "./mainPage/C05Result";
+import LoadingComponent from "./mainPage/C00Loading";
+import useLoadingDelayHandler from "../hook/mainPage/useMainLoading";
 
 function MainPageAfter() {
-  const [currentComponent, setCurrentComponent] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
 
-  const handleButtonClick = (componentNumber) => {
-    setIsLoading(true);
+  const initialDelay = 1200;  // 처음 로딩 시 딜레이
+  const buttonDelay = 1200;   // 버튼 클릭 시 딜레이
+  const [isLoading, currentComponent, handleButtonClick] = useLoadingDelayHandler(initialDelay, buttonDelay);
 
-    setTimeout(() => {
-      setIsLoading(false);
-      setCurrentComponent(componentNumber);
-    }, 2000);
-  };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1600); // 로딩 애니메이션 시간
-
-    return () => clearTimeout(timer);
-  }, []);
 
 
   return (
@@ -55,7 +44,7 @@ function MainPageAfter() {
             boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
           }}
         >
-          {isLoading && <LoadingComponent01 />}
+          {isLoading && <LoadingComponent />}
           {!isLoading && currentComponent === 1 && (
             <Component1 handleButtonClick={handleButtonClick} />
           )}
@@ -63,6 +52,12 @@ function MainPageAfter() {
             <Component2 handleButtonClick={handleButtonClick} />
           )}
           {!isLoading && currentComponent === 3 && (
+            <Component3 handleButtonClick={handleButtonClick} />
+          )}
+          {!isLoading && currentComponent === 4 && (
+            <Component3 handleButtonClick={handleButtonClick} />
+          )}
+          {!isLoading && currentComponent === 5 && (
             <Component3 handleButtonClick={handleButtonClick} />
           )}
         </div>

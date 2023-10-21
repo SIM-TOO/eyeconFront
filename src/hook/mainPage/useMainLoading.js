@@ -1,24 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-const useMainLoading = (initialLoadingState = true) => {
-  const [isLoading, setIsLoading] = useState(initialLoadingState);
+const useLoadingDelayHandler = (initialDelay, buttonDelay) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentComponent, setCurrentComponent] = useState(1);
 
-  // 로딩 상태 제어 함수
-  const startLoading = () => setIsLoading(true);
-  const endLoading = () => setIsLoading(false);
+  const handleButtonClick = (componentNumber) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setCurrentComponent(componentNumber);
+    }, buttonDelay);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      endLoading();
-    }, 1000);
+      setIsLoading(false);
+    }, initialDelay);
     return () => clearTimeout(timer);
-  }, []);
+  }, [initialDelay]);
 
-  return {
-    isLoading,
-    startLoading,
-    endLoading
-  };
+  return [isLoading, currentComponent, handleButtonClick];
 };
 
-export default useMainLoading;
+export default useLoadingDelayHandler;

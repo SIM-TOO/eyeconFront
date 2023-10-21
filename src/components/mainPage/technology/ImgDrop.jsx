@@ -7,11 +7,15 @@ function ImgDrop() {
   const onDrop = useCallback((acceptedFiles) => {
     const url = process.env.REACT_APP_MASTER_URL;
     console.log("이미지 업로드 시도");
-    console.log("이미지의 정보는 : ", acceptedFiles);
+   
 
     // 이미지 서버로 업로드
     const formData = new FormData();
-    formData.append('file', acceptedFiles[0]);
+    formData.append('beforeimg', acceptedFiles[0].path);  // 파일 경로를 'beforeimg' 키로 추가
+
+    // 테스트 출력
+    console.log("이미지의 정보는 : ", formData);
+    console.log("이미지의 이름 정보는 : ", formData.get('beforeimg'));
 
     try {
       axios.post(`${url}/test.do`, formData);

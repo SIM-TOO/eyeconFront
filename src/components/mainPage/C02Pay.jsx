@@ -5,8 +5,8 @@ const C02Pay = ({ handleButtonClick }) => {
     <div className='container mx-auto grid grid-cols-12 p-3 max-w-screen-xl h-[100%]'>
 
       {/* 나중에 다시 만들예정 */}
-       {/* 여백용박스 */}
-       <div className="col-span-12 h-[20%]" />
+      {/* 여백용박스 */}
+      <div className="col-span-12 h-[20%]" />
 
       <div className="col-span-12 grid grid-cols-12 h-[50%]">
         {/* 나중에 글씨 폰트 디자인 넣을것 */}
@@ -17,7 +17,9 @@ const C02Pay = ({ handleButtonClick }) => {
           <p className="text-left">
             현재 코인 : 2개 <br />
             필요 코인 : -1개 <br />
-            <div className="h-[2px] bg-[#e4e4e4]" />
+          </p>
+          <div className="h-[2px] bg-[#e4e4e4]" />
+          <p className="text-left">
             시선분석 서비스를 이용하기 위해서는 코인이 1개 필요합니다. 코인사용 버튼을 누르면 시선 분석이
             시작됩니다
           </p>
@@ -26,7 +28,7 @@ const C02Pay = ({ handleButtonClick }) => {
           </button>
         </div>
 
-       
+
 
         <div className="col-span-12 md:col-span-4">
           <img
@@ -49,9 +51,9 @@ const C02Pay = ({ handleButtonClick }) => {
       <button
         className="col-span-12"
         onClick={() => handleButtonClick(3)}
-        
+
       >
-       AI 페이지 이동 버튼 (임시버튼임 나중에 삭제 할 예정)
+        AI 페이지 이동 버튼 (임시버튼임 나중에 삭제 할 예정)
       </button>
       {/* 임시버튼 */}
     </div>

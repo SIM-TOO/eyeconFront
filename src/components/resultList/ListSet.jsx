@@ -61,6 +61,10 @@ function List() {
           {items.map(item => <ListItem {...item} />)}
           <DownloadButton />
         </div>
+        <div>
+        {items.map(item => <ListItem {...item} />)}
+        <DownloadButton />
+        </div>
       </div>
 
       <div className='col-span-3' />

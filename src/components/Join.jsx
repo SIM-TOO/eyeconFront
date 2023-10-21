@@ -27,7 +27,10 @@ function Join() {
       <UserHeader />
       <main className="container my-10 p-5 mx-auto font-Pretendard">
         <div className="grid md:grid-cols-2 gap-8">
-          <UserImage />
+          <div className="relative">
+            <img src="https://i.ibb.co/BCP0xW5/join.png" className="absolute top-0 left-0 z-10 hidden md:block" />
+            <UserImage />
+          </div>
           <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
             <p className="text-3xl font-medium text-left text-black p-3">Sign in</p>
 
@@ -114,15 +117,15 @@ function Join() {
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />
-                   <img
-                      src="https://i.ibb.co/VQjYh2k/searchicon.png"
-                      alt="searchicon"
-                      border="0"
-                      className="absolute cursor-default  w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
-onClick={handleButtonClick}
-                    />
+                  <img
+                    src="https://i.ibb.co/VQjYh2k/searchicon.png"
+                    alt="searchicon"
+                    border="0"
+                    className="absolute cursor-default  w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
+                    onClick={handleButtonClick}
+                  />
                 </div>
-              
+
               </div>
 
               {/* 가게 주소 2 */}

@@ -99,7 +99,7 @@ function HeaderAfter() {
             </div>
             <div>
             {menuOpen && (
-                <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden">
+                <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">
                   <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-light w-full">
                     <li
                       className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"

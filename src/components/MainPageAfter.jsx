@@ -6,11 +6,12 @@ import Component3 from "./mainPage/C03AIChat";
 import Component4 from "./mainPage/C04ImgUpdate";
 import Component5 from "./mainPage/C05Result";
 import LoadingComponent from "./mainPage/C00Loading";
+
 import useLoadingDelayHandler from "../hook/mainPage/useMainLoading";
 
 function MainPageAfter() {
 
-  const initialDelay = 1200;  // 처음 로딩 시 딜레이
+  const initialDelay = 1400;  // 처음 로딩 시 딜레이
   const buttonDelay = 1200;   // 버튼 클릭 시 딜레이
   const [isLoading, currentComponent, handleButtonClick] = useLoadingDelayHandler(initialDelay, buttonDelay);
 

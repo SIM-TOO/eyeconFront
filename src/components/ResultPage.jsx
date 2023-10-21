@@ -5,12 +5,15 @@ import Header from './Header';
 function ResultPage()  {
 
   return (
+    
+      
     <div>
       <Header></Header>
     <div>
         <List></List>
     </div>
     </div>
+    
   )
 
 

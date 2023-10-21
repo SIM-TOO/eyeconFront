@@ -1,8 +1,23 @@
 import React from "react";
+import Lottie from 'react-lottie-player';
+import lottieJson from '../../lottie/transaction.json';
 
 const MainPay = () => {
     const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
     const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
+
+    function Transaction() {
+        return (
+            <Lottie
+                loop
+                animationData={lottieJson}
+                play
+                style={{ width: '100%', maxWidth: '200px' }}
+            />
+        );
+    }
+
+
     return (
         <div>
             {/* 나중에 글씨 폰트 디자인 넣을것 */}
@@ -10,8 +25,11 @@ const MainPay = () => {
                 <img
                     src="https://i.ibb.co/BKYsFcQ/image.png"
                     alt="content-inside"
-                    className="mx-auto mt-8"
+                    className="mx-auto mt-8 hidden sm:block"
                 />
+                <div className="md:hidden">
+                <Transaction/>
+                </div>
                 <br />
                 <p className="text-2xl font-bold text-[#001D6C] ">Pricing</p>
                 <p className="text-4xl font-bold">서비스 플랜</p>

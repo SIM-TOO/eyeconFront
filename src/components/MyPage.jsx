@@ -1,10 +1,18 @@
 import React from 'react'
 import Header from './Header';
+import MyFix from './myPage/MyFix';
 
-function Mypage () {
-    
+function Mypage() {
+
     return (
-        <Header></Header>
+        <>
+        <div>
+            <Header></Header>
+        </div>
+        <div>
+                <MyFix></MyFix>
+        </div>
+        </>
     );
 
 }

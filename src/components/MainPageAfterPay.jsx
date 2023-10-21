@@ -7,13 +7,7 @@ function MainPageAfterPay() {
 
     return (
         <div
-            className="h-screen"
-            style={{
-                backgroundImage:
-                    'url("https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png")',
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-            }}
+            className="h-screen bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')]"
         >
             {/* 헤더 */}
 
@@ -26,7 +20,7 @@ function MainPageAfterPay() {
                 style={{ height: "calc(100vh - 120px)" }}
             >
                 <div
-                    className="w-[70%] h-[90%] rounded-2xl flex flex-col justify-center items-center"
+                    className="w-[70%] p-3 rounded-2xl flex flex-col justify-center items-center"
                     style={{
                         background:
                             "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",

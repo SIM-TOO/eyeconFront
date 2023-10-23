@@ -5,8 +5,8 @@ const C02Pay = ({ handleButtonClick }) => {
     <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3  gap-4 max-w-screen-xl h-[100%]'>
 
       {/* 나중에 다시 만들예정 */}
-      {/* 여백용박스 */}
-      <div className="col-span-12 h-[20%]" />
+      {/* 여백용 박스 */}
+      <div className="hidden md:block col-span-0 md:col-span-1" />
 
       <div className="col-span-12 grid grid-cols-12 h-[50%]">
         {/* 나중에 글씨 폰트 디자인 넣을것 */}

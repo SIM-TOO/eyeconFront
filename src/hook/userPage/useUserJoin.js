@@ -34,7 +34,7 @@ const useUserJoin = (IdErrorMessage, PWErrorMessage, PWMErrorMessage) => {
 
     // POST 요청 방식
     try {
-      axios.post(`${url}/join.do`, dataToSend);
+      axios.post(`${url}/user/join`, dataToSend);
     } catch (error) {
       console.error("전송을 실패 했습니다 에러 내용 :", error);
     }

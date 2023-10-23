@@ -4,7 +4,7 @@ import axios from 'axios';
 const useUserIdCK = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
-  const validateEmail = () => {
+  const validateEmail = async() => {
     const emailInput = document.querySelector('input[name="email"]');
     const email = emailInput.value;
     const url = process.env.REACT_APP_MASTER_URL;
@@ -24,10 +24,12 @@ const useUserIdCK = () => {
     } else {
       //  post 방식
       try {
-        const response = axios.post(`${url}/check-email`, { email: email });
-        
+        console.log('이메일:',email);
+        const user = { email: email }
+        const response = await axios.post(`${url}/user/checkEmail`, user);
+        console.log(response.data);
         // 중복으로 있으면 트루, 중복으로 없으면 펄스
-        if (response) { // 중복이 있을 때 실행
+        if (response.data==true) { // 중복이 있을 때 실행
           setErrorMessage('이미 사용 중인 이메일입니다.');
         } else { // 없을 때 실행
           setErrorMessage('');

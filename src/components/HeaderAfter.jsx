@@ -75,7 +75,8 @@ function HeaderAfter() {
             {/* 잔여코인 확인 & 로그아웃 버튼 */}
             <div className="col-span-6 flex items-center justify-end hidden md:flex">
               <div className="flex flex-wrap">
-                <p className="...클래스 이름...">
+                <p className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                >
                   <img src="https://i.ibb.co/Db5RC1S/emoji-coin.png" className="w-[20px] mr-2" alt="coin" />
                   {remainingCoins}개
                 </p>

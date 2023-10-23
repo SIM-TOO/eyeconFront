@@ -31,7 +31,7 @@ const Intro01 = () => {
                 <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
               </span>
             </div>
-            <div class="col-span-6 md:hidden flex justify-center ml-6" style={{ maxWidth: "350px" }}>
+            <div className="col-span-6 md:hidden flex justify-center ml-6" style={{ maxWidth: "350px" }}>
               <Animation />
             </div>
 

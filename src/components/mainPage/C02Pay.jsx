@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
+import { useSelector } from 'react-redux';
 const C02Pay = ({ handleButtonClick }) => {
+  // 리덕스에 저장된 코인 불러오기
+  const coinValue = useSelector((state) => state.coin);
   return (
     <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
@@ -19,7 +21,7 @@ const C02Pay = ({ handleButtonClick }) => {
         <div
           className='h-[150px] col-span-12 grid grid-cols-12'>
           <p className="col-span-6 text-left p-3">현재 코인 :</p>
-          <p className="col-span-6 text-right p-3"> X 개</p>
+          <p className="col-span-6 text-right p-3"> {coinValue} 개</p>
           <p className="col-span-6 text-left p-3">필요 코인 :</p>
           <p className="col-span-6 text-right p-3 text-[#fa3434]"> - 1 개</p>
         </div>

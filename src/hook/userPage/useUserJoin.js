@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import axios from 'axios';
 
+
 const useUserJoin = (IdErrorMessage, PWErrorMessage, PWMErrorMessage) => {
   const formRef = useRef(null);
   const url = process.env.REACT_APP_MASTER_URL;
@@ -35,6 +36,7 @@ const useUserJoin = (IdErrorMessage, PWErrorMessage, PWMErrorMessage) => {
     // POST 요청 방식
     try {
       axios.post(`${url}/user/join`, dataToSend);
+      window.location.href = '/login'
     } catch (error) {
       console.error("전송을 실패 했습니다 에러 내용 :", error);
     }

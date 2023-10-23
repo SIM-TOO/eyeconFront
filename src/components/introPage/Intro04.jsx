@@ -16,7 +16,7 @@ const Intro04 = () => {
             </div>
 
             {/* 컨테이너 박스 */}
-            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-3">
+            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4">
                 <div className="col-span-12 md:relative md:top-[-70px]">
                     <span className="relative">
                         <span className="relative z-10 text-4xl md:text-6xl font-bold p-3">AI CHATBOT <br /> <span className=' p-3'>그리고 시선분석</span></span>
@@ -24,7 +24,7 @@ const Intro04 = () => {
                     </span>
                     <p className="col-span-12 p-3" >
                         <br />
-                        AI 챗봇을 활용해 우리는 서비스의 품질을 높입니다. 단순한 결과물이 아닌 인공지능이 분석한 <br />
+                        AI 챗봇을 활용해 우리는 서비스의 품질을 높입니다. 단순한 결과물이 아닌 인공지능이 분석한 
                         결과물을 토대로 우리는 이용자들과 소통하고, 그것의 결과물로 이용자들의 더 나은 마케팅을 <br />
                         돕습니다.
                     </p>
@@ -32,7 +32,7 @@ const Intro04 = () => {
             </div>
 
             {/* 내용 적는 곳 */}
-            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-3">
+            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4">
                 <div className="col-span-12 md:col-span-6">
                     <div className=' grid grid-cols-4'>
                         {/* 첫번째 */}

@@ -1,12 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+import coinReducer from './store/coinSlice';
 
-let coinSlice = createSlice({
-  name: 'coin',
-  initialState: '',
-  reducers: {
-    setCoin: (state, action) => action.payload,
-  },
+const store = configureStore({
+  reducer: {
+    coin: coinReducer
+  }
 });
 
-export const { setCoin } = coinSlice.actions;
-export default coinSlice.reducer;
+export default store;

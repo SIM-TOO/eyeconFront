@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import useCoin from "../hook/mainPage/useCoin"
-import { setCoin } from '../store';
+import { setCoin } from '../store/coinSlice';
+
 
 function HeaderAfter() {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -4,7 +4,7 @@ import lottieJson from '../../lottie/check.json';
 
 const PayLoading = () => {
   return (
-    <div>
+    <div >
     {/* 반응형 화면 사이즈 수정 예정 */}
 
     <Lottie

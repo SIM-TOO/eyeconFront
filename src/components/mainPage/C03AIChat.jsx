@@ -41,7 +41,7 @@ const C03AIChat = ({ handleButtonClick }) => {
 function Robot() {
   return (
     <Lottie
-      className='translate3d-10-55-0'
+      className='translate3d-10-55-0 '
       loop
       animationData={lottieJson}
       play

@@ -1,22 +1,20 @@
-import React from 'react';
+import React from "react";
 import HeaderAfter from "./HeaderAfter";
 import Component1 from "./mainPage/C01Start";
 import Component2 from "./mainPage/C02Pay";
 import Component3 from "./mainPage/C03AIChat";
 import Component4 from "./mainPage/C04ImgUpdate";
 import Component5 from "./mainPage/C05Result";
+import Component6 from "./mainPage/C06PayLoading";
 import LoadingComponent from "./mainPage/C00Loading";
 import PayLoading from "./testPage/PayLoading";
 import useLoadingDelayHandler from "../hook/mainPage/useMainLoading";
 
 function MainPageAfter() {
-
-  const initialDelay = 1600;  // 처음 로딩 시 딜레이
-  const buttonDelay = 1200;   // 버튼 클릭 시 딜레이
-  const [isLoading, currentComponent, handleButtonClick] = useLoadingDelayHandler(initialDelay, buttonDelay);
-
-
-
+  const initialDelay = 1600; // 처음 로딩 시 딜레이
+  const buttonDelay = 1200; // 버튼 클릭 시 딜레이
+  const [isLoading, currentComponent, handleButtonClick] =
+    useLoadingDelayHandler(initialDelay, buttonDelay);
 
   return (
     // 배경화면 설정
@@ -45,7 +43,10 @@ function MainPageAfter() {
             boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
           }}
         >
-          {isLoading && (currentComponent !== 3 ? <LoadingComponent /> : <PayLoading />)}
+
+
+           {/* 6번 컴포넌트로 이동 시에만 기존 로딩 안뜨게 */}
+          {isLoading && <LoadingComponent />}
           {!isLoading && currentComponent === 1 && (
             <Component1 handleButtonClick={handleButtonClick} />
           )}
@@ -60,6 +61,9 @@ function MainPageAfter() {
           )}
           {!isLoading && currentComponent === 5 && (
             <Component5 handleButtonClick={handleButtonClick} />
+          )}
+          {!isLoading && currentComponent === 6 && (
+            <Component6 handleButtonClick={handleButtonClick} />
           )}
         </div>
       </div>

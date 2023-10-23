@@ -36,19 +36,19 @@ const Intro04 = () => {
                 <div className="col-span-12 md:col-span-6">
                     <div className=' grid grid-cols-4'>
                         {/* 첫번째 */}
-                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/dQGPp8B/pic1.png" alt="pic1" border="0" /></div>
+                        <div className="col-span-1 p-2"><img className="animate-bounce2" src="https://i.ibb.co/dQGPp8B/pic1.png" alt="pic1" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p>Key Accessibility Choice</p>
                             <p>Lorem ipsum dolor sit amet, consectetur ad consectetur adipiscing elit ut aliquam, purus.</p>
                         </div>
                         {/* 두번째 */}
-                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" /></div>
+                        <div className="col-span-1 p-2"><img className="animate-bounce2" src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p>Key Accessibility Choice</p>
                             <p>Lorem ipsum dolor sit amet, consectetur ad consectetur adipiscing elit ut aliquam, purus.</p>
                         </div>
                         {/* 세번째 */}
-                        <div className="col-span-1 p-2 "><img src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" /></div>
+                        <div className="col-span-1 p-2 "><img className="animate-bounce2" src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p>Key Accessibility Choice</p>
                             <p>Lorem ipsum dolor sit amet, consectetur ad consectetur adipiscing elit ut aliquam, purus.</p>

@@ -29,15 +29,14 @@ const useUserIdCK = () => {
         const response = await axios.post(`${url}/user/checkEmail`, user);
         console.log(response.data);
         // 중복으로 있으면 트루, 중복으로 없으면 펄스
-        if (response.data==true) { // 중복이 있을 때 실행
-          setErrorMessage('이미 사용 중인 이메일입니다.');
+        if (response.data===true) { // 중복이 있을 때 실행
+          setErrorMessage("이미 사용 중인 이메일입니다.");
         } else { // 없을 때 실행
           setErrorMessage('');
         }
       } catch (error) {
         console.error("이메일 중복 확인 중 오류 발생:", error);
       }
-      setErrorMessage('');
     }
   };
 

@@ -31,6 +31,9 @@ const Intro01 = () => {
                 <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
               </span>
             </div>
+            <div class="col-span-6 md:hidden flex justify-center ml-6" style={{ maxWidth: "350px" }}>
+              <Animation />
+            </div>
 
             {/* 두번째 줄 내용 겹치는 박스 */}
             <div className="py-5 md:py-40 p-6 sm:p-3 text-base sm:text-lg">

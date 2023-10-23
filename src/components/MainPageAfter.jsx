@@ -7,7 +7,6 @@ import Component4 from "./mainPage/C04ImgUpdate";
 import Component5 from "./mainPage/C05Result";
 import Component6 from "./mainPage/C06PayLoading";
 import LoadingComponent from "./mainPage/C00Loading";
-import PayLoading from "./testPage/PayLoading";
 import useLoadingDelayHandler from "../hook/mainPage/useMainLoading";
 
 function MainPageAfter() {

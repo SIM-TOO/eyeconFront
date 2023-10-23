@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import useCoin from "../hook/mainPage/useCoin"
+import { setCoin } from '../store/coinSlice';
+
 
 function HeaderAfter() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const dispatch = useDispatch();
 
+  // 리덕스에 코인 가져오기
+  const remainingCoins = useSelector(state => state.coin);
+
+  const getCoinInfo = useCoin();
+
+  // 코인 리덕스에 저장 하는 코드
+  useEffect(() => {
+    const fetchCoinInfo = async () => {
+      // 실제 이메일 값을 넣어야됨 세션에서 가져올것
+      const coins = await getCoinInfo("example@example.com");
+      if (coins !== null) {
+        dispatch(setCoin(coins));  // 가져온 코인 값을 스토어에 저장합니다.
+      }
+    };
+    fetchCoinInfo();
+  }, [dispatch, getCoinInfo]);
+
+  // 메뉴 토글
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -53,8 +75,10 @@ function HeaderAfter() {
             {/* 잔여코인 확인 & 로그아웃 버튼 */}
             <div className="col-span-6 flex items-center justify-end hidden md:flex">
               <div className="flex flex-wrap">
-                <p className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0">
-                  <img src="https://i.ibb.co/Db5RC1S/emoji-coin.png" className="w-[20px] mr-2"/>  3개
+                <p className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                >
+                  <img src="https://i.ibb.co/Db5RC1S/emoji-coin.png" className="w-[20px] mr-2" alt="coin" />
+                  {remainingCoins}개
                 </p>
                 <Link
                   to="/"
@@ -98,7 +122,7 @@ function HeaderAfter() {
               </button>
             </div>
             <div>
-            {menuOpen && (
+              {menuOpen && (
                 <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">
                   <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 font-light w-full">
                     <li

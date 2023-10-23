@@ -43,7 +43,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
           </>
         }
         {/* 이미지 드랍 */}
-        <ImgDrop onDrop={(image) => setUploadedImage(image)} />
+        <ImgDrop onUploadSuccess={(image) => setUploadedImage(image)} />
       </div>
 
       {/* 여백용 박스 */}

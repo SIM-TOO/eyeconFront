@@ -14,24 +14,27 @@ function ImgDrop({ onUploadSuccess }) {
     const reader = new FileReader();
 
     reader.onload = (event) => {
-      setImageSrc(event.target.result);  // 이미지 데이터를 상태 변수에 저장
+      setImageSrc(event.target.result);
+      if (onUploadSuccess) {
+        onUploadSuccess(event.target.result);
+      }
     };
 
     reader.readAsDataURL(file);
 
-    // 이미지 서버로 업로드
-    const formData = new FormData();
-    formData.append('beforeimg', acceptedFiles[0].path);  // 파일 경로를 'beforeimg' 키로 추가
+    // // 이미지 서버로 업로드
+    // const formData = new FormData();
+    // formData.append('beforeimg', acceptedFiles[0].path);  // 파일 경로를 'beforeimg' 키로 추가
 
-    // 테스트 출력
-    console.log("이미지의 정보는 : ", formData);
-    console.log("이미지의 이름 정보는 : ", formData.get('beforeimg'));
+    // // 테스트 출력
+    // console.log("이미지의 정보는 : ", formData);
+    // console.log("이미지의 이름 정보는 : ", formData.get('beforeimg'));
 
-    try {
-      axios.post(`${url}/test.do`, formData);
-    } catch (error) {
-      console.error("전송을 실패 했습니다 에러 내용 :", error);
-    }
+    // try {
+    //   axios.post(`${url}/test.do`, formData);
+    // } catch (error) {
+    //   console.error("전송을 실패 했습니다 에러 내용 :", error);
+    // }
 
   }, []);
 
@@ -48,7 +51,10 @@ function ImgDrop({ onUploadSuccess }) {
       <input {...getInputProps()} />
       {
         imageSrc ?
-          <img src={imageSrc} alt="Uploaded Preview" className="object-cover" />
+          <div className="w-full h-72 flex items-center justify-center">
+            <img src={imageSrc} alt="Uploaded Preview" className="max-h-full object-contain" />
+          </div>
+
           :
           <>
             <p className="hidden md:block opacity-50 font-medium text-[#190e61]">

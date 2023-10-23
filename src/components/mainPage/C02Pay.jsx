@@ -36,7 +36,8 @@ const C02Pay = ({ handleButtonClick }) => {
 
         {/* 버튼 */}
         <p className="col-span-3" />
-        <button className="h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]">
+
+        <button className="h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]" onClick={() => handleButtonClick(3)} >
           <p className="text-lg font-semibold text-center text-white">
             코인 사용
           </p>

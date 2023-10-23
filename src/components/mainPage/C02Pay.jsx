@@ -21,7 +21,7 @@ const C02Pay = ({ handleButtonClick }) => {
           <p className="col-span-6 text-left p-3">현재 코인 :</p>
           <p className="col-span-6 text-right p-3"> X 개</p>
           <p className="col-span-6 text-left p-3">필요 코인 :</p>
-          <p className="col-span-6 text-right p-3"> X 개</p>
+          <p className="col-span-6 text-right p-3 text-[#fa3434]"> - 1 개</p>
         </div>
         {/* 줄 */}
         <div className="col-span-12 h-[2px] bg-[#e4e4e4] " />

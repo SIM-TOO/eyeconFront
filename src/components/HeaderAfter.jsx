@@ -16,6 +16,7 @@ function HeaderAfter() {
   // 코인 리덕스에 저장 하는 코드
   useEffect(() => {
     const fetchCoinInfo = async () => {
+      // 실제 이메일 값을 넣어야됨 세션에서 가져올것
       const coins = await getCoinInfo("example@example.com");
       if (coins !== null) {
         dispatch(setCoin(coins));  // 가져온 코인 값을 스토어에 저장합니다.

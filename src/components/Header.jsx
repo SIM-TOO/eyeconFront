@@ -10,10 +10,10 @@ function Header() {
   };
 
   return (
-    <div>
-      <header className=" text-white p-5 font-Pretendard">
+    <div> 
+      <header className="fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard">
         <nav>
-          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
+          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/#" className="flex items-center">

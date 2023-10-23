@@ -10,6 +10,7 @@ function MainPage() {
   return (
     <div>
       <Header />
+
       <Intro01/>
       <Intro02/>
       <Intro03/>

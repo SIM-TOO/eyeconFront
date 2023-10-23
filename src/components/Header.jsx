@@ -30,7 +30,7 @@ function Header() {
               <Link to="/#" className="text-black hover:underline">
                 About
               </Link>
-              <Link to="/#" className="ml-4 text-black hover:underline">
+              <Link to="/pay" className="ml-4 text-black hover:underline">
                 Pricing
               </Link>
               {/* 추가 버튼 시 "ml-4" 넣기 */}

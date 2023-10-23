@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Lottie from "react-lottie-player";
+import lottieJson from "../../lottie/mainAnimation.json";
 
 const Intro01 = () => {
   return (
@@ -38,8 +40,8 @@ const Intro01 = () => {
               우리는 챗봇을 통해 사용자들과 소통합니다 <br />
               매장 운영에 필요한 정보를 분석하고, <br />
               상권, 성별, 연령을 바탕으로 <br />
-              챗봇과 최적의 정보를 파
-              우리는 챗봇 AI를 통해 더욱 정확해지고, 빨라졌습니다.
+              챗봇과 최적의 정보를 파 우리는 챗봇 AI를 통해 더욱 정확해지고,
+              빨라졌습니다.
             </div>
 
             {/* 버튼 만드는 자리 */}
@@ -54,16 +56,23 @@ const Intro01 = () => {
           </div>
           {/* 모바일이 사라짐 */}
           <div className="col-span-6 md:block hidden">
-            <img
-              src="https://i.ibb.co/CBj6Kn6/Group-624891.png"
-              alt="intro2"
-              className="h-auto pointer-events-none"
-            />
+            <Animation />
           </div>
         </div>
       </div>
     </div>
   );
 };
+
+function Animation() {
+  return (
+    <Lottie
+      loop
+      animationData={lottieJson}
+      play
+      style={{ width: "100%", maxWidth: "700px" }}
+    />
+  );
+}
 
 export default Intro01;

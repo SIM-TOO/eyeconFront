@@ -47,7 +47,7 @@ const MainPay = () => {
 
                 {/* 첫번쨰 박스 */}
                 <div className="col-span-11 md:col-span-3 p-3">
-                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
+                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-10">
                         <div className="inline-block rounded-lg border border-[#5d6a85]">
                             <p className="font-semibold text-left uppercase text-black px-3">
                                 BASIC
@@ -70,15 +70,15 @@ const MainPay = () => {
                                 <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> Custom Domains
                             </p>
                         </div>
-                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
+                        <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white ">
                             <span className="text-xs text-center text-[#020202]">Start today</span>
                         </button>
                     </div>
                 </div>
 
                 {/* 두번쨰 박스 */}
-                <div className="col-span-11 md:col-span-3 p-3">
-                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
+                <div className="col-span-11 md:col-span-3 p-3 ">
+                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-10">
                         <div className="inline-block rounded-lg border border-[#5d6a85]">
                             <p className="font-semibold text-left uppercase text-black px-3">
                                 premium
@@ -108,9 +108,9 @@ const MainPay = () => {
                 </div>
 
 
-                {/* 세번쨰 박스 */}
+                {/* 세번째 박스 */}
                 <div className="col-span-11 md:col-span-3 p-3">
-                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
+                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-10">
                         <div className="inline-block rounded-lg border border-[#5d6a85]">
                             <p className="font-semibold text-left uppercase text-black px-3">
                                 PRO

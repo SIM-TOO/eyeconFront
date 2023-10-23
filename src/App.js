@@ -46,8 +46,7 @@ function App() {
             <Route path='/payment' element={<Payment/>}/>
           </Routes>
         </AddressContext.Provider>
-      </Provider>,
-      document.getElementById('root')
+      </Provider>
 
     </div>
   );

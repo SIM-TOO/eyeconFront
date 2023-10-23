@@ -6,7 +6,7 @@ function PlanCard() {
   const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
 
   return (
-    <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl">
+    <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl font-Pretendard">
 
       {/* 여백용박스 */}
       <div className="col-span-0 md:col-span-1" />
@@ -25,7 +25,7 @@ function PlanCard() {
           <div className="p-3">
             <p className="text-xl p-3">
               <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
-              <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 5 Coins
+              <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 코인 5개
             </p>
             <p className="text-xl p-3">
               <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
@@ -53,7 +53,7 @@ function PlanCard() {
           <div className="p-3">
             <p className="text-xl p-3">
               <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
-              <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 15 Coins
+              <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 코인 15개
             </p>
             <p className="text-xl p-3">
               <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
@@ -82,7 +82,7 @@ function PlanCard() {
           <div className="p-3">
             <p className="text-xl p-3">
               <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
-              <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 30 Coins
+              <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 코인 30개
             </p>
             <p className="text-xl p-3">
               <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />

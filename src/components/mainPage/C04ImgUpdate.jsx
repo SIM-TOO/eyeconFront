@@ -17,8 +17,8 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
         </div>
         <div className="col-span-6 ">
           업로드 이미지 형식<br />
-          매대가 잘 보이는 이미지<br />
-          여백이 없는 이미지
+          1. 매대가 잘 보이는 이미지<br />
+          2. 여백이 없는 이미지
         </div>
         <ImgDrop></ImgDrop>
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const C02Pay = ({ handleButtonClick }) => {
   return (
-    <div className='container mx-auto grid grid-cols-12 p-3 max-w-screen-xl h-[100%]'>
+    <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3  gap-4 max-w-screen-xl h-[100%]'>
 
       {/* 나중에 다시 만들예정 */}
       {/* 여백용박스 */}

@@ -12,6 +12,9 @@ import ResultPage from './components/ResultPage';
 import Gpttest1 from './components/testPage/Gpttest1';
 import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
+import Payment from './components/payPage/Payment';
+
+
 
 
 function App() {
@@ -37,6 +40,7 @@ const inAddressContext={
           <Route path="/main" element={<MainPageAfter />} />
           <Route path='/mainpay' element={<MainPageAfterPay/>} />
           <Route path='/mypage' element={<MyPage/>}/>
+          <Route path='/payment' element={<Payment/>}/>
         
 
        </Routes>

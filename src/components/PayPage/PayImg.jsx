@@ -3,7 +3,7 @@ import React from "react";
 const img = () => {
     return (
         <div>
-            <div className="w-64 md:w-auto">
+            <div className="w-64 md:w-auto mt-40">
                 <img
                     src="https://i.ibb.co/5TcWgzd/price.png"
                     alt="pay1"

@@ -5,6 +5,7 @@ import { useDropzone } from 'react-dropzone';
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
   const [imageSrc, setImageSrc] = useState(null);
   const [beforeimg, setBeforeimg] = useState(null);
+  const [imageStyle, setImageStyle] = useState("w-auto h-full");
 
   // 이미지가 띄워진 상태 확인
   useEffect(() => {
@@ -45,16 +46,32 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
   }, [uploadedImageSend]);
 
   const onDrop = useCallback((acceptedFiles) => {
-    // 이미지 미리보기 설정
     const file = acceptedFiles[0];
     setBeforeimg(file.name);
     const reader = new FileReader();
+
     reader.onload = (event) => {
       setImageSrc(event.target.result);
+
+      const image = new Image();
+      image.src = event.target.result;
+
+      image.onload = () => {
+        const boxRatio = 1;  // 박스의 비율
+        const imageRatio = image.width / image.height;
+
+        if (imageRatio > boxRatio) {
+          setImageStyle("w-full h-auto");
+        } else {
+          setImageStyle("w-auto h-full");
+        }
+      }
+
       if (onUploadSuccess) {
         onUploadSuccess(event.target.result);
       }
     };
+
     reader.readAsDataURL(file);
   }, []);
 
@@ -67,15 +84,13 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     },  // 이미지만 허용
   });
 
-
   return (
-    <div {...getRootProps()} className="col-span-12 p-3 border-2 border-gray-300 rounded-md hover:border-blue-500 cursor-pointer h-[100%] flex items-center justify-center">
-      {/* 이미지 업로드 박스 */}
+    <div {...getRootProps()} className="col-span-12 border-2 border-gray-300 rounded-md hover:border-blue-500 cursor-pointer h-[100%] flex items-center justify-center">
       <input {...getInputProps()} />
       {
         imageSrc ?
-          <div className="w-full h-72 flex items-center justify-center">
-            <img src={imageSrc} alt="Uploaded Preview" className="max-h-full object-contain" />
+          <div style={{ maxWidth: '25rem', maxHeight: '25rem', width: '25rem', height: '25rem' }} className="flex items-center justify-center overflow-hidden">
+            <img src={imageSrc} alt="Uploaded Preview" className={imageStyle} />
           </div>
           :
           <>
@@ -94,5 +109,4 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
 }
 
 export default ImgDrop;
-
 

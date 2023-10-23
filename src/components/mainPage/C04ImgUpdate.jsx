@@ -30,7 +30,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
         {uploadedImage === null ?
           (
             <p className="text-center text-black">
-              시선 분석을 위해서 매장의 매대 사진을 드롭 박스에 업로드 해주세요
+              시선 분석을 위해서 매장의 매대 사진을 드롭 박스에 업로드 해주세요.
             </p>
           ) :
           (
@@ -93,6 +93,11 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
       {uploadedImage === null ?
         (
           <>
+          <div className="col-span-1 md:col-span-2 p-3" />
+         
+          <div className="col-span-2 md:col-span-2 p-3" />
+         
+          <div className="col-span-1 md:col-span-2 p-3"/>
           </>
         ) :
         (<>

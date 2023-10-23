@@ -15,7 +15,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
       handleButtonClick(5);
     } else {
       // 일단 실패해도 넘어가자! ^^
-      handleButtonClick(4);
+      handleButtonClick(5);
     }
   };
 

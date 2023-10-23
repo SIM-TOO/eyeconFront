@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const C02Pay = ({ handleButtonClick }) => {
   return (
@@ -12,19 +13,19 @@ const C02Pay = ({ handleButtonClick }) => {
 
       {/* 잔여 코인 확인 박스 */}
       <div className="col-span-12 h-full md:col-span-5 grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
-        
+
         <p className="col-span-12 text-2xl font-bold text-left text-[#505050]  p-3">잔여코인 확인</p>
-        
+
         <div
-        className='h-[150px] col-span-12 grid grid-cols-12'>
+          className='h-[150px] col-span-12 grid grid-cols-12'>
           <p className="col-span-6 text-left p-3">현재 코인 :</p>
-        <p className="col-span-6 text-right p-3"> X 개</p>
-        <p className="col-span-6 text-left p-3">필요 코인 :</p>
-        <p className="col-span-6 text-right p-3"> X 개</p>
+          <p className="col-span-6 text-right p-3"> X 개</p>
+          <p className="col-span-6 text-left p-3">필요 코인 :</p>
+          <p className="col-span-6 text-right p-3"> X 개</p>
         </div>
         {/* 줄 */}
         <div className="col-span-12 h-[2px] bg-[#e4e4e4] " />
-        
+
         {/* 내용 */}
         <p className="col-span-12 p-3" />
         <p className="col-span-12 text-left p-3">
@@ -33,8 +34,8 @@ const C02Pay = ({ handleButtonClick }) => {
         </p>
         <p className="col-span-12 p-3" />
 
-         {/* 버튼 */}
-         <p className="col-span-3" />
+        {/* 버튼 */}
+        <p className="col-span-3" />
         <button className="h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]">
           <p className="text-lg font-semibold text-center text-white">
             코인 사용
@@ -57,7 +58,7 @@ const C02Pay = ({ handleButtonClick }) => {
         />
         {/* 줄 */}
         <div className="col-span-12 h-[2px] bg-[#e4e4e4] " />
-        
+
         {/* 내용 */}
         <p className="col-span-12 p-3" />
         <p className="col-span-12 text-left p-3">
@@ -65,13 +66,16 @@ const C02Pay = ({ handleButtonClick }) => {
           서비스 결제가 필요하세요?
         </p>
         <p className="col-span-12 p-3" />
-        
+
         {/* 버튼 */}
         <p className="col-span-3" />
         <button className="h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]">
-          <p className="text-lg font-semibold text-center text-white">
-           서비스 결제하기
-          </p>
+          <Link
+            to="/mainpay"
+            className="text-lg font-semibold text-center text-white"
+          >
+            서비스 결제하기
+          </Link>
         </button>
         <p className="col-span-3" />
         <p className="col-span-12" />

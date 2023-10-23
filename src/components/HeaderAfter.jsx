@@ -37,7 +37,7 @@ function HeaderAfter() {
                 서비스결제
               </Link>
               <Link
-                to="/#"
+                to="/mainpay"
                 className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
               >
                 마이페이지

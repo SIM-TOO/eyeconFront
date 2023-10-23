@@ -46,6 +46,7 @@ function MiniRobot() {
             loop
             animationData={lottieJson}
             play
+            option={{ speed: 0.3 }}
             style={{ width: '100%', maxWidth: '200px' }}
         />
     );

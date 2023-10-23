@@ -40,9 +40,9 @@ const Intro05 = () => {
                         </div>
 
                         <ul className="list-none md:list-disc text-center md:text-left">
-                            <li>eye-tracking</li>
+                            <li>EYE-TRACKING</li>
                             <li>AI CHATBOT</li>
-                            <li>Commercial analysis</li>
+                            <li>COMMERCIAL ANALYSIS</li>
                         </ul>
                     </div>
 
@@ -54,9 +54,9 @@ const Intro05 = () => {
                             </p>
                         </div>
                         <div className="text-center md:text-left">
-                            <p>주소</p>
-                            <p>전화</p>
-                            <p>메일</p>
+                            <p>주소:</p>
+                            <p>전화:</p>
+                            <p>메일:eyecon@gmail.com</p>
                         </div>
                     </div>
 

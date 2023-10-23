@@ -10,10 +10,10 @@ function Header() {
   };
 
   return (
-    <div>
-      <header className=" text-white p-5 font-Pretendard">
+    <div> 
+      <header className="fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard">
         <nav>
-          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
+          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/#" className="flex items-center">
@@ -30,7 +30,7 @@ function Header() {
               <Link to="/#" className="text-black hover:underline">
                 About
               </Link>
-              <Link to="/#" className="ml-4 text-black hover:underline">
+              <Link to="/pay" className="ml-4 text-black hover:underline">
                 Pricing
               </Link>
               {/* 추가 버튼 시 "ml-4" 넣기 */}

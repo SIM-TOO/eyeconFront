@@ -12,6 +12,12 @@ module.exports = {
         '25-0-0': '25px, 0px, 0px',
         // ... 다른 값들
       }
+,
+      animation: {
+        'bounce1': 'bounce 2s infinite',
+        'bounce2': 'bounce 2.5s infinite',
+        'bounce3': 'bounce 3s infinite'
+      }
     },
   },
   plugins: [

@@ -3,7 +3,7 @@ import React from "react";
 const img = () => {
     return (
         <div>
-            <div className="w-64 md:w-auto">
+            <div className="w-64 md:w-auto mt-40">
                 <img
                     src="https://i.ibb.co/5TcWgzd/price.png"
                     alt="pay1"
@@ -11,7 +11,7 @@ const img = () => {
                 />
             </div>
 
-            <div className="container mx-auto grid grid-cols-12 max-w-screen-xl">
+            <div className="container mx-auto grid grid-cols-12 max-w-screen-xl font-Pretendard">
                 <div className="col-span-12 md:col-span-5">
                     {/* 첫번째 줄 내용 겹치는 박스 */}
                     <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5">
@@ -33,8 +33,10 @@ const img = () => {
                 {/* 나중에 글씨 폰트 디자인 넣을것 */}
                 <div className="col-span-12 md:col-span-5" />
                 <div className="col-span-12 md:col-span-2 text-center">
-                    <p>Pricing</p>
-                    <p>서비스 플랜</p>
+                <br />
+                    <p className="text-2xl font-bold text-[#001D6C]">Pricing</p>
+                    <p className="text-4xl font-bold">서비스 플랜</p>
+                    <br />
                 </div>
                 <div className="col-span-12 md:col-span-5" />
             </div>

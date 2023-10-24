@@ -29,6 +29,7 @@ const C02Pay = ({ handleButtonClick }) => {
     handleButtonClick(value);
     } else {
       console.log("코인 부족")
+      alert("코인이 부족합니다. 충전해주세요!");
       
     }
   };

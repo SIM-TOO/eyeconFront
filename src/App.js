@@ -13,10 +13,13 @@ import Gpttest1 from './components/testPage/Gpttest1';
 import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
 import Payment from './components/payPage/Payment';
+import { TokenRefresherContext } from './context/TokenRefresherContext';
+import TokenRefresher from './hook/userPage/TokenRefresher';
 
 
 import { Provider } from 'react-redux';
 import store from './store';
+
 
 
 function App() {
@@ -32,6 +35,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <AddressContext.Provider value={inAddressContext}>
+        <TokenRefresherContext.Provider value={TokenRefresher}>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/join" element={<Join />} />
@@ -45,6 +49,7 @@ function App() {
             <Route path='/mypage' element={<MyPage />} />
             <Route path='/payment' element={<Payment/>}/>
           </Routes>
+          </TokenRefresherContext.Provider>
         </AddressContext.Provider>
       </Provider>
 

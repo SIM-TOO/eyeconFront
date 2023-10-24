@@ -1,9 +1,40 @@
-import React from "react";
+import React from "react"
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import useRemoveCoin from "../../hook/mainPage/useRemoveCoin";
+import { setCoin } from "../../store/coinSlice";
+
 const C02Pay = ({ handleButtonClick }) => {
   // 리덕스에 저장된 코인 불러오기
+  const dispatch = useDispatch();
   const coinValue = useSelector((state) => state.coin);
+
+  // removeCoin 함수를 가져옵니다.
+  const removeCoin = useRemoveCoin();
+
+  
+  // 코인 차감 함수
+  const modifiedHandleButtonClick = async (value) => {
+
+    // 쿠키 (토큰 -access ->xxxx.xxxx.x(email) )
+    const email = "wlghd9958@naver.com";
+
+    if (coinValue > 0){
+      // 현재 코인 반환
+    const result = await removeCoin(email);
+    console.log(result)
+    console.log("차감완료")
+    // 코인 값 리덕스 저장
+    dispatch(setCoin(result));
+    handleButtonClick(value);
+    } else {
+      console.log("코인 부족")
+      alert("코인이 부족합니다. 충전해주세요!");
+      
+    }
+  };
+
+
   return (
     <div className="text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]">
       {/* 여백용 박스 */}
@@ -38,7 +69,7 @@ const C02Pay = ({ handleButtonClick }) => {
 
         <button
           className="animate-bounce3 h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]"
-          onClick={() => handleButtonClick(6)}
+          onClick={() => modifiedHandleButtonClick(6)}
         >
           <p className="text-lg font-semibold text-center text-white">
             코인 사용
@@ -89,7 +120,7 @@ const C02Pay = ({ handleButtonClick }) => {
       <div className="hidden md:block col-span-0 md:col-span-1" />
       <div className="col-span-12" />
 
-  
+
     </div>
   );
 };

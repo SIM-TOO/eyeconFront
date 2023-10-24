@@ -4,16 +4,13 @@ import PlanCard from "./payPage/PlanCard";
 import PayImg from "./payPage/PayImg";
 
 function Pay() {
-
-
-    return (
-        <div>
-            <Header></Header>
-            <PayImg></PayImg>
-            <PlanCard></PlanCard>
-        </div>
-    );
-
+  return (
+    <div>
+      <Header></Header>
+      <PayImg></PayImg>
+      <PlanCard></PlanCard>
+    </div>
+  );
 }
 
-export default Pay
+export default Pay;

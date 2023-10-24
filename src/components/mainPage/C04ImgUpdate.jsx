@@ -20,16 +20,16 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
   };
 
   return (
-    <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
+    <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />
       {/* 내용 박스 */}
-      <div className="col-span-12 md:col-span-10 bg-neutral-100 p-3  rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px]"
-        style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
+      <div className="col-span-12 md:col-span-10 p-7"
+        >
         {uploadedImage === null ?
           (
-            <p className="text-center text-black">
+            <p className="text-center text-black text-xl ">
               시선 분석을 위해서 매장의 매대 사진을 드롭 박스에 업로드 해주세요.
             </p>
           ) :

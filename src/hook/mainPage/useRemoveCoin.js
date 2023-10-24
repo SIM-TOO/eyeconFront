@@ -8,7 +8,9 @@ const useRemoveCoin = () => {
             const response = await axios.post(`${url}/user/removeCoin`, { email: email });
             if (response && response.data) {
                 console.log(response);
+                
                 return response.data;
+
             }
         } catch (error) {
             console.error("에러 내용:", error);

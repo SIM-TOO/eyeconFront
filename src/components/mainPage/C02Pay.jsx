@@ -15,23 +15,24 @@ const C02Pay = ({ handleButtonClick }) => {
   // 코인 차감 함수
   const modifiedHandleButtonClick = async (value) => {
 
-    // 세센에서 받아온 이메일
-    const email = "example@example.com";
+    // 쿠키 (토큰 -access ->xxxx.xxxx.x(email) )
+    const email = "wlghd9958@naver.com";
 
     // 임시용 통과 코드
-    dispatch(setCoin(9999));
+    // dispatch(setCoin(9999));
 
-    if (coinValue === 9999) {
-      console.log("임시용 통과 코드")
-      handleButtonClick(value);
+    // if (coinValue === 9999) {
+    //   console.log("임시용 통과 코드")
+    //   handleButtonClick(value);
       
-    } else if (coinValue > 0){
+    // } else 
+    if (coinValue > 0){
       // 현재 코인 반환
     const result = await removeCoin(email);
-
+    console.log(result)
     console.log("차감완료")
     // 코인 값 리덕스 저장
-    dispatch(setCoin(result.coin));
+    dispatch(setCoin(result));
     
     handleButtonClick(value);
     } else {

@@ -29,22 +29,22 @@ const C03AIChat = ({ handleButtonClick }) => {
 
         try {
             // 서버로 메시지를 보냅니다.
-            // const response = await axios.post('http://localhost:5000/send-message', {
-            //     'role': 'user',
-            //     content: inputValue, // 메시지 내용을 서버로 보냅니다.
-            // });
-
+            const response = await axios.post('http://localhost:5000/consult', {
+                'role': 'user',
+                content: inputValue, // 메시지 내용을 서버로 보냅니다.
+            });
+            console.log(response);
             // 서버에서 받은 응답을 처리하고 메시지 목록에 추가할 수 있습니다.
 
             // 서버 응답 데이터를 가져옵니다.
-            //const serverResponse = response.choices?.[0]?.message;
-            const serverResponse = {
-                content: "대답중",
-            };
+            const serverResponse = response.data.choices?.[0]?.message;
+            // const serverResponse = {
+            //     content: "대답중",
+            // };
             console.log(serverResponse);
 
             const serverMessage = {
-                content: serverResponse.content,
+                content: serverResponse?.content,
                 isMine: false,
             };
 

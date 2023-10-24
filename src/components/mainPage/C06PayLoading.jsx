@@ -7,6 +7,7 @@ import lottieJson from "../../lottie/check.json";
 const PayLoading = ({ handleButtonClick }) => {
   return (
     <div className="flex flex-col justify-center items-center">
+      <div className="hidden md:block"><br/><br/><br/><br/><br/></div>
       <Lottie
         loop
         animationData={lottieJson}

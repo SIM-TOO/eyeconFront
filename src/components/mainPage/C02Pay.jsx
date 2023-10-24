@@ -87,12 +87,9 @@ const C02Pay = ({ handleButtonClick }) => {
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />
+      <div className="col-span-12" />
 
-      {/* 임시버튼 */}
-      <button className="col-span-12" onClick={() => handleButtonClick(3)}>
-        AI 페이지 이동 버튼 (임시버튼임 나중에 삭제 할 예정)
-      </button>
-      {/* 임시버튼 */}
+  
     </div>
   );
 };

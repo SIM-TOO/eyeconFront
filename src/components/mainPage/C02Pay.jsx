@@ -12,9 +12,7 @@ const C02Pay = ({ handleButtonClick }) => {
   // removeCoin 함수를 가져옵니다.
   const removeCoin = useRemoveCoin();
 
-     // 임시용 통과 코드
-     //dispatch(setCoin(9999));
-
+  
   // 코인 차감 함수
   const modifiedHandleButtonClick = async (value) => {
 

@@ -5,7 +5,7 @@ const useRemoveCoin = () => {
 
     const removeCoin = async (email) => {
         try {
-            const response = await axios.post(`${url}/user/useCoin`, { email: email });
+            const response = await axios.post(`${url}/user/removeCoin`, { email: email });
             if (response && response.data) {
                 console.log(response);
                 return response.data;

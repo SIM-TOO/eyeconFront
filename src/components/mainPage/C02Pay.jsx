@@ -12,20 +12,22 @@ const C02Pay = ({ handleButtonClick }) => {
   // removeCoin 함수를 가져옵니다.
   const removeCoin = useRemoveCoin();
 
+     // 임시용 통과 코드
+     //dispatch(setCoin(9999));
+
   // 코인 차감 함수
   const modifiedHandleButtonClick = async (value) => {
 
     // 세센에서 받아온 이메일
     const email = "example@example.com";
 
-    // 임시용 통과 코드
-    dispatch(setCoin(9999));
-
+    // 임시통과용 코드 
     if (coinValue === 9999) {
       console.log("임시용 통과 코드")
       handleButtonClick(value);
-      
-    } else if (coinValue > 0){
+    }  
+    // 임시통과용 코드 
+    else if (coinValue > 0){
       // 현재 코인 반환
     const result = await removeCoin(email);
 

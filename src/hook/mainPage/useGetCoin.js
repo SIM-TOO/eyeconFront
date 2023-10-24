@@ -5,11 +5,13 @@ const useGetCoin = () => {
 
     const getCoin = async (email) => {
         try {
-            const response = await axios.post(`${url}/user/getCoin`, { email: email });
-            if (response && response.data) {
-                console.log(response);
-                return response.data;
-            }
+           // const response = await axios.post(`${url}/user/getCoin`, { email: email }); 
+            // if (response && response.data) {
+                //console.log(response);
+                //return response.data;
+                const num = 9999;
+                return num;
+            //}
         } catch (error) {
             console.error("에러 내용:", error);
         }

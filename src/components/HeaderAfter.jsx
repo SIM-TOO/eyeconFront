@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import useCoin from "../hook/mainPage/useCoin"
+
 import { setCoin } from '../store/coinSlice';
+import useGetCoin from "../hook/mainPage/useGetCoin";
 
 
 function HeaderAfter() {
@@ -12,19 +13,19 @@ function HeaderAfter() {
   // 리덕스에 코인 가져오기
   const remainingCoins = useSelector(state => state.coin);
 
-  const getCoinInfo = useCoin();
+const GetCoin = useGetCoin();
 
   // 코인 리덕스에 저장 하는 코드
   useEffect(() => {
     const fetchCoinInfo = async () => {
       // 실제 이메일 값을 넣어야됨 세션에서 가져올것
-      const coins = await getCoinInfo("example@example.com");
+      const coins = await GetCoin("");
       if (coins !== null) {
         dispatch(setCoin(coins));  // 가져온 코인 값을 스토어에 저장합니다.
       }
     };
     fetchCoinInfo();
-  }, [dispatch, getCoinInfo]);
+  }, [dispatch, GetCoin]);
 
   // 메뉴 토글
   const toggleMenu = () => {

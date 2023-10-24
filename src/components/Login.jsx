@@ -19,7 +19,7 @@ const Login = () => {
                         <img src="https://i.ibb.co/BCP0xW5/join.png" className="absolute top-0 left-0 z-10 hidden md:block" />
                         <UserImage />
                     </div>
-                    <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
+                    <div className="mx-auto lg:mt-0 mt-60 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
                         <p className="text-3xl font-medium text-left text-black p-3">Sign in</p>
 
                         {/* from 태그 시작 */}

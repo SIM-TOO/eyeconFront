@@ -2,7 +2,7 @@ import React from 'react';
 
 const Intro04 = () => {
     return (
-        <div className="font-Pretendard relative">
+        <div className="font-Pretendard relative dark:bg-gray-800 dark:text-[#F2F2F2]">
             {/* 여백용 박스 */}
             <div className="w-[50px] h-[45px] md:w-[100px] md:h-[90px]" />
 

@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
+import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
 
 const Intro01 = () => {
   return (
-    <div className="mt-40">
+    <div className="mt-40 dark:bg-gray-800 dark:text-[#F2F2F2]">
       <div className="font-Pretendard ">
         <div className="w-64 md:w-auto">
           <img
@@ -20,6 +22,7 @@ const Intro01 = () => {
             {/* 첫번째 줄 내용 겹치는 박스 */}
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20">
               <span className="text-4xl md:text-6xl font-bold">
+
                 WELCOME TO <br />
                 EYECON
               </span>
@@ -31,7 +34,10 @@ const Intro01 = () => {
                 <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
               </span>
             </div>
-            <div className="col-span-6 md:hidden flex justify-center ml-6" style={{ maxWidth: "350px" }}>
+            <div
+              className="col-span-6 md:hidden flex justify-center ml-6"
+              style={{ maxWidth: "350px" }}
+            >
               <Animation />
             </div>
 

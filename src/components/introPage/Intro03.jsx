@@ -2,12 +2,13 @@ import React from 'react'
 
 const Intro03 = () => {
     return (
-        <div className="font-Pretendard">
+        <div className='dark:text-[#F2F2F2]'>
+        <div className="font-Pretendard dark:bg-gray-800 dark:text-[#F2F2F2]">
             {/* 디자인용 박스*/}
-            <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
+            <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3 dark:text-[#F2F2F2]">
                 <div className="col-span-3 md:col-span-5" />
                 <div className="col-span-6 md:col-span-2 border border-[#696c73] rounded-lg">
-                    <p className="text-center whitespace-nowrap text-sm  md:text-2xl font-bold text-[#696c73] py-[15px] p-2">
+                    <p className="text-center whitespace-nowrap text-sm  md:text-2xl font-bold text-[#696c73] py-[15px] p-2 ">
                         OUR SERVICES
                     </p>
                 </div>
@@ -16,7 +17,7 @@ const Intro03 = () => {
                 {/* 글씨칸*/}
                 <div className="col-span-2 " />
                 <div className="col-span-8 ">
-                    <p className="text-2xl md:text-7xl font-bold text-center text-[#37383c] p-3 whitespace-nowrap ">
+                    <p className="text-2xl md:text-7xl font-bold text-center text-[#37383c] p-3 whitespace-nowrap dark:text-[#F2F2F2] ">
                         Who We Serve
                     </p>
                 </div>
@@ -24,7 +25,7 @@ const Intro03 = () => {
 
 
                 {/* 박스칸*/}
-                <div className='text-center md:text-left col-span-12 md:col-span-6 p-6 sm:p-3   '>
+                <div className='text-center md:text-left col-span-12 md:col-span-6 p-6 sm:p-3 '>
 
                     <img
                         src="https://i.ibb.co/g6B2pn5/icon1.png"
@@ -75,6 +76,7 @@ const Intro03 = () => {
 
 
 
+        </div>
         </div>
     )
 }

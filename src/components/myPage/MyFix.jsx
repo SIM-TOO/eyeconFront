@@ -16,15 +16,17 @@ const MyFix = () => {
       >
         <div className="container mx-auto grid grid-cols-12 max-w-screen-xl font-Pretendard">
           <div className="col-span-1" />
-          <div className="col-span-10">
-            <div className="text-center text-3xl font-bold p-5">마이페이지</div>
+          <div className="col-span-9">
+            <div className="text-center text-3xl font-bold p-7 ml-10">
+              마이페이지
+            </div>
             <div className="col-span-5"> 이메일 주소</div>
-                {/* 이메일 주소 출력 */}
+            {/* 이메일 주소 출력 */}
             <div className="mt-1 font-bold">
               <p>eyecon@naver.com</p>
             </div>
 
-              {/* 비밀번호 */}
+            {/* 비밀번호 */}
             <div className="col-span-5 mt-3"> 비밀번호</div>
 
             <div className="bg-[#FFFFFF] rounded-lg w-[250px] p-3 relative flex justify-between mt-3">
@@ -48,7 +50,18 @@ const MyFix = () => {
                   번호수정
                 </button>
               </div>
+              <div>가게 정보 넣을 div박스</div>
             </div>
+          </div>
+          <div className="col-span-1">
+            {/* 새 가게 생성 버튼 */}
+            <button className="mt-7 rounded-lg bg-[#00306D] p-2 text-base text-sm text-white w-[100px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center">
+              <img
+                src="https://i.ibb.co/h2FyQNK/plus-circle.png"
+                className="mr-2"
+              />
+              가게 추가
+            </button>
           </div>
         </div>
       </div>

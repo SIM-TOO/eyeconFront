@@ -2,10 +2,11 @@ import axios from "axios";
 
 const useCoin = () => {
     const url = process.env.REACT_APP_MASTER_URL;
-
+                            //HeaderAfter에서 email 가져옴
     const getCoinInfo = async (email) => {
         try {
-            const response = await axios.get(`${url}/user/getCoin`, { params: { email: email } });
+            console.log( { 'email': email });
+            const response = await axios.get(`${url}/user/removeCoin`,  { 'email': "wlghd9958@Naver.com" });
             if (response && response.data) {
                 console.log(response)
                 return response.data.coin;

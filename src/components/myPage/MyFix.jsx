@@ -46,6 +46,7 @@ const MyFix = () => {
                     className="bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
                   />
                 </div>
+                {/* 비밀번호 수정 버튼 */}
                 <button className="col-span-2 ml-3 mt-3 rounded-lg bg-[#15c3a7] p-2 text-base text-sm text-white w-[80px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
                   번호수정
                 </button>
@@ -53,9 +54,9 @@ const MyFix = () => {
               <div>가게 정보 넣을 div박스</div>
             </div>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-2">
             {/* 새 가게 생성 버튼 */}
-            <button className="mt-7 rounded-lg bg-[#00306D] p-2 text-base text-sm text-white w-[100px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center">
+            <button className="mt-7 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center">
               <img
                 src="https://i.ibb.co/h2FyQNK/plus-circle.png"
                 className="mr-2"

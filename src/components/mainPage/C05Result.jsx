@@ -1,10 +1,15 @@
 import React from 'react'
+import ResultLoading from './technology/ResultLoading'
+
 
 const C05Result = ({ handleButtonClick }) => {
   return (
-    <div>결과 컴포넌트
+    <div>
 
-            {/* 임시버튼 */}
+    {/* 정보가 올떄까지 로딩할 페이지 */}
+    <ResultLoading/>
+
+    {/* 임시버튼 */}
             <button
         className="col-span-12"
         onClick={() => handleButtonClick(1)}

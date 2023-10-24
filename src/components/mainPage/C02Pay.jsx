@@ -19,14 +19,6 @@ const C02Pay = ({ handleButtonClick }) => {
     // 쿠키 (토큰 -access ->xxxx.xxxx.x(email) )
     const email = "wlghd9958@naver.com";
 
-    // 임시용 통과 코드
-    // dispatch(setCoin(9999));
-
-    // if (coinValue === 9999) {
-    //   console.log("임시용 통과 코드")
-    //   handleButtonClick(value);
-      
-    // } else 
     if (coinValue > 0){
       // 현재 코인 반환
     const result = await removeCoin(email);
@@ -34,10 +26,10 @@ const C02Pay = ({ handleButtonClick }) => {
     console.log("차감완료")
     // 코인 값 리덕스 저장
     dispatch(setCoin(result));
-    
     handleButtonClick(value);
     } else {
       console.log("코인 부족")
+      
     }
   };
 

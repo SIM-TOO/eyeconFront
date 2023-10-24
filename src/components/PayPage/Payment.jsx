@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import axios from 'axios';
+import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 
 const Payment = () => {
     useEffect(() => {
@@ -15,6 +16,8 @@ const Payment = () => {
       };
     }, []);
   
+    const TokenRefresher = useContext(TokenRefresherContext);
+
     const requestPay = () => {
       const { IMP } = window;
       IMP.init('imp54472174');
@@ -38,7 +41,7 @@ const Payment = () => {
         try {
           console.log(rsp);
           axios.defaults.withCredentials=true;
-          const { data } = await axios.post('http://localhost:8023/verify/' + rsp.imp_uid);
+          const { data } = await TokenRefresher.post('/verify/' + rsp.imp_uid);
           if (rsp.paid_amount === data.response.amount) {
             console.log("결제 성공");
             let today = new Date();
@@ -53,7 +56,7 @@ const Payment = () => {
 
             let timeString = hours + ':' + minutes  + ':' + seconds;
             let dateString = year + '-' + month  + '-' + day;
-            axios.post("http://localhost:8023/verify/completed",{
+            TokenRefresher.post("/verify/completed",{
               // 코인아이디(식별키) + 개수
               impUid:rsp.imp_uid,
               amount:rsp.paid_amount,

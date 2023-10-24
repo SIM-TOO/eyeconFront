@@ -9,7 +9,7 @@ import Intro05 from './introPage/Intro05'
 function MainPage() {
   return (
     <div>
-      <Header />
+      <Header/>
 
       <Intro01/>
       <Intro02/>

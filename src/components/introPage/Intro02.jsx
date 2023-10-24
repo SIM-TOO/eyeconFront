@@ -4,7 +4,7 @@ import lottieJson from '../../lottie/miniRobot.json';
 
 const Intro02 = () => {
     return (
-        <div className="font-Pretendard">
+        <div className="font-Pretendard dark:bg-gray-800">
             {/* 색깔있는 박스 위치 */}
             <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
                 <div className="col-span-5 md:col-span-4" />

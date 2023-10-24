@@ -67,6 +67,7 @@ const Intro01 = () => {
   );
 };
 
+/* 메인 가장 위에 있는 애니메이션 */
 function Animation() {
   return (
     <Lottie

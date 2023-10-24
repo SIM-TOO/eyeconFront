@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router';
 
 const useUserLogin = () => {
   /* axios.defaults.headers['Access-Control-Allow-Origin'] = '*'; */
-  axios.defaults.withCredentials=true;
- 
+  axios.defaults.withCredentials = true;
+
   const formRef = useRef(null);
   const navigate = useNavigate(); // 추가
 
@@ -18,15 +18,15 @@ const useUserLogin = () => {
 
     if (!email || !password) {
       alert('이메일과 비밀번호를 입력하세요.');
-      return; 
+      return;
     }
 
     // 확인용 콘솔log
     // console.log(email);
     // console.log(password);
     const loginData = {
-      email : email,
-      pw : password
+      email: email,
+      pw: password
     }
     // 로그인 코드
     axios.post("http://localhost:8023/EyeconSpring/auth/login",loginData
@@ -49,7 +49,8 @@ const useUserLogin = () => {
        }
        
     })
-    };
+
+  };
 
   return { formRef, handleSubmit };
 };

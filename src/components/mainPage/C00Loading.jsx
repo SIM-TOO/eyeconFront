@@ -2,6 +2,8 @@ import React from 'react'
 import Lottie from 'react-lottie-player';
 import lottieJson from '../../lottie/loading.json';
 import lottieJson2 from '../../lottie/mobileLoading.json';
+
+
 const C00Loading = () => {
   return (
     <div>

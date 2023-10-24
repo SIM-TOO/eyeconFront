@@ -51,8 +51,7 @@ function App() {
           </Routes>
           </TokenRefresherContext.Provider>
         </AddressContext.Provider>
-      </Provider>,
-      document.getElementById('root')
+      </Provider>
 
     </div>
   );

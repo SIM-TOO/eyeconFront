@@ -1,62 +1,137 @@
-import React from 'react'
+import React from "react";
 
 const MyFix = () => {
-    return (
-        <div className='container mx-auto grid gird-cols-12 max-x screen-x'>
-            <div className='col-span-12 grid gird-cols-12 rounded-[20px]' style={{
-                background: "linear-gradient(161.83deg, #fff 27.62%, rgba(255,255,255,0) 125.16%)",
-                boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
-            }}>
-                <div className='grid gird-cols-4'>
-                    <p className="col-span-1 text-5xl font-bold text-center text-black">마이페이지</p>
-                    <p className="col-span-1 text-xs font-medium text-left text-[#1f1f1f]/70">이메일 주소</p>
-                    <p className="col-span-1 text-xs font-semibold text-left text-[#22242a]">Hello@gmail.com</p>
-                    <p className="col-span-1 text-xs font-medium text-left text-[#1f1f1f]/70">변경할 비밀번호</p>
-                </div>
-                <div className="gird gird-cols-8 rounded-lg bg-white border border-gray-100 w-[10%] h-[20%]"
-                    style={{ boxShadow: "2px 2px 1px 0 rgba(78,78,78,0.25)" }}
-                />
-                <p className="text-xs font-medium text-left text-[#1f1f1f]/70">변경할 비밀번호 확인</p>
-                <div className="rounded-lg bg-white border border-gray-100 w-[10%] h-[20%]"
-                    style={{ boxShadow: "2px 2px 1px 0 rgba(78,78,78,0.25)" }}
-                />
-                <div className="flex flex-col justify-start items-start gap-2.5 p-2.5">
-                    <div
-                        className="flex justify-center items-center flex-grow-0 flex-shrink-0 w-20 h-7 relative gap-2.5 px-5 py-[15px] rounded-md bg-[#15c3a7]"
-                        style={{ boxShadow: "0px 2px 2px 0 rgba(49,49,49,0.25)" }}
-                    >
-                        <button className="flex-grow-0 flex-shrink-0 text-[10px] font-semibold text-left text-white">
-                            수정하기
-                        </button>
-                    </div>
-                </div>
-                <div className='gird gird-cols-12 rounded-[20px] bg-[#13c7a8c]'>
-                    <p className="text-base font-semibold text-left text-black">내 가게 1</p>
-                    <p className="text-xs font-medium text-left text-[#1f1f1f]/70">매장명</p>
-                    <p className="text-xs font-semibold text-left text-[#22242a]">맛있어요 편의점</p>
-                    <p className="text-xs font-medium text-left text-[#1f1f1f]/70">업종 분류</p>
-                    <div
-                        className="flex justify-center items-center flex-grow-0 flex-shrink-0 w-20 h-7 relative gap-2.5 px-5 py-[15px] rounded-md bg-[#00306D]"
-                        style={{ boxShadow: "0px 2px 2px 0 rgba(49,49,49,0.25)" }}
-                    >
-                        <button className="flex-grow-0 flex-shrink-0 text-[10px] font-semibold text-left text-white">
-                            수정하기
-                        </button>
-                    </div>
-                    <div className="w-[298px] h-11">
-                        <div className="w-[298px] h-11">
-                            <div className="w-[298px] h-11 absolute left-[23.5px] top-[139.5px] rounded-md border border-[#544c4c]/[0.14]" />
-                            <p className="absolute left-[41px] top-[156px] text-xs font-medium text-left text-[#544c4c]">
-                                소매업
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
+  return (
+    <div
+      className="flex flex-col items-center"
+      style={{ height: "calc(100vh - 120px)" }}
+    >
+      <div
+        className="w-[70%] h-[95%] rounded-2xl"
+        style={{
+          background:
+            "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",
+          boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
+        }}
+      >
+        <div className="container mx-auto grid grid-cols-12 max-w-screen-xl font-Pretendard">
+          <div className="col-span-1" />
+          <div className="col-span-9">
+            <div className="text-center text-3xl font-bold p-7 ml-10">
+              마이페이지
             </div>
-        </div>
-    )
-}
+            <div className="col-span-5"> 이메일 주소</div>
+            {/* 이메일 주소 출력 */}
+            <div className="mt-1 font-bold">
+              <p>eyecon@naver.com</p>
+            </div>
 
-export default MyFix
+            {/* 비밀번호 */}
+            <div className="col-span-5 mt-3"> 비밀번호</div>
+
+            <div className="bg-[#FFFFFF] rounded-lg w-[250px] p-3 relative flex justify-between mt-3">
+              <input
+                type="password"
+                name="password"
+                className="bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+              />
+            </div>
+            <div className="col-span-5 mt-3">
+              비밀번호 수정
+              <div className="flex items-center">
+                <div className="bg-[#FFFFFF] rounded-lg w-[250px] p-3 relative flex justify-between col-span-3 mt-3">
+                  <input
+                    type="password"
+                    name="passwordCheck"
+                    className="bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+                  />
+                </div>
+
+                {/* 비밀번호 수정 버튼 */}
+                <button className="col-span-2 ml-3 mt-3 rounded-lg bg-[#15c3a7] p-2 text-base text-sm text-white w-[80px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in">
+                  번호수정
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <div className="col-span-2">
+            {/* 새 가게 생성 버튼 */}
+            <button className="mt-7 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center">
+              <img
+                src="https://i.ibb.co/h2FyQNK/plus-circle.png"
+                className="mr-2"
+              />
+              가게 추가
+            </button>
+          </div>
+
+          {/* 내 가게  */}
+          <div className="col-span-1" />
+          <div className="col-span-4 mt-3 bg-white rounded-lg p-3">
+            <div className="col-span-1 p-3" >
+              <p className="font-bold text-xl">내 가게 1</p>
+              <div />
+              <div className="col-span-3 p-3">
+                <p>매장명</p>
+                <div className="col-span-2">맛있어요 편의점
+                  {/* 매장명 수정 버튼  */}
+                  <button className="col-span-1 ml-3 p-1 rounded-lg bg-[#00306D] text-base text-center text-sm text-white w-[70px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in items-center"> 수정하기</button>
+                </div>
+                <div className="col-span-1 mt-3 mb-1"> 업종 분류</div>
+                {/* 업종 선택 */}
+                <div className="col-span-3 bg-[#EDF2F6] rounded-lg w-[340px] p-3 relative flex justify-between">
+                  <select
+                    name="category"
+                    className="bg-[#EDF2F6] outline-none focus:outline-none text-[15px] text-[#00306D] flex-1"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Select
+                    </option>
+                    <option value="편의점">편의점</option>
+                    <option value="마트">마트</option>
+                  </select>
+                </div>
+
+                <div className="col-span-4 mt-3 ">
+                  <div className="col-span-1 mt-3 mb-1"> 매장 주소</div>
+                  {/* 주소 검색 API 넣을 버튼 */}
+                  <div className="bg-[#EDF2F6] rounded-lg w-[340px] p-3 relative flex justify-between">
+                    <input
+                      type="text"
+                      name="place1"
+                      placeholder="주소 검색"
+                      className="text-[#00306D] bg-[#EDF2F6] outline-none focus:outline-none text-[15px] flex-1"
+
+
+                    />
+                    <img
+                      src="https://i.ibb.co/VQjYh2k/searchicon.png"
+                      alt="searchicon"
+                      border="0"
+                      className="absolute cursor-default w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
+
+                    />
+                  </div>
+                  <div className="bg-[#EDF2F6]  mt-3 rounded-lg w-[340px] p-3 relative flex justify-between">
+                    <input
+                      type="place2"
+                      name="place2"
+                      placeholder="상세 주소 입력"
+                      className="text-[#00306D] bg-[#EDF2F6] outline-none focus:outline-none text-[15px] text-[#00306D] flex-1"
+                    />
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MyFix;

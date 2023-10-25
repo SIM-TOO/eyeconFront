@@ -15,11 +15,10 @@ const MyFix = () => {
         }}
       >
         <div className="container mx-auto grid grid-cols-12 max-w-screen-xl font-Pretendard">
+
           <div className="col-span-1" />
-          <div className="col-span-5">
-            <div className="text-center text-3xl font-bold p-7 ml-10">
-              마이페이지
-            </div>
+          <div className="col-span-4">
+
 
             <div className="col-span-5"> 이메일 주소</div>
 
@@ -66,7 +65,7 @@ const MyFix = () => {
           </div>
 
           <div className="col-span-2">{/* 여백 */}</div>
-          
+
 
           {/* 내 가게  */}
           <div className="col-span-4 mt-3 bg-white rounded-lg p-3">

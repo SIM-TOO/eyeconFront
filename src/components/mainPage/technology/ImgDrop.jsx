@@ -12,7 +12,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       setImageSrc(null);
       return; // 이미지가 없으면 더 이상 진행하지 않음
     } if (uploadedImageSend) {
-       // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
+      
+      // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
       const url = process.env.REACT_APP_MASTER_URL;
       const formData = new FormData();
 

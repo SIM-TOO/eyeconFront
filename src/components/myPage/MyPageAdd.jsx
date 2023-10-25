@@ -2,7 +2,7 @@ import React from 'react'
 
 const MyPageAdd = () => {
     return (
-        <div className="w-auto md:w-[420px] w-[270px] mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
+        <div className="w-auto md:w-[420px] w-[280px] mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
             <div className="col-span-1 p-3">
                 <p className="font-bold text-xl">내 가게 등록 </p>
 

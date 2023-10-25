@@ -22,7 +22,7 @@ const Intro02 = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
+            <div className="dark:text-[#F2F2F2] container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
                 <div className="col-span-6" />
                 <div className="col-span-6">
                     <span className="relative text-right p-4 sm:p-3 md:p-5">

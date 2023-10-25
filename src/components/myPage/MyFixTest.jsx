@@ -32,21 +32,22 @@ const MyFixTest = () => {
                             {/* 비밀번호 */}
                             <div className="col-span-5 mt-3"> 비밀번호</div>
 
-                            <div className="bg-[#FFFFFF] rounded-lg w-[300px] p-3 relative flex justify-between mt-3">
+                            <div className="bg-[#FFFFFF] rounded-lg ">
                                 <input
                                     type="password"
                                     name="password"
-                                    className="bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+                                    className="bg-[#FFFFFF] rounded-lg p-3 flex justify-between mt-3 outline-none focus:outline-none text-[15px] text-[#15c3a7] w-auto w-[180px] md:w-[200px]"
                                 />
+
                             </div>
                             <div className="col-span-5 mt-3">
                                 비밀번호 수정
                                 <div className="flex items-center">
-                                    <div className="bg-[#FFFFFF] rounded-lg w-[300px] p-3 relative flex justify-between col-span-3 mt-3">
+                                    <div className="bg-[#FFFFFF] rounded-lg p-3 relative flex justify-between mt-3">
                                         <input
                                             type="password"
                                             name="passwordCheck"
-                                            className="bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+                                            className="bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1 w-auto md:w-[200px] w-[180px]"
                                         />
                                     </div>
 
@@ -179,9 +180,9 @@ const MyFixTest = () => {
                             </div>
                             {/* 가게가 추가되면 들어갈 곳 들어갈 곳 */}
                             <div className="col-span-4 mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
-                                
+
                                 <div className="col-span-1 p-3 " >
-                                  <p className="font-bold text-xl">아이콘 편의점 </p> 
+                                    <p className="font-bold text-xl">아이콘 편의점 </p>
                                     <div />
                                     <div className="col-span-3 p-3">
                                         <p className='font-bold'>업종 분류</p>

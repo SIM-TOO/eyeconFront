@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import MyPageAdd from "./MyPageAdd";
 
 const MyFixTest = () => {
+
+
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleAddButtonClick = () => {
+        // 버튼 클릭 시 로딩 상태를 토글
+        setIsLoading((prevLoading) => !prevLoading);
+        // 추가적인 데이터 또는 작업을 수행할 수 있습니다.
+    };
+
+
     return (
         <div
             className="flex flex-col items-center font-Pretendard min-h-full"
@@ -53,7 +66,7 @@ const MyFixTest = () => {
                                     {/* 비밀번호 수정 버튼 */}
                                 </div>
                                 {/*가게 추가 버튼 */}
-                                <button className="mt-3 md:mt-1 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] flex items-center">
+                                <button onClick={handleAddButtonClick} className="mt-3 md:mt-1 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] flex items-center" >
                                     <img
                                         src="https://i.ibb.co/h2FyQNK/plus-circle.png"
                                         className="mr-2"
@@ -61,71 +74,9 @@ const MyFixTest = () => {
                                     가게 추가
                                 </button>
                                 {/* 가게 추가 컴포넌트 생성 창 */}
-                                <div className="w-auto md:w-[420px] w-[270px] mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
-                                    <div className="col-span-1 p-3">
-                                        <p className="font-bold text-xl">내 가게 등록 </p>
+                                <div>
+                                    {isLoading && <MyPageAdd />}
 
-                                        <div className="col-span-3 md:p-3 ">
-                                            <p>매장명 </p>
-                                            <div className="bg-[#EDF2F6] mt-1 rounded-lg w-[220px] md:w-[340px] p-2 relative flex justify-between">
-                                                <input
-                                                    type="placename"
-                                                    name="placename"
-                                                    placeholder="매장 이름 입력"
-                                                    className="text-[#00306D] bg-[#EDF2F6] outline-none focus:outline-none text-[15px] text-[#00306D] flex-1"
-                                                />
-                                            </div>
-                                            <div className="col-span-1 mt-3 mb-1"> 업종 분류</div>
-                                            {/* 업종 선택 */}
-                                            <div className="col-span-3 bg-[#EDF2F6] rounded-lg w-[220px] md:w-[340px] p-2  relative flex justify-between">
-                                                <select
-                                                    name="category"
-                                                    className="bg-[#EDF2F6] outline-none focus:outline-none text-[15px] text-[#00306D] flex-1"
-                                                    defaultValue=""
-                                                >
-                                                    <option value="" disabled>
-                                                        업종을 선택해주세요
-                                                    </option>
-                                                    <option value="편의점">편의점</option>
-                                                    <option value="마트">마트</option>
-                                                </select>
-                                            </div>
-
-                                            <div className="col-span-4 mt-3 ">
-                                                <div className="col-span-1 mt-3 mb-1"> 매장 주소</div>
-                                                {/* 주소 검색 API 넣을 버튼 */}
-                                                <div className="bg-[#EDF2F6] rounded-lg p-2 relative flex justify-between">
-                                                    <input
-                                                        type="text"
-                                                        name="place1"
-                                                        placeholder="주소 검색"
-                                                        className="text-[#00306D] w-[220px] md:w-[340px] bg-[#EDF2F6] outline-none focus:outline-none text-[15px] flex-1"
-                                                    />
-                                                    <img
-                                                        src="https://i.ibb.co/VQjYh2k/searchicon.png"
-                                                        alt="searchicon"
-                                                        border="0"
-                                                        className="absolute cursor-default w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
-                                                    />
-                                                </div>
-                                                <div className="bg-[#EDF2F6]  mt-3 rounded-lg w-[220px] md:w-[340px] p-2 relative flex justify-between">
-                                                    <input
-                                                        type="place2"
-                                                        name="place2"
-                                                        placeholder="상세 주소 입력"
-                                                        className="text-[#00306D] bg-[#EDF2F6] outline-none focus:outline-none text-[15px] text-[#00306D] flex-1"
-                                                    />
-                                                </div>
-                                                <button className="mt-3 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] transition-transform transform duration-100 ease-in flex items-center">
-                                                    <img
-                                                        src="https://i.ibb.co/h2FyQNK/plus-circle.png"
-                                                        className="mr-2"
-                                                    />
-                                                    등록하기
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -135,8 +86,6 @@ const MyFixTest = () => {
                         {/* 내 가게 관리 */}
 
                         <div className="col-span-4 mt-3 ">
-                            {/* 기존 가게 들어갈 곳 */}
-
                             <div className="bg-white rounded-lg p-3 filter drop-shadow-lg">
                                 <div className="col-span-1 p-3">
                                     {/* 가게 이름 입력될 곳 */}
@@ -160,6 +109,8 @@ const MyFixTest = () => {
                                     </div>
                                 </div>
                             </div>
+                            {/* 기존 가게 들어갈 곳 */}
+
                             {/* 가게가 추가되면 들어갈 곳 들어갈 곳 */}
                             <div className="col-span-4 mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
                                 <div className="col-span-1 p-3 ">

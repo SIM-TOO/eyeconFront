@@ -2,7 +2,7 @@ import React from 'react'
 
 const MyPageAdd = () => {
     return (
-        <div className="w-auto md:w-[420px] w-[270px] mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
+        <div className="w-auto md:w-[420px] w-[280px] mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg">
             <div className="col-span-1 p-3">
                 <p className="font-bold text-xl">내 가게 등록 </p>
 
@@ -43,10 +43,10 @@ const MyPageAdd = () => {
                                 className="text-[#00306D] w-[220px] md:w-[340px] bg-[#EDF2F6] outline-none focus:outline-none text-[15px] flex-1"
                             />
                             <img
-                                src="https://i.ibb.co/VQjYh2k/searchicon.png"
+                                src="https://i.ibb.co/m6x4dXL/Vector.png"
                                 alt="searchicon"
                                 border="0"
-                                className="absolute cursor-default w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
+                                className="absolute cursor-default w-5 h-5 right-2 top-1/2 transform -translate-y-1/2"
                             />
                         </div>
                         <div className="bg-[#EDF2F6]  mt-3 rounded-lg w-[220px] md:w-[340px] p-2 relative flex justify-between">

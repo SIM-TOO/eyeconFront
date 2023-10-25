@@ -4,7 +4,7 @@ const img = () => {
     return (
         <div>
             <div className="w-64 md:w-auto dark:bg-gray-800 dark:text-[#F2F2F2]">
-                <div className="h-[150px] bg-white dark:bg-gray-800" />
+            <div className="h-[150px] bg-white dark:bg-gray-800"/>
                 <img
                     src="https://i.ibb.co/5TcWgzd/price.png"
                     alt="pay1"
@@ -22,7 +22,7 @@ const img = () => {
                     </div>
                 </div>
 
-                <div className="md:col-span-7 dark:bg-gray-800 dark:text-[#F2F2F2]">
+                <div className="md:col-span-7">
                     <img
                         src="https://i.ibb.co/vmWSTyD/content-inside.jpg"
                         alt="content-inside"
@@ -34,7 +34,7 @@ const img = () => {
                 {/* 나중에 글씨 폰트 디자인 넣을것 */}
                 <div className="col-span-12 md:col-span-5 dark:bg-gray-800 dark:text-[#F2F2F2]" />
                 <div className="col-span-12 md:col-span-2 text-center">
-                    <br />
+                <br />
                     <p className="text-2xl font-bold text-[#001D6C]">Pricing</p>
                     <p className="text-4xl font-bold">서비스 플랜</p>
                     <br />

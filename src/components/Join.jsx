@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import UserHeader from './userPage/UserHeader';
 import UserImage from './userPage/UserImage';
@@ -23,16 +24,18 @@ function Join() {
   };
 
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:h-screen">
       <UserHeader />
       <main className="container my-10 p-5 mx-auto font-Pretendard">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative">
-            <img src="https://i.ibb.co/BCP0xW5/join.png" className="absolute top-0 left-0 z-10 hidden md:block" />
+            <Link to="/#">
+              <img src="https://i.ibb.co/BCP0xW5/join.png" className="absolute top-0 left-0 z-10 hidden md:block" />
+            </Link>
             <UserImage />
           </div>
           <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
-            <p className="text-3xl font-medium text-left text-black p-3">Sign in</p>
+            <p className="text-3xl font-medium text-left text-black p-3 dark:text-[#F2F2F2]">Sign in</p>
 
             {/* from 태그 시작 */}
             <form ref={formRef} onSubmit={handleSubmit}>
@@ -123,7 +126,7 @@ function Join() {
                     alt="searchicon"
                     border="0"
                     className="absolute cursor-default  w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
-                    
+
                   />
                 </div>
 

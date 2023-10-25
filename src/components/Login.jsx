@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UserHeader from "./userPage/UserHeader";
 import UserImage from "./userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
@@ -6,6 +6,24 @@ import Lottie from "react-lottie-player";
 import lottieJson from "../lottie/login.json";
 
 const Login = () => {
+ 
+// 토큰있는 지 확인하는 메소드
+const jwt =()=>{
+  const cookies = document.cookie.split('; ');
+  console.log('1번 : ',cookies);
+  const accessToken = cookies.find(row => row.startsWith('accessToken='));
+  console.log('2번 : ',accessToken);
+if(accessToken){
+  alert('토큰있어요')
+}
+};
+
+useEffect(() => {
+  jwt();
+}, []);
+
+ 
+ 
   const { formRef, handleSubmit } = useUserLogin();
 
   return (

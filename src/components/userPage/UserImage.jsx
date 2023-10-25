@@ -1,7 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/login.json";
-import lottieJson2 from "../../lottie/mobileAni.json";
 import lottieJson3 from "../../lottie/loginAni.json";
 
 function UserImage() {

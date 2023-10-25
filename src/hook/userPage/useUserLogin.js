@@ -31,15 +31,18 @@ const useUserLogin = () => {
     // 로그인 코드
     axios.post("http://localhost:8023/EyeconSpring/auth/login",loginData
     ).then(function(res){
-      console.log('====================================');
-      console.log(res);
-      console.log('====================================');
+      // console.log('====================================');
+      // console.log(res);
+      // console.log('====================================');
+      // 로그인이 성공하면 res.data에 "Exist"라는 문자열이 반환/ 이걸로 로그인 됐는지 안됐는지 판별하면 됨
+      console.log(res.data);
+      
       navigate("/main")
     }).catch(function(error){
-       console.log('=================error================');
-       console.log(error.response.status);
-       console.log(error.response.data.message);
-       console.log(error);
+      //  console.log('=================error================');
+      //  console.log(error.response.status);
+      //  console.log(error.response.data.message);
+      //  console.log(error);
        // 아이디가 틀렸을때(존재하지 않는)
        if(error.response.data.message == 'The user does not exist'){
         alert("존재하지 않는 회원");
@@ -49,6 +52,7 @@ const useUserLogin = () => {
        }
        
     })
+    
 
   };
 

@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Lottie from 'react-lottie-player';
 import lottieJson from '../../lottie/transaction.json';
 
+import { TokenRefresherContext } from '../../context/TokenRefresherContext';
+import usePayment from './../../hook/userPage/usePayment';
+
 const MainPay = () => {
+    const TokenRefresher = useContext(TokenRefresherContext);
+    const [coinList, setCoinList] = useState([]);
+    // usePayment.js의 requestPay함수 불러오기
+    const {requestPay} = usePayment();
+    
+    useEffect(() => {
+        // db에 있는 코인 상품들 불러오기
+        const fetchData = async () => {
+            const res = await TokenRefresher.get("/coin");
+            console.log('====================================');
+            console.log(res.data);
+            console.log('====================================');
+            setCoinList(res.data);
+        };
+    
+        fetchData();
+    }, []);
+    
     const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
     const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
 
@@ -17,6 +38,8 @@ const MainPay = () => {
             />
         );
     }
+
+
 
 
     return (
@@ -54,12 +77,12 @@ const MainPay = () => {
                             </p>
                         </div>
                         <div className="text-center">
-                            <p className="text-3xl font-bold p-3">￦25,000</p>
+                            <p className="text-3xl font-bold p-3">￦{coinList[0] && coinList[0].price}</p>
                         </div>
                         <div>
                             <p className="text-xm p-3">
                                 <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
-                                <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 5 Coins
+                                <img className="inline-block  group-hover:hidden" src={image1} alt="image1" />  {coinList[0] && coinList[0].coinCnt} Coins
                             </p>
                             <p className="text-xm p-3">
                                 <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
@@ -71,7 +94,9 @@ const MainPay = () => {
                             </p>
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white ">
-                            <span className="text-xs text-center text-[#020202]">Start today</span>
+                            <span className="text-xs text-center text-[#020202]"  onClick={() => {
+                                                                                requestPay(coinList[0].price,coinList[0].coinName)}} >
+                            Start today</span>
                         </button>
                     </div>
                 </div>
@@ -85,12 +110,12 @@ const MainPay = () => {
                             </p>
                         </div>
                         <div className="text-center">
-                            <p className="text-3xl font-bold p-3">￦75,000</p>
+                            <p className="text-3xl font-bold p-3">￦{coinList[1] && coinList[1].price}</p>
                         </div>
                         <div>
                             <p className="text-xm p-3">
                                 <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
-                                <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 15 Coins
+                                <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> {coinList[1] && coinList[1].coinCnt} Coins
                             </p>
                             <p className="text-xm p-3">
                                 <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
@@ -102,7 +127,9 @@ const MainPay = () => {
                             </p>
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
-                            <span className="text-xs text-center text-[#020202]">Start today</span>
+                            <span className="text-xs text-center text-[#020202]" onClick={() => {
+                                                                                requestPay(coinList[1].price,coinList[1].coinName)}}>
+                                                                                    Start today</span>
                         </button>
                     </div>
                 </div>
@@ -117,12 +144,12 @@ const MainPay = () => {
                             </p>
                         </div>
                         <div className="text-center">
-                            <p className="text-3xl font-bold p-3">￦150,000</p>
+                            <p className="text-3xl font-bold p-3">￦{coinList[2] && coinList[2].price}</p>
                         </div>
                         <div>
                             <p className="text-xm p-3">
                                 <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
-                                <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> 30 Coins
+                                <img className="inline-block  group-hover:hidden" src={image1} alt="image1" /> {coinList[2] && coinList[2].coinCnt} Coins
                             </p>
                             <p className="text-xm p-3">
                                 <img className="hidden  group-hover:inline-block" src={image2} alt="image2" />
@@ -134,7 +161,9 @@ const MainPay = () => {
                             </p>
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
-                            <span className="text-xs text-center text-[#020202]">Start today</span>
+                            <span className="text-xs text-center text-[#020202]" onClick={() => {
+                                                                                requestPay(coinList[2].price,coinList[2].coinName)}}>
+                                                                                    Start today</span>
                         </button>
                     </div>
                 </div>

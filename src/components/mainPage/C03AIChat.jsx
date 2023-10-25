@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/robot.json";
 import lottieJson2 from "../../lottie/mobileLoading.json";
@@ -90,12 +90,12 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="hidden md:block col-span-0 md:col-span-1" />
 
             {/* 임시버튼 */}
-            {/* <button
+            <button
                 className="col-span-12"
                 onClick={() => handleButtonClick(4)}
             >
                 (임시버튼임 나중에 삭제 할 예정)
-            </button> */}
+            </button>
             {/* 임시버튼 */}
         </div>
     )

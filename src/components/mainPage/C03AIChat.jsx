@@ -4,94 +4,29 @@ import lottieJson from "../../lottie/robot.json";
 import lottieJson2 from "../../lottie/mobileLoading.json";
 import AIchatStart from './technology/AIchatStart';
 import AIchat from './technology/AIchat';
-import axios from 'axios';
+import useChat from '../../hook/mainPage/useChat';
+import useChatChange from '../../hook/mainPage/useChatChange';
 
 const C03AIChat = ({ handleButtonClick }) => {
+    // 시작시 메시지 입력 장소 .
+    const initialMessage = '안녕하세요! 저는 챗봇 이콘이에요.';
+
+    //  채팅 보내기 함수
+    const {
+        inputValue,
+        setInputValue,
+        waitingForResponse,
+        messages,
+        chatHandleSubmit,
+    } = useChat(initialMessage);
 
     // start 컴포넌트와 AIChat 컴포넌트 변경
-    const [showAIchatStart, setAIchatStart] = useState(true);
-    const [showAIchat, setAIchat] = useState(false);
-    const changeButtonClick = () => {
-        setAIchatStart(false);
-        setAIchat(true);
-    // react - spring - db - spring - flask 데이터 전송
-    const url = process.env.REACT_APP_MASTER_URL;
-    axios.defaults.withCredentials = true;
-        try {
-            axios.get(`${url}/flask/callData`);
-        } catch (error) {
-            console.error("에러 내용:", error);
-        }
-        
-    };
-    const [inputValue, setInputValue] = useState('');
-    const [waitingForResponse, setWaitingForResponse] = useState(false);
-
-    // 시작시 기본 메세지 출력
-    const [messages, setMessages] = useState([{
-        content: '안녕하세요! 저는 챗봇 이콘이입니다.',
-        isMine: false,
-    }]);
-
-    //  채팅 보내기
-    const chatHandleSubmit = async () => {
-        // 현재 사용자가 입력한 메시지 저장
-        const newMessage = { content: inputValue, isMine: true };
-        setMessages((prevMessages) => [...prevMessages, newMessage]);
-        setInputValue('');
-        console.log(inputValue);
-
-        // 로딩 중 표시
-        const loadingMessage = {
-            content: '로딩중...',
-            isMine: false,
-        };
-        setMessages((prevMessages) => [...prevMessages, loadingMessage]);
-        setWaitingForResponse(true);
-        axios.defaults.withCredentials = false;
-        try {
-            // 서버로 메시지를 보냅니다.
-
-            const response = await axios.post('http://localhost:5000/consult', {
-                'role': 'user',
-                content: inputValue, // 메시지 내용을 서버로 보냅니다.
-            });
-            console.log(response);
-
-            // 서버 응답 데이터를 가져옵니다.
-            const serverResponse = response.data.choices?.[0]?.message;
-            // const serverResponse = {
-            //     content: "대답중",
-            // };
-            console.log(serverResponse);
-
-            const serverMessage = {
-                content: serverResponse?.content,
-                isMine: false,
-            };
-
-            // 서버 응답을 받으면 "로딩 중..." 메시지를 삭제
-            setMessages((prevMessages) => prevMessages.filter((message) => message !== loadingMessage));
-            setWaitingForResponse(false);
-
-            // 서버 응답
-            setMessages((prevMessages) => [...prevMessages, serverMessage]);
-            
-        } catch (error) {
-            console.error('메시지 전송 중 오류 발생:', error);
-
-            // 오류가 발생하면 "로딩 중..." 메시지를 삭제
-            setMessages((prevMessages) => prevMessages.filter((message) => message !== loadingMessage));
-            setWaitingForResponse(false);
-
-        }
-
-        // 입력 필드를 초기화합니다.
-        setInputValue('');
-    };
+    //  체인지 함수
+    const { showAIchatStart, showAIchat, changeButtonClick } = useChatChange();
 
 
-    // 엔터키 입력시 채팅 전송 버튼으로 할당
+
+    //  엔터키를 채팅 전송으로 할당
     const chatHandleKeyDown = (e) => {
         if (e.key === 'Enter') {
             chatHandleSubmit();
@@ -140,7 +75,6 @@ const C03AIChat = ({ handleButtonClick }) => {
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={chatHandleKeyDown}
-
                         />
                         <button
                             className='col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
@@ -155,10 +89,6 @@ const C03AIChat = ({ handleButtonClick }) => {
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
 
-
-
-
-
             {/* 임시버튼 */}
             {/* <button
                 className="col-span-12"
@@ -167,10 +97,6 @@ const C03AIChat = ({ handleButtonClick }) => {
                 (임시버튼임 나중에 삭제 할 예정)
             </button> */}
             {/* 임시버튼 */}
-
-
-
-
         </div>
     )
 }

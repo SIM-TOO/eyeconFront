@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/robot.json";
+import lottieJson2 from "../../lottie/mobileLoading.json";
 import AIchatStart from './technology/AIchatStart';
 import AIchat from './technology/AIchat';
 import axios from 'axios';
@@ -14,8 +15,8 @@ const C03AIChat = ({ handleButtonClick }) => {
         setAIchatStart(false);
         setAIchat(true);
     };
-
     const [inputValue, setInputValue] = useState('');
+    const [waitingForResponse, setWaitingForResponse] = useState(false);
 
     // 시작시 기본 메세지 출력
     const [messages, setMessages] = useState([{
@@ -37,20 +38,16 @@ const C03AIChat = ({ handleButtonClick }) => {
             isMine: false,
         };
         setMessages((prevMessages) => [...prevMessages, loadingMessage]);
-
+        setWaitingForResponse(true);
 
         try {
             // 서버로 메시지를 보냅니다.
-            
+
             const response = await axios.post('http://localhost:5000/consult', {
                 'role': 'user',
                 content: inputValue, // 메시지 내용을 서버로 보냅니다.
             });
             console.log(response);
-
-            // 서버에서 받은 응답을 처리하고 메시지 목록에 추가할 수 있습니다.
-
-
 
             // 서버 응답 데이터를 가져옵니다.
             const serverResponse = response.data.choices?.[0]?.message;
@@ -64,17 +61,19 @@ const C03AIChat = ({ handleButtonClick }) => {
                 isMine: false,
             };
 
-            // 서버 응답을 받으면 "로딩 중..." 메시지를 삭제합니다.
+            // 서버 응답을 받으면 "로딩 중..." 메시지를 삭제
             setMessages((prevMessages) => prevMessages.filter((message) => message !== loadingMessage));
-
+            setWaitingForResponse(false);
 
             // 서버 응답
             setMessages((prevMessages) => [...prevMessages, serverMessage]);
+            
         } catch (error) {
             console.error('메시지 전송 중 오류 발생:', error);
 
-            // 오류가 발생하면 "로딩 중..." 메시지를 삭제합니다.
+            // 오류가 발생하면 "로딩 중..." 메시지를 삭제
             setMessages((prevMessages) => prevMessages.filter((message) => message !== loadingMessage));
+            setWaitingForResponse(false);
 
         }
 
@@ -92,13 +91,20 @@ const C03AIChat = ({ handleButtonClick }) => {
 
     return (
         <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
-            
-           
+
+
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1 " />
             {/* 로봇 */}
-            <div className=" hidden md:block md:col-span-3">
-                <Robot />
+            {/* 로봇 또는 다른 컴포넌트 */}
+            <div className="hidden md:block md:col-span-3">
+                {waitingForResponse ? (
+                    // 서버 응답을 기다리는 동안 보여줄 컴포넌트
+                    <Loading />
+                ) : (
+                    // 응답을 기다리지 않는 경우에는 로봇 컴포넌트를 보여줍니다.
+                    <Robot />
+                )}
             </div>
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
@@ -167,6 +173,17 @@ function Robot() {
             loop
             animationData={lottieJson}
             play
+        />
+    );
+}
+
+function Loading() {
+    return (
+        <Lottie
+            loop
+            animationData={lottieJson2}
+            play
+            option={{ speed: 0.7 }}
         />
     );
 }

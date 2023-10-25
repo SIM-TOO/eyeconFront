@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./HeaderAfter";
-import Test from './myPage/MyFixTest'
+import MyPage from './myPage/MyFixTest'
 
 function Mypage() {
   return (
@@ -14,7 +14,7 @@ function Mypage() {
       }}
     >
       <Header />
-      <Test />
+      <MyPage />
     </div>
   );
 }

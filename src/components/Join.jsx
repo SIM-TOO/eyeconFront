@@ -24,7 +24,7 @@ function Join() {
   };
 
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:h-screen">
       <UserHeader />
       <main className="container my-10 p-5 mx-auto font-Pretendard">
         <div className="grid md:grid-cols-2 gap-8">
@@ -35,7 +35,7 @@ function Join() {
             <UserImage />
           </div>
           <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
-            <p className="text-3xl font-medium text-left text-black p-3">Sign in</p>
+            <p className="text-3xl font-medium text-left text-black p-3 dark:text-[#F2F2F2]">Sign in</p>
 
             {/* from 태그 시작 */}
             <form ref={formRef} onSubmit={handleSubmit}>

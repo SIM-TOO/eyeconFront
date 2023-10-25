@@ -39,7 +39,7 @@ const C03AIChat = ({ handleButtonClick }) => {
         };
         setMessages((prevMessages) => [...prevMessages, loadingMessage]);
         setWaitingForResponse(true);
-
+        axios.defaults.withCredentials = false;
         try {
             // 서버로 메시지를 보냅니다.
 

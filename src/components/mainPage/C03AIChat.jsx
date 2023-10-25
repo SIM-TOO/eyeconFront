@@ -14,6 +14,15 @@ const C03AIChat = ({ handleButtonClick }) => {
     const changeButtonClick = () => {
         setAIchatStart(false);
         setAIchat(true);
+    // react - spring - db - spring - flask 데이터 전송
+    const url = process.env.REACT_APP_MASTER_URL;
+    axios.defaults.withCredentials = true;
+        try {
+            axios.get(`${url}/flask/callData`);
+        } catch (error) {
+            console.error("에러 내용:", error);
+        }
+        
     };
     const [inputValue, setInputValue] = useState('');
     const [waitingForResponse, setWaitingForResponse] = useState(false);

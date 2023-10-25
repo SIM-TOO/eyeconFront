@@ -2,10 +2,10 @@ import axios from "axios";
 
 const useGetCoin = () => {
     const url = process.env.REACT_APP_MASTER_URL;
-
+    axios.defaults.withCredentials = true;
     const getCoin = async (email) => {
         try {
-           const response = await axios.post(`${url}/user/findCoin`, { email: email }); 
+           const response = await axios.post(`${url}/coin/findCoin`); 
             if (response && response.data) {
                 console.log(response);
                 return response.data;

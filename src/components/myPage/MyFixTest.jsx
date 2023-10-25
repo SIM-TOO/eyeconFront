@@ -81,8 +81,7 @@ const MyFixTest = () => {
 
                         <div className="col-span-2" />
 
-                        {/* 내 가게 관리 */}
-                        <div className="col-span-4 mt-3 ">
+                        <div className="col-span-7 md:col-span-4 mt-3 ">
                             <div className="bg-white rounded-lg p-3 filter drop-shadow-lg">
                                 <div className="col-span-1 p-3">
                                     {/* 가게 이름 입력될 곳 */}
@@ -132,6 +131,8 @@ const MyFixTest = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* 내 가게 관리 */}
                     </div>
                 </div>
             </div>

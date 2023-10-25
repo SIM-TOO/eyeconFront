@@ -45,7 +45,7 @@ const C03AIChat = ({ handleButtonClick }) => {
     return (
         <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
-          
+            {/* 모바일 버튼 */}
             <button className='block md:hidden col-span-12 p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
                 시선 분석하기
             </button>
@@ -55,12 +55,8 @@ const C03AIChat = ({ handleButtonClick }) => {
             {/* 로봇 */}
             {/* 로봇 또는 다른 컴포넌트 */}
             <div className="hidden md:block md:col-span-3">
-                {showAIchatStart && <div></div>}
-                
-                  {/* PC화면시 등장하는 버튼 */}
-                {showAIchat && <button className='p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
-                    시선 분석하기
-                </button>}
+
+
 
 
                 {waitingForResponse ? (
@@ -70,6 +66,17 @@ const C03AIChat = ({ handleButtonClick }) => {
                     // 응답을 기다리지 않는 경우에는 로봇 컴포넌트를 보여줍니다.
                     <Robot />
                 )}
+                <div className='p-3'></div>
+               
+                <div className='p-3'></div>
+
+                {/* PC화면시 등장하는 버튼 */}
+                {showAIchatStart && <div></div>}
+                {showAIchat && <button className='p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
+                    시선 분석하기
+                </button>}
+
+
             </div>
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}

@@ -41,7 +41,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/pay" element={<Pay />} />
             <Route path="/place" element={<Place />} />
-            <Route path='/ResultPage' element={<ResultPage />} />
+            <Route path='/result' element={<ResultPage />} />
             <Route path='/gpttest' element={<Gpttest1 />} />
             <Route path="/main" element={<MainPageAfter />} />
             <Route path='/mainpay' element={<MainPageAfterPay />} />

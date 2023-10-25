@@ -33,6 +33,7 @@ const Login = () => {
             <Link to="/#">
               <img
                 src="https://i.ibb.co/BCP0xW5/join.png"
+                alt=""
                 className="absolute top-0 left-0 z-10 hidden md:block"
               />
             </Link>

@@ -4,26 +4,27 @@ import UserImage from "./userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
 import Lottie from "react-lottie-player";
 import lottieJson from "../lottie/login.json";
+import { Link } from "react-router-dom";
 
 const Login = () => {
- 
-// 토큰있는 지 확인하는 메소드
-const jwt =()=>{
-  const cookies = document.cookie.split('; ');
-  console.log('1번 : ',cookies);
-  const accessToken = cookies.find(row => row.startsWith('accessToken='));
-  console.log('2번 : ',accessToken);
-if(accessToken){
-  alert('토큰있어요')
-}
-};
 
-useEffect(() => {
-  jwt();
-}, []);
+  // 토큰있는 지 확인하는 메소드
+  const jwt = () => {
+    const cookies = document.cookie.split('; ');
+    console.log('1번 : ', cookies);
+    const accessToken = cookies.find(row => row.startsWith('accessToken='));
+    console.log('2번 : ', accessToken);
+    if (accessToken) {
+      alert('토큰있어요')
+    }
+  };
 
- 
- 
+  useEffect(() => {
+    jwt();
+  }, []);
+
+
+
   const { formRef, handleSubmit } = useUserLogin();
 
   return (
@@ -32,10 +33,12 @@ useEffect(() => {
       <main className="container my-10 p-5 mx-auto font-Pretendard">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative">
-            <img
-              src="https://i.ibb.co/BCP0xW5/join.png"
-              className="absolute top-0 left-0 z-10 hidden md:block"
-            />
+            <Link to="/#">
+              <img
+                src="https://i.ibb.co/BCP0xW5/join.png"
+                className="absolute top-0 left-0 z-10 hidden md:block"
+              />
+            </Link>
             <UserImage />
           </div>
           <div className="mx-auto lg:mt-0 mt-60 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">

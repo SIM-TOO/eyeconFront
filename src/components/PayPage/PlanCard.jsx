@@ -4,7 +4,7 @@ function PlanCard() {
 
   const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
   const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
-
+  
   return (
     <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl font-Pretendard">
 

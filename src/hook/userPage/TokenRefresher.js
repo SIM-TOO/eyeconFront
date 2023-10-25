@@ -9,38 +9,35 @@ const TokenRefresher = axios.create({
 });
 
 // 요청 인터셉터 추가
-TokenRefresher.interceptors.request.use(
+/* TokenRefresher.interceptors.request.use(
   config => {
-    console.log('====================================');
-    console.log("dd");
-    console.log('====================================');
-   /*  const token = localStorage.getItem('accessToken');
-    if (token) {
-      config.headers['Authorization'] = 'Bearer ' + token;
-    } */
+     console.log('====================================');
+    console.log("interceptors.request");
+    console.log('===================================='); 
+   
     return config;
   },
   error => {
     Promise.reject(error)
-  });
+  }); */
 
 // 응답 인터셉터 추가
 TokenRefresher.interceptors.response.use((response) => {
   return response
 }, function (error) {
   const originalRequest = error.config;
-  console.log('====================================');
-  console.log("!!!!!!!!!!!!",error.response.status);
-  console.log('====================================');
+//   console.log('====================================');
+//   console.log("!!!!!!!!!!!!",error.response.status);
+//   console.log('====================================');
   if (error.response.status === 401) {
-    console.log("여긴왔어?")
+    // console.log("여긴왔어?")
     originalRequest._retry = true;
     axios.defaults.withCredentials=true;
-    return axios.post('http://localhost:8023/auth/refresh')
+    return axios.post('http://localhost:8023/EyeconSpring/auth/refresh')
       .then(res => {
-        console.log('====================================');
-            console.log("201 떳냐?",res.status);
-            console.log('====================================');
+        // console.log('====================================');
+        //     console.log("201 떳냐?",res.status);
+        //     console.log('====================================');
         if (res.status === 201) {
             
           //localStorage.setItem('accessToken', res.data);

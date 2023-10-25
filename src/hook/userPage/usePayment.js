@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import axios from 'axios';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 
-const Payment = () => {
+// 결제관련
+const usePayment = () => {
     useEffect(() => {
       const jquery = document.createElement("script");
       jquery.src = "http://code.jquery.com/jquery-1.12.4.min.js";
@@ -18,7 +19,7 @@ const Payment = () => {
   
     const TokenRefresher = useContext(TokenRefresherContext);
 
-    const requestPay = () => {
+    const requestPay = (coinPrice, coinName) => {
       const { IMP } = window;
       IMP.init('imp54472174');
   
@@ -26,8 +27,8 @@ const Payment = () => {
         pg : 'nice.iamport00m',   
         pay_method : 'card', 
         merchant_uid: 'merchant_' + new Date().getTime(), //상점에서 생성한 고유 주문번호
-        name : '주문명:결제테스트',
-        amount : 101, // 가격
+        name : coinName,
+        amount : coinPrice, // 가격
         company : '아이콘',//해당 파라미터 설정시 통합결제창에 해당 상호명이 노출됩니다.  // 코인아이디/ 가격/ 상품명 / 개수
         buyer_postcode : '123-456',
         language : 'ko', // en 설정시 영문으로 출력되면 해당 파라미터 생략시 한국어 default
@@ -77,11 +78,9 @@ const Payment = () => {
       });
     };
   
-    return (
-      <div>
-        <button onClick={requestPay}>결제하기</button>
-      </div>
-    );
+    return {
+      requestPay
+    }
   };
 
-export default Payment
+export default usePayment

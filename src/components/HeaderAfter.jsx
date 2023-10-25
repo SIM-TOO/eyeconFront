@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 import { setCoin } from '../store/coinSlice';
 import useGetCoin from "../hook/mainPage/useGetCoin";
+import axios from "axios";
 
 
 function HeaderAfter() {
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
+  const url = process.env.REACT_APP_MASTER_URL;
 
   // 리덕스에 코인 가져오기
   const remainingCoins = useSelector(state => state.coin);
@@ -31,6 +33,16 @@ const GetCoin = useGetCoin();
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  // 로그아웃
+  async function goLogout(){
+    const res = await axios.post(`${url}/auth/logout`)
+    .catch((err) => {
+      console.log(err);
+    });
+
+    console.log(res);
+  }
 
   return (
     <div>
@@ -84,6 +96,7 @@ const GetCoin = useGetCoin();
                 <Link
                   to="/"
                   className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0"
+                  onClick={goLogout}
                 >
                   로그아웃
                 </Link>

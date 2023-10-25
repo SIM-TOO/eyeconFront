@@ -22,7 +22,7 @@ const MainPay = () => {
         };
     
         fetchData();
-    }, []);
+    }, [TokenRefresher]);
     
     const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
     const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";

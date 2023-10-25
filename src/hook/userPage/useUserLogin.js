@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useRef } from 'react';
-import App from './../../App';
 import { useNavigate } from 'react-router';
 
 const useUserLogin = () => {
@@ -44,10 +43,10 @@ const useUserLogin = () => {
       //  console.log(error.response.data.message);
       //  console.log(error);
        // 아이디가 틀렸을때(존재하지 않는)
-       if(error.response.data.message == 'The user does not exist'){
+       if(error.response.data.message === 'The user does not exist'){
         alert("존재하지 않는 회원");
         // 비밀번호가 틀렸을때
-       }else if(error.response.data.message == 'password error'){
+       }else if(error.response.data.message === 'password error'){
         alert("비밀번호가 틀림");
        }
        

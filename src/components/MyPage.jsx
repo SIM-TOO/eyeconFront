@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./HeaderAfter";
-import MyFix from "./myPage/MyFix";
 import Test from './myPage/MyFixTest'
 
 function Mypage() {

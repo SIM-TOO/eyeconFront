@@ -67,6 +67,7 @@ const MyFixTest = () => {
                                 <button onClick={handleAddButtonClick} className="mt-3 md:mt-1 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] flex items-center" >
                                     <img
                                         src="https://i.ibb.co/h2FyQNK/plus-circle.png"
+                                        alt=""
                                         className="mr-2"
                                     />
                                     가게 추가

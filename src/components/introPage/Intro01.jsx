@@ -6,9 +6,12 @@ import lottieJson from "../../lottie/mainAnimation.json";
 import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
 
 const Intro01 = () => {
+
   return (
-    <div className="dark:bg-gray-800 dark:text-[#F2F2F2] mt-40 ">
+    <div className="dark:bg-gray-800 dark:text-[#F2F2F2]">
+      <div className="h-[150px] bg-white dark:bg-gray-800"/>
       <div className="font-Pretendard ">
+        
         <div className="w-64 md:w-auto">
           <img
             src="https://i.ibb.co/0YBkn3z/service.png"

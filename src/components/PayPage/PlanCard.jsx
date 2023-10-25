@@ -4,15 +4,15 @@ function PlanCard() {
 
   const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
   const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
-  
+
   return (
-    <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl font-Pretendard">
+    <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl font-Pretendard dark:bg-gray-800 dark:text-[#F2F2F2]">
 
       {/* 여백용박스 */}
-      <div className="col-span-0 md:col-span-1" />
+      <div className="col-span-0 md:col-span-1 dark:bg-gray-800 dark:text-[#F2F2F2]" />
 
       {/* 첫번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3">
+      <div className="col-span-11 md:col-span-3 p-3 ">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
             <p className="font-semibold text-left uppercase text-black px-3">
@@ -40,14 +40,14 @@ function PlanCard() {
       </div>
 
       {/* 두번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3">
+      <div className="col-span-11 md:col-span-3 p-3 ">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
             <p className="font-semibold text-left uppercase text-black px-3">
               BASIC
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center" >
             <p className="text-5xl font-bold p-5">￦75,000</p>
           </div>
           <div className="p-3">
@@ -69,7 +69,7 @@ function PlanCard() {
 
 
       {/* 세번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3">
+      <div className="col-span-11 md:col-span-3 p-3 ">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
             <p className="font-semibold text-left uppercase text-black px-3">
@@ -97,7 +97,7 @@ function PlanCard() {
       </div>
 
       {/* 여백용박스 */}
-      <div className="col-span-0 md:col-span-1" />
+      <div className="col-span-0 md:col-span-1 dark:bg-gray-800 dark:text-[#F2F2F2]" />
 
     </div>
   );

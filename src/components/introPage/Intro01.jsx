@@ -7,7 +7,7 @@ import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
 
 const Intro01 = () => {
   return (
-    <div className="mt-40 dark:bg-gray-800 dark:text-[#F2F2F2]">
+    <div className="mt-40 dark:bg-gray-800 dark:text-[#F2F2F2] ">
       <div className="font-Pretendard ">
         <div className="w-64 md:w-auto">
           <img

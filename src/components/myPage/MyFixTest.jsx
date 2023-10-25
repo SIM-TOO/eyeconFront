@@ -4,13 +4,11 @@ import MyPageAdd from "./MyPageAdd";
 const MyFixTest = () => {
 
 
-
+    /* 내 가게 추가창 생성 */
     const [isLoading, setIsLoading] = useState(false);
-
     const handleAddButtonClick = () => {
-        // 버튼 클릭 시 로딩 상태를 토글
         setIsLoading((prevLoading) => !prevLoading);
-        // 추가적인 데이터 또는 작업을 수행할 수 있습니다.
+
     };
 
 
@@ -73,10 +71,9 @@ const MyFixTest = () => {
                                     />
                                     가게 추가
                                 </button>
-                                {/* 가게 추가 컴포넌트 생성 창 */}
+                                {/* 가게 추가 컴포넌트 생성 공간 */}
                                 <div>
                                     {isLoading && <MyPageAdd />}
-
                                 </div>
                             </div>
                         </div>
@@ -84,7 +81,6 @@ const MyFixTest = () => {
                         <div className="col-span-2" />
 
                         {/* 내 가게 관리 */}
-
                         <div className="col-span-4 mt-3 ">
                             <div className="bg-white rounded-lg p-3 filter drop-shadow-lg">
                                 <div className="col-span-1 p-3">

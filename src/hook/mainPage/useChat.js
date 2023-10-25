@@ -10,11 +10,7 @@ const useChat = (initialMessage) => {
     useEffect(() => {
       if (!initialized) {
         if (initialMessage) {
-          const welcomeMessage = {
-            content: initialMessage,
-            isMine: false,
-          };
-          setMessages([welcomeMessage]);
+          setMessages(initialMessage);
         }
         setInitialized(true);
       }

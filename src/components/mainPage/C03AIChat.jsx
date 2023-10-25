@@ -9,7 +9,16 @@ import useChatChange from '../../hook/mainPage/useChatChange';
 
 const C03AIChat = ({ handleButtonClick }) => {
     // 시작시 메시지 입력 장소 .
-    const initialMessage = '안녕하세요! 저는 챗봇 이콘이에요.';
+    const initialMessage = [
+        {
+            content: "안녕하세요! 챗봇 이콘입니다.",
+            isMine: false,
+        },
+        {
+            content: "시선 분석을 원하시면 시선 분석 버튼을 클릭해주세요.",
+            isMine: false,
+        },
+    ];
 
     //  채팅 보내기 함수
     const {
@@ -36,12 +45,24 @@ const C03AIChat = ({ handleButtonClick }) => {
     return (
         <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
+          
+            <button className='block md:hidden col-span-12 p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
+                시선 분석하기
+            </button>
 
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1 " />
             {/* 로봇 */}
             {/* 로봇 또는 다른 컴포넌트 */}
             <div className="hidden md:block md:col-span-3">
+                {showAIchatStart && <div></div>}
+                
+                  {/* PC화면시 등장하는 버튼 */}
+                {showAIchat && <button className='p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
+                    시선 분석하기
+                </button>}
+
+
                 {waitingForResponse ? (
                     // 서버 응답을 기다리는 동안 보여줄 컴포넌트
                     <Loading />
@@ -88,15 +109,6 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
-
-            {/* 임시버튼 */}
-            <button
-                className="col-span-12"
-                onClick={() => handleButtonClick(4)}
-            >
-                (임시버튼임 나중에 삭제 할 예정)
-            </button>
-            {/* 임시버튼 */}
         </div>
     )
 }

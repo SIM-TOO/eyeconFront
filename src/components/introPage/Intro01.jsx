@@ -7,21 +7,21 @@ import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
 
 const Intro01 = () => {
   return (
-    <div className="mt-40 dark:bg-gray-800 dark:text-[#F2F2F2] ">
+    <div className="dark:bg-gray-800 dark:text-[#F2F2F2] mt-40 ">
       <div className="font-Pretendard ">
         <div className="w-64 md:w-auto">
           <img
             src="https://i.ibb.co/0YBkn3z/service.png"
             alt="intro1"
-            className="h-auto pointer-events-none"
+            className="h-auto pointer-events-none "
           />
         </div>
 
-        <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
-          <div className="col-span-12 md:col-span-6">
+        <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
+          <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
-            <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20">
-              <span className="text-4xl md:text-6xl font-bold">
+            <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20 ">
+              <span className="text-4xl md:text-6xl font-bold ">
 
                 WELCOME TO <br />
                 EYECON

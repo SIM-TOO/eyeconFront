@@ -116,13 +116,14 @@ function Join() {
                     className="placeholder-[#15c3a7] bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
+                    onClick={handleButtonClick}
                   />
                   <img
                     src="https://i.ibb.co/VQjYh2k/searchicon.png"
                     alt="searchicon"
                     border="0"
                     className="absolute cursor-default  w-6 h-6 right-1 top-1/2 transform -translate-y-1/2"
-                    onClick={handleButtonClick}
+                    
                   />
                 </div>
 

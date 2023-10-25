@@ -7,17 +7,12 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
   const [beforeimg, setBeforeimg] = useState(null);
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
 
-  // 이미지가 띄워진 상태 확인
   useEffect(() => {
     if (uploadedImage === null) {
       setImageSrc(null);
-    }
-  }, [uploadedImage]);
-
-
-  // 이미지 서버로 업로드
-  useEffect(() => {
-    if (uploadedImageSend) {
+      return; // 이미지가 없으면 더 이상 진행하지 않음
+    } if (uploadedImageSend) {
+       // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
       const url = process.env.REACT_APP_MASTER_URL;
       const formData = new FormData();
 
@@ -28,8 +23,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       formData.append('beforeimg', beforeimg);
 
       // 이상없음
-      // console.log(formData.get('Base64Data'));
-      // console.log(formData.get('beforeimg'));
+      console.log(formData.get('Base64Data'));
+      console.log(formData.get('beforeimg'));
 
       axios.post(`${url}/test.do`, formData)
         .then(response => {
@@ -43,7 +38,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
           onUploadComplete(false);
         });
     }
-  }, [uploadedImageSend]);
+  }, [uploadedImage, uploadedImageSend, beforeimg, onUploadComplete]);
+
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
@@ -73,7 +69,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     };
 
     reader.readAsDataURL(file);
-  }, []);
+  }, [onUploadSuccess]);
 
   // 업로드 파일 조건 
   const { getRootProps, getInputProps } = useDropzone({

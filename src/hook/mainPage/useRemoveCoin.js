@@ -2,10 +2,10 @@ import axios from "axios";
 
 const useRemoveCoin = () => {
     const url = process.env.REACT_APP_MASTER_URL;
-
+    axios.defaults.withCredentials = true;
     const removeCoin = async (email) => {
         try {
-            const response = await axios.post(`${url}/user/removeCoin`, { email: email });
+            const response = await axios.post(`${url}/coin/removeCoin`);
             if (response && response.data) {
                 console.log(response);
                 

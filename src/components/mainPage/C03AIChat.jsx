@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/robot.json";
+import lottieJson2 from "../../lottie/mobileLoading.json";
 import AIchatStart from './technology/AIchatStart';
 import AIchat from './technology/AIchat';
+import useChat from '../../hook/mainPage/useChat';
+import useChatChange from '../../hook/mainPage/useChatChange';
 
 const C03AIChat = ({ handleButtonClick }) => {
+    // 시작시 메시지 입력 장소 .
+    const initialMessage = '안녕하세요! 저는 챗봇 이콘이에요.';
+
+    //  채팅 보내기 함수
+    const {
+        inputValue,
+        setInputValue,
+        waitingForResponse,
+        messages,
+        chatHandleSubmit,
+    } = useChat(initialMessage);
 
     // start 컴포넌트와 AIChat 컴포넌트 변경
-    const [showAIchatStart, setAIchatStart] = useState(true);
-    const [showAIchat, setAIchat] = useState(false);
-    const changeButtonClick = () => {
-        setAIchatStart(false);
-        setAIchat(true);
-    };
+    //  체인지 함수
+    const { showAIchatStart, showAIchat, changeButtonClick } = useChatChange();
 
-    const [inputValue, setInputValue] = useState('');
-    // 시작시 기본 메세지 출력
-    const [messages, setMessages] = useState([
-        {
-            content: "안녕하세요 머시기 입니다.",
-            isMine: false
-        }
-    ]);
 
-    //  채팅 보내기
-    const chatHandleSubmit = () => {
-        setMessages([...messages, { content: inputValue, isMine: true }]);
-        setInputValue('');
-    };
 
-    // 엔터키 입력시 채팅 전송 버튼으로 할당
+    //  엔터키를 채팅 전송으로 할당
     const chatHandleKeyDown = (e) => {
         if (e.key === 'Enter') {
             chatHandleSubmit();
@@ -39,11 +36,19 @@ const C03AIChat = ({ handleButtonClick }) => {
     return (
         <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
+
             {/* 여백용 박스 */}
-            <div className="hidden md:block col-span-0 md:col-span-1" />
+            <div className="hidden md:block col-span-0 md:col-span-1 " />
             {/* 로봇 */}
-            <div className=" hidden md:block md:col-span-5">
-                <Robot />
+            {/* 로봇 또는 다른 컴포넌트 */}
+            <div className="hidden md:block md:col-span-3">
+                {waitingForResponse ? (
+                    // 서버 응답을 기다리는 동안 보여줄 컴포넌트
+                    <Loading />
+                ) : (
+                    // 응답을 기다리지 않는 경우에는 로봇 컴포넌트를 보여줍니다.
+                    <Robot />
+                )}
             </div>
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
@@ -60,7 +65,7 @@ const C03AIChat = ({ handleButtonClick }) => {
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
                     <p className="text-center text-black">
-                        서비스를 위해 챗봇 시로와 함께 대화를 시작해보세요.
+                        서비스를 위해 챗봇 이콘이와 함께 대화를 시작해보세요.
                     </p>}
                 {showAIchat &&
                     <div className="h-[100%] w-[100%] grid grid-cols-12 p-3">
@@ -70,7 +75,6 @@ const C03AIChat = ({ handleButtonClick }) => {
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={chatHandleKeyDown}
-
                         />
                         <button
                             className='col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
@@ -85,10 +89,6 @@ const C03AIChat = ({ handleButtonClick }) => {
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
 
-
-
-
-
             {/* 임시버튼 */}
             <button
                 className="col-span-12"
@@ -97,10 +97,6 @@ const C03AIChat = ({ handleButtonClick }) => {
                 (임시버튼임 나중에 삭제 할 예정)
             </button>
             {/* 임시버튼 */}
-
-
-
-
         </div>
     )
 }
@@ -112,6 +108,17 @@ function Robot() {
             loop
             animationData={lottieJson}
             play
+        />
+    );
+}
+
+function Loading() {
+    return (
+        <Lottie
+            loop
+            animationData={lottieJson2}
+            play
+            option={{ speed: 0.7 }}
         />
     );
 }

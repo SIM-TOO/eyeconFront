@@ -5,7 +5,17 @@ import useChat from '../../hook/mainPage/useChat';
 const C05Result = ({ handleButtonClick }) => {
 
   // 시작시 메시지 입력 장소 .
-  const initialMessage = '결과 페이지 입니다.';
+  // 시작시 메시지 입력 장소 .
+  const initialMessage = [
+    {
+      content: "안녕하세요! 챗봇 이콘입니다.",
+      isMine: false,
+    },
+    {
+      content: "시선 분석 결과를 출력하겠습니다.",
+      isMine: false,
+    },
+  ];
 
   //  채팅 보내기 함수
   const {

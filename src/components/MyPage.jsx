@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./HeaderAfter";
 import MyPage from './myPage/MyFixTest'
 
+
 function Mypage() {
   return (
     <div

@@ -29,28 +29,35 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
 
       // 서버 통신용
       // 반환값 Base64Data로 줄것!(중요)
+      // ex
       const resultImage = axios.post(`${url}/test.do`, formData)
         .then(response => {
           // 전송 성공
           console.log("전송 성공");
           onUploadComplete(true);
+          return response.data;
         })
         .catch(error => {
           // 전송 실패
           console.error("전송을 실패 했습니다 에러 내용 :", error);
           onUploadComplete(false);
+          return null
         });
-      
-     
-      // 임시용 결과물
-      // onUploadComplete(true);
-      // const resultImage = formData.get('Base64Data')
+
+        
+
 
       console.log("결과물 : ", resultImage)
+      resultImage.then(data => {
+        if (data !== null) {
+          // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행합니다.
+          localStorage.setItem('resultImageData', data);
+        } else {
+          // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
+          // 또는 필요한 다른 처리를 수행합니다.
+        }
+      })
 
-      // 로컬 스토리지에 결과 이미지 데이터 저장
-      localStorage.setItem('resultImageData', resultImage);
-      
 
     }
   }, [uploadedImage, uploadedImageSend, beforeimg, onUploadComplete]);

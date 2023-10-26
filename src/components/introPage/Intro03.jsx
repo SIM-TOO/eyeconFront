@@ -30,7 +30,7 @@ const Intro03 = () => {
                     <img
                         src="https://i.ibb.co/g6B2pn5/icon1.png"
                         alt="green1"
-                        className="mx-auto md:mx-0"
+                        className="mx-auto md:mx-0 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300"
 
                     />
                     <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3 dark:text-[#F2F2F2]">

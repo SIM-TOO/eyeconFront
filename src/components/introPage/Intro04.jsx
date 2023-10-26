@@ -14,6 +14,7 @@ const Intro04 = () => {
                     className="h-auto pointer-events-none"
                 />
             </div>
+            
 
             {/* 컨테이너 박스 */}
             <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4">

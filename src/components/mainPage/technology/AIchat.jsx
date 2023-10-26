@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react'
+import Lottie from "react-lottie-player";
+import lottieJson from "../../../lottie/robotIcon.json";
 
 const AIchat = ({ messages }) => {
     const chatRef = useRef(null);
@@ -21,7 +23,7 @@ const AIchat = ({ messages }) => {
                 <div key={index} className={`flex ${msg.isMine ? 'justify-end' : 'justify-start'} mb-4`}>
                     
                     {/* 프로필 이미지  */}
-                    {!msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png" alt="Profile" className="w-10 h-10 rounded-full mr-3" />}
+                    {!msg.isMine && <RobotIcon className="w-10 h-10 rounded-full mr-3" />}
 
                     {/* 채팅 메시지 박스 */}
                     <div className={`p-3 rounded-lg ${msg.isMine ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}>
@@ -35,6 +37,18 @@ const AIchat = ({ messages }) => {
             ))}
         </div>
     )
+}
+
+
+function RobotIcon() {
+    return (
+        <Lottie
+            className='translate3d-10-55-0 '
+            loop
+            animationData={lottieJson}
+            play
+        />
+    );
 }
 
 export default AIchat

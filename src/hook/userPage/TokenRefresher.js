@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-// axios 인스턴스 생성
 
+const url = process.env.REACT_APP_MASTER_URL;
+// axios 인스턴스 생성
 const TokenRefresher = axios.create({
-  baseURL: 'http://localhost:8023/EyeconSpring',
+  baseURL: `${url}`,
   withCredentials : true
 //   timeout: 1000,
 });
@@ -33,7 +34,7 @@ TokenRefresher.interceptors.response.use((response) => {
     // console.log("여긴왔어?")
     originalRequest._retry = true;
     axios.defaults.withCredentials=true;
-    return axios.post('http://localhost:8023/EyeconSpring/auth/refresh')
+    return axios.post(`${url}/auth/refresh`)
       .then(res => {
         // console.log('====================================');
         //     console.log("201 떳냐?",res.status);

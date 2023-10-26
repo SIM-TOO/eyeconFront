@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react'
+import Lottie from "react-lottie-player";
+import lottieJson from "../../../lottie/robotIcon.json";
 
 const AIchat = ({ messages }) => {
     const chatRef = useRef(null);
@@ -35,6 +37,18 @@ const AIchat = ({ messages }) => {
             ))}
         </div>
     )
+}
+
+
+function RobotIcon() {
+    return (
+        <Lottie
+            className='translate3d-10-55-0 '
+            loop
+            animationData={lottieJson}
+            play
+        />
+    );
 }
 
 export default AIchat

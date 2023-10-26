@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderAfter from "./HeaderAfter";
-import MainPay from "./payPage/MainPay"; 
+import MainPay from "./payPage/MainPay";
 
 function MainPageAfterPay() {
   return (

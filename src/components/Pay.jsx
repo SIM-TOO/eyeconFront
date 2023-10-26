@@ -5,7 +5,7 @@ import PayImg from "./payPage/PayImg";
 
 function Pay() {
   return (
-    <div>
+    <div className="dark:bg-gray-800">
       <Header></Header>
       <PayImg></PayImg>
       <PlanCard></PlanCard>

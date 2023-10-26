@@ -8,9 +8,8 @@ import Intro05 from './introPage/Intro05'
 
 function MainPage() {
   return (
-    <div>
-      <Header/>
-
+    <div className='dark:bg-gray-800'>
+      <Header/> 
       <Intro01/>
       <Intro02/>
       <Intro03/>

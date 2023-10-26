@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
+import { setAccessCK } from "../store/accessCKSlice";
+import { useDispatch } from "react-redux";
+import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
 
 
 function HeaderAfter() {
-
+  const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
   const url = process.env.REACT_APP_MASTER_URL;
 
@@ -33,15 +36,14 @@ function HeaderAfter() {
 
   // 로그아웃
   async function goLogout() {
-    const res = await axios.post(`${url}/auth/logout`)
+    await axios.post(`${url}/auth/logout`)
       .catch((err) => {
         console.log(err);
       });
+    dispatch(setAccessCK(null));
     // 로컬 스토리지 클리어
     localStorage.removeItem('coinsData');
     localStorage.removeItem('resultImageData');
-
-    // console.log(res);
   }
 
   // 브라우저 종료 이벤트 감지
@@ -51,7 +53,6 @@ function HeaderAfter() {
     localStorage.removeItem('resultImageData');
   });
 
-
   return (
     <div>
       <header className=" text-white p-5 font-Pretendard">
@@ -60,11 +61,14 @@ function HeaderAfter() {
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/" className="flex items-center">
-                <img
+              <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
-                  className="w-[140px] h-[54px]"
+                  className="w-[140px] h-[54px] dark:hidden "
                   alt="logo"
                 />
+                <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
+                className="w-[120px] h-[44px] hidden dark:block"
+                alt="logo2"/>
               </Link>
             </div>
 

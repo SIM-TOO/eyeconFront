@@ -5,23 +5,6 @@ import useUserLogin from "../hook/userPage/useUserLogin";
 
 const Login = () => {
 
-  // // 토큰있는 지 확인하는 메소드
-  // const jwt = () => {
-  //   const cookies = document.cookie.split('; ');
-  //   console.log('1번 : ', cookies);
-  //   const accessToken = cookies.find(row => row.startsWith('accessToken='));
-  //   console.log('2번 : ', accessToken);
-  //   if (accessToken) {
-  //     alert('토큰있어요')
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   jwt();
-  // }, []);
-
-
-
   const { formRef, handleSubmit } = useUserLogin();
 
   return (

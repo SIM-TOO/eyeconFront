@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AIchat from './technology/AIchat';
 import useChat from '../../hook/mainPage/useChat';
+import { Link } from 'react-router-dom';
+import Lottie from "react-lottie-player";
+import lottieJson from "../../lottie/mobileLoading.json";
 
 const C05Result = ({ handleButtonClick }) => {
 
-  // 시작시 메시지 입력 장소 .
   // 시작시 메시지 입력 장소 .
   const initialMessage = [
     {
@@ -32,17 +34,50 @@ const C05Result = ({ handleButtonClick }) => {
     }
   };
 
+  // 로컬 스토리지에서 결과 이미지 데이터 가져오기
+  const [isLoading, setIsLoading] = useState(true);
+  const [resultImage, setResultImage] = useState(null);
+
+  useEffect(() => {
+    // 로컬 스토리지에서 데이터 가져오기
+    const resultImageData = localStorage.getItem('resultImageData');
+    console.log("데이터 받아짐?", resultImageData)
+    if (resultImageData != null) {
+      // 로컬 스토리지에 데이터가 존재하면 로딩 상태를 종료하고 이미지 데이터 설정
+      setIsLoading(false);
+      setResultImage(resultImageData);
+    } else {
+      // 로컬 스토리지에 데이터가 없으면 로딩 상태를 유지
+      setIsLoading(true);
+    }
+  }, []);
   return (
     <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
+      <div className="col-span-12 " />
+
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1 " />
 
       {/* 결과 이미지 */}
-      <div className="col-span-3">
+      <div className="col-span-3 grid grid-cols-12 h-[100%]">
 
-        결과이미지
+        {/* 결과페이지 */}
+        <div className="col-span-12">
+          {isLoading ? (
+            <div><Loading/></div>
+          ) : (
+            // 데이터를 가져온 후 보여줄 이미지
+            <img src={resultImage} alt="resultImage" />
+          )}
+        </div>
 
+        {/* 결과 페이지 이동 링크 */}
+        <div className="col-span-12 flex justify-center items-center h-full">
+          <Link to="/result" className="p-3 rounded-lg bg-gray-300 text-black">
+            결과페이지 이동하기
+          </Link>
+        </div>
       </div>
 
 
@@ -76,5 +111,14 @@ const C05Result = ({ handleButtonClick }) => {
     </div>
   )
 }
-
+function Loading() {
+  return (
+    <Lottie
+      loop
+      animationData={lottieJson}
+      play
+      option={{ speed: 0.7 }}
+    />
+  );
+}
 export default C05Result

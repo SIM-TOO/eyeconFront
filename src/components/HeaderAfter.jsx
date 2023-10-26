@@ -39,6 +39,7 @@ function HeaderAfter() {
       });
     // 로컬 스토리지 클리어
     localStorage.removeItem('coinsData');
+    localStorage.removeItem('resultImageData');
 
     // console.log(res);
   }
@@ -47,6 +48,7 @@ function HeaderAfter() {
   window.addEventListener('beforeunload', function () {
     // 데이터 삭제
     localStorage.removeItem('coinsData');
+    localStorage.removeItem('resultImageData');
   });
 
 

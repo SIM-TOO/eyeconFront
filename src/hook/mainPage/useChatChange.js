@@ -5,7 +5,6 @@ import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 const useChatChange = () => {
     const [showAIchatStart, setAIchatStart] = useState(true);
     const [showAIchat, setAIchat] = useState(false);
-    const urlf = process.env.FLASK_APP_MASTER_URL;
     const changeButtonClick = () => {
         setAIchatStart(false);
         setAIchat(true);

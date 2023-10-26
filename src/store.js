@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import loginCKReducer from './store/loginCKSlice';
+import accessReducer from './store/accessCKSlice';
 
 const store = configureStore({
   reducer: {
-    loginCK: loginCKReducer
+    accessCK: accessReducer
   }
 });
 

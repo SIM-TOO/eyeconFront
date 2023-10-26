@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { setLoginCK } from '../../store/loginCKSlice';
+import { setAccessCK } from '../../store/accessCKSlice';
 
 const useUserLogin = () => {
   /* axios.defaults.headers['Access-Control-Allow-Origin'] = '*'; */
@@ -45,17 +45,16 @@ const useUserLogin = () => {
       if (responseData === "Exist") {
         // 로그인이 성공한 경우
         // 리덕스 스토어에 데이터 저장
+        dispatch(setAccessCK(true));
         
-        dispatch(setLoginCK(responseData));
-
-        // 다른 작업 수행
+        // 메인 페이지로 이동
         navigate("/main");
       } else {
         // 로그인 실패
         alert("로그인 실패");
       }
 
-      navigate("/main")
+
     }).catch(function (error) {
       //  console.log('=================error================');
       //  console.log(error.response.status);

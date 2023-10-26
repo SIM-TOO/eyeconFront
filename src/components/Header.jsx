@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
+import axios from "axios";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,8 +11,40 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  // 로그인 상태 확인용
+  // false 로그인전 상태
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // 로그아웃
+  const url = process.env.REACT_APP_MASTER_URL;
+  async function goLogout() {
+
+    // 로그아웃 상태로 변경
+    setIsLoggedIn(false)
+
+    const res = await axios.post(`${url}/auth/logout`)
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // 로컬 스토리지 클리어
+    localStorage.removeItem('coinsData');
+    localStorage.removeItem('resultImageData');
+
+    // console.log(res);
+  }
+
+  // 브라우저 종료 이벤트 감지
+  window.addEventListener('beforeunload', function () {
+    // 데이터 삭제
+    localStorage.removeItem('coinsData');
+    localStorage.removeItem('resultImageData');
+  });
+
+
+
   return (
-    <div> 
+    <div>
       <header className="dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard  ">
         <nav>
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
@@ -34,27 +67,46 @@ function Header() {
               <Link to="/pay" className="ml-4 text-black hover:underline dark:text-[#F2F2F2]">
                 Pricing
               </Link>
-          
+
               {/* 추가 버튼 시 "ml-4" 넣기 */}
             </div>
 
             {/* 서비스 시작 버튼 & 회원 가입 */}
             <div className="col-span-6 flex items-center justify-end hidden md:flex">
               <div className="flex flex-wrap">
-              <DarkModeSwitch/>
-                <Link
-                  to="/login"
-                  className="text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
-                >
-                  서비스 시작하기
-                </Link>
-                <Link
-                  to="/join"
-                  className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0"
-                >
-                  회원가입
-                </Link>
-         
+                <DarkModeSwitch />
+                {isLoggedIn ? (
+                  <>
+                    <Link
+                      to="/main"
+                      className="text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                    >
+                      서비스 시작하기
+                    </Link>
+                    <Link
+                      to="/"
+                      className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0"
+                      onClick={goLogout}
+                    >
+                      로그아웃
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/login"
+                      className="text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                    >
+                      서비스 시작하기
+                    </Link>
+                    <Link
+                      to="/join"
+                      className="flex items-center justify-center text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 h-[52px] rounded-[90px] bg-[#15c3a7] border border-[#d9dbe9] mb-2 md:mb-0"
+                    >
+                      회원가입
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
 
@@ -90,7 +142,7 @@ function Header() {
                 </svg>
               </button>
             </div>
-            
+
             {/* 모바일 메뉴 목록 */}
             <div>
               {menuOpen && (

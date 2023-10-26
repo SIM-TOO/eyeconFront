@@ -33,8 +33,8 @@ const useChat = (initialMessage) => {
         axios.defaults.withCredentials = false;
         try {
             // 서버로 메시지를 보냅니다.
-            const urlf = process.env.FLASK_APP_MASTER_URL;
-            const response = await axios.post(`${urlf}/consult`, {
+            // const urlf = process.env.REACT_APP_MASTER_URL1;
+            const response = await axios.post(`http://localhost:5000/consult`, {
                 'role': 'user',
                 content: inputValue, // 메시지 내용을 서버로 보냅니다.
             });

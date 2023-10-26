@@ -6,7 +6,7 @@ function PlanCard() {
   const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
 
   return (
-    <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl font-Pretendard dark:bg-gray-800 dark:text-[#F2F2F2]">
+    <div className="container mx-auto grid grid-cols-11 p-3 max-w-screen-xl font-Pretendard dark:text-[#F2F2F2]">
 
       {/* 여백용박스 */}
       <div className="col-span-0 md:col-span-1 dark:bg-gray-800 dark:text-[#F2F2F2]" />

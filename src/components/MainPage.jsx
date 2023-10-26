@@ -9,7 +9,7 @@ import HeaderAfter from './HeaderAfter'
 
 function MainPage() {
   return (
-    <div>
+    <div className='dark:bg-gray-800'>
       <Header/> 
       <Intro01/>
       <Intro02/>

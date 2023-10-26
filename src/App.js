@@ -13,15 +13,24 @@ import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
 import { TokenRefresherContext } from './context/TokenRefresherContext';
 import TokenRefresher from './hook/userPage/TokenRefresher';
-import { Provider, useSelector } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { setAccessCK } from './store/accessCKSlice';
 import store from './store';
-
 
 function App() {
 
   const loginCKData = useSelector((state) => state.accessCK);
-
-
+  const storedCoins = localStorage.getItem('coinsData');
+  const dispatch = useDispatch();
+  if (storedCoins == null) {
+   
+  }
+  if (loginCKData !== 'Exist') {
+    if (storedCoins !== null) {
+      dispatch(setAccessCK('Exist'));
+    }
+  }
+  console.log("현재 리덕스 값",loginCKData)
 
   return (
     <div className="App">

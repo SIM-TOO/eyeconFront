@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { setLoginCK } from '../../store/loginCKSlice';
+import { setAccessCK } from '../../store/accessCKSlice';
 
 const useUserLogin = () => {
   /* axios.defaults.headers['Access-Control-Allow-Origin'] = '*'; */
@@ -47,7 +47,7 @@ const useUserLogin = () => {
         // 로그인이 성공한 경우
         // 리덕스 스토어에 데이터 저장
         
-        dispatch(setLoginCK(responseData));
+        dispatch(setAccessCK(responseData));
 
         // 다른 작업 수행
         navigate("/main");

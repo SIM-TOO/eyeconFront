@@ -13,11 +13,15 @@ import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
 import { TokenRefresherContext } from './context/TokenRefresherContext';
 import TokenRefresher from './hook/userPage/TokenRefresher';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import store from './store';
 
 
 function App() {
+
+ 
+
+
 
   return (
     <div className="App">

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,27 +12,37 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
-  // 로그인 상태 확인용
-  // false 로그인전 상태
+  // 로그인 상태
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+  const loginCKData = useSelector((state) => state.accessCK);
+
+  console.log("리덕스에 저장된 값", loginCKData)
+  // 리덕스 값 테스트용 
+  useEffect(() => {
+    if (loginCKData === "Exist") {
+      console.log("로그인 정보 있다.")
+      setIsLoggedIn(true);
+    } else {
+      console.log("로그인 정보 없다.")
+      setIsLoggedIn(false);
+    }
+  }, [loginCKData]); // loginCKData가 변경될 때만 실행
+
+
 
   // 로그아웃
   const url = process.env.REACT_APP_MASTER_URL;
   async function goLogout() {
-
-    // 로그아웃 상태로 변경
-    setIsLoggedIn(false)
-
-    const res = await axios.post(`${url}/auth/logout`)
+    await axios.post(`${url}/auth/logout`)
       .catch((err) => {
         console.log(err);
       });
-
+    setIsLoggedIn(false)
     // 로컬 스토리지 클리어
     localStorage.removeItem('coinsData');
     localStorage.removeItem('resultImageData');
-
-    // console.log(res);
   }
 
   // 브라우저 종료 이벤트 감지

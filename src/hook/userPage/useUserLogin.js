@@ -6,6 +6,7 @@ import { setLoginCK } from '../../store/loginCKSlice';
 
 const useUserLogin = () => {
   /* axios.defaults.headers['Access-Control-Allow-Origin'] = '*'; */
+  const url = process.env.REACT_APP_MASTER_URL;
   axios.defaults.withCredentials = true;
 
   const formRef = useRef(null);
@@ -31,16 +32,16 @@ const useUserLogin = () => {
       pw: password
     }
     // 로그인 코드
-    axios.post("http://localhost:8023/EyeconSpring/auth/login", loginData
+    axios.post(`${url}/auth/login`, loginData
     ).then(function (res) {
       // console.log('====================================');
       // console.log(res);
       // console.log('====================================');
       // 로그인이 성공하면 res.data에 "Exist"라는 문자열이 반환/ 이걸로 로그인 됐는지 안됐는지 판별하면 됨
-      console.log(res.data);
+      // console.log(res.data);
       const responseData = res.data; // res.data를 변수에 저장
 
-      console.log(responseData); // responseData를 사용하여 로그 출력
+      // console.log(responseData); // responseData를 사용하여 로그 출력
 
       if (responseData === "Exist") {
         // 로그인이 성공한 경우

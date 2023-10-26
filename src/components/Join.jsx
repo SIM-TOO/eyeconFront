@@ -30,7 +30,7 @@ function Join() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="relative">
             <Link to="/#">
-              <img src="https://i.ibb.co/BCP0xW5/join.png" className="absolute top-0 left-0 z-10 hidden md:block" />
+              <img src="https://i.ibb.co/BCP0xW5/join.png" alt="" className="absolute top-0 left-0 z-10 hidden md:block" />
             </Link>
             <UserImage />
           </div>

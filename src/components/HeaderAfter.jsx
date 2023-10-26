@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 
 function HeaderAfter() {
+
+    // // 토큰있는 지 확인하는 메소드
+  const jwt = () => {
+    const cookies = document.cookie.split('; ');
+    console.log('1번 : ', cookies);
+    const accessToken = cookies.find(row => row.startsWith('accessToken='));
+    console.log('2번 : ', accessToken);
+    if (accessToken) {
+      alert('토큰있어요')
+    }
+  };
+
+  useEffect(() => {
+    jwt();
+  }, []);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const url = process.env.REACT_APP_MASTER_URL;
 
@@ -37,7 +53,7 @@ function HeaderAfter() {
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
-              <Link to="/main" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
                   className="w-[140px] h-[54px]"
@@ -121,6 +137,8 @@ function HeaderAfter() {
                 </svg>
               </button>
             </div>
+            
+            {/* 모바일 메뉴 목록 */}
             <div>
               {menuOpen && (
                 <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">

@@ -1,11 +1,15 @@
 import axios from "axios";
+import { TokenRefresherContext } from '../../context/TokenRefresherContext';
+import { useContext } from "react";
+
 
 const useGetCoin = () => {
     const url = process.env.REACT_APP_MASTER_URL;
     axios.defaults.withCredentials = true;
-    const getCoin = async (email) => {
+    const TokenRefresher = useContext(TokenRefresherContext);
+    const getCoin = async () => {
         try {
-            const response = await axios.post(`${url}/coin/findCoin`);
+           const response = await TokenRefresher.post(`${url}/coin/findCoin`); 
             if (response && response.data) {
                 const coins = response.data;
 

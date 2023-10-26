@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import axios from 'axios';
+import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 
 const Gpttest1 = () => {
+    const url = process.env.FLASK_APP_MASTER_URL;
 
     const [content, setContent] = useState("");
     const [response, setResponse] = useState(""); // 추가: 서버 응답을 저장할 상태
@@ -20,7 +22,7 @@ const Gpttest1 = () => {
 
         try {
             console.time('시간');
-            const res = await axios.post(`http://localhost:5000/consult`, chat); // 수정: 응답을 변수에 저장
+            const res = await axios.post(`${url}/consult`, chat); // 수정: 응답을 변수에 저장
             
             setResponse(res.data); // 추가: 응답을 상태에 저장
             console.timeEnd('시간')

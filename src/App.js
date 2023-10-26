@@ -13,14 +13,30 @@ import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
 import { TokenRefresherContext } from './context/TokenRefresherContext';
 import TokenRefresher from './hook/userPage/TokenRefresher';
-import { Provider, useSelector } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { setAccessCK } from './store/accessCKSlice';
 import store from './store';
+import useGetCoin from './hook/mainPage/useGetCoin';
 
 
 function App() {
 
   const loginCKData = useSelector((state) => state.accessCK);
-
+  const storedCoins = localStorage.getItem('coinsData');
+  const GetCoin = useGetCoin();
+  const dispatch = useDispatch();
+  if (storedCoins == null) {
+    const fetchCoinInfo = async () => {
+      await GetCoin("");
+      dispatch(setAccessCK(''));
+    };
+    fetchCoinInfo();
+  }
+  if (loginCKData !== 'Exist') {
+    if (storedCoins !== null) {
+      dispatch(setAccessCK('Exist'));
+    }
+  }
 
 
   return (

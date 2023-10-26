@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
+import { setAccessCK } from "../store/accessCKSlice";
+import { useDispatch } from "react-redux";
 
 function HeaderAfter() {
-
+  const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
   const url = process.env.REACT_APP_MASTER_URL;
 
@@ -32,15 +34,14 @@ function HeaderAfter() {
 
   // 로그아웃
   async function goLogout() {
-    const res = await axios.post(`${url}/auth/logout`)
+    await axios.post(`${url}/auth/logout`)
       .catch((err) => {
         console.log(err);
       });
+    dispatch(setAccessCK(null));
     // 로컬 스토리지 클리어
     localStorage.removeItem('coinsData');
     localStorage.removeItem('resultImageData');
-
-    // console.log(res);
   }
 
   // 브라우저 종료 이벤트 감지
@@ -49,7 +50,6 @@ function HeaderAfter() {
     localStorage.removeItem('coinsData');
     localStorage.removeItem('resultImageData');
   });
-
 
   return (
     <div>

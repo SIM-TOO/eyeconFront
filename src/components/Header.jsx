@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useUserLogin from "../hook/userPage/useUserLogin";
+import { setAccessCK } from "../store/accessCKSlice";
 
 function Header() {
+
+  const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,8 +18,9 @@ function Header() {
   useUserLogin()
   // 로그인 상태
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const loginCKData = useSelector((state) => state.accessCK);
+
+
 
   // console.log("리덕스에 저장된 값", loginCKData)
   // 리덕스 값 테스트용 
@@ -38,6 +42,7 @@ function Header() {
       .catch((err) => {
         console.log(err);
       });
+    dispatch(setAccessCK(null));
     setIsLoggedIn(false)
     // 로컬 스토리지 클리어
     localStorage.removeItem('coinsData');

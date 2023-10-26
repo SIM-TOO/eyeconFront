@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
+
 import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
 
 
@@ -24,7 +25,7 @@ const Intro01 = () => {
           />
         </div>
 
-        <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
+        <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl font-Pretendard ">
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20 ">
@@ -78,6 +79,7 @@ const Intro01 = () => {
           </div>
         </div>
       </div>
+    
       <div className="md:block hidden">
 
         {/* 슬라이더 자리 */}

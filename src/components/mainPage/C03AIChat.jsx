@@ -8,6 +8,10 @@ import useChat from '../../hook/mainPage/useChat';
 import useChatChange from '../../hook/mainPage/useChatChange';
 
 const C03AIChat = ({ handleButtonClick }) => {
+    
+    //시작시 기존 로컬 이미지 삭제
+    localStorage.removeItem('resultImageData');
+
     // 시작시 메시지 입력 장소 .
     const initialMessage = [
         {

@@ -1,6 +1,7 @@
 import React from 'react';
 import AIchat from './technology/AIchat';
 import useChat from '../../hook/mainPage/useChat';
+import { Link } from 'react-router-dom';
 
 const C05Result = ({ handleButtonClick }) => {
 
@@ -32,20 +33,27 @@ const C05Result = ({ handleButtonClick }) => {
   };
 
   // 로컬 스토리지에서 결과 이미지 데이터 가져오기
-const resultImage = localStorage.getItem('resultImageData');
-console.log(resultImage)
+  const resultImage = localStorage.getItem('resultImageData');
 
   return (
     <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
+      <div className="col-span-12 " />
+
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1 " />
 
       {/* 결과 이미지 */}
-      <div className="col-span-3">
+      <div className="col-span-3 grid grid-cols-12 h-[100%]">
+        <div className="col-span-12">
+          <img src={resultImage} alt="" />
+        </div>
 
-      <img src={resultImage} alt="Image" />
-
+        <div className="col-span-12 flex justify-center items-center h-full">
+          <Link to="/result" className="p-3 rounded-lg bg-gray-300 text-black">
+            결과페이지 이동하기
+          </Link>
+        </div>
       </div>
 
 

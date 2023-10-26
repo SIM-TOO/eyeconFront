@@ -5,7 +5,6 @@ import Intro02 from './introPage/Intro02'
 import Intro03 from './introPage/Intro03'
 import Intro04 from './introPage/Intro04'
 import Intro05 from './introPage/Intro05'
-import HeaderAfter from './HeaderAfter'
 
 function MainPage() {
   return (

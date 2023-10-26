@@ -1,33 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import UserHeader from "./userPage/UserHeader";
 import UserImage from "./userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
-import useGetCoin from "../hook/mainPage/useGetCoin";
 
 const Login = () => {
 
-  // 토큰있는 지 확인하는 메소드
-  const jwt = () => {
-    const cookies = document.cookie.split('; ');
-    console.log('1번 : ', cookies);
-    const accessToken = cookies.find(row => row.startsWith('accessToken='));
-    console.log('2번 : ', accessToken);
-    if (accessToken) {
-      alert('토큰있어요')
-    }
-  };
+  // // 토큰있는 지 확인하는 메소드
+  // const jwt = () => {
+  //   const cookies = document.cookie.split('; ');
+  //   console.log('1번 : ', cookies);
+  //   const accessToken = cookies.find(row => row.startsWith('accessToken='));
+  //   console.log('2번 : ', accessToken);
+  //   if (accessToken) {
+  //     alert('토큰있어요')
+  //   }
+  // };
 
-  useEffect(() => {
-    jwt();
-  }, []);
+  // useEffect(() => {
+  //   jwt();
+  // }, []);
 
-  // 서버에서 코인 가져오는 함수
-  const GetCoin = useGetCoin();
-  const fetchCoinInfo = async () => {
-    await GetCoin("");
-    console.log("코인가져오는 함수 실행")
-  };
-  fetchCoinInfo();
 
 
   const { formRef, handleSubmit } = useUserLogin();

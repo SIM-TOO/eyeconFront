@@ -4,7 +4,7 @@ import useRemoveCoin from "../../hook/mainPage/useRemoveCoin";
 
 const C02Pay = ({ handleButtonClick }) => {
 
-  const storedCoins = sessionStorage.getItem('coinsData');
+  const storedCoins = localStorage.getItem('coinsData');
   const coins = JSON.parse(storedCoins);
   const coinValue = coins
 

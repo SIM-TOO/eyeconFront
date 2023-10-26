@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import useGetCoin from "../hook/mainPage/useGetCoin";
 
 
 function HeaderAfter() {
 
-    // // 토큰있는 지 확인하는 메소드
-  const jwt = () => {
-    const cookies = document.cookie.split('; ');
-    console.log('1번 : ', cookies);
-    const accessToken = cookies.find(row => row.startsWith('accessToken='));
-    console.log('2번 : ', accessToken);
-    if (accessToken) {
-      alert('토큰있어요')
-    }
-  };
-
-  useEffect(() => {
-    jwt();
-  }, []);
-
   const [menuOpen, setMenuOpen] = useState(false);
   const url = process.env.REACT_APP_MASTER_URL;
 
-  // 세션에서 가져온 코인 수
-  const storedCoins = sessionStorage.getItem('coinsData');
+  // localStorage에서 가져온 코인 수
+  const storedCoins = localStorage.getItem('coinsData');
   const coins = JSON.parse(storedCoins);
   const remainingCoins = coins
+
+  // 서버에서 코인 가져오는 함수
+  // localStorage이 없는 경우만 실행
+  const GetCoin = useGetCoin();
+  if (storedCoins == null) {
+    const fetchCoinInfo = async () => {
+      await GetCoin("");
+      console.log("코인가져오는 함수 실행")
+    };
+    fetchCoinInfo();
+  }
+
 
   // 메뉴 토글
   const toggleMenu = () => {
@@ -39,12 +37,18 @@ function HeaderAfter() {
       .catch((err) => {
         console.log(err);
       });
-
-    // 세션 스토리지 클리어
-    sessionStorage.clear();
+    // 로컬 스토리지 클리어
+    localStorage.removeItem('coinsData');
 
     // console.log(res);
   }
+
+  // 브라우저 종료 이벤트 감지
+  window.addEventListener('beforeunload', function () {
+    // 데이터 삭제
+    localStorage.removeItem('coinsData');
+  });
+
 
   return (
     <div>
@@ -137,7 +141,7 @@ function HeaderAfter() {
                 </svg>
               </button>
             </div>
-            
+
             {/* 모바일 메뉴 목록 */}
             <div>
               {menuOpen && (

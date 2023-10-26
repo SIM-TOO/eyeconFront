@@ -73,17 +73,6 @@ const C05Result = ({ handleButtonClick }) => {
         </div>
       </div>
       <div className="hidden md:block col-span-0 md:col-span-1" />
-
-
-
-      {/* 임시버튼 */}
-      <button
-        className="col-span-12"
-        onClick={() => handleButtonClick(1)}
-      >
-        처음 페이지 이동 버튼 (임시버튼임 나중에 삭제 할 예정)
-      </button>
-      {/* 임시버튼 */}
     </div>
   )
 }

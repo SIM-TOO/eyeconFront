@@ -14,9 +14,9 @@ const useGetCoin = () => {
                 const coins = response.data;
 
                 // 세션 스토리지에 데이터 저장
-                sessionStorage.setItem('coinsData', JSON.stringify(coins));
+                localStorage.setItem('coinsData', JSON.stringify(coins));
 
-                console.log("세션에 저장된 coinsData : ",coins);
+                console.log("localStorage에 저장된 coinsData : ",coins);
                 return response.data;
             }
         } catch (error) {

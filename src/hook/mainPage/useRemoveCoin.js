@@ -9,9 +9,9 @@ const useRemoveCoin = () => {
             if (response && response.data) {
                 console.log(response);
                 const coins = response.data;
-                // 세션 스토리지에 데이터 저장
-                sessionStorage.setItem('coinsData', JSON.stringify(coins));
-                console.log("차감 후 세션에 저장된 coinsData : ", coins);
+                // 로컬 스토리지에 데이터 저장
+                localStorage.setItem('coinsData', JSON.stringify(coins));
+                console.log("차감 후 localStorage에 저장된 coinsData : ", coins);
                 return coins;
 
             }

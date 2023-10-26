@@ -27,18 +27,27 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       console.log(formData.get('Base64Data'));
       console.log(formData.get('beforeimg'));
 
-      axios.post(`${url}/test.do`, formData)
-        .then(response => {
-          // 전송 성공
-          console.log("전송 성공");
-          onUploadComplete(true);
-        })
-        .catch(error => {
-          // 전송 실패
-          console.error("전송을 실패 했습니다 에러 내용 :", error);
-          onUploadComplete(false);
-        });
-    }
+      // 서버 통신 사용할때 주석 풀것
+
+      // const resultImage = axios.post(`${url}/test.do`, formData)
+      //   .then(response => {
+      //     // 전송 성공
+      //     console.log("전송 성공");
+      //     onUploadComplete(true);
+      //   })
+      //   .catch(error => {
+      //     // 전송 실패
+      //     console.error("전송을 실패 했습니다 에러 내용 :", error);
+      //     onUploadComplete(false);
+      //   });
+
+      // 임시용 결과물
+      const resultImage = formData.get('Base64Data')
+      console.log("결과물 : ",resultImage)
+      
+      
+
+    } 
   }, [uploadedImage, uploadedImageSend, beforeimg, onUploadComplete]);
 
 

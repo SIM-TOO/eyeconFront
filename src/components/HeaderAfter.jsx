@@ -2,14 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
-import { useSelector } from "react-redux";
-
 
 function HeaderAfter() {
-
-
-  const loginCKData = useSelector((state) => state.accessCK);
-  console.log("리덕스에 저장된 값", loginCKData)
 
   const [menuOpen, setMenuOpen] = useState(false);
   const url = process.env.REACT_APP_MASTER_URL;

@@ -4,6 +4,7 @@ import { useState } from "react";
 import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import useUserLogin from "../hook/userPage/useUserLogin";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,21 +12,19 @@ function Header() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  useUserLogin()
   // 로그인 상태
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
   const loginCKData = useSelector((state) => state.accessCK);
 
-  console.log("리덕스에 저장된 값", loginCKData)
+  // console.log("리덕스에 저장된 값", loginCKData)
   // 리덕스 값 테스트용 
   useEffect(() => {
+
     if (loginCKData === "Exist") {
-      console.log("로그인 정보 있다.")
       setIsLoggedIn(true);
     } else {
-      console.log("로그인 정보 없다.")
       setIsLoggedIn(false);
     }
   }, [loginCKData]); // loginCKData가 변경될 때만 실행
@@ -68,8 +67,8 @@ function Header() {
                   alt="logo"
                 />
                 <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
-                className="w-[120px] h-[44px] hidden dark:block"
-                alt="logo2"/>
+                  className="w-[120px] h-[44px] hidden dark:block"
+                  alt="logo2" />
               </Link>
             </div>
 

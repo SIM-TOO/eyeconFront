@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import UserHeader from "./userPage/UserHeader";
 import UserImage from "./userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
-import Lottie from "react-lottie-player";
-import lottieJson from "../lottie/login.json";
-import { Link } from "react-router-dom";
+import useGetCoin from "../hook/mainPage/useGetCoin";
 
 const Login = () => {
 
@@ -23,6 +21,13 @@ const Login = () => {
     jwt();
   }, []);
 
+  // 서버에서 코인 가져오는 함수
+  const GetCoin = useGetCoin();
+  const fetchCoinInfo = async () => {
+    await GetCoin("");
+    console.log("코인가져오는 함수 실행")
+  };
+  fetchCoinInfo();
 
 
   const { formRef, handleSubmit } = useUserLogin();
@@ -33,12 +38,13 @@ const Login = () => {
       <main className="container my-10 p-5 mx-auto font-Pretendard dark:bg-gray-800 ">
         <div className="grid md:grid-cols-2 gap-8 ">
           <div className="relative">
-            <Link to="/#">
-              <img
-                src="https://i.ibb.co/BCP0xW5/join.png"
-                className="absolute top-0 left-0 z-10 hidden md:block"
-              />
-            </Link>
+            {/* <Link to="/#"> */}
+            <img
+              src="https://i.ibb.co/BCP0xW5/join.png"
+              alt=""
+              className="absolute top-0 left-0 z-10 hidden md:block"
+            />
+            {/* </Link> */}
             <UserImage />
           </div>
           <div className="mx-auto lg:mt-0 mt-60 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px] dark:text-[#F2F2F2]">

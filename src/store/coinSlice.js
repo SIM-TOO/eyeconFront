@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 let coinSlice = createSlice({
   name: 'coin',
-  initialState: 0,
+  initialState: null,
   reducers: {
     setCoin: (state, action) => action.payload,
   },

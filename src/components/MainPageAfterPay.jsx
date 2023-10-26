@@ -16,6 +16,8 @@ function MainPageAfterPay() {
 
 
             {/* 내부박스 */}
+
+            
             <div
                 className="flex flex-col items-center"
                 style={{ height: "calc(100vh - 120px)" }}

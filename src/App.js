@@ -18,37 +18,40 @@ import TokenRefresher from './hook/userPage/TokenRefresher';
 
 import { Provider } from 'react-redux';
 import store from './store';
-
+import { useSelector } from 'react-redux';
 
 
 function App() {
-  const [company, setCompany] = useState({})
-  // postContext에 담길 데이터  
-  const inAddressContext = {
-    // 주소
-    company: company,
-    setCompany: setCompany
-  }
+  // const [company, setCompany] = useState({})
+  // // postContext에 담길 데이터  
+  // const inAddressContext = {
+  //   // 주소
+  //   company: company,
+  //   setCompany: setCompany
+  // }
 
+  const loginCKData = useSelector((state) => state.loginCK);
+  console.log("리덕스에 저장된 값",loginCKData)
+  
   return (
     <div className="App">
       <Provider store={store}>
-        <AddressContext.Provider value={inAddressContext}>
-        <TokenRefresherContext.Provider value={TokenRefresher}>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/join" element={<Join />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/pay" element={<Pay />} />
-            <Route path="/place" element={<Place />} />
-            <Route path='/result' element={<ResultPage />} />
-            <Route path='/gpttest' element={<Gpttest1 />} />
-            <Route path="/main" element={<MainPageAfter />} />
-            <Route path='/mainpay' element={<MainPageAfterPay />} />
-            <Route path='/mypage' element={<MyPage />} />
-          </Routes>
+        {/* <AddressContext.Provider value={inAddressContext}> */}
+          <TokenRefresherContext.Provider value={TokenRefresher}>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/join" element={<Join />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/pay" element={<Pay />} />
+              <Route path="/place" element={<Place />} />
+              <Route path='/result' element={<ResultPage />} />
+              <Route path='/gpttest' element={<Gpttest1 />} />
+              <Route path="/main" element={<MainPageAfter />} />
+              <Route path='/mainpay' element={<MainPageAfterPay />} />
+              <Route path='/mypage' element={<MyPage />} />
+            </Routes>
           </TokenRefresherContext.Provider>
-        </AddressContext.Provider>
+        {/* </AddressContext.Provider> */}
       </Provider>
 
     </div>

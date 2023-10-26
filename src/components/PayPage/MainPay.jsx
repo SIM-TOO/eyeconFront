@@ -15,9 +15,9 @@ const MainPay = () => {
         // db에 있는 코인 상품들 불러오기
         const fetchData = async () => {
             const res = await TokenRefresher.get("/coin");
-            console.log('====================================');
-            console.log(res.data);
-            console.log('====================================');
+            // console.log('====================================');
+            // console.log(res.data);
+            // console.log('====================================');
             setCoinList(res.data);
         };
     

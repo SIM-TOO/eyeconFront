@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import MyPageAdd from "./MyPageAdd";
 import MyPageList from "./MyPageList";
 import useUserPWCK from "../../hook/userPage/useUserPWCK";
 import useUserPWCKM from "../../hook/userPage/useUserPWCKM";
+import useUserUpdatePw from "../../hook/userPage/useUserUpdatePw";
 
 const MyFixTest = () => {
   /* 내 가게 추가창 생성 */
@@ -13,6 +14,14 @@ const MyFixTest = () => {
 
   const PWErrorMessage = useUserPWCK();
   const PWMErrorMessage = useUserPWCKM();
+
+  // 비밀번호 수정 , 비밀번호 수정확인 input태그에 걸어놈
+  const pwRef1 = useRef(null);
+  const pwRef2 = useRef(null);
+
+  const { updatePwFunc } = useUserUpdatePw(PWErrorMessage, PWMErrorMessage);
+  
+  
 
   return (
     <div
@@ -42,6 +51,7 @@ const MyFixTest = () => {
               <div className="mt-3"> 비밀번호</div>
               <div className="rounded-lg">
                 <input
+                  ref={pwRef1}
                   type="password"
                   name="password"
                   className="bg-[#FFFFFF] rounded-lg p-3 flex justify-between mt-3 outline-none focus:outline-none text-[15px] text-[#15c3a7] w-auto md:w-[325px] w-[170px]"
@@ -60,13 +70,17 @@ const MyFixTest = () => {
                   {/* flex-wrap 클래스 추가 */}
                   <div className="bg-[#FFFFFF] rounded-lg p-3 relative flex justify-between">
                     <input
+                      ref={pwRef2}
                       type="password"
                       name="passwordCheck"
                       className="col-span-2 bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] w-auto md:w-[300px] w-[150px]"
                     />
                   </div>
                   {/* 비밀번호 수정 확인 버튼 */}
-                  <button className="whitespace-nowrap mt-2 ml-2 rounded-lg bg-[#15c3a7] p-2 text-base text-sm text-white w-[80px] hover:bg-[#128d82] active:bg-[#0d6b59] md:mt-3 md:ml-2 md:mb-3">
+                  <button className="whitespace-nowrap mt-2 ml-2 rounded-lg bg-[#15c3a7] p-2 text-base text-sm text-white w-[80px] hover:bg-[#128d82] active:bg-[#0d6b59] md:mt-3 md:ml-2 md:mb-3"
+                  onClick={()=>{
+                    updatePwFunc(pwRef1,pwRef2);
+                  }}>
                     수정하기
                   </button>
                 </div>

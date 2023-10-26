@@ -53,9 +53,12 @@ function Header() {
               <Link to="/#" className="flex items-center">
                 <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
-                  className="w-[140px] h-[54px] "
+                  className="w-[140px] h-[54px] dark:hidden "
                   alt="logo"
                 />
+                <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
+                className="w-[120px] h-[44px] hidden dark:block"
+                alt="logo2"/>
               </Link>
             </div>
 

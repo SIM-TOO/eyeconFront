@@ -1,33 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import { setCoin } from '../store/coinSlice';
-import useGetCoin from "../hook/mainPage/useGetCoin";
 import axios from "axios";
 
 
 function HeaderAfter() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const dispatch = useDispatch();
   const url = process.env.REACT_APP_MASTER_URL;
 
-  // 리덕스에 코인 가져오기
-  const remainingCoins = useSelector(state => state.coin);
-
-const GetCoin = useGetCoin();
-
-  // 코인 리덕스에 저장 하는 코드
-  useEffect(() => {
-    const fetchCoinInfo = async () => {
-      // 실제 이메일 값을 넣어야됨 세션에서 가져올것
-      const coins = await GetCoin("");
-      if (coins !== null) {
-        dispatch(setCoin(coins));  // 가져온 코인 값을 스토어에 저장합니다.
-      }
-    };
-    fetchCoinInfo();
-  }, [dispatch, GetCoin]);
+  // 세션에서 가져온 코인 수
+  const storedCoins = sessionStorage.getItem('coinsData');
+  const coins = JSON.parse(storedCoins);
+  const remainingCoins = coins
 
   // 메뉴 토글
   const toggleMenu = () => {
@@ -35,13 +18,16 @@ const GetCoin = useGetCoin();
   };
 
   // 로그아웃
-  async function goLogout(){
+  async function goLogout() {
     const res = await axios.post(`${url}/auth/logout`)
-    .catch((err) => {
-      console.log(err);
-    });
+      .catch((err) => {
+        console.log(err);
+      });
 
-    console.log(res);
+    // 세션 스토리지 클리어
+    sessionStorage.clear();
+
+    // console.log(res);
   }
 
   return (

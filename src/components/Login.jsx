@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import UserHeader from "./userPage/UserHeader";
 import UserImage from "./userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
+import useGetCoin from "../hook/mainPage/useGetCoin";
 
 const Login = () => {
 
@@ -20,6 +21,13 @@ const Login = () => {
     jwt();
   }, []);
 
+  // 서버에서 코인 가져오는 함수
+  const GetCoin = useGetCoin();
+  const fetchCoinInfo = async () => {
+    await GetCoin("");
+    console.log("코인가져오는 함수 실행")
+  };
+  fetchCoinInfo();
 
 
   const { formRef, handleSubmit } = useUserLogin();
@@ -31,11 +39,11 @@ const Login = () => {
         <div className="grid md:grid-cols-2 gap-8 ">
           <div className="relative">
             {/* <Link to="/#"> */}
-              <img
-                src="https://i.ibb.co/BCP0xW5/join.png"
-                alt=""
-                className="absolute top-0 left-0 z-10 hidden md:block"
-              />
+            <img
+              src="https://i.ibb.co/BCP0xW5/join.png"
+              alt=""
+              className="absolute top-0 left-0 z-10 hidden md:block"
+            />
             {/* </Link> */}
             <UserImage />
           </div>

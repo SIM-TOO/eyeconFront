@@ -1,13 +1,12 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import useRemoveCoin from "../../hook/mainPage/useRemoveCoin";
-import { setCoin } from "../../store/coinSlice";
 
 const C02Pay = ({ handleButtonClick }) => {
-  // 리덕스에 저장된 코인 불러오기
-  const dispatch = useDispatch();
-  const coinValue = useSelector((state) => state.coin);
+
+  const storedCoins = localStorage.getItem('coinsData');
+  const coins = JSON.parse(storedCoins);
+  const coinValue = coins
 
   // removeCoin 함수를 가져옵니다.
   const removeCoin = useRemoveCoin();
@@ -22,10 +21,9 @@ const C02Pay = ({ handleButtonClick }) => {
     if (coinValue > 0){
       // 현재 코인 반환
     const result = await removeCoin(email);
-    console.log(result)
+    // console.log(result)
     console.log("차감완료")
-    // 코인 값 리덕스 저장
-    dispatch(setCoin(result));
+   
     handleButtonClick(value);
     } else {
       console.log("코인 부족")

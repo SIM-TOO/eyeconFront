@@ -1,33 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import { setCoin } from '../store/coinSlice';
-import useGetCoin from "../hook/mainPage/useGetCoin";
 import axios from "axios";
+import useGetCoin from "../hook/mainPage/useGetCoin";
 
 
 function HeaderAfter() {
+
   const [menuOpen, setMenuOpen] = useState(false);
-  const dispatch = useDispatch();
   const url = process.env.REACT_APP_MASTER_URL;
 
-  // 리덕스에 코인 가져오기
-  const remainingCoins = useSelector(state => state.coin);
+  // localStorage에서 가져온 코인 수
+  const storedCoins = localStorage.getItem('coinsData');
+  const coins = JSON.parse(storedCoins);
+  const remainingCoins = coins
 
-const GetCoin = useGetCoin();
-
-  // 코인 리덕스에 저장 하는 코드
-  useEffect(() => {
+  // 서버에서 코인 가져오는 함수
+  // localStorage이 없는 경우만 실행
+  const GetCoin = useGetCoin();
+  if (storedCoins == null) {
     const fetchCoinInfo = async () => {
-      // 실제 이메일 값을 넣어야됨 세션에서 가져올것
-      const coins = await GetCoin("");
-      if (coins !== null) {
-        dispatch(setCoin(coins));  // 가져온 코인 값을 스토어에 저장합니다.
-      }
+      await GetCoin("");
+      console.log("코인가져오는 함수 실행")
     };
     fetchCoinInfo();
-  }, [dispatch, GetCoin]);
+  }
+
 
   // 메뉴 토글
   const toggleMenu = () => {
@@ -35,14 +32,25 @@ const GetCoin = useGetCoin();
   };
 
   // 로그아웃
-  async function goLogout(){
+  async function goLogout() {
     const res = await axios.post(`${url}/auth/logout`)
-    .catch((err) => {
-      console.log(err);
-    });
+      .catch((err) => {
+        console.log(err);
+      });
+    // 로컬 스토리지 클리어
+    localStorage.removeItem('coinsData');
+    localStorage.removeItem('resultImageData');
 
-    console.log(res);
+    // console.log(res);
   }
+
+  // 브라우저 종료 이벤트 감지
+  window.addEventListener('beforeunload', function () {
+    // 데이터 삭제
+    localStorage.removeItem('coinsData');
+    localStorage.removeItem('resultImageData');
+  });
+
 
   return (
     <div>
@@ -51,7 +59,7 @@ const GetCoin = useGetCoin();
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
-              <Link to="/#" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
                   className="w-[140px] h-[54px]"
@@ -78,7 +86,7 @@ const GetCoin = useGetCoin();
                 마이페이지
               </Link>
               <Link
-                to="/#"
+                to="/result"
                 className="ml-4  whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
               >
                 결과페이지
@@ -135,6 +143,8 @@ const GetCoin = useGetCoin();
                 </svg>
               </button>
             </div>
+
+            {/* 모바일 메뉴 목록 */}
             <div>
               {menuOpen && (
                 <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">

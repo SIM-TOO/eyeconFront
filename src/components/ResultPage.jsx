@@ -1,13 +1,14 @@
 import React from 'react'
 import List from './resultList/ListSet';
-import Header from './Header';
+
+import HeaderAfter from './HeaderAfter';
 
 function ResultPage()  {
 
   return (
       
     <div>
-      <Header></Header>
+      <HeaderAfter/>
     <div>
         <List></List>
     </div>

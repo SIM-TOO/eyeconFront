@@ -8,8 +8,11 @@ const useRemoveCoin = () => {
             const response = await axios.post(`${url}/coin/removeCoin`);
             if (response && response.data) {
                 console.log(response);
-                
-                return response.data;
+                const coins = response.data;
+                // 로컬 스토리지에 데이터 저장
+                localStorage.setItem('coinsData', JSON.stringify(coins));
+                console.log("차감 후 localStorage에 저장된 coinsData : ", coins);
+                return coins;
 
             }
         } catch (error) {

@@ -12,7 +12,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       setImageSrc(null);
       return; // 이미지가 없으면 더 이상 진행하지 않음
     } if (uploadedImageSend) {
-       // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
+
+      // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
       const url = process.env.REACT_APP_MASTER_URL;
       const formData = new FormData();
 
@@ -26,7 +27,9 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       console.log(formData.get('Base64Data'));
       console.log(formData.get('beforeimg'));
 
-      axios.post(`${url}/test.do`, formData)
+      // 서버 통신용
+      // 반환값 Base64Data로 줄것!(중요)
+      const resultImage = axios.post(`${url}/test.do`, formData)
         .then(response => {
           // 전송 성공
           console.log("전송 성공");
@@ -37,6 +40,18 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
           console.error("전송을 실패 했습니다 에러 내용 :", error);
           onUploadComplete(false);
         });
+      
+     
+      // 임시용 결과물
+      // onUploadComplete(true);
+      // const resultImage = formData.get('Base64Data')
+
+      console.log("결과물 : ", resultImage)
+
+      // 로컬 스토리지에 결과 이미지 데이터 저장
+      localStorage.setItem('resultImageData', resultImage);
+      
+
     }
   }, [uploadedImage, uploadedImageSend, beforeimg, onUploadComplete]);
 

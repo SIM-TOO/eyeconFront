@@ -1,19 +1,19 @@
 import React from 'react'
 const Intro05 = () => {
     return (
-        <div className="font-Pretendard relative dark:bg-gray-800 dark:text-gray-400">
+        <div className="font-Pretendard relative dark:bg-gray-800 dark:text-[#F2F2F2] ">
             {/* 여백용 박스 */}
             <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
 
             {/* 내용 적는 곳 */}
-            <div className='bg-[#FBFBFB] '>
+            <div className='bg-[#FBFBFB] dark:bg-[#343434] '>
                 <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
 
                     {/* 여백용 박스 */}
                     <div className="col-span-12 md:h-20 h-10" />
 
                     {/* 첫번째 */}
-                    <div className="col-span-12 md:col-span-5">
+                    <div className="col-span-12 md:col-span-5 ">
                         <div style={{ height: '80px' }} className="flex md:block items-center justify-center">
                             <img
                                 src="https://i.ibb.co/XXscVvr/Group-6348.png"

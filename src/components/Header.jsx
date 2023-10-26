@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <div> 
-      <header className="dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard ">
+      <header className="dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard  ">
         <nav>
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
             {/* 로고 */}
@@ -20,18 +20,18 @@ function Header() {
               <Link to="/#" className="flex items-center">
                 <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
-                  className="w-[140px] h-[54px]"
+                  className="w-[140px] h-[54px] "
                   alt="logo"
                 />
               </Link>
             </div>
 
             {/* 메뉴바 */}
-            <div className="col-span-4 flex items-center hidden md:flex dark:text-[#F2F2F2]">
-              <Link to="/#" className="text-black hover:underline">
+            <div className="col-span-4 flex items-center hidden md:flex ">
+              <Link to="/#" className="text-black hover:underline dark:text-[#F2F2F2]">
                 About
               </Link>
-              <Link to="/pay" className="ml-4 text-black hover:underline">
+              <Link to="/pay" className="ml-4 text-black hover:underline dark:text-[#F2F2F2]">
                 Pricing
               </Link>
           
@@ -44,7 +44,7 @@ function Header() {
               <DarkModeSwitch/>
                 <Link
                   to="/login"
-                  className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                  className="text-gray-800 dark:text-black hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
                 >
                   서비스 시작하기
                 </Link>
@@ -90,6 +90,8 @@ function Header() {
                 </svg>
               </button>
             </div>
+            
+            {/* 모바일 메뉴 목록 */}
             <div>
               {menuOpen && (
                 <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">
@@ -110,6 +112,7 @@ function Header() {
                 </div>
               )}
             </div>
+
           </div>
         </nav>
       </header>

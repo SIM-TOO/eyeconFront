@@ -72,8 +72,8 @@ function Header() {
                   alt="logo"
                 />
                 <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
-                  className="w-[120px] h-[44px] hidden dark:block"
-                  alt="logo2" />
+                className="w-[120px] h-[44px] hidden dark:block"
+                alt="logo2"/>
               </Link>
             </div>
 

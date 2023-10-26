@@ -2,8 +2,19 @@ import React from 'react'
 const Intro05 = () => {
     return (
         <div className="font-Pretendard relative dark:bg-gray-800 dark:text-[#F2F2F2] ">
+            
             {/* 여백용 박스 */}
             <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
+             {/* 넣을까 말까 고민중인..*/}
+             {/* 
+            <div class="flex min-h-screen items-center justify-center bg-gradient-to-tr to-blue-400 from-green-500 p-10">
+        <div class="w-max">
+          <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
+            당신 시선의 끝에 아이콘이 있습니다
+          </h1>
+        </div>
+      </div>
+      /}
 
             {/* 내용 적는 곳 */}
             <div className='bg-[#FBFBFB] dark:bg-[#343434] '>

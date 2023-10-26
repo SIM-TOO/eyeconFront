@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
+import React from "react";
 import UserHeader from "./userPage/UserHeader";
 import UserImage from "./userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
 
 const Login = () => {
 
-  // 토큰있는 지 확인하는 메소드
-  const jwt = () => {
-    const cookies = document.cookie.split('; ');
-    console.log('1번 : ', cookies);
-    const accessToken = cookies.find(row => row.startsWith('accessToken='));
-    console.log('2번 : ', accessToken);
-    if (accessToken) {
-      alert('토큰있어요')
-    }
-  };
+  // // 토큰있는 지 확인하는 메소드
+  // const jwt = () => {
+  //   const cookies = document.cookie.split('; ');
+  //   console.log('1번 : ', cookies);
+  //   const accessToken = cookies.find(row => row.startsWith('accessToken='));
+  //   console.log('2번 : ', accessToken);
+  //   if (accessToken) {
+  //     alert('토큰있어요')
+  //   }
+  // };
 
-  useEffect(() => {
-    jwt();
-  }, []);
+  // useEffect(() => {
+  //   jwt();
+  // }, []);
 
 
 
@@ -31,11 +31,11 @@ const Login = () => {
         <div className="grid md:grid-cols-2 gap-8 ">
           <div className="relative">
             {/* <Link to="/#"> */}
-              <img
-                src="https://i.ibb.co/BCP0xW5/join.png"
-                alt=""
-                className="absolute top-0 left-0 z-10 hidden md:block"
-              />
+            <img
+              src="https://i.ibb.co/BCP0xW5/join.png"
+              alt=""
+              className="absolute top-0 left-0 z-10 hidden md:block"
+            />
             {/* </Link> */}
             <UserImage />
           </div>

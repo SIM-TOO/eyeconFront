@@ -5,7 +5,6 @@ import useChat from '../../hook/mainPage/useChat';
 const C05Result = ({ handleButtonClick }) => {
 
   // 시작시 메시지 입력 장소 .
-  // 시작시 메시지 입력 장소 .
   const initialMessage = [
     {
       content: "안녕하세요! 챗봇 이콘입니다.",
@@ -32,6 +31,10 @@ const C05Result = ({ handleButtonClick }) => {
     }
   };
 
+  // 로컬 스토리지에서 결과 이미지 데이터 가져오기
+const resultImage = localStorage.getItem('resultImageData');
+console.log(resultImage)
+
   return (
     <div className='text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
@@ -41,7 +44,7 @@ const C05Result = ({ handleButtonClick }) => {
       {/* 결과 이미지 */}
       <div className="col-span-3">
 
-        결과이미지
+      <img src={resultImage} alt="Image" />
 
       </div>
 
@@ -73,17 +76,6 @@ const C05Result = ({ handleButtonClick }) => {
         </div>
       </div>
       <div className="hidden md:block col-span-0 md:col-span-1" />
-
-
-
-      {/* 임시버튼 */}
-      <button
-        className="col-span-12"
-        onClick={() => handleButtonClick(1)}
-      >
-        처음 페이지 이동 버튼 (임시버튼임 나중에 삭제 할 예정)
-      </button>
-      {/* 임시버튼 */}
     </div>
   )
 }

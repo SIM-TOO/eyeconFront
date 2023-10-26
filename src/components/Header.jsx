@@ -90,6 +90,8 @@ function Header() {
                 </svg>
               </button>
             </div>
+            
+            {/* 모바일 메뉴 목록 */}
             <div>
               {menuOpen && (
                 <div className="absolute justify-between items-center w-full lg:w-auto lg:order-1 md:hidden z-10">
@@ -110,6 +112,7 @@ function Header() {
                 </div>
               )}
             </div>
+
           </div>
         </nav>
       </header>

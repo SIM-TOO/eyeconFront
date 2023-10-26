@@ -4,6 +4,8 @@ import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
 import { setAccessCK } from "../store/accessCKSlice";
 import { useDispatch } from "react-redux";
+import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
+
 
 function HeaderAfter() {
   const dispatch = useDispatch();
@@ -59,11 +61,14 @@ function HeaderAfter() {
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/" className="flex items-center">
-                <img
+              <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
-                  className="w-[140px] h-[54px]"
+                  className="w-[140px] h-[54px] dark:hidden "
                   alt="logo"
                 />
+                <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
+                className="w-[120px] h-[44px] hidden dark:block"
+                alt="logo2"/>
               </Link>
             </div>
 

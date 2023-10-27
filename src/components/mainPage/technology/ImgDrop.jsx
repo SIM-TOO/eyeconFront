@@ -43,7 +43,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       // 서버 통신용
       // 반환값 Base64Data로 줄것!(중요)
       // ex
-      const resultImage = axios.post(`${url}/test.do`, formData)
+      const resultImage = axios.post(`${url}/flask/sendImg`, formData)
         .then(response => {
           // 전송 성공
           console.log("전송 성공");

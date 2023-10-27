@@ -49,15 +49,6 @@ function Header() {
     localStorage.removeItem('resultImageData');
   }
 
-  // 브라우저 종료 이벤트 감지
-  window.addEventListener('beforeunload', function () {
-    // 데이터 삭제
-    localStorage.removeItem('coinsData');
-    localStorage.removeItem('resultImageData');
-  });
-
-
-
   return (
     <div>
       <header className="dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard  ">
@@ -72,8 +63,8 @@ function Header() {
                   alt="logo"
                 />
                 <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
-                className="w-[120px] h-[44px] hidden dark:block"
-                alt="logo2"/>
+                  className="w-[120px] h-[44px] hidden dark:block"
+                  alt="logo2" />
               </Link>
             </div>
 

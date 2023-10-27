@@ -30,7 +30,7 @@ const Login = () => {
             {/* from 태그 시작 */}
             <form ref={formRef} onSubmit={handleSubmit}>
               {/* 아이디 입력 */}
-              <div className="mb-4">
+              <div className="mb-4 ">
                 <div className="bg-[#f3fffd] rounded-lg p-3 w-[340px]">
                   <input
                     type="email"

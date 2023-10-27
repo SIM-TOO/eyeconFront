@@ -17,12 +17,17 @@ const Place = (props) => {
             }
             fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
         }
+            // 추가: 지번 주소 저장
+        let jibunAddress = data.jibunAddress;
+        console.log("jibunAddress", jibunAddress);
+        
         console.log("data",data)
         console.log("fullAddress",fullAddress)
         console.log("zoneCode",data.zonecode)
 
        
         localStorage.setItem('address', fullAddress);
+        localStorage.setItem('jibunAddress', jibunAddress); // 추가: 지번 주소 저장
         window.close()
     }
   

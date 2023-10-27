@@ -14,6 +14,7 @@ const PayLoading = ({ handleButtonClick }) => {
         play
         option={{ speed: 0.1 }}
         style={{ width: "100%", maxWidth: "400px" }}
+        className="animate-pulse"
       />
       <p className="text-4xl md:text-4xl font-bold text-center">
         코인이 사용되었습니다.

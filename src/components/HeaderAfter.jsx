@@ -4,6 +4,8 @@ import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
 import { setAccessCK } from "../store/accessCKSlice";
 import { useDispatch } from "react-redux";
+import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
+
 
 function HeaderAfter() {
   const dispatch = useDispatch();
@@ -45,10 +47,29 @@ function HeaderAfter() {
   }
 
   // 브라우저 종료 이벤트 감지
-  window.addEventListener('beforeunload', function () {
-    // 데이터 삭제
+  let isRefresh = false;
+
+  window.addEventListener('beforeunload', function (event) {
+    if (isRefresh) {
+      return;
+    }
+    // 새로고침이 아닐 때 수행할 코드
     localStorage.removeItem('coinsData');
     localStorage.removeItem('resultImageData');
+  });
+
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'F5' || (event.ctrlKey && (event.key === 'r' || event.key === 'R'))) {
+      isRefresh = true;
+    }
+  });
+
+  // 마우스로 새로고침 버튼을 클릭할 경우를 대비하여 mouseup 이벤트도 추가합니다.
+  window.addEventListener('mouseup', function (event) {
+    // 일부 브라우저는 주소 표시줄 영역을 클릭하면 새로고침이 수행될 수 있습니다.
+    if (event.target.tagName.toLowerCase() === 'a' && event.target.href === document.location.href) {
+      isRefresh = true;
+    }
   });
 
   return (
@@ -61,9 +82,12 @@ function HeaderAfter() {
               <Link to="/" className="flex items-center">
                 <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
-                  className="w-[140px] h-[54px]"
+                  className="w-[140px] h-[54px] dark:hidden "
                   alt="logo"
                 />
+                <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
+                  className="w-[120px] h-[44px] hidden dark:block"
+                  alt="logo2" />
               </Link>
             </div>
 

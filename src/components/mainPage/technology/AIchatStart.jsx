@@ -2,7 +2,7 @@ import React from 'react'
 
 const AIchatStart = ({ onButtonClick }) => {
     return (
-        <div className="h-[100%] col-span-12 md:col-span-7 p-3 flex flex-col items-center justify-center">
+        <div className="font-Pretendard h-[100%] col-span-12 md:col-span-7 p-3 flex flex-col items-center justify-center">
             {/* 이미지 */}
             <img
                 src="https://i.ibb.co/C8B5YHB/Group-624909.png"

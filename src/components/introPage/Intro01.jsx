@@ -3,23 +3,15 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
+
 import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+
+import Slider from './Slider'
 
 const Intro01 = () => {
 
 
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
 
   return (
     <div className="dark:bg-gray-800 dark:text-[#F2F2F2]">
@@ -32,8 +24,8 @@ const Intro01 = () => {
             className="h-auto pointer-events-none "
           />
         </div>
-       
-        <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
+
+        <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl font-Pretendard ">
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20 ">
@@ -49,7 +41,7 @@ const Intro01 = () => {
                 <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
               </span>
             </div>
-       
+
             <div
               className="col-span-6 md:hidden flex justify-center ml-6"
               style={{ maxWidth: "350px" }}
@@ -80,41 +72,18 @@ const Intro01 = () => {
               </Link>
             </div>
           </div>
-          
+
           {/* 모바일이 사라짐 */}
           <div className="col-span-6 md:block hidden">
             <Animation />
           </div>
         </div>
       </div>
+    
       <div className="md:block hidden">
-      <Swiper
-        style={{height:"700px"}}
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper "
-      >
-        <SwiperSlide><img src="/img/slider6-01.png" className="w-100" /></SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
 
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
-      </Swiper>
+        {/* 슬라이더 자리 */}
+      <Slider/>
       </div>
     </div>
   );

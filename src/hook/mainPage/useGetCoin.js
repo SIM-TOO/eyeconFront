@@ -2,7 +2,6 @@ import axios from "axios";
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import { useContext } from "react";
 
-
 const useGetCoin = () => {
     const url = process.env.REACT_APP_MASTER_URL;
     axios.defaults.withCredentials = true;
@@ -12,18 +11,16 @@ const useGetCoin = () => {
             const response = await TokenRefresher.post(`${url}/coin/findCoin`);
             if (response && response.data) {
                 const coins = response.data;
-
-                // 세션 스토리지에 데이터 저장
+                // 로컬 스토리지에 데이터 저장
                 localStorage.setItem('coinsData', JSON.stringify(coins));
-
-                console.log("localStorage에 저장된 coinsData : ", coins);
+                // console.log("localStorage에 저장된 coinsData : ", coins);
                 return response.data;
             }
         } catch (error) {
             console.error("에러 내용:", error);
             window.alert("잘못된 접근입니다.");
-            // 페이지 새로 고침
-            window.location.reload();
+            localStorage.removeItem('coinsData');
+            window.location.href = "http://localhost:3000/";
         }
         return null;
     };

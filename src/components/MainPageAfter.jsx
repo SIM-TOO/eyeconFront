@@ -64,6 +64,7 @@ function MainPageAfter() {
           {!isLoading && currentComponent === 6 && (
             <Component6 handleButtonClick={handleButtonClick} />
           )}
+
         </div>
       </div>
     </div>

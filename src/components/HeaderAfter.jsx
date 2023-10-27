@@ -4,8 +4,6 @@ import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
 import { setAccessCK } from "../store/accessCKSlice";
 import { useDispatch } from "react-redux";
-import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
-
 
 function HeaderAfter() {
   const dispatch = useDispatch();
@@ -18,15 +16,12 @@ function HeaderAfter() {
   const remainingCoins = coins
 
   // 서버에서 코인 가져오는 함수
-  // localStorage이 없는 경우만 실행
   const GetCoin = useGetCoin();
-  if (storedCoins == null) {
-    const fetchCoinInfo = async () => {
-      await GetCoin("");
-      console.log("코인가져오는 함수 실행")
-    };
-    fetchCoinInfo();
-  }
+  const fetchCoinInfo = async () => {
+    await GetCoin("");
+  };
+  fetchCoinInfo();
+
 
 
   // 메뉴 토글
@@ -46,13 +41,6 @@ function HeaderAfter() {
     localStorage.removeItem('resultImageData');
   }
 
-  // 브라우저 종료 이벤트 감지
-  window.addEventListener('beforeunload', function () {
-    // 데이터 삭제
-    localStorage.removeItem('coinsData');
-    localStorage.removeItem('resultImageData');
-  });
-
   return (
     <div>
       <header className=" text-white p-5 font-Pretendard">
@@ -61,14 +49,14 @@ function HeaderAfter() {
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/" className="flex items-center">
-              <img
+                <img
                   src="https://i.ibb.co/HrC0TWJ/Group-6348.png"
                   className="w-[140px] h-[54px] dark:hidden "
                   alt="logo"
                 />
                 <img src="https://i.ibb.co/dKwGbXx/Kakao-Talk-20231026-151815812.png"
-                className="w-[120px] h-[44px] hidden dark:block"
-                alt="logo2"/>
+                  className="w-[120px] h-[44px] hidden dark:block"
+                  alt="logo2" />
               </Link>
             </div>
 

@@ -5,7 +5,6 @@ import Pay from './components/Pay'
 import Login from './components/Login'
 import Place from './methodes/Place'
 import './index.css';
-
 import MainPageAfter from './components/MainPageAfter';
 import ResultPage from './components/ResultPage';
 import Gpttest1 from './components/testPage/Gpttest1';
@@ -16,6 +15,8 @@ import TokenRefresher from './hook/userPage/TokenRefresher';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { setAccessCK } from './store/accessCKSlice';
 import store from './store';
+import { AddressContext } from './context/AddressContext';
+import { useState } from 'react';
 
 function App() {
 
@@ -30,40 +31,48 @@ function App() {
       dispatch(setAccessCK('Exist'));
     }
   }
-
   //console.log("현재 리덕스 값",loginCKData)
+
+  const [company, setCompany] = useState({})
+  // postContext에 담길 데이터  
+  const inAddressContext = {
+    // 주소
+    company: company,
+    setCompany: setCompany
+  }
 
   return (
     <div className="App">
       <Provider store={store}>
         <TokenRefresherContext.Provider value={TokenRefresher}>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/gpttest" element={<Gpttest1 />} />
-            <Route path="/pay" element={<Pay />} />
-            <Route path="/place" element={<Place />} />
+          <AddressContext.Provider value={inAddressContext}>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/gpttest" element={<Gpttest1 />} />
+              <Route path="/pay" element={<Pay />} />
+              <Route path="/place" element={<Place />} />
 
-            {loginCKData === 'Exist' ? (
-              <>
-                <Route path="/join" element={<MainPage />} />
-                <Route path="/login" element={<MainPage />} />
-                <Route path="/result" element={<ResultPage />} />
-                <Route path="/main" element={<MainPageAfter />} />
-                <Route path="/mainpay" element={<MainPageAfterPay />} />
-                <Route path="/mypage" element={<MyPage />} />
-              </>
-            ) :
-              <>
-                <Route path="/join" element={<Join />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/result" element={<Login />} />
-                <Route path="/main" element={<Login />} />
-                <Route path="/mainpay" element={<Login />} />
-                <Route path="/mypage" element={<Login />} />
-              </>
-            }
-
-          </Routes>
+              {loginCKData === 'Exist' ? (
+                <>
+                  <Route path="/join" element={<MainPage />} />
+                  <Route path="/login" element={<MainPage />} />
+                  <Route path="/result" element={<ResultPage />} />
+                  <Route path="/main" element={<MainPageAfter />} />
+                  <Route path="/mainpay" element={<MainPageAfterPay />} />
+                  <Route path="/mypage" element={<MyPage />} />
+                </>
+              ) :
+                <>
+                  <Route path="/join" element={<Join />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/result" element={<Login />} />
+                  <Route path="/main" element={<Login />} />
+                  <Route path="/mainpay" element={<Login />} />
+                  <Route path="/mypage" element={<Login />} />
+                </>
+              }
+            </Routes>
+          </AddressContext.Provider>
         </TokenRefresherContext.Provider>
       </Provider>
 

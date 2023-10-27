@@ -66,7 +66,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
 
 
     }
-  }, [uploadedImage, uploadedImageSend, onUploadComplete]);
+  }, [TokenRefresher, onUploadComplete, uploadedImage, uploadedImageSend]);
 
 
   const onDrop = useCallback((acceptedFiles) => {

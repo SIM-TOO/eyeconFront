@@ -40,6 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/gpttest" element={<Gpttest1 />} />
+            <Route path="/pay" element={<Pay />} />
             {loginCKData === 'Exist' ? (
               <>
                 <Route path="/join" element={<MainPage />} />
@@ -54,8 +55,7 @@ function App() {
             ) :
               <>
                 <Route path="/join" element={<Join />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/pay" element={<Pay />} />
+                <Route path="/login" element={<Login />} />       
                 <Route path="/place" element={<Login />} />
                 <Route path="/result" element={<Login />} />
                 <Route path="/main" element={<Login />} />

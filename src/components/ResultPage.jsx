@@ -3,22 +3,22 @@ import List from './resultList/ListSet';
 
 import HeaderAfter from './HeaderAfter';
 
-function ResultPage()  {
+function ResultPage() {
 
   return (
-      
+
     <div>
-      <HeaderAfter/>
-    <div>
+      <HeaderAfter />
+      <div>
         <List></List>
+      </div>
     </div>
-    </div>
-    
-    
+
+
   )
 
 
-  
+
 }
 
 export default ResultPage;

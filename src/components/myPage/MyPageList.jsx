@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const MyPageList = () => {
 
+
+/* 마이페이지 내 내 가게관리 컴포넌트 */
+
+const MyPageList = () => {
     
       // 내 가게 임시 데이터 
   const [myPageList, setMyPageList] = useState([
@@ -14,18 +17,21 @@ const MyPageList = () => {
     },
   ]);
 
+
+      // 내가게 삭제 버튼
   const handleDelete = (id) => {
-    // 목록에서 해당 아이템을 삭제합니다.
     const updatedList = myPageList.filter((item) => item.id !== id);
     setMyPageList(updatedList);
   };
 
+
+
   return (
-    <div>
+    <div className="">
       {myPageList.map((item) => (
         <div
-          key={item.id}
-          className="col-span-1 p-5 mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg"
+          key={item.index}
+          className="col-span-1 p-3 mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg"
         >
           <p className="font-bold text-xl">{item.storeName}</p>
           <div />

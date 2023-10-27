@@ -19,7 +19,7 @@ const C00Loading = () => {
     </div>
 
     {/* 모바일 로딩 화면 */}
-    <div className='md:hidden mt-20'>
+    <div className='md:hidden mt-40'>
     <Lottie
       loop
       animationData={lottieJson2}

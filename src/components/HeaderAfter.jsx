@@ -4,8 +4,6 @@ import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
 import { setAccessCK } from "../store/accessCKSlice";
 import { useDispatch } from "react-redux";
-import DarkModeSwitch from "./mainPage/darkMode/DarkModeToggle";
-
 
 function HeaderAfter() {
   const dispatch = useDispatch();

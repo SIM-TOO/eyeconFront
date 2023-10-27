@@ -54,7 +54,7 @@ function IntroSlider() {
 
 
                 <div className=" mr-60 flex justify-end text-gray-800">
-                    <img src="https://i.ibb.co/HxdDtYd/text-01.png" className="w-[50%]" /> <SlideAni /></div>
+                    <img src="https://i.ibb.co/HxdDtYd/text-01.png" alt="" className="w-[50%]" /> <SlideAni /></div>
             </div> <Link
                 className="absolute left-[40%] top-[54%] text-sm md:text-2xl text-center text-black px-[35px] py-[15px] rounded-[10px] border-2 border-[#999999] whitespace-nowrap z-10"
                 to="/login"

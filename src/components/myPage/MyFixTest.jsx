@@ -36,6 +36,8 @@ const MyFixTest = () => {
           boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
         }}
       >
+
+        
         {/* 마이페이지 시작 */}
         <p className="text-center text-2xl font-bold mt-7 mb-3">마이페이지</p>
         <div class="container mx-auto max-w-screen-xl font-Pretendard">
@@ -44,12 +46,12 @@ const MyFixTest = () => {
             <div className="col-span-4">
               <div> 이메일 주소</div>
               <div className="mt-1 font-bold">
-                {/* 이메일 주소 출력 */}
+                {/* 이메일 주소 나와야 할 곳  */}
                 <p>eyecon@naver.com</p>
-              </div>
-              {/* 비밀번호 */}
+              </div> 
               <div className="mt-3"> 비밀번호</div>
               <div className="rounded-lg">
+                    {/* 비밀번호 수정할 곳 */}
                 <input
                   ref={pwRef1}
                   type="password"
@@ -76,7 +78,7 @@ const MyFixTest = () => {
                       className="col-span-2 bg-[#FFFFFF] outline-none focus:outline-none text-[15px] text-[#15c3a7] w-auto md:w-[300px] w-[150px]"
                     />
                   </div>
-                  {/* 비밀번호 수정 확인 버튼 */}
+                  {/* 비밀번호 수정 버튼 */}
                   <button className="whitespace-nowrap mt-2 ml-2 rounded-lg bg-[#15c3a7] p-2 text-base text-sm text-white w-[80px] hover:bg-[#128d82] active:bg-[#0d6b59] md:mt-3 md:ml-2 md:mb-3"
                   onClick={()=>{
                     updatePwFunc(pwRef1,pwRef2);
@@ -85,7 +87,9 @@ const MyFixTest = () => {
                   </button>
                 </div>
                 <p style={{ color: "red", fontSize: 12 }}>{PWMErrorMessage}</p>
-                {/*가게 추가 버튼 */}
+
+
+                {/*내 가게 추가 버튼 */}
                 <button
                   onClick={handleAddButtonClick}
                   className="mt-3 md:mt-1 rounded-lg bg-[#00306D] p-2 text-base text-center text-sm text-white w-[110px] hover:bg-[#128d82] active:bg-[#0d6b59] flex items-center"
@@ -109,8 +113,6 @@ const MyFixTest = () => {
               <MyPageList />
               <MyPageList />
             </div>
-
-            {/* 가게가 추가되면 들어갈 곳 */}
           </div>
         </div>
       </div>

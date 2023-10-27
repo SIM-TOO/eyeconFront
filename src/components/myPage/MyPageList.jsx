@@ -14,11 +14,14 @@ const MyPageList = () => {
     },
   ]);
 
+
+      // 내가게 삭제 버튼
   const handleDelete = (id) => {
-    // 목록에서 해당 아이템을 삭제합니다.
     const updatedList = myPageList.filter((item) => item.id !== id);
     setMyPageList(updatedList);
   };
+
+
 
   return (
     <div className="">

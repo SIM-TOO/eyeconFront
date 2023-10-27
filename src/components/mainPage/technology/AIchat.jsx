@@ -21,18 +21,18 @@ const AIchat = ({ messages }) => {
             {/* 채팅창 */}
             {messages.map((msg, index) => (
                 <div key={index} className={`flex ${msg.isMine ? 'justify-end' : 'justify-start'} mb-4`}>
-                    
+
                     {/* 프로필 이미지  */}
-                    {!msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png" alt="Profile" className="w-10 h-10 rounded-full mr-3" />}
+                    {!msg.isMine && < RobotIcon className="rounded-full mr-3" />}
 
                     {/* 채팅 메시지 박스 */}
-                    <div className={`p-3 rounded-lg ${msg.isMine ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}>
+                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-300 text-black' :'bg-blue-500 text-white'  }`}>
                         {msg.content}
                     </div>
 
                     {/* 프로필 이미지 */}
                     {msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png   " alt="Profile" className="w-10 h-10 rounded-full ml-3" />}
-                    
+
                 </div>
             ))}
         </div>
@@ -43,7 +43,7 @@ const AIchat = ({ messages }) => {
 function RobotIcon() {
     return (
         <Lottie
-            className='translate3d-10-55-0 '
+            className='w-[60px] h-[60px] animate-pulse' // 크기를 10px로 조절하고, animate-pulse를 사용하여 느린 펄스 애니메이션을 적용
             loop
             animationData={lottieJson}
             play

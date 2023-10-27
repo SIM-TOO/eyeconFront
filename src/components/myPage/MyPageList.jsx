@@ -21,11 +21,11 @@ const MyPageList = () => {
   };
 
   return (
-    <div>
+    <div className="">
       {myPageList.map((item) => (
         <div
-          key={item.id}
-          className="col-span-1 p-5 mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg"
+          key={item.index}
+          className="col-span-1 p-3 mt-3 bg-white rounded-lg p-3 filter drop-shadow-lg"
         >
           <p className="font-bold text-xl">{item.storeName}</p>
           <div />

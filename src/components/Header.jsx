@@ -49,34 +49,6 @@ function Header() {
     localStorage.removeItem('resultImageData');
   }
 
-  // 브라우저 종료 이벤트 감지
-  let isRefresh = false;
-
-  window.addEventListener('beforeunload', function (event) {
-    if (isRefresh) {
-      return;
-    }
-    // 새로고침이 아닐 때 수행할 코드
-    localStorage.removeItem('coinsData');
-    localStorage.removeItem('resultImageData');
-  });
-
-  window.addEventListener('keydown', function (event) {
-    if (event.key === 'F5' || (event.ctrlKey && (event.key === 'r' || event.key === 'R'))) {
-      isRefresh = true;
-    }
-  });
-
-  // 마우스로 새로고침 버튼을 클릭할 경우를 대비하여 mouseup 이벤트도 추가합니다.
-  window.addEventListener('mouseup', function (event) {
-    // 일부 브라우저는 주소 표시줄 영역을 클릭하면 새로고침이 수행될 수 있습니다.
-    if (event.target.tagName.toLowerCase() === 'a' && event.target.href === document.location.href) {
-      isRefresh = true;
-    }
-  });
-
-
-
   return (
     <div>
       <header className="dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard  ">

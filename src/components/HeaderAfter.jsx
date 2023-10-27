@@ -20,13 +20,13 @@ function HeaderAfter() {
   // 서버에서 코인 가져오는 함수
   // localStorage이 없는 경우만 실행
   const GetCoin = useGetCoin();
-  if (storedCoins == null) {
-    const fetchCoinInfo = async () => {
-      await GetCoin("");
-      console.log("코인가져오는 함수 실행")
-    };
-    fetchCoinInfo();
-  }
+
+  const fetchCoinInfo = async () => {
+    await GetCoin("");
+    console.log("코인가져오는 함수 실행")
+  };
+  fetchCoinInfo();
+
 
 
   // 메뉴 토글
@@ -45,32 +45,6 @@ function HeaderAfter() {
     localStorage.removeItem('coinsData');
     localStorage.removeItem('resultImageData');
   }
-
-  // 브라우저 종료 이벤트 감지
-  let isRefresh = false;
-
-  window.addEventListener('beforeunload', function (event) {
-    if (isRefresh) {
-      return;
-    }
-    // 새로고침이 아닐 때 수행할 코드
-    localStorage.removeItem('coinsData');
-    localStorage.removeItem('resultImageData');
-  });
-
-  window.addEventListener('keydown', function (event) {
-    if (event.key === 'F5' || (event.ctrlKey && (event.key === 'r' || event.key === 'R'))) {
-      isRefresh = true;
-    }
-  });
-
-  // 마우스로 새로고침 버튼을 클릭할 경우를 대비하여 mouseup 이벤트도 추가합니다.
-  window.addEventListener('mouseup', function (event) {
-    // 일부 브라우저는 주소 표시줄 영역을 클릭하면 새로고침이 수행될 수 있습니다.
-    if (event.target.tagName.toLowerCase() === 'a' && event.target.href === document.location.href) {
-      isRefresh = true;
-    }
-  });
 
   return (
     <div>

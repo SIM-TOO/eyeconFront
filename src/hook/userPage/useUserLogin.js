@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { setAccessCK } from '../../store/accessCKSlice';
+import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 
 const useUserLogin = () => {
   /* axios.defaults.headers['Access-Control-Allow-Origin'] = '*'; */
@@ -12,6 +13,8 @@ const useUserLogin = () => {
   const formRef = useRef(null);
   const navigate = useNavigate(); // 추가
   const dispatch = useDispatch();
+  // token재발급을 위한 interceptors
+  const TokenRefresher = useContext(TokenRefresherContext); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +35,7 @@ const useUserLogin = () => {
       pw: password
     }
     // 로그인 코드
-    axios.post(`${url}/auth/login`, loginData
+    TokenRefresher.post(`${url}/auth/login`, loginData
     ).then(function (res) {
       // console.log('====================================');
       // console.log(res);

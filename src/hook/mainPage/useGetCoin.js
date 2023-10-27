@@ -22,7 +22,7 @@ const useGetCoin = () => {
             console.error("에러 내용:", error);
             window.alert("잘못된 접근입니다.");
             localStorage.removeItem('coinsData');
-            window.location.href = "http://localhost:3000/";
+            window.location.href = "/";
         }
         return null;
     };

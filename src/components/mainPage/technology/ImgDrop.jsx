@@ -1,19 +1,23 @@
 import axios from 'axios';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import firebaseApp from "../../../Firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
   const [imageSrc, setImageSrc] = useState(null);
   const [beforeimg, setBeforeimg] = useState(null);
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
 
+  axios.defaults.withCredentials = true;
+  const TokenRefresher = useContext(TokenRefresherContext);
   useEffect(() => {
     if (uploadedImage === null) {
       setImageSrc(null);
       return; // 이미지가 없으면 더 이상 진행하지 않음
-    } if (uploadedImageSend) {
+    } 
+    if (uploadedImageSend) {
       console.log("이미지 전송 코드 실행")
       const storage = getStorage(firebaseApp);
 
@@ -21,29 +25,17 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       const url = process.env.REACT_APP_MASTER_URL;
       const formData = new FormData();
 
-      console.log("폼데이터랍니다 : ", formData);
-
+      console.log(uploadedImage);
       const imageRef = ref(storage, `images/${Date.now()}`);
       // `images === 참조값이름(폴더이름), / 뒤에는 파일이름 어떻게 지을지
-      const imageUrl = uploadBytes(imageRef, uploadedImage)
+      const beforeimg = uploadBytes(imageRef, uploadedImage)
         .then((snapshot) => getDownloadURL(snapshot.ref));
 
-      console.log('url', imageUrl);
-      formData.append('beforeimg', imageUrl);
-      // // 이미지의 실제 데이터
-      // formData.append('Base64Data', uploadedImage);
+      console.log('url', beforeimg);
+      const result ={ 'beforeimg' : beforeimg}
+      const ex = "안녕하세요";
 
-      // // // 이미지 이름 데이터
-      // formData.append('beforeimg', beforeimg);
-
-      // // 이상없음
-      // console.log(formData.get('Base64Data'));
-      // console.log(formData.get('beforeimg'));
-
-      // 서버 통신용
-      // 반환값 Base64Data로 줄것!(중요)
-      // ex
-      const resultImage = axios.post(`${url}/flask/sendImg`, formData)
+      const resultImage = TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg' : ex})
         .then(response => {
           // 전송 성공
           console.log("전송 성공");

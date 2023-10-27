@@ -23,14 +23,14 @@ function App() {
   const storedCoins = localStorage.getItem('coinsData');
   const dispatch = useDispatch();
   if (storedCoins == null) {
-   
+
   }
   if (loginCKData !== 'Exist') {
     if (storedCoins !== null) {
       dispatch(setAccessCK('Exist'));
     }
   }
-  
+
   //console.log("현재 리덕스 값",loginCKData)
 
   return (
@@ -41,12 +41,12 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/gpttest" element={<Gpttest1 />} />
             <Route path="/pay" element={<Pay />} />
+            <Route path="/place" element={<Place />} />
+
             {loginCKData === 'Exist' ? (
               <>
                 <Route path="/join" element={<MainPage />} />
                 <Route path="/login" element={<MainPage />} />
-                <Route path="/pay" element={<MainPage />} />
-                <Route path="/place" element={<Place />} />
                 <Route path="/result" element={<ResultPage />} />
                 <Route path="/main" element={<MainPageAfter />} />
                 <Route path="/mainpay" element={<MainPageAfterPay />} />
@@ -55,8 +55,7 @@ function App() {
             ) :
               <>
                 <Route path="/join" element={<Join />} />
-                <Route path="/login" element={<Login />} />       
-                <Route path="/place" element={<Login />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/result" element={<Login />} />
                 <Route path="/main" element={<Login />} />
                 <Route path="/mainpay" element={<Login />} />

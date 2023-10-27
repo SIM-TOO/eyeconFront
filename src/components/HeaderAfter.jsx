@@ -16,12 +16,9 @@ function HeaderAfter() {
   const remainingCoins = coins
 
   // 서버에서 코인 가져오는 함수
-  // localStorage이 없는 경우만 실행
   const GetCoin = useGetCoin();
-
   const fetchCoinInfo = async () => {
     await GetCoin("");
-    console.log("코인가져오는 함수 실행")
   };
   fetchCoinInfo();
 

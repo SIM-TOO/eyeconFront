@@ -14,7 +14,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       setImageSrc(null);
       return; // 이미지가 없으면 더 이상 진행하지 않음
     } if (uploadedImageSend) {
-
+      console.log("이미지 전송 코드 실행")
       const storage = getStorage(firebaseApp);
 
       // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
@@ -29,11 +29,11 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
         .then((snapshot) => getDownloadURL(snapshot.ref));
 
       console.log('url', imageUrl);
-
-      // 이미지의 실제 데이터
+      formData.append('beforeimg', imageUrl);
+      // // 이미지의 실제 데이터
       // formData.append('Base64Data', uploadedImage);
 
-      // // 이미지 이름 데이터
+      // // // 이미지 이름 데이터
       // formData.append('beforeimg', beforeimg);
 
       // // 이상없음

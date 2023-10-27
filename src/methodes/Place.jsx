@@ -3,7 +3,7 @@ import { AddressContext } from "../context/AddressContext";
 import React, { useContext } from "react";
 const Place = (props) => {
     
-    const {setCompany} = useContext(AddressContext);
+    useContext(AddressContext);
     const complete = (data) =>{
         let fullAddress = data.address;
         let extraAddress = '';

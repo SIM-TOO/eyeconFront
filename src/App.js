@@ -31,7 +31,7 @@ function App() {
     }
   }
   
-  console.log("현재 리덕스 값",loginCKData)
+  //console.log("현재 리덕스 값",loginCKData)
 
   return (
     <div className="App">

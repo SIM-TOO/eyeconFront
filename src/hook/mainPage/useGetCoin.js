@@ -11,10 +11,8 @@ const useGetCoin = () => {
             const response = await TokenRefresher.post(`${url}/coin/findCoin`);
             if (response && response.data) {
                 const coins = response.data;
-
                 // 로컬 스토리지에 데이터 저장
                 localStorage.setItem('coinsData', JSON.stringify(coins));
-
                 // console.log("localStorage에 저장된 coinsData : ", coins);
                 return response.data;
             }

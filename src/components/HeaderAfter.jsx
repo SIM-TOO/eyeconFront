@@ -21,7 +21,7 @@ function HeaderAfter() {
 
   const fetchCoinInfo = async () => {
     await GetCoin("");
-    console.log("코인가져오는 함수 실행")
+    // console.log("코인가져오는 함수 실행")
   };
   fetchCoinInfo();
 

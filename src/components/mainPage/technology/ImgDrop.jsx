@@ -5,9 +5,9 @@ import firebaseApp from "../../../Firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 
+
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
   const [imageSrc, setImageSrc] = useState(null);
-  const [beforeimg, setBeforeimg] = useState(null);
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
 
   axios.defaults.withCredentials = true;
@@ -16,26 +16,27 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     if (uploadedImage === null) {
       setImageSrc(null);
       return; // 이미지가 없으면 더 이상 진행하지 않음
-    } 
+    }
     if (uploadedImageSend) {
       console.log("이미지 전송 코드 실행")
       const storage = getStorage(firebaseApp);
 
       // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
       const url = process.env.REACT_APP_MASTER_URL;
-      const formData = new FormData();
 
-      console.log(uploadedImage);
+      // 이미지 데이터
+      console.log("이미지 데이터",uploadedImage);
+
+
+      // 파이어 베이스
       const imageRef = ref(storage, `images/${Date.now()}`);
       // `images === 참조값이름(폴더이름), / 뒤에는 파일이름 어떻게 지을지
       const beforeimg = uploadBytes(imageRef, uploadedImage)
         .then((snapshot) => getDownloadURL(snapshot.ref));
 
       console.log('url', beforeimg);
-      const result ={ 'beforeimg' : beforeimg}
-      const ex = "안녕하세요";
 
-      const resultImage = TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg' : ex})
+      const resultImage = TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimg })
         .then(response => {
           // 전송 성공
           console.log("전송 성공");
@@ -65,37 +66,34 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
 
 
     }
-  }, [uploadedImage, uploadedImageSend, beforeimg, onUploadComplete]);
+  }, [uploadedImage, uploadedImageSend, onUploadComplete]);
 
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];
-    setBeforeimg(file.name);
-    const reader = new FileReader();
 
-    reader.onload = (event) => {
-      setImageSrc(event.target.result);
 
-      const image = new Image();
-      image.src = event.target.result;
+    const imageURL = URL.createObjectURL(file);
+    setImageSrc(imageURL);
 
-      image.onload = () => {
-        const boxRatio = 1;  // 박스의 비율
-        const imageRatio = image.width / image.height;
+    const image = new Image();
+    image.src = imageURL;
 
-        if (imageRatio > boxRatio) {
-          setImageStyle("w-full h-auto");
-        } else {
-          setImageStyle("w-auto h-full");
-        }
+    image.onload = () => {
+      const boxRatio = 1;  // 박스의 비율
+      const imageRatio = image.width / image.height;
+
+      if (imageRatio > boxRatio) {
+        setImageStyle("w-full h-auto");
+      } else {
+        setImageStyle("w-auto h-full");
       }
+    }
 
-      if (onUploadSuccess) {
-        onUploadSuccess(event.target.result);
-      }
-    };
-
-    reader.readAsDataURL(file);
+    if (onUploadSuccess) {
+      // 이미지 파일의 URL을 전달
+      onUploadSuccess(imageURL);
+    }
   }, [onUploadSuccess]);
 
   // 업로드 파일 조건 

@@ -9,7 +9,7 @@ const ListItem = ({ date, img1, img2, description }) => {
       <p className='col-span-3 text-2xl text-left text-black'>{date}</p>
 
       <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center m-3 p-3 rounded-[35px]' id="item1">
-        <img src={img1} alt="image" className='object-contain w-[auto] h-[auto] justify-center items-center' />
+        <img src={img1} alt="image1" className='object-contain w-[auto] h-[auto] justify-center items-center' />
       </div>
 
       <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center p-3 m-3 rounded-[35px]' id='item2'>

@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import MyPageAdd from "./MyPageAdd";
 import MyPageList from "./MyPageList";
 import useUserPWCK from "../../hook/userPage/useUserPWCK";

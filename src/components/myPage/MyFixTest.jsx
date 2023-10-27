@@ -5,6 +5,9 @@ import useUserPWCK from "../../hook/userPage/useUserPWCK";
 import useUserPWCKM from "../../hook/userPage/useUserPWCKM";
 import useUserUpdatePw from "../../hook/userPage/useUserUpdatePw";
 
+/* 마이페이지 */
+
+
 const MyFixTest = () => {
   /* 내 가게 추가창 생성 */
   const [isLoading, setIsLoading] = useState(false);

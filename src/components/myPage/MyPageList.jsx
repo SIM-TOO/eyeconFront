@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const MyPageList = () => {
 
+
+/* 마이페이지 내 내 가게관리 컴포넌트 */
+
+const MyPageList = () => {
     
       // 내 가게 임시 데이터 
   const [myPageList, setMyPageList] = useState([

@@ -4,6 +4,8 @@ import React from 'react';
 // 다운로드 및 모든 데이터 함수
 const ListItem = ({ date, img1, img2, description }) => {
   return (
+    <div  style={{ background:
+      "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)"}} >
 
     <div className='font-Pretendard grid grid-cols-3 border-2 gap-4 p-4  rounded-3xl border-2 border-black/10 bg-[F9F9F9]' style={{ marginBottom: "45px" }}>
       <p className='col-span-3 text-2xl text-left text-black'>{date}</p>
@@ -29,6 +31,7 @@ const ListItem = ({ date, img1, img2, description }) => {
         <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" className='w-[auto] h-[auto] flex items-center justify-center  p-2' />
       </button>
       <div className='col-span-1' />
+    </div>
     </div>
   );
 };
@@ -70,7 +73,8 @@ const List = () => {
 
         <div className='col-span-1 md:col-span-2' />
         {/* 이거, 모바일화면에서는 col-span-10이 맞는데, pc화면에서는 조금 줄일 거 고려해야할듯 */}
-        <div className='col-span-10 md:col-span-8 flex flex-col justify-center items-center rounded-[25px] border' style={{ width: "100%", height: "100%", padding: "20px" }}>
+        <div className='bg-white col-span-10 md:col-span-8 flex flex-col justify-center items-center rounded-[25px] border' style={{ 
+                        width: "100%", height: "100%", padding: "20px" }}>
           <div>
             <p className='text-5xl font-bold text-center text-black p-4'> 시선 분석 결과 </p>
             <p className='text-2xl font-bold text-right text-black p-4'>↓ 최신순</p>

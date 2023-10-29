@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { setAccessCK } from '../../store/accessCKSlice';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
+import Swal from 'sweetalert2';
 
 const useUserLogin = () => {
   /* axios.defaults.headers['Access-Control-Allow-Origin'] = '*'; */
@@ -67,10 +68,17 @@ const useUserLogin = () => {
       //  console.log(error);
       // 아이디가 틀렸을때(존재하지 않는)
       if (error.response.data.message === 'The user does not exist') {
-        alert("존재하지 않는 회원");
-        // 비밀번호가 틀렸을때
+        Swal.fire({
+          icon: 'error',
+          title: '로그인 오류',
+          text: '존재하지 않는 회원입니다.아이디를 확인해주세요.',
+        });
       } else if (error.response.data.message === 'password error') {
-        alert("비밀번호가 틀림");
+        Swal.fire({
+          icon: 'error',
+          title: '로그인 오류',
+          text: '비밀번호를 다시 확인해주세요.',
+        });
       }
 
     })

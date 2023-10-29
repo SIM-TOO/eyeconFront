@@ -24,7 +24,11 @@ const useUserLogin = () => {
     const password = formData.get('password');
 
     if (!email || !password) {
-      alert('이메일과 비밀번호를 입력하세요.');
+      Swal.fire({
+        icon: 'warning',
+        title: '입력 정보 확인',
+        text: '이메일과 비밀번호를 다시 입력해주세요.',
+      });
       return;
     }
 
@@ -57,7 +61,11 @@ const useUserLogin = () => {
         navigate("/main");
       } else {
         // 로그인 실패
-        alert("로그인 실패");
+        Swal.fire({
+          icon: 'error',
+          title: '로그인 실패',
+          text: '오류가 발생했습니다. 다시 시도해주세요.',
+        });
       }
 
       navigate("/main")

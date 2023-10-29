@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 
 /* 마이페이지 내 내 가게관리 컴포넌트 */
 
 const MyPageList = () => {
-    
-      // 내 가게 임시 데이터 
+
+  // 내 가게 임시 데이터 
   const [myPageList, setMyPageList] = useState([
     {
       index: 1,
@@ -18,7 +18,7 @@ const MyPageList = () => {
   ]);
 
 
-      // 내가게 삭제 버튼
+  // 내가게 삭제 버튼
   const handleDelete = (id) => {
     const updatedList = myPageList.filter((item) => item.id !== id);
     setMyPageList(updatedList);

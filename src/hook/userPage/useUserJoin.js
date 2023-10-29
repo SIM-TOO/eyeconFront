@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 const useUserJoin = (IdErrorMessage, PWErrorMessage, PWMErrorMessage) => {
@@ -13,7 +14,11 @@ const useUserJoin = (IdErrorMessage, PWErrorMessage, PWMErrorMessage) => {
     // 로컬 스토리지와 오류 메시지 검사 로직
     if (IdErrorMessage === "") {
       if (IdErrorMessage !== "" || PWErrorMessage !== "" || PWMErrorMessage !== "") {
-        alert("가입 정보를 확인 후 입력해주세요");
+        Swal.fire({
+          icon: 'warning',
+          title: '입력 정보 오류',
+          text: '가입 정보를 다시 확인해주세요.',
+        });
         return;
       } else {
         localStorage.clear();

@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import useRemoveCoin from "../../hook/mainPage/useRemoveCoin";
+import Swal from 'sweetalert2';
 
 const C02Pay = ({ handleButtonClick }) => {
 
@@ -27,7 +28,11 @@ const C02Pay = ({ handleButtonClick }) => {
     handleButtonClick(value);
     } else {
       console.log("코인 부족")
-      alert("코인이 부족합니다. 충전해주세요!");
+      Swal.fire({
+        icon: 'warning',
+        title: '코인 부족',
+        text: '코인이 부족합니다. 충전 후 이용해주세요.',
+      });
       
     }
   };

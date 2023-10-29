@@ -34,7 +34,7 @@ const C02Pay = ({ handleButtonClick }) => {
 
 
   return (
-    <div className="text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]">
+    <div className=" font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]">
       {/* 여백용 박스 */}
       <div className="col-span-12 p-3" />
       <div className="hidden md:block col-span-0 md:col-span-1" />
@@ -81,7 +81,7 @@ const C02Pay = ({ handleButtonClick }) => {
       <div className="hidden md:block col-span-0 md:col-span-1" />
 
       {/* 이미지 */}
-      <div className="h-full col-span-12 grid grid-cols-12  md:col-span-4 p-3 bg-white rounded shadow border border-[#DEE2E7]">
+      <div className="font-Pretendard h-full col-span-12 grid grid-cols-12  md:col-span-4 p-3 bg-white rounded shadow border border-[#DEE2E7]">
         <p className="col-span-12 text-2xl font-bold text-left text-[#505050]  p-3">
           추가 서비스 이용 방법
         </p>

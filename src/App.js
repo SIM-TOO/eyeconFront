@@ -17,6 +17,7 @@ import { setAccessCK } from './store/accessCKSlice';
 import store from './store';
 import { AddressContext } from './context/AddressContext';
 import { useState } from 'react';
+import CoinCheck from './components/payPage/CoinCheck';
 
 function App() {
 

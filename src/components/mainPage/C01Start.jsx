@@ -5,7 +5,7 @@ import lottieJson from "../../lottie/robot.json";
 const C01Start = ({ handleButtonClick }) => {
   return (
     <div
-      className="flex flex-col justify-center items-center"
+      className="font-Pretendard  flex flex-col justify-center items-center"
       style={{ width: '100%', height: '100%' }}
     >
       {/* 로봇 */}

@@ -1,6 +1,7 @@
 import React from 'react'
 import List from './resultList/ListSet';
-
+import ResultList from './resultList/ListResult'
+import ListSet from './resultList/ListSet'
 import HeaderAfter from './HeaderAfter';
 
 function ResultPage() {
@@ -18,7 +19,7 @@ function ResultPage() {
     >
       <HeaderAfter />
       <div>
-        <List></List>
+        <ListSet/>
       </div>
     </div>
 

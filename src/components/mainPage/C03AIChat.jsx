@@ -83,8 +83,9 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             </div>
             {/* 내용 박스 */}
+            
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
-            {showAIchat && < AIchat messages={messages} />}
+            {showAIchat && < AIchat messages={messages} style={{marginTop:"10%"}}/>}
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
 
@@ -93,7 +94,7 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="hidden md:block col-span-0 md:col-span-1" />
 
             {/* 내용 박스 */}
-            <div className="h-[100px] col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
+            <div className="text-xl h-[100px] col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
                     <p className="text-center text-black">

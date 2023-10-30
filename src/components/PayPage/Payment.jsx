@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import axios from 'axios';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
+import Swal from 'sweetalert2';
 
 const Payment = () => {
     useEffect(() => {
@@ -68,11 +69,20 @@ const Payment = () => {
             console.log("/order/completed 실패")
           })
           } else {
-            alert('결제 실패1');
+            Swal.fire({
+              icon: 'warning',
+              title: '결제 실패',
+              text: '결제 실패 오류',
+            });
+            
           }
         } catch (error) {
           console.error('Error while verifying payment:', error);
-          alert('결제 실패2');
+          Swal.fire({
+            icon: 'warning',
+            title: '결제 실패',
+            text: '결제 실패 오류',
+          });
         }
       });
     };

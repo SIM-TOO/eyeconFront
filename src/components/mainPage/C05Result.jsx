@@ -55,7 +55,7 @@ const C05Result = ({ handleButtonClick }) => {
     <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
       {/* 모바일 이동하기 버튼 */}
-      <Link to="/result" className="block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg bg-gray-300 text-black">
+      <Link to="/result" className="block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg bg-gray-300 text-black" >
         결과페이지 이동하기
       </Link>
 
@@ -64,10 +64,9 @@ const C05Result = ({ handleButtonClick }) => {
       <div className="hidden md:block col-span-0 md:col-span-1 " />
 
       {/* 결과 이미지 */}
-      <div className="col-span-3 grid grid-cols-3">
-
+      <div className="col-span-3 grid grid-cols-3 p-3">
         {/* 결과페이지 */}
-        <div className="col-span-3" style={{ maxWidth: "400px" }}>
+        <div className="col-span-3" style={{ height: "350px" }}>
           {isLoading ? (
             <Loading />
           ) : (
@@ -75,15 +74,13 @@ const C05Result = ({ handleButtonClick }) => {
             <img src={resultImage} alt="resultImage" />
           )}
         </div>
-
         {/*PC화면 결과 페이지 이동 링크 */}
-        <div className="hidden block md:block col-span-3 flex justify-center items-center ">
-          <Link to="/result" className="p-3 rounded-lg bg-gray-300 text-black mt-20">
+        <div className="hidden block md:block col-span-3 flex justify-center items-center">
+          <Link to="/result" className="rounded-lg bg-gray-300 text-black p-3">
             결과페이지 이동하기
           </Link>
         </div>
       </div>
-
 
       {/* 내용 박스 */}
       < AIchat messages={messages} />

@@ -14,7 +14,7 @@ const C01Start = ({ handleButtonClick }) => {
       </div>
 
       <button
-        className="rounded-[5px]  text-2xl md:text-5xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-5"
+        className="rounded-[5px] font-bold text-2xl md:text-5xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-5"
         style={{ width: '60%', maxWidth: '400px' }}
         onClick={() => handleButtonClick(2)}
       >

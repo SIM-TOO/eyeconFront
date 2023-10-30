@@ -52,6 +52,7 @@ function App() {
               <Route path="/gpttest" element={<Gpttest1 />} />
               <Route path="/pay" element={<Pay />} />
               <Route path="/place" element={<Place />} />
+              <Route path="/coincheck" element={<CoinCheck />} />
 
               {loginCKData === 'Exist' ? (
                 <>
@@ -70,6 +71,8 @@ function App() {
                   <Route path="/main" element={<Login />} />
                   <Route path="/mainpay" element={<Login />} />
                   <Route path="/mypage" element={<Login />} />
+                  
+                
 
                 </>
               }

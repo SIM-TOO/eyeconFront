@@ -66,7 +66,7 @@ const C05Result = ({ handleButtonClick }) => {
       {/* 결과 이미지 */}
       <div className="col-span-3 grid grid-cols-3 p-3">
         {/* 결과페이지 */}
-        <div className="col-span-3" style={{ height: "350px" }}>
+        <div className="hidden md:block col-span-3" style={{ height: "350px" }}>
           {isLoading ? (
             <Loading />
           ) : (
@@ -75,7 +75,7 @@ const C05Result = ({ handleButtonClick }) => {
           )}
         </div>
         {/*PC화면 결과 페이지 이동 링크 */}
-        <div className="hidden block md:block col-span-3 flex justify-center items-center">
+        <div className="hidden md:block col-span-3 flex justify-center items-center">
           <Link to="/result" className="rounded-lg bg-gray-300 text-black p-3">
             결과페이지 이동하기
           </Link>

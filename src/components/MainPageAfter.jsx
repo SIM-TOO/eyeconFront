@@ -35,7 +35,7 @@ function MainPageAfter() {
         style={{ height: "calc(100vh - 120px)" }}
       >
         <div
-          className="w-[70%] h-[90%] rounded-2xl"
+          className="w-[95%] h-[100%] md:w-[70%] md:h-[90%]  rounded-2xl"
           style={{
             background:
               "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",

@@ -9,8 +9,8 @@ const MainPay = () => {
     const TokenRefresher = useContext(TokenRefresherContext);
     const [coinList, setCoinList] = useState([]);
     // usePayment.js의 requestPay함수 불러오기
-    const {requestPay} = usePayment();
-    
+    const { requestPay } = usePayment();
+
     useEffect(() => {
         // db에 있는 코인 상품들 불러오기
         const fetchData = async () => {
@@ -20,10 +20,10 @@ const MainPay = () => {
             // console.log('====================================');
             setCoinList(res.data);
         };
-    
+
         fetchData();
     }, [TokenRefresher]);
-    
+
     const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
     const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
 
@@ -52,7 +52,7 @@ const MainPay = () => {
                     className="mx-auto mt-8 hidden sm:block"
                 />
                 <div className="md:hidden">
-                <Transaction/>
+                    <Transaction />
                 </div>
                 <br />
                 <p className="text-2xl font-bold text-[#001D6C] ">Pricing</p>
@@ -94,16 +94,20 @@ const MainPay = () => {
                             </p>
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white ">
-                            <span className="text-xs text-center text-[#020202]"  onClick={() => {
-                                                                                requestPay(coinList[0].price,coinList[0].coinName)}} >
-                            Start today</span>
+                            <span className="text-xs text-center text-[#020202]" onClick={() => {
+                                requestPay(coinList[0].price, coinList[0].coinName)
+                            }} >
+                                Start today</span>
                         </button>
                     </div>
                 </div>
 
-                {/* 두번째 박스 */}
-                <div className="col-span-11 md:col-span-3 p-3 animate-bounce3">
-                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-10">
+
+                {/* 두번쨰 박스 */}
+                <div className="col-span-11 md:col-span-3 p-3">
+                    <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-100">
+                        {/* 두번째 박스 */}
+
                         <div className="inline-block rounded-lg border border-[#5d6a85]">
                             <p className="font-semibold text-left uppercase text-black px-3">
                                 premium
@@ -128,8 +132,9 @@ const MainPay = () => {
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]" onClick={() => {
-                                                                                requestPay(coinList[1].price,coinList[1].coinName)}}>
-                                                                                    Start today</span>
+                                requestPay(coinList[1].price, coinList[1].coinName)
+                            }}>
+                                Start today</span>
                         </button>
                     </div>
                 </div>
@@ -162,8 +167,9 @@ const MainPay = () => {
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]" onClick={() => {
-                                                                                requestPay(coinList[2].price,coinList[2].coinName)}}>
-                                                                                    Start today</span>
+                                requestPay(coinList[2].price, coinList[2].coinName)
+                            }}>
+                                Start today</span>
                         </button>
                     </div>
                 </div>

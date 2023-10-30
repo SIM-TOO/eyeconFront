@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/check.json";
 
-
-
 const PayLoading = ({ handleButtonClick }) => {
+  useEffect(() => {
+    const delay = 1500; // 1.5초 (애니메이션 1턴 시간 1.5초)
+
+    const timeoutId = setTimeout(() => {
+      handleButtonClick(3); // 이 부분에서 handleButtonClick(3)를 호출합니다.
+    }, delay);
+
+    return () => clearTimeout(timeoutId);
+  }, [handleButtonClick]);
+
   return (
     <div className="font-Pretendard flex flex-col justify-center items-center">
-      <div className="hidden md:block"><br/><br/><br/><br/><br/></div>
+      <div className="hidden md:block"><br/><br/><br/><br/></div>
       <Lottie
         loop
         animationData={lottieJson}
@@ -19,15 +27,6 @@ const PayLoading = ({ handleButtonClick }) => {
       <p className="text-4xl md:text-4xl font-bold text-center">
         코인이 사용되었습니다.
       </p>
-
-
-      {/* AI chat으로 이동 */}
-      <button
-        className="text-sm md:text-xl text-center text-white px-[25px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap mt-10 animate-bounce2"
-        onClick={() => handleButtonClick(3)}
-      >
-        서비스 계속하기
-      </button>
     </div>
   );
 };

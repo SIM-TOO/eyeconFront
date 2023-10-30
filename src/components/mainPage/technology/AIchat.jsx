@@ -16,7 +16,7 @@ const AIchat = ({ messages }) => {
         // 채팅창 내부
         <div
             ref={chatRef}
-            className="h-[100%] col-span-12 md:col-span-7 p-3 flex flex-col overflow-y-auto max-h-[500px] mt-40"
+            className="h-[100%] col-span-12 md:col-span-7 flex flex-col overflow-y-auto max-h-[500px] mt-40"
         >
             {/* 채팅창 */}
             {messages.map((msg, index) => (

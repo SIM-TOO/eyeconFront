@@ -8,7 +8,7 @@ import useChat from '../../hook/mainPage/useChat';
 import useChatChange from '../../hook/mainPage/useChatChange';
 
 const C03AIChat = ({ handleButtonClick }) => {
-    
+
     //시작시 기존 로컬 이미지 삭제
     localStorage.removeItem('resultImageData');
 
@@ -58,34 +58,33 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="hidden md:block col-span-0 md:col-span-1 " />
             {/* 로봇 */}
             {/* 로봇 또는 다른 컴포넌트 */}
-            <div className="hidden md:block md:col-span-3">
-
-
-
-
-                {waitingForResponse ? (
-                    // 서버 응답을 기다리는 동안 보여줄 컴포넌트
-                    <Loading />
-                ) : (
-                    // 응답을 기다리지 않는 경우에는 로봇 컴포넌트를 보여줍니다.
-                    <Robot />
-                )}
-                <div className='p-3'></div>
-               
-                <div className='p-3'></div>
+            <div className="col-span-3 grid grid-cols-3 h-[80%]">
+                <div className="col-span-3" style={{ maxWidth: "400px" }}>
+                    {waitingForResponse ? (
+                        // 서버 응답을 기다리는 동안 보여줄 컴포넌트
+                        <Loading />
+                    ) : (
+                        // 응답을 기다리지 않는 경우에는 로봇 컴포넌트를 보여줍니다.
+                        <Robot />
+                    )}
+                </div>
 
                 {/* PC화면시 등장하는 버튼 */}
-                {showAIchatStart && <div></div>}
-                {showAIchat && <button className='p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
-                    시선 분석하기
-                </button>}
-
-
+                <div className="col-span-3 flex justify-center items-center">
+                    {showAIchatStart && <div></div>}
+                    {showAIchat && <button className='p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
+                        시선 분석하기
+                    </button>}
+                </div>
             </div>
+
+
+
+
             {/* 내용 박스 */}
-            
+
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
-            {showAIchat && < AIchat messages={messages} style={{marginTop:"10%"}}/>}
+            {showAIchat && < AIchat messages={messages} />}
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
 

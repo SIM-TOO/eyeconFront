@@ -53,17 +53,16 @@ const C05Result = ({ handleButtonClick }) => {
   }, []);
   return (
     <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
-      <div className="col-span-12 " />
-
+      
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1 " />
 
       {/* 결과 이미지 */}
-      <div className="col-span-3 grid grid-cols-12 h-[100%]">
+      <div className="col-span-3 grid grid-cols-3 h-[80%]">
 
         {/* 결과페이지 */}
-        <div className="col-span-12">
+        <div className="col-span-3" style={{ maxWidth: "400px" }}>
           {isLoading ? (
             <div><Loading/></div>
           ) : (
@@ -73,7 +72,7 @@ const C05Result = ({ handleButtonClick }) => {
         </div>
 
         {/* 결과 페이지 이동 링크 */}
-        <div className="col-span-12 flex justify-center items-center h-full">
+        <div className="col-span-3 flex justify-center items-center">
           <Link to="/result" className="p-3 rounded-lg bg-gray-300 text-black">
             결과페이지 이동하기
           </Link>
@@ -83,13 +82,13 @@ const C05Result = ({ handleButtonClick }) => {
 
       {/* 내용 박스 */}
       < AIchat messages={messages} />
+
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1"  />
 
-
       {/* 채팅 입력 박스 구간 */}
       <div className="hidden md:block col-span-0 md:col-span-1 " />
-      <div className="h-[100px] col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
+      <div className="text-xl h-[100px] col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px]  "
         style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
         <div className="h-[100%] w-[100%] grid grid-cols-12 p-3">
           <input

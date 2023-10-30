@@ -40,7 +40,7 @@ function PlanCard() {
       </div>
 
       {/* 두번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3 ">
+      <div className="col-span-11 md:col-span-3 p-3">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
             <p className="font-semibold text-left uppercase text-black px-3">

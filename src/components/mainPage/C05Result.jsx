@@ -53,38 +53,40 @@ const C05Result = ({ handleButtonClick }) => {
   }, []);
   return (
     <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
-      
+
+      {/* 모바일 이동하기 버튼 */}
+      <Link to="/result" className="block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg bg-gray-300 text-black" >
+        결과페이지 이동하기
+      </Link>
+
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1 " />
 
       {/* 결과 이미지 */}
-      <div className="col-span-3 grid grid-cols-3 h-[80%]">
-
+      <div className="col-span-3 grid grid-cols-3 p-3">
         {/* 결과페이지 */}
-        <div className="col-span-3" style={{ maxWidth: "400px" }}>
+        <div className="hidden md:block col-span-3" style={{ height: "350px" }}>
           {isLoading ? (
-            <div><Loading/></div>
+            <Loading />
           ) : (
             // 데이터를 가져온 후 보여줄 이미지
             <img src={resultImage} alt="resultImage" />
           )}
         </div>
-
-        {/* 결과 페이지 이동 링크 */}
-        <div className="col-span-3 flex justify-center items-center">
-          <Link to="/result" className="p-3 rounded-lg bg-gray-300 text-black">
+        {/*PC화면 결과 페이지 이동 링크 */}
+        <div className="hidden md:block col-span-3 flex justify-center items-center">
+          <Link to="/result" className="rounded-lg bg-gray-300 text-black p-3">
             결과페이지 이동하기
           </Link>
         </div>
       </div>
 
-
       {/* 내용 박스 */}
       < AIchat messages={messages} />
 
       {/* 여백용 박스 */}
-      <div className="hidden md:block col-span-0 md:col-span-1"  />
+      <div className="hidden md:block col-span-0 md:col-span-1" />
 
       {/* 채팅 입력 박스 구간 */}
       <div className="hidden md:block col-span-0 md:col-span-1 " />

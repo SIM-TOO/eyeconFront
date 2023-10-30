@@ -50,16 +50,16 @@ const C03AIChat = ({ handleButtonClick }) => {
         <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
             {/* 모바일 버튼 */}
-            <button className='block md:hidden col-span-12 p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
+            <button className='block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
                 시선 분석하기
             </button>
 
             {/* 여백용 박스 */}
-            <div className="hidden md:block col-span-0 md:col-span-1 " />
+            <div className="hidden md:block col-span-0 md:col-span-1" />
             {/* 로봇 */}
             {/* 로봇 또는 다른 컴포넌트 */}
-            <div className="col-span-3 grid grid-cols-3 h-[80%]">
-                <div className="col-span-3" style={{ maxWidth: "400px" }}>
+            <div className="hidden block md:block col-span-3 grid grid-cols-3 p-3">
+                <div className="col-span-3" style={{  height: "325px" }} >
                     {waitingForResponse ? (
                         // 서버 응답을 기다리는 동안 보여줄 컴포넌트
                         <Loading />
@@ -70,9 +70,9 @@ const C03AIChat = ({ handleButtonClick }) => {
                 </div>
 
                 {/* PC화면시 등장하는 버튼 */}
-                <div className="col-span-3 flex justify-center items-center">
-                    {showAIchatStart && <div></div>}
-                    {showAIchat && <button className='p-3 rounded-lg bg-gray-300 text-black' onClick={() => handleButtonClick(4)}>
+                <div className="hidden block md:block col-span-3 flex justify-center items-center ">
+                    {showAIchatStart && <></>}
+                    {showAIchat && <button className='rounded-lg bg-gray-300 text-black p-3'  style={{ position: "relative", top: "15px"}}  onClick={() => handleButtonClick(4)}>
                         시선 분석하기
                     </button>}
                 </div>
@@ -127,7 +127,7 @@ const C03AIChat = ({ handleButtonClick }) => {
 function Robot() {
     return (
         <Lottie
-            className='translate3d-10-55-0 '
+            className='translate3d-10-55-0'
             loop
             animationData={lottieJson}
             play

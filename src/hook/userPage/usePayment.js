@@ -65,6 +65,11 @@ const usePayment = () => {
               time: timeString
           }).then(function(response){
             console.log("/order/completed 성공")
+            Swal.fire({
+              icon: 'success',
+              title: '결제 성공',
+              text: '결제에 성공했습니다.',
+            });
           }).catch(function(error){
             console.log("/order/completed 실패")
           })

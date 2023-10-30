@@ -19,23 +19,27 @@ const List = () => {
         width: "100%", height: "100%", padding: "20px"
       }}>
         <div>
-          <p className='text-1xl font-bold text-left text-black p-4'> 내 가게 선택 ↓ </p>
-          <p className='text-5xl font-bold text-center text-black p-4'> 시선 분석 결과 </p>
-          <p className='text-2xl font-bold text-right text-black p-4'>↓ 최신순</p>
+          <div className='col-span-12 gird grid-cols-12'>
+            <div className='col-span-6' />
+            <button className='text-1xl font-bold text-left text-black p-4 border-[1.5px] bg-[#19ab93] rounded-[20px] text-[#FFFFFF]'> 내 가게 선택 ↓ </button>
+            <p className='text-5xl font-bold text-center text-black p-4'> 시선 분석 결과 </p>
+            <p className='text-2xl font-bold text-right text-black p-4'>↓ 최신순</p>
+            <div className='col-span-6' />
+          </div>
 
-
-          <div className="col-span-5 grid gird-cols-10  md:col-span-4 group rounded-lg border border-[#d9d9d9] p-5  bg-[#FFFFFF] bg-opacity-10">
-            <p className='text-2xl font-bold text-left text-black p-2 col-span-'> 2023-10-30 </p>
-            <svg className='col-span-'>
+          <div className="col-span-12 grid gird-cols-12  md:col-span-4 group rounded-lg border border-[#d9d9d9] p-5  bg-[#FFFFFF] bg-opacity-10">
+            <p className='col-span-2 grid gird-cols-2 text-2xl font-bold text-left text-black p-2'> 2023-10-30 </p>
+            <svg className='col-span-1'>
               <line y1="0.5" x2={486} y2="0.5" stroke="#CACACA" />
             </svg>
-            <div className='col-span- md:col-span- bg-white rounded-[20px]' style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
+            <div className='col-span-4' />
+            <div className='bg-white rounded-[20px]' style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
               <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="image-36" border="0" />
-              <div className='col-span- md:col-span-'>
+              <div className='col-span-4 md:col-span-4'>
                 <p className='text-2xl font-bold text-left p-2'> 시선분석 전 </p>
-                <div className='col-span- md:col-span- border-[1.5px] border-[#19ab93] rounded-[20px] w-[116px] h-auto text-center'>
+                <button className='col-span-4 md:col-span-4 border-[1.5px] border-[#19ab93] rounded-[20px] w-[116px] h-auto text-center'>
                   Download ↓
-                </div>
+                </button>
                 <p className='text-[11px] font-medium text-left'>
                   <span>시선 분석 전 매대 사진입니다.</span>
                   <br />
@@ -43,21 +47,33 @@ const List = () => {
                 </p>
               </div>
             </div>
-            <div className='col-span- md:col-span- bg-white rounded-[20px]' style={{boxShadow: "0 4px 4px 0 rgba(0,0,0,0.25)"}}>
-            <img src="https://i.ibb.co/wYpgY2J/Rectangle.png" alt="Rectangle" border="0"/>
-            <div className='col-span- md:col-span-'>
-              <p className='text-2xl font-bold text-right'> 시선 분석 후</p>
-              <div className='col-span- md:col-span- border-[1.5px] border-[#19ab93] rounded-[20px]'>
-                Download ↓
+            <div className='col-span-2' />
+            <div className='bg-white rounded-[20px]' style={{ boxShadow: "0 4px 4px 0 rgba(0,0,0,0.25)" }}>
+              <img src="https://i.ibb.co/wYpgY2J/Rectangle.png" alt="Rectangle" border="0" />
+              <div className='col-span-4 md:col-span-4'>
+                <p className='text-2xl font-bold text-right'> 시선 분석 후</p>
+                <button className='col-span-4 md:col-span-4 border-[1.5px] border-[#19ab93] rounded-[20px] w-[116px] h-auto text-center'>
+                  Download ↓
+                </button>
+                <p className='text-[11px] font-medium text-right'>
+                  <span> 시선 분석 후 매대 사진입니다. 색깔이 있는 곳이 고객들의 </span>
+                  <br />
+                  <span> 시선이 많이 머무는 곳입니다. 다운르도를 원하시면 </span>
+                  <br />
+                  <span> 버튼을 눌러주세요.</span>
+                </p>
               </div>
-              <p className='text-[11px] font-medium text-right'> 
-              <span> 시선 분석 후 매대 사진입니다. 색깔이 있는 곳이 고객들의 </span>
-              <br />
-              <span> 시선이 많이 머무는 곳입니다. 다운르도를 원하시면 </span>
-              <br />
-              <span> 버튼을 눌러주세요.</span>
-              </p>
             </div>
+            <div className='col-span-4'>
+              <p className='text-xl opacity-75 text-center text-[#313131]'>
+                <span> 광주 동구 상업단지 상권 40대 남성을 타겟으로 한 매대 시선분석 결과입니다.</span>
+                <br />
+                <span> 현재 광주 동구 충장로 상권인 경우 40대 남성을 주 대상으로 하고 있습니다. 주</span>
+                <br />
+                <span> 요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해</span>
+                <br />
+                <span> 보세요.</span>
+              </p>
             </div>
           </div>
         </div>

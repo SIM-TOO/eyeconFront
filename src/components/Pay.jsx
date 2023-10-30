@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import PlanCard from "./payPage/PlanCard";
 import PayImg from "./payPage/PayImg";
+import CoinCheck from "./payPage/CoinCheck";
 
 function Pay() {
   return (
@@ -9,6 +10,7 @@ function Pay() {
       <Header></Header>
       <PayImg></PayImg>
       <PlanCard></PlanCard>
+   
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./HeaderAfter";
 import MyPage from './myPage/MyFixTest'
+import CoinCheck from "./payPage/CoinCheck";
 
 
 function Mypage() {
@@ -15,7 +16,8 @@ function Mypage() {
       }}
     >
       <Header />
-      <MyPage />
+{/*       <MyPage /> */}
+      <CoinCheck/>
     </div>
   );
 }

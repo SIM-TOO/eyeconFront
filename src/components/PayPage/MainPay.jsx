@@ -68,7 +68,7 @@ const MainPay = () => {
                 {/* 여백용박스 */}
                 <div className="col-span-0 md:col-span-1" />
 
-                {/* 첫번쨰 박스 */}
+                {/* 첫번째 박스 */}
                 <div className="col-span-11 md:col-span-3 p-3">
                     <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-10">
                         <div className="inline-block rounded-lg border border-[#5d6a85]">
@@ -101,7 +101,7 @@ const MainPay = () => {
                     </div>
                 </div>
 
-                {/* 두번쨰 박스 */}
+                {/* 두번째 박스 */}
                 <div className="col-span-11 md:col-span-3 p-3 animate-bounce3">
                     <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7] bg-[#FFFFFF] bg-opacity-10">
                         <div className="inline-block rounded-lg border border-[#5d6a85]">

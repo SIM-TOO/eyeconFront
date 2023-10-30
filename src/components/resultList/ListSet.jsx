@@ -1,92 +1,94 @@
 import React from 'react';
 
 
-// 다운로드 및 모든 데이터 함수
-const ListItem = ({ date, img1, img2, description }) => {
-  return (
-    <div  style={{ background:
-      "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)"}} >
-
-    <div className='font-Pretendard grid grid-cols-3 border-2 gap-4 p-4  rounded-3xl border-2 border-black/10 bg-[F9F9F9]' style={{ marginBottom: "45px" }}>
-      <p className='col-span-3 text-2xl text-left text-black'>{date}</p>
-
-      <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center m-3 p-3 rounded-[35px]' id="item1">
-        <img src={img1} alt="image1" className='object-contain w-[auto] h-[auto] justify-center items-center' />
-      </div>
-
-      <div className='col-span-1 border border-[#15c3a7] flex justify-center items-center p-3 m-3 rounded-[35px]' id='item2'>
-        <img src={img2} alt="heatmap" className='object-contain w-[auto] h-[auto] justify-center items-center' />
-      </div>
-
-      <div className='col-span-1'>
-        <p className='text-base text-[#313131] text-center' style={{ marginTop: "65px" }}>{description}</p>
-      </div>
-
-      <button className='col-span-1 text-2xl text-center text-white rounded-[10px] bg-[#15c3a7] whitespace-nowrap mb-4 flex justify-center items-center '>
-        다운로드
-        <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" className='w-[auto] h-[auto] flex items-center justify-center  p-2' />
-      </button>
-      <button className='col-span-1 text-2xl text-center text-white rounded-[10px] bg-[#15c3a7] whitespace-nowrap mb-4 flex justify-center items-center'>
-        다운로드
-        <img src="https://i.ibb.co/s38LqgC/Vector.png" alt="Vector" className='w-[auto] h-[auto] flex items-center justify-center  p-2' />
-      </button>
-      <div className='col-span-1' />
-    </div>
-    </div>
-  );
-};
-
-// 이미지 및 날짜 부가 설명 함수
 const List = () => {
-  const items = [
-    {
-      date: "2023-10-19",
-      img1: "https://i.ibb.co/wKLDFT2/image-36.png",
-      img2: "https://i.ibb.co/wYpgY2J/Rectangle.png",
-      description: "광주 북구 공장단지 상권 40대 남성을 타겟으로 한 메대 시선분석 결과입니다."
-    },
-    // 추가 항목들...
-    {
-      date: "2023-10-21",
-      img1: "https://i.ibb.co/wKLDFT2/image-36.png",
-      img2: "https://i.ibb.co/wYpgY2J/Rectangle.png",
-      description: "안녕하세용"
-    }
-  ];
-
 
   return (
-    // 마트 나열 함수
-   
-      <div className="container font-Pretendard mx-auto grid grid-cols-12 max-w-screen-x">
-        <div className='col-span-12 grid grid-cols-12 gap-4 flex items-center'>
-          <div className='col-span-4' />
-          {["A마트", "B마트", "C마트", "D마트"].map((mart, index) => (
-            <div className={`col-span-1 rounded-t-[15px] ${index === 0 ? 'bg-[#15c3a7]' : 'bg-[#A9A9A9]'}`}>
-              <p className='text-2xl  font-bold text-center text-neutral-700' style={{ transform: 'scale(1.0)' }}>{mart}</p>
-            </div>
-          ))}
 
+    <div className="container font-Pretendard mx-auto grid grid-cols-12 max-w-screen-x">
+      <div className='col-span-12 grid grid-cols-12 gap-4 flex items-center'>
+        <div className='col-span-4' />
 
-          <div className='col-span-3' />
-        </div>
-
-        <div className='col-span-1 md:col-span-2' />
-        {/* 이거, 모바일화면에서는 col-span-10이 맞는데, pc화면에서는 조금 줄일 거 고려해야할듯 */}
-        <div className='bg-white col-span-10 md:col-span-8 flex flex-col justify-center items-center rounded-[25px] border' style={{ 
-                        width: "100%", height: "100%", padding: "20px" }}>
-          <div>
-            <p className='text-5xl font-bold text-center text-black p-4'> 시선 분석 결과 </p>
-            <p className='text-2xl font-bold text-right text-black p-4'>↓ 최신순</p>
-
-            {items.map(item => <ListItem {...item} />)}
-          </div>
-        </div>
 
         <div className='col-span-3' />
       </div>
-   
-      );
+
+      <div className='col-span-1 md:col-span-2' />
+      {/* 이거, 모바일화면에서는 col-span-10이 맞는데, pc화면에서는 조금 줄일 거 고려해야할듯 */}
+      <div className='bg-white col-span-10 md:col-span-8 flex flex-col justify-center items-center rounded-[25px] border' style={{
+        width: "100%", height: "100%", padding: "20px"
+      }}>
+        <div>
+          <div className='col-span-12 gird grid-cols-12'>
+            <div className='col-span-6' />
+            <button className='text-1xl font-bold text-left text-black p-4 border-[1.5px] bg-[#19ab93] rounded-[20px] text-[#FFFFFF]'> 내 가게 선택 ↓ </button>
+            <p className='text-5xl font-bold text-center text-black p-4'> 시선 분석 결과 </p>
+            <p className='text-2xl font-bold text-right text-black p-4'>↓ 최신순</p>
+            <div className='col-span-6' />
+          </div>
+
+          <div className="col-span-12 grid gird-cols-12  md:col-span-4 group rounded-lg border border-[#d9d9d9] p-5  bg-[#FFFFFF] bg-opacity-10">
+            <p className='col-span-2 grid gird-cols-2 text-2xl font-bold text-left text-black p-2'> 2023-10-30 </p>
+            <svg className='col-span-1'>
+              <line y1="0.5" x2={486} y2="0.5" stroke="#CACACA" />
+            </svg>
+            <div className='col-span-4' />
+            <div className='bg-white rounded-[20px]' style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
+              <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="image-36" border="0" />
+              <div className='col-span-4 md:col-span-4'>
+                <p className='text-2xl font-bold text-left p-2'> 시선분석 전 </p>
+                <button className='col-span-4 md:col-span-4 border-[1.5px] border-[#19ab93] rounded-[20px] w-[116px] h-auto text-center'>
+                  Download ↓
+                </button>
+                <p className='text-[11px] font-medium text-left'>
+                  <span>시선 분석 전 매대 사진입니다.</span>
+                  <br />
+                  <span> 다운로드를 원하시면 버튼을 눌러주세요.</span>
+                </p>
+              </div>
+            </div>
+            <div className='col-span-2' />
+            <div className='bg-white rounded-[20px]' style={{ boxShadow: "0 4px 4px 0 rgba(0,0,0,0.25)" }}>
+              <img src="https://i.ibb.co/wYpgY2J/Rectangle.png" alt="Rectangle" border="0" />
+              <div className='col-span-4 md:col-span-4'>
+                <p className='text-2xl font-bold text-right'> 시선 분석 후</p>
+                <button className='col-span-4 md:col-span-4 border-[1.5px] border-[#19ab93] rounded-[20px] w-[116px] h-auto text-center'>
+                  Download ↓
+                </button>
+                <p className='text-[11px] font-medium text-right'>
+                  <span> 시선 분석 후 매대 사진입니다. 색깔이 있는 곳이 고객들의 </span>
+                  <br />
+                  <span> 시선이 많이 머무는 곳입니다. 다운르도를 원하시면 </span>
+                  <br />
+                  <span> 버튼을 눌러주세요.</span>
+                </p>
+              </div>
+            </div>
+            <div className='col-span-4'>
+              <p className='text-xl opacity-75 text-center text-[#313131]'>
+                <span> 광주 동구 상업단지 상권 40대 남성을 타겟으로 한 매대 시선분석 결과입니다.</span>
+                <br />
+                <span> 현재 광주 동구 충장로 상권인 경우 40대 남성을 주 대상으로 하고 있습니다. 주</span>
+                <br />
+                <span> 요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해</span>
+                <br />
+                <span> 보세요.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='col-span-3' />
+    </div>
+
+  );
 };
 
-      export default List;
+
+
+
+
+
+
+export default List;

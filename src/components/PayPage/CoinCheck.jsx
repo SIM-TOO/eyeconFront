@@ -41,25 +41,48 @@ const CoinCheck = () => {
                     animationData={lottieJson}
                     play
                     option={{ speed: 0.1 }}
-                    style={{ width: "100%", maxWidth: "400px" }}
+                    style={{ width: "100%", maxWidth: "300px" }}
                     className="mb-10 animate-bounce2"
                 />
-                <p className="text-4xl md:text-4xl font-bold text-center">
-                    {coinmoney}원 결제
-                    {coinCount}원 결제 완료 <br />  </p>
-                    <p className="text-4xl md:text-xl font-bold text-center">현재 잔여 코인 {remainingCoins}개<br /></p>
-                   <p className="text-4xl md:text-4xl font-bold text-center"> 잠시 후 메인으로 이동합니다</p>
-              
-                <Lottie
-                    loop
-                    animationData={lottieJson2}
-                    play
-                    option={{ speed: 0.1 }}
-                    style={{ width: "100%", maxWidth: "600px" }}
-                    className="mb-10"
-                />
+
+
+                
+                <div className="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <h5 className="mb-2 text-4xl font-bold text-gray-900 dark:text-white">코인 {coinCount}개 충전 완료</h5>
+                    <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">코인이 충전되었습니다. 잠시 후 메인 화면으로 이동합니다.</p>
+                    <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                        <div className="w-full sm:w-auto bg-[#0BB79B] hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-6 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+
+                            <div className="text-left">
+                                <div className="mb-1 text-sm">현재 잔여코인</div>
+                                <div className="-mt-1 font-sans text-sm font-semibold text-center">{remainingCoins}개</div>
+                            </div>
+                        </div>
+                        
+                        <div className="w-full sm:w-auto bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-8 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                            <div className="text-left">
+                                <div className="mb-1 text-sm">충전 금액</div>
+                                <div className="-mt-1 font-sans text-sm font-semibold text-center">{coinmoney}원</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-center">
+                        <Lottie
+                            loop
+                            animationData={lottieJson2}
+                            play
+                            option={{ speed: 0.1 }}
+                            style={{ width: "100%", maxWidth: "400px" }}
+                            className="mb-10"
+                        />
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-        </div>
+
     );
 };
 

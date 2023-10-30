@@ -18,14 +18,7 @@ function MainPageAfter() {
   return (
     // 배경화면 설정
     <div
-      className="h-screen"
-      style={{
-        backgroundImage:
-          'url("https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png")',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+      className="h-screen  bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')]">
       {/* 헤더 */}
       <HeaderAfter />
 
@@ -35,7 +28,7 @@ function MainPageAfter() {
         style={{ height: "calc(100vh - 120px)" }}
       >
         <div
-          className="w-[70%] h-[90%] rounded-2xl"
+          className="w-[95%] h-[100%] md:w-[70%] md:h-[90%]  rounded-2xl"
           style={{
             background:
               "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",

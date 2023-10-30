@@ -18,14 +18,7 @@ function MainPageAfter() {
   return (
     // 배경화면 설정
     <div
-      className="h-screen"
-      style={{
-        backgroundImage:
-          'url("https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png")',
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
+      className="h-screen  bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')]">
       {/* 헤더 */}
       <HeaderAfter />
 

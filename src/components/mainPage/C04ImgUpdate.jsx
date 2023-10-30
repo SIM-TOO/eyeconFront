@@ -103,17 +103,17 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
         (<>
           <div className="col-span-1 md:col-span-2" />
           <button
-            className="col-span-4 md:col-span-3 bg-[#15c3a7] p-3 font-semibold text-white rounded-full"
+            className="col-span-4 md:col-span-3 bg-[#0090E1] p-3 font-semibold text-white rounded-full"
             onClick={() => setUploadedImage(null)}
           >
-            취소하기
+            이전 단계로 이동
           </button>
           <div className="col-span-2 md:col-span-2" />
           <button
-            className="col-span-4 md:col-span-3 bg-[#15c3a7] p-3 font-semibold text-white rounded-full"
+            className="animate-bounce3 col-span-4 md:col-span-3 bg-[#15c3a7] p-3 font-semibold text-white rounded-full"
             onClick={() => setUploadedImageSend(true)}
           >
-            전송하기
+            이미지 업로드
           </button>
           <div className="col-span-1 md:col-span-2"
             />

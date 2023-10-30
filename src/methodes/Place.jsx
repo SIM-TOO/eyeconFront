@@ -27,7 +27,7 @@ const Place = (props) => {
 
        
         localStorage.setItem('address', fullAddress);
-        localStorage.setItem('jibunAddress', jibunAddress); // 추가: 지번 주소 저장
+        localStorage.setItem('dong', jibunAddress); // 추가: 지번 주소 저장
         window.close()
     }
   

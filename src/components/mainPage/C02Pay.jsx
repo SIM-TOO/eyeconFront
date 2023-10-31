@@ -15,13 +15,10 @@ const C02Pay = ({ handleButtonClick }) => {
   // 코인 차감 함수
   const modifiedHandleButtonClick = async (value) => {
 
-    // 쿠키 (토큰 -access ->xxxx.xxxx.x(email) )
-    const email = "wlghd9958@naver.com";
-
     if (coinValue > 0) {
       // 현재 코인 반환
       // const result = 
-      await removeCoin(email);
+      await removeCoin();
       // console.log(result)
       console.log("차감완료")
 

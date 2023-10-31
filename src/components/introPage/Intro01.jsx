@@ -20,6 +20,7 @@ const Intro01 = () => {
         <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl font-Pretendard ">
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
+       
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20 ">
               <span className="text-4xl md:text-6xl font-bold ">
                 WELCOME TO <br />

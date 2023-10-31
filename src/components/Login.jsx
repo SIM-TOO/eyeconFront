@@ -25,7 +25,7 @@ const Login = () => {
             <UserImage />
           </div>
           <div className="mx-auto lg:mt-0 mt-60 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px] dark:text-[#F2F2F2]">
-            <p className="text-3xl font-medium text-left text-black p-3 dark:text-[#F2F2F2]">
+            <p className="text-3xl font-medium text-center md:text-left text-black p-3 dark:text-[#F2F2F2]">
               Sign in
             </p>
 

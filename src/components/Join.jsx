@@ -39,8 +39,8 @@ function Join() {
             </Link>
             <UserImage />
           </div>
-          <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px]">
-            <p className="text-3xl font-medium text-left text-black p-3 dark:text-[#F2F2F2]">Sign in</p>
+          <div className="mx-auto lg:p-10 lg:min-w-[600px] p-0 min-w-[300px] mt-60 md:mt-0">
+            <p className="text-3xl font-medium text-center md:text-left text-black p-3 dark:text-[#F2F2F2]">Sign in</p>
 
             {/* from 태그 시작 */}
             <form ref={formRef} onSubmit={handleSubmit}>

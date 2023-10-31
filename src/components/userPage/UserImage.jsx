@@ -23,7 +23,7 @@ function UserImage() {
           play
           option={{ speed: 0.2 }}
           style={{ width: "100%", maxWidth: "250px" }}
-          className="absolute left-10"
+          className="absolute left-20"
         />
       </div>
     </div>

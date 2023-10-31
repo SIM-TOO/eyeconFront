@@ -7,7 +7,6 @@ import Place from './methodes/Place'
 import './index.css';
 import MainPageAfter from './components/MainPageAfter';
 import ResultPage from './components/ResultPage';
-import Gpttest1 from './components/testPage/Gpttest1';
 import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
 import { TokenRefresherContext } from './context/TokenRefresherContext';
@@ -48,7 +47,6 @@ function App() {
             <Routes>
               {/* 기본적으로 접근 가능한 페이지 */}
               <Route path="/" element={<MainPage />} />
-              <Route path="/gpttest" element={<Gpttest1 />} />
               <Route path="/pay" element={<Pay />} />
               <Route path="/place" element={<Place />} />
               <Route path="/coincheck" element={<CoinCheck />} />

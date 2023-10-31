@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
-
-import DarkModeSwitch from "../mainPage/darkMode/DarkModeToggle";
 
 
 import Slider from './Slider'

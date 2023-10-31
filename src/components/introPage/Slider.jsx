@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link } from "react-router-dom";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -54,7 +53,7 @@ function IntroSlider() {
 
 
                 <div className=" mr-60 flex justify-end text-gray-800">
-                    <img src="https://i.ibb.co/BGVMTtp/1-01.png" className="w-[50%]" /> <SlideAni /></div>
+                    <img src="https://i.ibb.co/BGVMTtp/1-01.png" alt="" className="w-[50%]" /> <SlideAni /></div>
             </div></SwiperSlide>
 
             <SwiperSlide>Slide 2</SwiperSlide>

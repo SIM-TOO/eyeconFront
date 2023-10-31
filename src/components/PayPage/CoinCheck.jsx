@@ -4,7 +4,7 @@ import Header from "../HeaderAfter";
 import lottieJson from '../../lottie/coineffect.json';
 import lottieJson2 from '../../lottie/progress.json';
 import useGetCoin from "../../hook/mainPage/useGetCoin";
-import { useLocation, Navigate, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -27,11 +27,13 @@ const CoinCheck = () => {
 
     // 서버에서 코인 가져오는 함수
     const GetCoin = useGetCoin();
-    const fetchCoinInfo = async () => {
-        await GetCoin("");
-    };
 
     useEffect(() => {
+
+        const fetchCoinInfo = async () => {
+            await GetCoin("");
+        };
+
         fetchCoinInfo();
 
         // 3초 후에 main 페이지로 이동
@@ -43,7 +45,7 @@ const CoinCheck = () => {
         return () => {
             clearTimeout(timeoutId);
         };
-    }, [navigate]);
+    }, [GetCoin, navigate]);
 
     return (
         <div>

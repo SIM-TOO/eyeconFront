@@ -35,7 +35,7 @@ function Join() {
               alt=""
               className="absolute top-0 left-0 z-10 hidden md:block dark:hidden"
             />
-             <img src="https://i.ibb.co/ZNvzZMz/Group-624891.png" className="absolute top-0 left-0 z-10 hidden dark:block"/>
+             <img src="https://i.ibb.co/ZNvzZMz/Group-624891.png" alt="" className="absolute top-0 left-0 z-10 hidden dark:block"/>
             </Link>
             <UserImage />
           </div>

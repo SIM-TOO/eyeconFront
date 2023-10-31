@@ -37,8 +37,6 @@ const C03AIChat = ({ handleButtonClick }) => {
     //  체인지 함수
     const { showAIchatStart, showAIchat, changeButtonClick } = useChatChange();
 
-
-
     //  엔터키를 채팅 전송으로 할당
     const chatHandleKeyDown = (e) => {
         if (e.key === 'Enter') {
@@ -56,10 +54,11 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
+
             {/* 로봇 */}
             {/* 로봇 또는 다른 컴포넌트 */}
             <div className="hidden block md:block col-span-3 grid grid-cols-3 p-3">
-                <div className="col-span-3" style={{  height: "325px" }} >
+                <div className="col-span-3" style={{ height: "325px" }} >
                     {waitingForResponse ? (
                         // 서버 응답을 기다리는 동안 보여줄 컴포넌트
                         <Loading />
@@ -72,22 +71,17 @@ const C03AIChat = ({ handleButtonClick }) => {
                 {/* PC화면시 등장하는 버튼 */}
                 <div className="hidden block md:block col-span-3 flex justify-center items-center ">
                     {showAIchatStart && <></>}
-                    {showAIchat && <button className='rounded-lg bg-gray-300 text-black p-3'  style={{ position: "relative", top: "15px"}}  onClick={() => handleButtonClick(4)}>
+                    {showAIchat && <button className='rounded-lg bg-gray-300 text-black p-3' style={{ position: "relative", top: "15px" }} onClick={() => handleButtonClick(4)}>
                         시선 분석하기
                     </button>}
                 </div>
             </div>
 
-
-
-
             {/* 내용 박스 */}
-
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
             {showAIchat && < AIchat messages={messages} />}
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
-
 
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />

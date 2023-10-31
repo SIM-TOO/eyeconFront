@@ -65,6 +65,7 @@ const C05Result = ({ handleButtonClick }) => {
 
       {/* 결과 이미지 */}
       <div className="col-span-3 grid grid-cols-3 p-3">
+
         {/* 결과페이지 */}
         <div className="hidden md:block col-span-3" style={{ height: "350px" }}>
           {isLoading ? (

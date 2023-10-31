@@ -57,7 +57,7 @@ const C03AIChat = ({ handleButtonClick }) => {
             {/* 로봇 */}
             {/* 로봇 또는 다른 컴포넌트 */}
             <div className="hidden block md:block col-span-3 grid grid-cols-3 p-3">
-                <div className="col-span-3" style={{ height: "325px" }} >
+                <div className="col-span-3 mt-40" style={{ height: "325px" }} >
                     {waitingForResponse ? (
                         // 서버 응답을 기다리는 동안 보여줄 컴포넌트
                         <Loading />
@@ -120,7 +120,7 @@ const C03AIChat = ({ handleButtonClick }) => {
 function Robot() {
     return (
         <Lottie
-            className='translate3d-10-55-0'
+            className='translate3d-10-55-0 animate-wiggle'
             loop
             animationData={lottieJson}
             play

@@ -31,7 +31,7 @@ const C02Pay = ({ handleButtonClick }) => {
 
 
   return (
-    <div className=" font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]">
+    <div className="font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]">
 
       {/* 여백용 박스 */}
       <div className="col-span-12 p-3" />

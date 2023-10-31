@@ -23,14 +23,12 @@ const useGetCoin = () => {
                 icon: 'error',
                 title: '오류',
                 text: '오류가 발생했습니다. 다시 시도해주세요.',
-              });
+            });
             localStorage.removeItem('coinsData');
             window.location.href = "/";
         }
         return null;
     };
-
     return getCoin;
 };
-
 export default useGetCoin;

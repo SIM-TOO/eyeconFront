@@ -26,12 +26,12 @@ const AIchat = ({ messages }) => {
                     {!msg.isMine && < RobotIcon className="rounded-full mr-3" />}
 
                     {/* 채팅 메시지 박스 */}
-                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-300 text-black' :'bg-blue-500 text-white'  }`}>
+                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-300 text-black' : 'bg-blue-500 text-white'}`}>
                         {msg.content}
                     </div>
 
                     {/* 프로필 이미지 */}
-                    {msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png   " alt="Profile" className="w-10 h-10 rounded-full ml-3" />}
+                    {msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png" alt="Profile" className="w-10 h-10 rounded-full ml-3" />}
 
                 </div>
             ))}

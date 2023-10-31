@@ -6,6 +6,7 @@ import PayImg from "./payPage/PayImg";
 function Pay() {
   return (
     <div className="dark:bg-gray-800">
+      {/* 헤더 */}
       <Header></Header>
       <PayImg></PayImg>
       <PlanCard></PlanCard>

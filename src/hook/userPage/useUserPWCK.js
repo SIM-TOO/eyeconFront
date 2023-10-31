@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useUserPWCK = () => {
   const [errorMessage, setErrorMessage] = useState('  ');
@@ -7,9 +7,10 @@ const useUserPWCK = () => {
     const passwordInput = document.querySelector('input[name="password"]');
     const password = passwordInput.value;
 
-    // 간단한 비밀번호 유효성 검사. 실제로는 더 복잡한 검사를 수행해야 할 수 있습니다.
+    // 비밀번호 유효성검사 로직
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
+    // 출력 메세지
     if (password === '') {
       setErrorMessage('비밀번호를 입력하세요.');
     } else if (!passwordPattern.test(password)) {

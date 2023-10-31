@@ -27,11 +27,11 @@ const List = () => {
 
           <div className="col-span-16 grid gird-cols-16  md:col-span-4 group rounded-lg border border-[#d9d9d9] p-5  bg-[#FFFFFF] bg-opacity-10">
             <p className='text-4xl font-bold text-left text-black' style={{height:"50px"}}> 2023-10-30 </p>
-            <svg className='col-span-3'>
+            <svg className='col-span-3' style={{height:"50px"}}>
               <line y1="0.5" x2={486} y2="0.5" stroke="#CACACA" />
             </svg>
             <div className='bg-white rounded-[20px]' style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
-              <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="image-36" border="0" />
+              <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="36" border="0" />
                 <div className='grid grid-cols-2'>
                   <p className='text-2xl font-bold text-left p-2 order-1'> 시선분석 전 </p>
                   <button className='border-[1.5px] border-[#19ab93] rounded-[20px] text-center order-2' style={{ margin: "10px" }}>

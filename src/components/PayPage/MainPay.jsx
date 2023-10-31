@@ -4,7 +4,7 @@ import lottieJson from '../../lottie/transaction.json';
 
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import usePayment from './../../hook/userPage/usePayment';
-import CoinCheck from "./CoinCheck";
+
 
 const MainPay = () => {
     const TokenRefresher = useContext(TokenRefresherContext);

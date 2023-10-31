@@ -5,7 +5,7 @@ const useUserAddress = () => {
     const [dong, setDong] = useState('');
     useEffect(() => {
         const savedAddress = localStorage.getItem('address');
-        const savedAddress2= localStorage.getItem('dong')
+        const savedAddress2 = localStorage.getItem('dong')
         if (savedAddress) {
             setAddress(savedAddress);
             setDong(savedAddress2);

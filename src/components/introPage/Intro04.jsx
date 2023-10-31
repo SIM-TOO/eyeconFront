@@ -14,7 +14,7 @@ const Intro04 = () => {
                     className="h-auto pointer-events-none"
                 />
             </div>
-            
+
 
             {/* 컨테이너 박스 */}
             <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4">
@@ -25,7 +25,7 @@ const Intro04 = () => {
                     </span>
                     <p className="col-span-12 p-3" >
                         <br />
-                        AI 챗봇을 활용해 우리는 서비스의 품질을 높입니다. 단순한 결과물이 아닌 인공지능이 분석한 
+                        AI 챗봇을 활용해 우리는 서비스의 품질을 높입니다. 단순한 결과물이 아닌 인공지능이 분석한
                         결과물을 토대로 우리는 이용자들과 소통하고, 그것의 결과물로 이용자들의 더 나은 마케팅을 <br />
                         돕습니다.
                     </p>

@@ -73,7 +73,7 @@ function IntroSlider() {
             <SwiperSlide><div className="dark:bg-[#8C8C8C] bg-[#F8F8F8] w-full h-full">
 
                 <div className=" mr-60 flex justify-end text-gray-800">
-                    <img src="https://i.ibb.co/BGVMTtp/1-01.png" alt="" className="w-[50%]" /> <SlideAni /></div>
+                    <img src="https://i.ibb.co/BGVMTtp/1-01.png" alt="" className="w-[50%] mt-20" /> <SlideAni /></div>
             </div></SwiperSlide>
 
             <SwiperSlide><div className="dark:bg-[#3275E9] bg-[#609DE4] w-full h-full">
@@ -81,7 +81,7 @@ function IntroSlider() {
                 <div className=" mr-60 flex justify-end text-gray-800">
                     <SlideAni2 /> <img src="https://i.ibb.co/k6GbMwf/Untitled-8-01.png" className="w-[40%]" /> </div>
             </div></SwiperSlide>
-            <SwiperSlide><div className="dark:bg-[#8C8C8C] bg-[#C4F981] w-full h-full">
+            <SwiperSlide><div className="dark:bg-[#82DD0F] bg-[#C4F981] w-full h-full">
 
                 <div className=" mr-80 flex justify-end text-gray-800">
                 <img src="https://i.ibb.co/XLQb7qV/Untitled-11-01.png" className="w-[40%] mt-20" /> <SlideAni3 /></div>

@@ -7,6 +7,9 @@ import Intro04 from './introPage/Intro04'
 import Intro05 from './introPage/Intro05'
 
 function MainPage() {
+  localStorage.clear('dong');
+  localStorage.clear('address');
+
   return (
     <div className='dark:bg-gray-800'>
       <Header/> 

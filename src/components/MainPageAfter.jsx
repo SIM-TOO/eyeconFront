@@ -17,47 +17,29 @@ function MainPageAfter() {
 
   return (
     // 배경화면 설정
-    <div
-      className="h-screen  bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')]">
+    <div className="h-screen  bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')]">
+
       {/* 헤더 */}
       <HeaderAfter />
 
       {/* 내부박스 */}
-      <div
-        className="flex flex-col items-center"
-        style={{ height: "calc(100vh - 120px)" }}
-      >
+      <div className="flex flex-col items-center" style={{ height: "calc(100vh - 120px)" }}>
+        
         <div
           className="w-[95%] h-[100%] md:w-[70%] md:h-[90%]  rounded-2xl"
           style={{
-            background:
-              "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",
+            background: "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",
             boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)",
-          }}
-        >
+          }}>
 
-
-           {/* 6번 컴포넌트로 이동 시에만 기존 로딩 안뜨게 */}
+          {/* 6번 컴포넌트로 이동 시에만 기존 로딩 안뜨게 */}
           {isLoading && <LoadingComponent />}
-          {!isLoading && currentComponent === 1 && (
-            <Component1 handleButtonClick={handleButtonClick} />
-          )}
-          {!isLoading && currentComponent === 2 && (
-            <Component2 handleButtonClick={handleButtonClick} />
-          )}
-          {!isLoading && currentComponent === 3 && (
-            <Component3 handleButtonClick={handleButtonClick} />
-          )}
-          {!isLoading && currentComponent === 4 && (
-            <Component4 handleButtonClick={handleButtonClick} />
-          )}
-          {!isLoading && currentComponent === 5 && (
-            <Component5 handleButtonClick={handleButtonClick} />
-          )}
-          {!isLoading && currentComponent === 6 && (
-            <Component6 handleButtonClick={handleButtonClick} />
-          )}
-
+          {!isLoading && currentComponent === 1 && (<Component1 handleButtonClick={handleButtonClick} />)}
+          {!isLoading && currentComponent === 2 && (<Component2 handleButtonClick={handleButtonClick} />)}
+          {!isLoading && currentComponent === 3 && (<Component3 handleButtonClick={handleButtonClick} />)}
+          {!isLoading && currentComponent === 4 && (<Component4 handleButtonClick={handleButtonClick} />)}
+          {!isLoading && currentComponent === 5 && (<Component5 handleButtonClick={handleButtonClick} />)}
+          {!isLoading && currentComponent === 6 && (<Component6 handleButtonClick={handleButtonClick} />)}
         </div>
       </div>
     </div>

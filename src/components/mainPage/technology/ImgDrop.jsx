@@ -9,7 +9,7 @@ import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
   const [imageSrc, setImageSrc] = useState(null);
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
-
+  // const [beforeimg, setBeforeimg] = useState('');
   axios.defaults.withCredentials = true;
   const TokenRefresher = useContext(TokenRefresherContext);
   useEffect(() => {
@@ -31,11 +31,12 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       // 파이어 베이스
       const imageRef = ref(storage, `images/${Date.now()}`);
       // `images === 참조값이름(폴더이름), / 뒤에는 파일이름 어떻게 지을지
-      const beforeimg = uploadBytes(imageRef, uploadedImage)
-        .then((snapshot) => getDownloadURL(snapshot.ref));
 
+      uploadBytes(imageRef, uploadedImage)
+        .then((snapshot) => getDownloadURL(snapshot.ref).then((url)=>sessionStorage.setItem('beforeimg',url)))
+      const beforeimg = sessionStorage.getItem('beforeimg')
       console.log('url', beforeimg);
-
+      sessionStorage.clear();
       const resultImage = TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimg })
         .then(response => {
           // 전송 성공

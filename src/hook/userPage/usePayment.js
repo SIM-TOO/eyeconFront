@@ -1,10 +1,11 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import Swal from 'sweetalert2';
 // import CoinCheck from '../../components/payPage/CoinCheck'; // 이동할 컴포넌트를 가져옴
 import { Link } from 'react-router-dom';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import useDarkOverlay from './useDarkOverlay';
 
 
 // 결제관련
@@ -14,6 +15,8 @@ const usePayment = () => {
   // const location = useLocation();
 
 
+
+ 
 
   useEffect(() => {
     const jquery = document.createElement("script");
@@ -27,9 +30,9 @@ const usePayment = () => {
       document.head.removeChild(iamport);
     };
   }, []);
-
-
-
+  
+  
+  
 
   const TokenRefresher = useContext(TokenRefresherContext);
 
@@ -84,7 +87,7 @@ const usePayment = () => {
               title: '결제 성공',
               text: '결제에 성공했습니다.',
             }).then(function () {
-              navigate('/coincheck', { state: { coinCount: rsp.paid_amount , coinCnt : coinCnt} });
+              navigate('/coincheck', { state: { coinCount: rsp.paid_amount, coinCnt: coinCnt } });
               <Link to="/coincheck" />
             }).catch(function (error) {
               console.log("/order/completed 실패")

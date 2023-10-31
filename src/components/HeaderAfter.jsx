@@ -4,8 +4,9 @@ import axios from "axios";
 import useGetCoin from "../hook/mainPage/useGetCoin";
 import { setAccessCK } from "../store/accessCKSlice";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
-function HeaderAfter() {
+function HeaderAfter(props) {
   const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
   const url = process.env.REACT_APP_MASTER_URL;
@@ -22,6 +23,10 @@ function HeaderAfter() {
   };
   fetchCoinInfo();
 
+  const location = useLocation();
+
+  // Check if the current pathname is "/main"
+  const isMainPage = location.pathname === "/main";
 
 
   // 메뉴 토글
@@ -62,7 +67,11 @@ function HeaderAfter() {
 
             {/* 메뉴바 */}
             <div className="col-span-4 flex items-center hidden md:flex">
-              <Link to="/main" className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500">
+              <Link
+                to="/main"
+                className={`ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500 ${isMainPage ? "cursor-pointer" : ""}`}
+                onClick={isMainPage ? () => props.handleButtonClick(1) : null}
+              >
                 시선 분석
               </Link>
               <Link

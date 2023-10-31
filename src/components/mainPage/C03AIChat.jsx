@@ -12,13 +12,12 @@ const C03AIChat = ({ handleButtonClick }) => {
     //시작시 기존 로컬 이미지 삭제
     localStorage.removeItem('resultImageData');
 
-    // 시작시 메시지 입력 장소 .
+    // 시작시 메시지 입력 장소(isMine: false = AI 대답)
     const initialMessage = [
         {
             content: "안녕하세요! 챗봇 이콘입니다.",
             isMine: false,
-        },
-        {
+        }, {
             content: "시선 분석을 원하시면 시선 분석 버튼을 클릭해주세요.",
             isMine: false,
         },

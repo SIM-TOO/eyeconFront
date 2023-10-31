@@ -12,19 +12,18 @@ import useLoadingDelayHandler from "../hook/mainPage/useMainLoading";
 function MainPageAfter() {
   const initialDelay = 1600; // 처음 로딩 시 딜레이
   const buttonDelay = 1200; // 버튼 클릭 시 딜레이
-  const [isLoading, currentComponent, handleButtonClick] =
-    useLoadingDelayHandler(initialDelay, buttonDelay);
+  const [isLoading, currentComponent, handleButtonClick] = useLoadingDelayHandler(initialDelay, buttonDelay);
 
   return (
     // 배경화면 설정
     <div className="h-screen  bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')]">
 
       {/* 헤더 */}
-      <HeaderAfter />
+      <HeaderAfter handleButtonClick={handleButtonClick} />
 
       {/* 내부박스 */}
       <div className="flex flex-col items-center" style={{ height: "calc(100vh - 120px)" }}>
-        
+
         <div
           className="w-[95%] h-[100%] md:w-[70%] md:h-[90%]  rounded-2xl"
           style={{

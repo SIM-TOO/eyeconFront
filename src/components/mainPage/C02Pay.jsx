@@ -14,14 +14,10 @@ const C02Pay = ({ handleButtonClick }) => {
 
   // 코인 차감 함수
   const modifiedHandleButtonClick = async (value) => {
-
     if (coinValue > 0) {
       // 현재 코인 반환
-      // const result = 
       await removeCoin();
-      // console.log(result)
       console.log("차감완료")
-
       handleButtonClick(value);
     } else {
       console.log("코인 부족")
@@ -30,7 +26,6 @@ const C02Pay = ({ handleButtonClick }) => {
         title: '코인 부족',
         text: '코인이 부족합니다. 충전 후 이용해주세요.',
       });
-
     }
   };
 

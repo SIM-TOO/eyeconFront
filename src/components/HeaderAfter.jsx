@@ -49,9 +49,9 @@ function HeaderAfter(props) {
 
   return (
     <div>
-      <header className=" text-white p-5 font-Pretendard">
+      <header className=" text-white p-5 font-Pretendard ">
         <nav>
-          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl">
+          <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
             {/* 로고 */}
             <div className="col-span-10 md:col-span-2 flex items-center">
               <Link to="/" className="flex items-center">
@@ -67,30 +67,30 @@ function HeaderAfter(props) {
             </div>
 
             {/* 메뉴바 */}
-            <div className="col-span-4 flex items-center hidden md:flex">
+            <div className="col-span-4 flex items-center hidden md:flex ">
          
               <Link
                 to="/main"
-                className={`ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500 ${isMainPage ? "cursor-pointer" : ""}`}
+                className={`dark:text-white ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500 ${isMainPage ? "cursor-pointer" : ""}`}
                 onClick={isMainPage ? () => props.handleButtonClick(1) : null}
               >
                 시선 분석
               </Link>
               <Link
                 to="/mainpay"
-                className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
+                className="dark:text-[#F2F2F2] ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
               >
                 서비스결제
               </Link>
               <Link
                 to="/mypage"
-                className="ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
+                className="dark:text-[#F2F2F2] ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
               >
                 마이페이지
               </Link>
               <Link
                 to="/result"
-                className="ml-4  whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
+                className="dark:text-[#F2F2F2] ml-4 whitespace-nowrap hover:font-semibold text-black hover:text-blue-500"
               >
                 결과페이지
               </Link>
@@ -101,7 +101,7 @@ function HeaderAfter(props) {
               <div className="flex flex-wrap">
                 <DarkModeSwitch />
 
-                <p className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
+                <p className="text-gray-800 dark:text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 bg-white border border-[#d9dbe9] rounded-[90px] h-[52px] flex items-center justify-center mb-2 md:mb-0"
                 >
                   <img src="https://i.ibb.co/Db5RC1S/emoji-coin.png" className="w-[20px] mr-2" alt="coin" />
                   {remainingCoins}개

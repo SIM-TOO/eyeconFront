@@ -13,7 +13,7 @@ const C01Start = ({ handleButtonClick }) => {
 
       {/* 시작하기 버튼 */}
       <button
-        className="rounded-[5px] font-bold text-3xl md:text-4xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-4"
+        className="dark:text-[#F2F2F2] dark:border-[#F2F2F2] rounded-[5px] font-bold text-3xl md:text-4xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-4"
         style={{ width: '60%', maxWidth: '350px' }}
         onClick={() => handleButtonClick(2)}
       >

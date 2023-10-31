@@ -135,12 +135,12 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
           </div>
           :
           <>
-            <p className="hidden md:block opacity-50 font-medium text-[#190e61]">
+            <p className="hidden md:block opacity-50 font-medium text-[#190e61] dark:text-[#FFFFFF]">
               이미지를 드래그를 통해
               <br />
               이곳에 위치시키세요
             </p>
-            <p className="block md:hidden opacity-50 font-medium text-[#190e61]">
+            <p className="block md:hidden opacity-50 font-medium text-[#190e61] dark:text-[#FFFFFF]">
               클릭해서 업로드 해주세요
             </p>
           </>

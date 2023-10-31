@@ -74,8 +74,8 @@ function IntroSlider() {
 
                 <div className=" mr-60 flex justify-end text-gray-800">
                     <SlideAni2 />  <img src="https://i.ibb.co/k8LwH8Q/Untitled-7-01.png" className="w-[40%]" /> </div>
-            </div></SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
+            </div>{/* </SwiperSlide>
+            <SwiperSlide>Slide 3 */}</SwiperSlide>
 
 
             <div className="autoplay-progress" slot="container-end">

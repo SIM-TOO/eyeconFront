@@ -2,16 +2,16 @@ import { useContext, useEffect } from 'react'
 import axios from 'axios';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import Swal from 'sweetalert2';
-import CoinCheck from '../../components/payPage/CoinCheck'; // 이동할 컴포넌트를 가져옴
+// import CoinCheck from '../../components/payPage/CoinCheck'; // 이동할 컴포넌트를 가져옴
 import { Link } from 'react-router-dom';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 // 결제관련
 const usePayment = () => {
 
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
 
 

@@ -21,7 +21,8 @@ const C02Pay = ({ handleButtonClick }) => {
 
     if (coinValue > 0) {
       // 현재 코인 반환
-      const result = await removeCoin(email);
+      // const result = 
+      await removeCoin(email);
       // console.log(result)
       console.log("차감완료")
 
@@ -48,7 +49,7 @@ const C02Pay = ({ handleButtonClick }) => {
       <div className="rounded-[10px] col-span-12 h-full md:col-span-5 grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
 
         <p className="col-span-12 text-2xl font-bold text-left text-[#505050]  p-3 text-center">
-        <img src="https://i.ibb.co/CbxhQmw/icon-check-circle-1.png" className="w-8 inline-block mr-2" />
+        <img src="https://i.ibb.co/CbxhQmw/icon-check-circle-1.png" alt="" className="w-8 inline-block mr-2" />
           잔여코인 확인
         </p>
 

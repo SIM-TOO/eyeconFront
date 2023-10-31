@@ -50,21 +50,16 @@ function IntroSlider() {
 
         >
 
-            <SwiperSlide><div className="bg-[#F8F8F8] w-full h-full">
+            <SwiperSlide><div className="dark:bg-[#8C8C8C] bg-[#F8F8F8] w-full h-full">
 
 
                 <div className=" mr-60 flex justify-end text-gray-800">
-                    <img src="https://i.ibb.co/HxdDtYd/text-01.png" alt="" className="w-[50%]" /> <SlideAni /></div>
-            </div> <Link
-                className="absolute left-[40%] top-[54%] text-sm md:text-2xl text-center text-black px-[35px] py-[15px] rounded-[10px] border-2 border-[#999999] whitespace-nowrap z-10"
-                to="/login"
-              >
-                Get started
-              </Link></SwiperSlide>
-        
+                    <img src="https://i.ibb.co/BGVMTtp/1-01.png" className="w-[50%]" /> <SlideAni /></div>
+            </div></SwiperSlide>
+
             <SwiperSlide>Slide 2</SwiperSlide>
             <SwiperSlide>Slide 3</SwiperSlide>
- 
+
 
             <div className="autoplay-progress" slot="container-end">
                 <svg viewBox="0 0 48 48" ref={progressCircle}>

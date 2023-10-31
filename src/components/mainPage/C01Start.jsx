@@ -14,8 +14,8 @@ const C01Start = ({ handleButtonClick }) => {
       </div>
 
       <button
-        className="rounded-[5px] font-bold text-2xl md:text-5xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-5"
-        style={{ width: '60%', maxWidth: '400px' }}
+        className="rounded-[5px] font-bold text-3xl md:text-4xl font-bold text-[#190e61] border border-[#190e61] border-2 p-3 md:p-4"
+        style={{ width: '60%', maxWidth: '350px' }}
         onClick={() => handleButtonClick(2)}
       >
         START
@@ -28,7 +28,7 @@ const C01Start = ({ handleButtonClick }) => {
 function Robot() {
   return (
     <Lottie
-    className='translate3d-15-0-0 md:translate3d-25-0-0 '
+    className='translate3d-15-0-0 md:translate3d-25-0-0 animate-wiggle'
       loop
       animationData={lottieJson}
       play

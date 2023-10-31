@@ -50,8 +50,8 @@ const Intro01 = () => {
             <div className="py-5 md:py-40 p-6 sm:p-3 text-base sm:text-lg  ">
               <p className="text-2xl font-semibold"> WHERE THE EYES GO, SALES ARE THERE</p>
               시선 분석 AI를 통해 매대를 정밀하게 분석하고<br />
-              소비자의 시선을 예측해보세요. <br /> <p className="font-bold">소비자의 시선이 향하는 곳에 매출이
-                있습니다. </p>
+              소비자의 시선을 예측해보세요. <br />소비자의 시선이 향하는 곳에 매출이
+                있습니다.<br />
               우리는 챗봇을 통해 사용자들과 소통합니다 <br />
               매장 운영에 필요한 정보를 분석하고, <br />
               상권, 성별, 연령을 바탕으로

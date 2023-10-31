@@ -9,7 +9,6 @@ import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
   const [imageSrc, setImageSrc] = useState(null);
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
-  // const [beforeimg, setBeforeimg] = useState('');
   axios.defaults.withCredentials = true;
   const TokenRefresher = useContext(TokenRefresherContext);
   useEffect(() => {
@@ -23,10 +22,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       // 파이어 베이스 스토리지 가져오기
       const storage = getStorage(firebaseApp);
       console.log('이미지 센드', uploadedImageSend);
-
       // 백엔드 서버 URL 가져오기
       const url = process.env.REACT_APP_MASTER_URL;
-
       // 이미지 데이터
       console.log("이미지 데이터", uploadedImage);
 
@@ -36,19 +33,38 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       // `images === 참조값이름(폴더이름), / 뒤에는 파일이름 어떻게 지을지
       // `images`는 폴더 이름, `/` 뒤에는 파일 이름 또는 어떻게 저장할지 지정
 
+      // const test01 = uploadBytes(imageRef, uploadedImage)
+      //   .then((snapshot) => getDownloadURL(snapshot.ref)
+      //     .then((url) => setBeforeimg(url)))
 
-      uploadBytes(imageRef, uploadedImage)
-        .then((snapshot) => getDownloadURL(snapshot.ref).then((url)=>sessionStorage.setItem('beforeimg',url)))
-      const beforeimg = sessionStorage.getItem('beforeimg')
-      console.log('url', beforeimg);
+
+
+      // url 받아오는 함수
+      async function uploadImageAndSetUrl() {
+        try {
+          const snapshot = await uploadBytes(imageRef, uploadedImage);
+          const url = await getDownloadURL(snapshot.ref);
+          return url
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      const beforeimg = uploadImageAndSetUrl();
+
+      console.log("먼저 실행", beforeimg)
+      console.log('1번 실행 url', beforeimg);
       sessionStorage.clear();
+
       const resultImage = TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimg })
+
         .then(response => {
           // 전송 성공
           console.log("전송 성공");
           onUploadComplete(true);
           return response.data;
         })
+
         .catch(error => {
           // 전송 실패
           console.error("전송을 실패 했습니다 에러 내용 :", error);

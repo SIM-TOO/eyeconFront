@@ -8,8 +8,11 @@ const Intro02 = () => {
             {/* 색깔있는 박스 위치 */}
             <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
                 <div className="col-span-5 md:col-span-4" />
-                <div className="col-span-7 w-[70px] h-[60px] md:w-[200px] md:h-[180px] ">    < MiniRobot /></div>
-
+                
+                {/* 움직이는 로봇 */}
+                <div className="col-span-7 w-[70px] h-[60px] md:w-[200px] md:h-[180px] ">
+                    < MiniRobot />
+                </div>
             </div>
 
             <div className="flex flex-row-reverse items-center">
@@ -39,7 +42,7 @@ const Intro02 = () => {
 };
 
 
-{/* 메인화면 내 움직이는 미니 로봇 */ }
+// 메인화면 내 움직이는 미니 로봇
 function MiniRobot() {
     return (
         <Lottie

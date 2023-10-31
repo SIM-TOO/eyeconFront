@@ -71,15 +71,14 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
 
   const onDrop = useCallback((acceptedFiles) => {
     const file = acceptedFiles[0];   // *************** 요놈을 파이어베이스에 보내야합니다만 위 useEffect로 보내려니 코드 해석이 빡쎄요
-    console.log(file);  
-
-
-
+  
+    // 미리보기용 이미지 URL
     const imageURL = URL.createObjectURL(file);
     setImageSrc(imageURL);
 
+
     const image = new Image();
-    image.src = imageURL;
+    image.src = file;
 
     image.onload = () => {
       const boxRatio = 1;  // 박스의 비율
@@ -93,8 +92,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     }
 
     if (onUploadSuccess) {
-      // 이미지 파일의 URL을 전달
-      onUploadSuccess(imageURL);
+      // 이미지 파일을 전달
+      onUploadSuccess(file);
     }
   }, [onUploadSuccess]);
 

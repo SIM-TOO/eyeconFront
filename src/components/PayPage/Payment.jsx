@@ -87,6 +87,10 @@ const Payment = () => {
       });
     };
   
+
+
+
+    
     return (
       <div>
         <button onClick={requestPay}>결제하기</button>

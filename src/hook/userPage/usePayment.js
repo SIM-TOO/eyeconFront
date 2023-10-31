@@ -2,9 +2,19 @@ import { useContext, useEffect } from 'react'
 import axios from 'axios';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import Swal from 'sweetalert2';
+import CoinCheck from '../../components/payPage/CoinCheck'; // 이동할 컴포넌트를 가져옴
+import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 
 // 결제관련
 const usePayment = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+
   useEffect(() => {
     const jquery = document.createElement("script");
     jquery.src = "http://code.jquery.com/jquery-1.12.4.min.js";
@@ -18,9 +28,12 @@ const usePayment = () => {
     };
   }, []);
 
+
+
+
   const TokenRefresher = useContext(TokenRefresherContext);
 
-  const requestPay = (coinPrice, coinName) => {
+  const requestPay = (coinPrice, coinName, coinCnt) => {
     const { IMP } = window;
     IMP.init('imp54472174');
 
@@ -70,10 +83,9 @@ const usePayment = () => {
               icon: 'success',
               title: '결제 성공',
               text: '결제에 성공했습니다.',
-            }).then(() => {
-              // 결제 성공 팝업을 닫고 이동
-              Swal.close();
-            /*   ReactDOM.render(<CoinCheck />); */
+            }).then(function () {
+              navigate('/coincheck', { state: { coinCount: rsp.paid_amount , coinCnt : coinCnt} });
+              <Link to="/coincheck" />
             }).catch(function (error) {
               console.log("/order/completed 실패")
             })
@@ -97,8 +109,11 @@ const usePayment = () => {
   };
 
   return {
-    requestPay
+    requestPay,
+
   }
 };
+
+
 
 export default usePayment

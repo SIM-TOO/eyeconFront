@@ -4,6 +4,7 @@ import lottieJson from '../../lottie/transaction.json';
 
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import usePayment from './../../hook/userPage/usePayment';
+import CoinCheck from "./CoinCheck";
 
 const MainPay = () => {
     const TokenRefresher = useContext(TokenRefresherContext);
@@ -95,7 +96,7 @@ const MainPay = () => {
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white ">
                             <span className="text-xs text-center text-[#020202]" onClick={() => {
-                                requestPay(coinList[0].price, coinList[0].coinName)
+                                requestPay(coinList[0].price, coinList[0].coinName, coinList[0].coinCnt)
                             }} >
                                 Start today</span>
                         </button>
@@ -132,7 +133,7 @@ const MainPay = () => {
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]" onClick={() => {
-                                requestPay(coinList[1].price, coinList[1].coinName)
+                                requestPay(coinList[1].price, coinList[1].coinName, coinList[1].coinCnt)
                             }}>
                                 Start today</span>
                         </button>
@@ -167,7 +168,7 @@ const MainPay = () => {
                         </div>
                         <button className="p-3 px-4 py-1.5 rounded-[20px] bg-transparent border border-white hover:bg-white">
                             <span className="text-xs text-center text-[#020202]" onClick={() => {
-                                requestPay(coinList[2].price, coinList[2].coinName)
+                                requestPay(coinList[2].price, coinList[2].coinName, coinList[2].coinCnt)
                             }}>
                                 Start today</span>
                         </button>

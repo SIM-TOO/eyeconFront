@@ -20,7 +20,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     if (uploadedImageSend) {
       console.log("이미지 전송 코드 실행")
       const storage = getStorage(firebaseApp);
-
+      console.log('이미지 센드', uploadedImageSend);
       // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
       const url = process.env.REACT_APP_MASTER_URL;
 
@@ -70,14 +70,15 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
 
 
   const onDrop = useCallback((acceptedFiles) => {
-    const file = acceptedFiles[0];
-
-
+    const file = acceptedFiles[0];   // *************** 요놈을 파이어베이스에 보내야합니다만 위 useEffect로 보내려니 코드 해석이 빡쎄요
+  
+    // 미리보기용 이미지 URL
     const imageURL = URL.createObjectURL(file);
     setImageSrc(imageURL);
 
+
     const image = new Image();
-    image.src = imageURL;
+    image.src = file;
 
     image.onload = () => {
       const boxRatio = 1;  // 박스의 비율
@@ -91,8 +92,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     }
 
     if (onUploadSuccess) {
-      // 이미지 파일의 URL을 전달
-      onUploadSuccess(imageURL);
+      // 이미지 파일을 전달
+      onUploadSuccess(file);
     }
   }, [onUploadSuccess]);
 

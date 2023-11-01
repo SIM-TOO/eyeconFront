@@ -11,7 +11,7 @@ function MainPage() {
   localStorage.clear('address');
 
   return (
-    <div className='dark:bg-gray-800'>
+    <div>
       <Header/> 
       <Intro01/>
       <Intro02/>

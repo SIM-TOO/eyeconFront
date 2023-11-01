@@ -9,7 +9,7 @@ const useGetCoin = () => {
     const TokenRefresher = useContext(TokenRefresherContext);
     const getCoin = async () => {
         try {
-            const response = await TokenRefresher.post(`${url}/coin/findCoin`);
+            const response = await TokenRefresher.get(`${url}/coin/findCoin`);
             if (response && response.data) {
                 const coins = response.data;
                 // 로컬 스토리지에 데이터 저장
@@ -23,14 +23,12 @@ const useGetCoin = () => {
                 icon: 'error',
                 title: '오류',
                 text: '오류가 발생했습니다. 다시 시도해주세요.',
-              });
+            });
             localStorage.removeItem('coinsData');
             window.location.href = "/";
         }
         return null;
     };
-
     return getCoin;
 };
-
 export default useGetCoin;

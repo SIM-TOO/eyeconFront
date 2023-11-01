@@ -8,7 +8,13 @@ module.exports = {
       Pretendard: ["Pretendard-Regular"]
     },
     extend: {
+
       keyframes: {
+
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
         typing: {
           "0%": {
             width: "0%",
@@ -27,20 +33,19 @@ module.exports = {
           }
         }
       },
-
       translate3d: {
         '10-55-0': '10px, 55px, 0px',
         '15-0-0': '15px, 0px, 0px',
         '25-0-0': '25px, 0px, 0px',
         // ... 다른 값들
-      }
-,
+      },
       animation: {
         'bounce1': 'bounce 2s infinite',
         'bounce2': 'bounce 2.5s infinite',
         'bounce3': 'bounce 3s infinite',
-                typing: "typing 3s steps(30) infinite alternate, blink .7s infinite"
-      }
+        typing: "typing 3s steps(30) infinite alternate, blink .7s infinite",
+        wiggle: 'wiggle 2s ease-in-out infinite',
+      },
     },
   },
   plugins: [
@@ -55,4 +60,4 @@ module.exports = {
       addUtilities(newUtilities, variants('translate3d'));
     },
   ],
-}
+};

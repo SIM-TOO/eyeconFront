@@ -7,7 +7,6 @@ import Place from './methodes/Place'
 import './index.css';
 import MainPageAfter from './components/MainPageAfter';
 import ResultPage from './components/ResultPage';
-import Gpttest1 from './components/testPage/Gpttest1';
 import MainPageAfterPay from './components/MainPageAfterPay';
 import MyPage from './components/MyPage';
 import { TokenRefresherContext } from './context/TokenRefresherContext';
@@ -18,15 +17,14 @@ import store from './store';
 import { AddressContext } from './context/AddressContext';
 import { useState } from 'react';
 import CoinCheck from './components/payPage/CoinCheck';
+import Test from './components/testPage/Test';
 
 function App() {
 
+  // 로그인 상태 확인 & 코인 상태 확인
   const loginCKData = useSelector((state) => state.accessCK);
   const storedCoins = localStorage.getItem('coinsData');
   const dispatch = useDispatch();
-  if (storedCoins == null) {
-
-  }
   if (loginCKData !== 'Exist') {
     if (storedCoins !== null) {
       dispatch(setAccessCK('Exist'));
@@ -48,31 +46,35 @@ function App() {
         <TokenRefresherContext.Provider value={TokenRefresher}>
           <AddressContext.Provider value={inAddressContext}>
             <Routes>
+              {/* 기본적으로 접근 가능한 페이지 */}
               <Route path="/" element={<MainPage />} />
-              <Route path="/gpttest" element={<Gpttest1 />} />
               <Route path="/pay" element={<Pay />} />
               <Route path="/place" element={<Place />} />
               <Route path="/coincheck" element={<CoinCheck />} />
 
               {loginCKData === 'Exist' ? (
                 <>
+                  {/* 로그인 정보 있을 경우 접근 가능 */}
                   <Route path="/join" element={<MainPage />} />
                   <Route path="/login" element={<MainPage />} />
                   <Route path="/result" element={<ResultPage />} />
                   <Route path="/main" element={<MainPageAfter />} />
                   <Route path="/mainpay" element={<MainPageAfterPay />} />
                   <Route path="/mypage" element={<MyPage />} />
+                  <Route path="/test" element={<Test />} />
+
                 </>
               ) :
                 <>
+                  {/* 로그인 정보 없을 경우 접근 불가능 로그인 페이지로 우회 */}
                   <Route path="/join" element={<Join />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/result" element={<Login />} />
                   <Route path="/main" element={<Login />} />
                   <Route path="/mainpay" element={<Login />} />
                   <Route path="/mypage" element={<Login />} />
-                  
-                
+
+
 
                 </>
               }

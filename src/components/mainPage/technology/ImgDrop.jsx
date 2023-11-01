@@ -9,21 +9,21 @@ import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
   const [imageSrc, setImageSrc] = useState(null);
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
-
   axios.defaults.withCredentials = true;
   const TokenRefresher = useContext(TokenRefresherContext);
   useEffect(() => {
     if (uploadedImage === null) {
-      setImageSrc(null);
+      setImageSrc(null); // 업로드된 이미지가 없으면 미리보기 이미지 초기화
       return; // 이미지가 없으면 더 이상 진행하지 않음
     }
     if (uploadedImageSend) {
+
       console.log("이미지 전송 코드 실행")
+      // 파이어 베이스 스토리지 가져오기
       const storage = getStorage(firebaseApp);
       console.log('이미지 센드', uploadedImageSend);
-      // 이미지가 있으며, 전송 버튼을 클릭한 경우 실행
+      // 백엔드 서버 URL 가져오기
       const url = process.env.REACT_APP_MASTER_URL;
-
       // 이미지 데이터
       console.log("이미지 데이터", uploadedImage);
 
@@ -80,9 +80,16 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       sendImage();
 
 
-
-
-
+      console.log("결과물 : ", resultImage)
+      resultImage.then(data => {
+        if (data !== null) {
+          // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행     
+          localStorage.setItem('resultImageData', data);
+        } else {
+          // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
+          // 또는 필요한 다른 처리를 수행합니다.
+        }
+      })
 
 
     }
@@ -96,14 +103,13 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
     const imageURL = URL.createObjectURL(file);
     setImageSrc(imageURL);
 
-
     const image = new Image();
     image.src = file;
 
+    // 이미지 가로 세로 비율을 조정하여 박스에 출력
     image.onload = () => {
       const boxRatio = 1;  // 박스의 비율
       const imageRatio = image.width / image.height;
-
       if (imageRatio > boxRatio) {
         setImageStyle("w-full h-auto");
       } else {
@@ -136,12 +142,12 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
           </div>
           :
           <>
-            <p className="hidden md:block opacity-50 font-medium text-[#190e61]">
+            <p className="hidden md:block opacity-50 font-medium text-[#190e61] dark:text-[#FFFFFF]">
               이미지를 드래그를 통해
               <br />
               이곳에 위치시키세요
             </p>
-            <p className="block md:hidden opacity-50 font-medium text-[#190e61]">
+            <p className="block md:hidden opacity-50 font-medium text-[#190e61] dark:text-[#FFFFFF]">
               클릭해서 업로드 해주세요
             </p>
           </>

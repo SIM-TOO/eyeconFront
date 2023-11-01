@@ -17,13 +17,15 @@ const Login = () => {
             <img
               src="https://i.ibb.co/BCP0xW5/join.png"
               alt=""
-              className="absolute top-0 left-0 z-10 hidden md:block"
+              className="absolute top-0 left-0 z-10 hidden md:block dark:hidden"
             />
+             <img src="https://i.ibb.co/ZNvzZMz/Group-624891.png" alt="" className="absolute top-0 left-0 z-10 block dark:hidden md:hidden hidden"/>
+           
             {/* </Link> */}
             <UserImage />
           </div>
           <div className="mx-auto lg:mt-0 mt-60 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px] dark:text-[#F2F2F2]">
-            <p className="text-3xl font-medium text-left text-black p-3 dark:text-[#F2F2F2]">
+            <p className="text-3xl font-medium text-center md:text-left text-black p-3 dark:text-[#F2F2F2]">
               Sign in
             </p>
 
@@ -36,7 +38,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     placeholder="Enter Email"
-                    className="bg-[#f3fffd] placeholder-[#15c3a7] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7] text-[#15c3a7]::placeholder"
+                    className="bg-[#f3fffd] placeholder-[#15c3a7] outline-none focus:outline-none w-full text-[15px] text-[#15c3a7]"
                   />
                 </div>
               </div>
@@ -48,7 +50,7 @@ const Login = () => {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    className="placeholder-[#15c3a7] bg-[#f3fffd] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
+                    className="bg-[#f3fffd] placeholder-[#15c3a7] outline-none focus:outline-none text-[15px] text-[#15c3a7] flex-1"
                   />
                 </div>
               </div>

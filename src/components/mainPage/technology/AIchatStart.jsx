@@ -12,7 +12,7 @@ const AIchatStart = ({ onButtonClick }) => {
             <div className='w-[100%] grid grid-cols-12 p-3'>
                 <div className="col-span-12 p-3" />
                 <div className="col-span-3" />
-                <div className="col-span-7 flex justify-center items-center p-3 rounded-lg bg-[#40c3ae] cursor-pointer"
+                <div className="col-span-7 flex justify-center items-center p-3 rounded-lg bg-[#40c3ae] cursor-pointer "
                     onClick={onButtonClick}
                     // 맨위로 선언(로티로 인한 가려짐 방지)
                     style={{ zIndex: 999 }} >

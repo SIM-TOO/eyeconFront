@@ -15,7 +15,7 @@ const List = () => {
         <p className='font-bold text-2xl'> ↓ 최신순 </p>  
         </div>
         <div className='rounded-[10px] col-span-12 h-full grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]'>
-          <div className='col-span-4'>
+          <div className='col-span-12'>
             <p className='font-2xl font-bold'>2023-11-01</p>
           </div>
           <div className='col-span-4 rounded-[10px] p-3 bg-white rounded shadow border border-[#DEE2E7] flex items-center justify-center'>
@@ -41,15 +41,13 @@ const List = () => {
               눌러주세요.
             </p>
           </div>
-          <div className='col-span-4'/>
-          <div className='col-span-4'>
+          <div className='col-span-8'>
             <p>
               광주 동구 상업단지 상권 40대 남성을 타겟으로 한 매대 시선분석 결과입니다.
               현재 광주 동구 충장로 상권의 경우 40대 남성을 주 대상으로 하고 있습니다.
               주요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해보세요.
             </p>
           </div>
-          <div className='col-span-4'/>
         </div>
       </div>
     </div>

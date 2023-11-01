@@ -3,7 +3,7 @@ import HeaderAfter from "./HeaderAfter";
 import MainPay from "./payPage/MainPay";
 import PayHistory from "./payPage/PayHistory";
 import axios from "axios";
-import servicemain from "../assets/servicemain.png"
+
 
 function MainPageAfterPay() {
 
@@ -57,11 +57,7 @@ function MainPageAfterPay() {
         //     coin_id: 2,
         //     coin: 3,
         //     price: 100,
-        //     finance: '국민KB카드'
-        
-        
-        
-        ,
+        //     finance: '국민KB카드',
         //   }
 
         //가져온 데이터 배열로 저장  
@@ -81,7 +77,7 @@ function MainPageAfterPay() {
 
 
   return (
-<div className="h-screen bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')] dark:bg-[url('https://i.ibb.co/PD92ZQZ/1.png')]">
+    <div className="h-screen bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')] dark:bg-[src('./assets/servicemain.png').default]">
 
       {/* 헤더 */}
       <HeaderAfter />

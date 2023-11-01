@@ -17,11 +17,11 @@ const List = () => {
             <div className='col-span-2'/>
             <p className='col-span-2'>↓ 최신순</p>
           </div>
-          <div className="col-span-4 rounded-[10px] bg-white rounded shadow border border-[#DEE2E7]">
-            <img src="https://i.ibb.co/6Y1kC07/image.jpg" alt="image" border="0" className='mx-auto' />
-            <div className="col-span-4">
-              <p>시선분석 전</p>
-              <button className="rounded-[15px] rounded-[20px] border-[1.5px] border-[#19ab93] col-span-2">DOWNLOAD ↓</button>
+          <div className='col-span-4 rounded-[10px] p-3 bg-white rounded shadow border border-[#DEE2E7] flex items-center justify-center'>
+            <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="image-36" border="0" className='mx-auto' />
+            <div className='col-span-1'>
+            <p className='p-3'> 시선 분석 전 </p>
+            <button className='rounded-[20px] border-[1.5px] border-[#19ab93]'>Download ↓</button>
             </div>
             <p>
               시선 분석 전 매대 사진입니다.

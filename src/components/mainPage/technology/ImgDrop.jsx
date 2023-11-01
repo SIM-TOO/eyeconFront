@@ -80,16 +80,16 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       sendImage();
 
 
-      console.log("결과물 : ", resultImage)
-      resultImage.then(data => {
-        if (data !== null) {
-          // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행     
-          localStorage.setItem('resultImageData', data);
-        } else {
-          // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
-          // 또는 필요한 다른 처리를 수행합니다.
-        }
-      })
+      // console.log("결과물 : ", resultImage)
+      // resultImage.then(data => {
+      //   if (data !== null) {
+      //     // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행     
+      //     localStorage.setItem('resultImageData', data);
+      //   } else {
+      //     // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
+      //     // 또는 필요한 다른 처리를 수행합니다.
+      //   }
+      // })
 
 
     }

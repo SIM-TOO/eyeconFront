@@ -16,6 +16,7 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
   useUserLogin()
+
   // 로그인 상태
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const loginCKData = useSelector((state) => state.accessCK);
@@ -169,19 +170,41 @@ function Header() {
                     >
                       <Link to="/pay">Pricing</Link>
                     </li>
-                    <li
-                      className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
-                      aria-current="page"
-                    >
-                      <Link to="/login">Login</Link>
-                    </li>
-                    <li
-                      className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-gray-400 lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
-                      aria-current="page"
-                    >
-                      <Link to="/join">Join</Link>
-                    </li>
 
+
+
+                    {isLoggedIn ? (
+                      <>
+                        <Link
+                          to="/main"
+                          className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                        >
+                          서비스 시작하기
+                        </Link>
+                        <Link
+                          to="/"
+                          className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-gray-400 lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                          onClick={goLogout}
+                        >
+                          로그아웃
+                        </Link>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          to="/login"
+                          className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-[#15c3a7] lg:bg-transparent lg:text-gray-600 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                        >
+                          서비스 시작하기
+                        </Link>
+                        <Link
+                          to="/join"
+                          className="block py-2 pr-4 pl-3 px-2 text-white rounded bg-gray-400 lg:bg-transparent lg:text-gray-200 lg:p-0 dark:text-white transition-transform hover:font-semibold hover:text-blue-500"
+                        >
+                          회원가입
+                        </Link>
+                      </>
+                    )}
 
 
 

@@ -4,9 +4,13 @@ import lottieJson from '../../lottie/transaction.json';
 
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import usePayment from './../../hook/userPage/usePayment';
+import DarkOverlay from "../../hook/userPage/useDarkOverlay";
 
 
 const MainPay = () => {
+    /* 검정 백그라운드 */
+    const [showOverlay, setShowOverlay] = useState(false);
+
     const TokenRefresher = useContext(TokenRefresherContext);
     const [coinList, setCoinList] = useState([]);
     // usePayment.js의 requestPay함수 불러오기
@@ -14,16 +18,26 @@ const MainPay = () => {
 
     useEffect(() => {
         // db에 있는 코인 상품들 불러오기
+        /* 아진짜 타이밍 어떻게 잡지 */
+        setShowOverlay(true);
         const fetchData = async () => {
+            setShowOverlay(false);
             const res = await TokenRefresher.get("/coin");
+            
             // console.log('====================================');
             // console.log(res.data);
             // console.log('====================================');
             setCoinList(res.data);
         };
-
+        
+        
         fetchData();
+        
+        
+  
+
     }, [TokenRefresher]);
+
 
     const image1 = "https://i.ibb.co/zbHnGYX/icon.png";
     const image2 = "https://i.ibb.co/M5rqSD4/icon-1.png";
@@ -45,6 +59,8 @@ const MainPay = () => {
 
     return (
         <div>
+            {showOverlay && <DarkOverlay />}
+
             {/* 나중에 글씨 폰트 디자인 넣을것 */}
             <div className="flex flex-col items-center justify-center text-center font-Pretendard ">
                 <img

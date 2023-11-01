@@ -6,7 +6,10 @@ import ImgDrop from "./technology/ImgDrop";
 
 const C04ImgUpdate = ({ handleButtonClick }) => {
 
+  // 실제 이미지
   const [uploadedImage, setUploadedImage] = useState(null);
+
+  // 이미지 전송 확인용
   const [uploadedImageSend, setUploadedImageSend] = useState(null);
 
   // 이미지 업로드 성공시 실행되는 함수
@@ -14,7 +17,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
     if (success) {
       handleButtonClick(5);
     } else {
-      // 일단 실패해도 넘어가자! ^^
+      // 일단 실패해도 넘어가자! ^^ 나중에 4로 바꿀것
       handleButtonClick(5);
     }
   };
@@ -26,7 +29,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
       <div className="hidden md:block col-span-0 md:col-span-1" />
       {/* 내용 박스 */}
       <div className="col-span-12 md:col-span-10 p-7"
-        >
+      >
         {uploadedImage === null ?
           (
             <p className="text-center text-black text-xl ">
@@ -43,7 +46,6 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />
 
-
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />
       {/* 로봇 */}
@@ -53,76 +55,58 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
 
       {/* 이미지 내용 박스 */}
       <div className="h-[100%] col-span-12 md:col-span-5 grid grid-cols-12 flex items-center justify-center">
-        {
-          !uploadedImage &&  // uploadedImage가 null이 아닐 경우만 표시
+        {!uploadedImage &&  // uploadedImage가 null이 아닐 경우만 표시
           <>
             {/* 이미지 */}
             <div className="col-span-12 md:col-span-4 flex justify-center">
-              <img
-                src="https://i.ibb.co/ZSfF5Bb/Kakao-Talk-20231023-104406363.png"
-                alt="매대이미지"
-                className="mx-auto"
-              />
+              <img src="https://i.ibb.co/ZSfF5Bb/Kakao-Talk-20231023-104406363.png" alt="매대이미지" className="mx-auto" />
             </div>
             {/* 내용 */}
             <div className="col-span-12 md:col-span-8 p-3 text-base text-center text-black">
               <p className="font-bold">
                 업로드 이미지 형식</p>
               <p className="font-medium">
-                매대가 잘 보이는 이미지
-                <br />
+                매대가 잘 보이는 이미지 <br />
                 여백이 없는 이미지
               </p>
             </div >
           </>
         }
-        {/* 이미지 드랍 */}
+        {/* 이미지 드랍 함수 */}
         <ImgDrop
-      onUploadSuccess={(image) => setUploadedImage(image)}
-      uploadedImage={uploadedImage}
-      uploadedImageSend={uploadedImageSend}
-      onUploadComplete={handleImageUploadComplete}
-    />
+          onUploadSuccess={(image) => setUploadedImage(image)}
+          //실제 이미지 업로드 파일
+          uploadedImage={uploadedImage}
+          uploadedImageSend={uploadedImageSend}
+          onUploadComplete={handleImageUploadComplete}
+        />
       </div>
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />
 
       {/* 버튼박스 */}
-
       {uploadedImage === null ?
-        (
-          <>
+        (<>
           <div className="col-span-1 md:col-span-2 p-3" />
-         
           <div className="col-span-2 md:col-span-2 p-3" />
-         
-          <div className="col-span-1 md:col-span-2 p-3"/>
-          </>
-        ) :
+          <div className="col-span-1 md:col-span-2 p-3" />
+        </>)
+        :
         (<>
           <div className="col-span-1 md:col-span-2" />
-          <button
-            className="col-span-4 md:col-span-3 bg-[#0090E1] p-3 font-semibold text-white rounded-full"
-            onClick={() => setUploadedImage(null)}
-          >
+          <button className="col-span-4 md:col-span-3 bg-[#0090E1] p-3 font-semibold text-white rounded-full"
+            onClick={() => setUploadedImage(null)}>
             이전 단계로 이동
           </button>
           <div className="col-span-2 md:col-span-2" />
-          <button
-            className="animate-bounce3 col-span-4 md:col-span-3 bg-[#15c3a7] p-3 font-semibold text-white rounded-full"
-            onClick={() => setUploadedImageSend(true)}
-          >
+          <button className="animate-bounce3 col-span-4 md:col-span-3 bg-[#15c3a7] p-3 font-semibold text-white rounded-full"
+            onClick={() => setUploadedImageSend(true)}>
             이미지 업로드
           </button>
-          <div className="col-span-1 md:col-span-2"
-            />
-        </>
-        )
+          <div className="col-span-1 md:col-span-2" />
+        </>)
       }
-
-
-
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-12" />

@@ -14,10 +14,7 @@ const AIchat = ({ messages }) => {
 
     return (
         // 채팅창 내부
-        <div
-            ref={chatRef}
-            className="h-[100%] md:h-[80%] col-span-12 md:col-span-7 flex flex-col overflow-y-auto md:mt-20"
-        >
+        <div ref={chatRef} className="h-[100%] md:h-[80%] col-span-12 md:col-span-7 flex flex-col overflow-y-auto md:mt-20">
             {/* 채팅창 */}
             {messages.map((msg, index) => (
                 <div key={index} className={`flex ${msg.isMine ? 'justify-end' : 'justify-start'} mb-4 `}>
@@ -26,13 +23,12 @@ const AIchat = ({ messages }) => {
                     {!msg.isMine && < RobotIcon className="rounded-full mr-3" />}
 
                     {/* 채팅 메시지 박스 */}
-                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-300 text-black' :'bg-blue-500 text-white'  }`}>
+                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-300 text-black' : 'bg-blue-500 text-white'}`}>
                         {msg.content}
                     </div>
 
                     {/* 프로필 이미지 */}
-                    {msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png   " alt="Profile" className="w-10 h-10 rounded-full ml-3" />}
-
+                    {msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png" alt="Profile" className="w-10 h-10 rounded-full ml-3" />}
                 </div>
             ))}
         </div>

@@ -2,14 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
-
-
 import Slider from './Slider'
 
 const Intro01 = () => {
-
-
-
   return (
     <div className="dark:bg-gray-800 dark:text-[#F2F2F2]">
       <div className="h-[150px] bg-white dark:bg-gray-800" />
@@ -25,6 +20,7 @@ const Intro01 = () => {
         <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl font-Pretendard ">
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
+       
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20 ">
               <span className="text-4xl md:text-6xl font-bold ">
                 WELCOME TO <br />
@@ -51,12 +47,12 @@ const Intro01 = () => {
               <p className="text-2xl font-semibold"> WHERE THE EYES GO, SALES ARE THERE</p>
               시선 분석 AI를 통해 매대를 정밀하게 분석하고<br />
               소비자의 시선을 예측해보세요. <br />소비자의 시선이 향하는 곳에 매출이
-                있습니다.<br />
+              있습니다.<br />
               우리는 챗봇을 통해 사용자들과 소통합니다 <br />
               매장 운영에 필요한 정보를 분석하고, <br />
               상권, 성별, 연령을 바탕으로
-              최적의 정보를 제공합니다. <br/>
-              우리는 챗봇 AI를 통해 더욱 정확해지고 <br/>
+              최적의 정보를 제공합니다. <br />
+              우리는 챗봇 AI를 통해 더욱 정확해지고 <br />
               고객 만족 서비스를 제공합니다.
             </div>
 

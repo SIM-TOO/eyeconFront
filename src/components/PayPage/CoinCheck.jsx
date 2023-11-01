@@ -39,7 +39,7 @@ const CoinCheck = () => {
         // 3초 후에 main 페이지로 이동
         const timeoutId = setTimeout(() => {
             navigate('/main');
-        }, 3000);
+        }, 4000);
 
         // 컴포넌트가 언마운트 될 때 타임아웃 클리어
         return () => {

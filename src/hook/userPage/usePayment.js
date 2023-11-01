@@ -85,7 +85,7 @@ const usePayment = () => {
             Swal.fire({
               icon: 'success',
               title: '결제 성공',
-              text: '결제에 성공했습니다.',
+              text: '결제를 성공했습니다.',
             }).then(function () {
               navigate('/coincheck', { state: { coinCount: rsp.paid_amount, coinCnt: coinCnt } });
               <Link to="/coincheck" />

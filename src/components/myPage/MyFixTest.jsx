@@ -28,11 +28,11 @@ const MyFixTest = () => {
 
   return (
     <div
-      className="flex flex-col items-center font-Pretendard min-h-full"
+      className="flex flex-col items-center font-Pretendard"
       style={{ height: "calc(100vh - 120px)" }}
     >
       <div
-        className="w-[90%] md:w-[70%] md:h-[90%] rounded-2xl"
+        className="w-[90%] md:w-[70%] md:h-[98%] rounded-2xl"
         style={{
           background:
             "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)",

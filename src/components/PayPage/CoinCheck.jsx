@@ -5,6 +5,7 @@ import lottieJson from '../../lottie/coineffect.json';
 import lottieJson2 from '../../lottie/progress.json';
 import useGetCoin from "../../hook/mainPage/useGetCoin";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 
 
@@ -36,7 +37,7 @@ const CoinCheck = () => {
 
         fetchCoinInfo();
 
-        // 3초 후에 main 페이지로 이동
+        // 4초 후에 main 페이지로 이동
         const timeoutId = setTimeout(() => {
             navigate('/main');
         }, 4000);
@@ -67,20 +68,26 @@ const CoinCheck = () => {
                     <h5 className="mb-2 text-4xl font-bold text-gray-900 dark:text-white">코인 {coinCount}개 충전 완료</h5>
                     <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">코인이 충전되었습니다. 잠시 후 메인 화면으로 이동합니다.</p>
                     <div className="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-                        <div className="w-full sm:w-auto bg-[#0BB79B] hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-6 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
-
+                        <div className="w-full sm:w-auto  bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-6 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                             <div className="text-left">
                                 <div className="mb-1 text-sm">현재 잔여코인</div>
                                 <div className="-mt-1 font-sans text-sm font-semibold text-center">{remainingCoins}개</div>
                             </div>
                         </div>
+                        <Link to="/main">
+                            <div className="w-full sm:w-auto  bg-[#0BB79B] hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-6 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                                <div className="text-left">
+                                    <div className="mb-1 text-sm font-semibold">메인으로</div>
+                                    <div className="-mt-1 font-sans text-sm font-semibold text-center">이동</div>
+                                </div>
+                            </div>
+                        </Link>
 
                         <div className="w-full sm:w-auto bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-8 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                             <div className="text-left">
                                 <div className="mb-1 text-sm">충전 금액</div>
                                 <div className="-mt-1 font-sans text-sm font-semibold text-center">{coinmoney}원</div>
                             </div>
-
                         </div>
                     </div>
                     <div className="flex items-center justify-center">

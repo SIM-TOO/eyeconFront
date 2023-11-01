@@ -19,7 +19,7 @@ const List = () => {
             <p className='font-2xl font-bold'>2023-11-01</p>
           </div>
           <div className='col-span-4 rounded-[10px] p-3 bg-white rounded shadow border border-[#DEE2E7] flex items-center justify-center'>
-            <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="image-36" border="0" className='mx-auto' />
+            <img src="https://i.ibb.co/wKLDFT2/image-36.png" alt="36" border="0" className='mx-auto' />
             <div className='col-span-1'>
             <p className='p-3'> 시선 분석 전 </p>
             <button className='rounded-[20px] border-[1.5px] border-[#19ab93]'>Download ↓</button>

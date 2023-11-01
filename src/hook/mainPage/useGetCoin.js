@@ -9,7 +9,7 @@ const useGetCoin = () => {
     const TokenRefresher = useContext(TokenRefresherContext);
     const getCoin = async () => {
         try {
-            const response = await TokenRefresher.post(`${url}/coin/findCoin`);
+            const response = await TokenRefresher.get(`${url}/coin/findCoin`);
             if (response && response.data) {
                 const coins = response.data;
                 // 로컬 스토리지에 데이터 저장

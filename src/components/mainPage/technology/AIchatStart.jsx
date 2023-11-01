@@ -30,6 +30,7 @@ function StartRobot() {
             className='translate3d-10-55-0 w-[60%]'
             loop
             animationData={lottieJson}
+            speed={2.5} // 2배 빠르게 재생
             play
         />
     );

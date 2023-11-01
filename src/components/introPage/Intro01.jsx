@@ -71,6 +71,7 @@ const Intro01 = () => {
           {/* 모바일이 사라짐 */}
           <div className="col-span-6 md:block hidden">
             <Animation />
+            
           </div>
         </div>
       </div>

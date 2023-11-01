@@ -17,6 +17,7 @@ import store from './store';
 import { AddressContext } from './context/AddressContext';
 import { useState } from 'react';
 import CoinCheck from './components/payPage/CoinCheck';
+import Test from './components/testPage/Test';
 
 function App() {
 
@@ -60,6 +61,8 @@ function App() {
                   <Route path="/main" element={<MainPageAfter />} />
                   <Route path="/mainpay" element={<MainPageAfterPay />} />
                   <Route path="/mypage" element={<MyPage />} />
+                  <Route path="/test" element={<Test />} />
+
                 </>
               ) :
                 <>

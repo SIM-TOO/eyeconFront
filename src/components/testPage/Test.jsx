@@ -12,6 +12,7 @@ const Test = () => {
     const printImg = async () => {
         try {
             const response = await TokenRefresher.get(`${url}/flask/printImg`);
+            console.log(response.data);
             setImg(response.data)
 
         } catch (error) {

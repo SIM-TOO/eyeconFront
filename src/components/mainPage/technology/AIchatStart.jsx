@@ -11,12 +11,12 @@ const AIchatStart = ({ onButtonClick }) => {
             {/* 대화 시작하기 버튼 */}
             <div className='w-[100%] grid grid-cols-12 p-3'>
                 <div className="col-span-12 p-3" />
-                <div className="col-span-2" />
-                <div className="col-span-8 flex justify-center items-center p-3 rounded-lg bg-[#40c3ae] cursor-pointer"
+                <div className="col-span-3" />
+                <div className="col-span-7 flex justify-center items-center p-3 rounded-lg bg-[#40c3ae] cursor-pointer"
                     onClick={onButtonClick}
                     // 맨위로 선언(로티로 인한 가려짐 방지)
                     style={{ zIndex: 999 }} >
-                    <p className='text-white text-ml font-bold cursor-pointer'>챗봇과 시선분석 시작하기</p>
+                    <p className='text-white text-ml font-bold cursor-pointer '>챗봇과 시선분석 시작하기</p><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" className='ml-5 w-[15px] animate-pulse'/><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" className='w-[15px] animate-pulse'/>
                 </div>
                 <div className="col-span-2" />
             </div>

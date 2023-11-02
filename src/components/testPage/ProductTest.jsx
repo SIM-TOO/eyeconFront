@@ -58,7 +58,11 @@ function App() {
 
   return (
     <div className="App">
-      <canvas id="canvas" width="1000" height="900"></canvas>
+      <canvas id="canvas" width="1000" height="900">
+
+      </canvas>
+      <div >1231231456465</div>
+      <canvas width="1000" height="900"></canvas>
     </div>
   );
 }

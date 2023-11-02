@@ -66,14 +66,14 @@ function DateAndData({ date, data }) {
                   <button className="rounded-[20px] border-[1.5px] border-[#19ab93] col-span-4 font-semibold p-[3px]">{item.buttonText}</button>
                 </div>
                 <div className="col-span-12 grid grid-cols-12">
-                  <p className="text-xl text-bold col-span-12">{item.description}</p>
+                  <p className="text-base text-bold col-span-12">{item.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
         <div className="col-span-12">
-          <p className='opacity-75 text-xl'>
+          <p className='opacity-75 text-base'>
             광주 동구 상업단지 상권 40대 남성을 타겟으로 한 매대 시선분석 결과입니다.
             현재 광주 동구 충장로 상권의 경우 40대 남성을 주 대상으로 하고 있습니다.
             주요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해보세요.

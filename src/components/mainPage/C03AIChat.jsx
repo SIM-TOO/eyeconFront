@@ -89,14 +89,14 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="text-xl h-[100px] col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
-                    <p className="text-center text-black">
+                    <p className="text-center text-black animate-typing overflow-hidden whitespace-nowrap">
                         서비스를 위해 챗봇 이콘이와 함께 대화를 시작해보세요.
                     </p>}
                 {showAIchat &&
-                    <div className="h-[100%] w-[100%] grid grid-cols-12 p-3">
+                    <div className="h-[100%] w-[100%] grid grid-cols-12 p-3 ">
                         <input
                             type="text"
-                            className='col-span-11 bg-transparent focus:outline-none'
+                            className='col-span-11 bg-transparent focus:outline-none '
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={chatHandleKeyDown}

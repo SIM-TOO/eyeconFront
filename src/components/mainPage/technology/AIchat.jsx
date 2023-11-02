@@ -22,9 +22,9 @@ const AIchat = ({ messages }) => {
                     {/* 프로필 이미지  */}
                     {!msg.isMine && < RobotIcon className="rounded-full mr-3" />}
 
-                    {/* 채팅 메시지 박스 */}
+                    {/* 채팅 메시지 박스, 타이핑 효과  */}
                     <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-300 text-black' : 'bg-blue-500 text-white'}`}>
-                        {msg.content}
+                        <p className="animate-typing2 overflow-hidden whitespace-nowrap">{msg.content}</p>
                     </div>
 
                     {/* 프로필 이미지 */}

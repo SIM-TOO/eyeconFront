@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import firebaseApp from "../../../Firebase";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL, upload, uploadBytesResumable } from "firebase/storage";
 import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 
 
@@ -28,69 +28,79 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       console.log("이미지 데이터", uploadedImage);
 
 
-      // 파이어 베이스
+      // 파이어 베이스에 before이미지 저장
+      let beforeimgUrl;
       const imageRef = ref(storage, `images/${Date.now()}`);
       // `images === 참조값이름(폴더이름), / 뒤에는 파일이름 어떻게 지을지
-      // `images`는 폴더 이름, `/` 뒤에는 파일 이름 또는 어떻게 저장할지 지정
-
-      // const test01 = uploadBytes(imageRef, uploadedImage)
-      //   .then((snapshot) => getDownloadURL(snapshot.ref)
-      //     .then((url) => setBeforeimg(url)))
-
-
-
-      // url 받아오는 함수
-      async function uploadImageAndSetUrl() {
-        try {
-          const snapshot = await uploadBytes(imageRef, uploadedImage);
-          const url = await getDownloadURL(snapshot.ref);
-          return url
-        } catch (error) {
-          console.error("Error:", error);
-        }
+      const beforeimg = async () => {
+        const snapshot = await uploadBytes(imageRef, uploadedImage);
+        const result = await getDownloadURL(snapshot.ref);
+        console.log('result', result);
+        beforeimgUrl = result;
       }
 
-      const beforeimg = uploadImageAndSetUrl();
+      // beforeimage를 spring-> flask로 보내고 히트맵 이미지(base64)를 반환받는 함수
+      const sendImage = async () => {
+        await beforeimg();
+        await TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimgUrl })
+          .then(async res => {
+            // base64로 넘어온 히트맵 이미지를 localStorage에 담음
+            let base64Image = `data:image/*;base64,${res.data}`;
+            localStorage.setItem('resultImageData', base64Image);
+            
+            // Base64 데이터를 Blob으로 변환
+            let fetchResponse = await fetch(base64Image);
+            let blob = await fetchResponse.blob();
 
-      console.log("먼저 실행", beforeimg)
-      console.log('1번 실행 url', beforeimg);
-      sessionStorage.clear();
+            // Firebase Storage에 히트맵이미지(Blob형태) 업로드 --시작
+            let storageRef = ref(storage, `images/hitmap_${Date.now()}`); 
+            let metadata = {
+              contentType: 'image/jpeg',
+            };
+            
+            const uploadResultImage = async () => {
+              const snapshot = await uploadBytesResumable(storageRef, blob,metadata);
+              const result = await getDownloadURL(snapshot.ref);
+              console.log('resultimage', result);
+              await TokenRefresher.post(`${url}/flask/saveAfterImage`, {resultname: result})
+              
+            }
+            await uploadResultImage();
+            // Firebase Storage에 히트맵이미지(Blob형태) 업로드 --끝
 
-      const resultImage = TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimg })
+            // 이걸 설정해 줘야 C05Result.jsx로 넘어가는거 같아서 해줬음
+            onUploadComplete(true);
+  
+          })
+          .catch(error => {
+            console.log("전송을 실패 했습니다 에러 내용 :", error);
+            onUploadComplete(false);
+            return null
+          });
 
-        .then(response => {
-          // 전송 성공
-          console.log("전송 성공");
-          onUploadComplete(true);
-          return response.data;
-        })
+      
+        // resultImage.then(data => {
+        //   if (data !== null) {
+        //     // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행합니다.
+        //     console.log("resultImage : ", data);
+        //     // localStorage.setItem('resultImageData', data);
+        //   } else {
+        //     // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
+        //     // 또는 필요한 다른 처리를 수행합니다.
+        //   }
+        // })
 
-        .catch(error => {
-          // 전송 실패
-          console.error("전송을 실패 했습니다 에러 내용 :", error);
-          onUploadComplete(false);
-          return null
-        });
 
-      console.log("결과물 : ", resultImage)
-      resultImage.then(data => {
-        if (data !== null) {
-          // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행     
-          localStorage.setItem('resultImageData', data);
-        } else {
-          // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
-          // 또는 필요한 다른 처리를 수행합니다.
-        }
-      })
+      }
 
+      sendImage();
 
     }
   }, [TokenRefresher, onUploadComplete, uploadedImage, uploadedImageSend]);
 
 
   const onDrop = useCallback((acceptedFiles) => {
-    // 드롭존에서 받은 파일
-    const file = acceptedFiles[0];
+    const file = acceptedFiles[0];   // *************** 요놈을 파이어베이스에 보내야합니다만 위 useEffect로 보내려니 코드 해석이 빡쎄요
 
     // 미리보기용 이미지 URL
     const imageURL = URL.createObjectURL(file);

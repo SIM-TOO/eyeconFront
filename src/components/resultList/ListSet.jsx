@@ -79,9 +79,9 @@ function DateAndData({ date, data }) {
             주요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해보세요.
           </p>
         </div>
-      <div className='col-span-12 grid grid-cols-12 gap-4'>
-        <button className='bg-[#46cfb9] col-span-12 text-[15px] font-semibold text-center text-white'>매대상품배치 하기</button>
-      </div>
+        <div className='col-span-12 grid grid-cols-12 gap-4'>
+          <button className='bg-[#46cfb9] col-span-12 text-[15px] font-semibold text-center text-white'>매대상품배치 하기</button>
+        </div>
       </div>
     </div></>
   );
@@ -101,8 +101,9 @@ const List = () => {
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   );
 }
 
 export default List;
+  

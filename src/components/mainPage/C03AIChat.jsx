@@ -89,7 +89,7 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="text-base md:text-xl h-[100px] overflow-hidden col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
-                    <p className="text-center text-black animate-typing overflow-hidden whitespace-pre-wrap">
+                    <p className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
                         서비스를 위해 챗봇 이콘이와 함께 대화를 시작해보세요.
                     </p>}
                 {showAIchat &&

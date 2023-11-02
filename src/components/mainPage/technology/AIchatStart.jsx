@@ -23,7 +23,14 @@ function AIchatStart({ onButtonClick }) {
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
+    // 드롭다운 닫음
 
+    const closeDropdown = () => {
+        setIsDropdownOpen(false);
+    };
+
+
+    
     //가게 데이터셋
     useEffect(() => {
         const testStore = [
@@ -36,7 +43,7 @@ function AIchatStart({ onButtonClick }) {
     //드롭다운 후 버튼 등장 근데 사라지진 않는디요
     const handleSelectButton = (storeName) => {
         setSelectedStore(storeName);
-        setIsDropdownOpen(false);
+        closeDropdown(); 
     };
 
 
@@ -70,7 +77,7 @@ function AIchatStart({ onButtonClick }) {
                 onClick={toggleDropdown}
                 id="dropdownDefaultButton"
                 data-dropdown-toggle="dropdown"
-                className="w-[250px] text-white text-center bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="w-[250px] text-white text-center bg-[#46cfb9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
             >
 
@@ -99,7 +106,7 @@ function AIchatStart({ onButtonClick }) {
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                         <li
                             key="showAll"
-                            className={`p-2 hover:bg-gray-100 cursor-pointer ${!selectedStore ? 'bg-gray-100' : ''}`}
+                            className={`p-2 text-center hover:bg-gray-100 cursor-pointer ${!selectedStore ? 'bg-gray-100' : ''}`}
                             onClick={() => {
                                 setSelectedStore(null);
                                 setIsDropdownOpen(false);

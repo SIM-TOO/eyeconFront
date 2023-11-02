@@ -2,8 +2,8 @@ import React from 'react';
 
 const List = () => {
   return (
-    <div className="flex items-center justify-center w-[100%]">
-      <div className="w-[95%] md:w-[70%] rounded-2xl dark:bg-gradient-[#0a0a0a] bg-gradient-[#fff] p-4">
+    <div className="flex items-center justify-center">
+      <div className="w-[95%] md:w-[70%] rounded-2xl p-4">
         <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl h-full p-4">
           <div className='col-span-12 grid grid-cols-12 rounded-[10px] bg-white rounded shadow border border-[#DEE2E7] p-3'>
             <div className='col-span-12 grid grid-cols-12 gap-2 p-4'>

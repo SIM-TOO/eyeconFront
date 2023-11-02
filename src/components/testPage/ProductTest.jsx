@@ -72,28 +72,28 @@ function App() {
     canvas.renderAll();
 
     // 이미지 충돌시 옆으로 밀리게 하는 함수
-    // canvas.on('object:moving', function (e) {
-    //     var obj = e.target;
+    canvas.on('object:moving', function (e) {
+        var obj = e.target;
     
-    //     // 구역의 위치와 크기를 설정
-    //     var zone = { left: 700, top: 200, width: canvas.width*0.4, height: 200 };
+        // 구역의 위치와 크기를 설정
+        var zone = { left: 700, top: 200, width: canvas.width*0.4, height: 200 };
     
-    //     // 객체의 중심 위치를 계산
-    //     var objCenter = { x: obj.left + obj.width / 2, y: obj.top + obj.height / 2 };
+        // 객체의 중심 위치를 계산
+        var objCenter = { x: obj.left + obj.width / 2, y: obj.top + obj.height / 2 };
     
-    //     // 객체와 구역 사이의 거리를 계산
-    //     var dx = zone.left + zone.width / 2 - objCenter.x;
-    //     var dy = zone.top + zone.height / 2 - objCenter.y;
-    //     var distance = Math.sqrt(dx * dx + dy * dy);
+        // 객체와 구역 사이의 거리를 계산
+        var dx = zone.left + zone.width / 2 - objCenter.x;
+        var dy = zone.top + zone.height / 2 - objCenter.y;
+        var distance = Math.sqrt(dx * dx + dy * dy);
     
-    //     // 거리가 특정 값 이하면 객체를 구역으로 이동
-    //     if (distance < 50) {
-    //         obj.set({
-    //             left: zone.left,
-    //             top: zone.top
-    //         });
-    //     }
-    // });
+        // 거리가 특정 값 이하면 객체를 구역으로 이동
+        if (distance < 50) {
+            obj.set({
+                left: zone.left,
+                top: zone.top
+            });
+        }
+    });
 
     canvas.on('object:moving', function (e) {
         var obj = e.target;

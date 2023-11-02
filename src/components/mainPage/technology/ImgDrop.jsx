@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import firebaseApp from "../../../Firebase";
-import { getStorage, ref, uploadBytes, getDownloadURL, upload, uploadBytesResumable } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 
 

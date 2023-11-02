@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import useUserAddress from "../../hook/userPage/useUserAddress";
-import MyPageList from "./MyPageList";
+// import MyPageList from "./MyPageList";
 
 const MyPageAdd = () => {
 
 
   
-  {
-    /* 주소 API 삽입 근데 오류뜸... */
-  }
+  
+    // /* 주소 API 삽입 근데 오류뜸... */
+  
   const { address, setAddress } = useUserAddress();
   const handleButtonClick = () => {
     window.open("/place", "AddressPopup", "width=650,height=500");

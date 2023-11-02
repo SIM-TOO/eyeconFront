@@ -19,6 +19,7 @@ import { useState } from 'react';
 import CoinCheck from './components/payPage/CoinCheck';
 import Test from './components/testPage/Test';
 import ProductTest from './components/testPage/ProductTest';
+import ProductTest02 from './components/testPage/ProductTest02';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
                   <Route path="/mypage" element={<MyPage />} />
                   <Route path="/test" element={<Test />} />
                   <Route path="/producttest" element={<ProductTest />} />
+                  <Route path="/producttest02" element={<ProductTest02 />} />
 
                 </>
               ) :

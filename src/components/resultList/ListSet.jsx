@@ -27,12 +27,35 @@ const List = () => {
                 <div className='col-span-4 p-2' />
                 <div className='col-span-4 p-2' />
               </div>
-              <div className="rounded-[10px] col-span-12 h-full md:col-span-5 grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
-                <img src="https://i.ibb.co/6Y1kC07/image.jpg" alt="image" border="0" />
-              </div>
-              <div className=''/>
-              <div className="rounded-[10px] col-span-12 h-full md:col-span-5 grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
-                <img src="https://i.ibb.co/61WLv05/image.jpg" alt="image" border="0" />
+              <div className='col-span-12 grid grid-cols-12'>
+                <div className='col-span-1'/>
+                <div className="rounded-[10px] col-span-12 h-full md:col-span-4 grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
+                  <img src="https://i.ibb.co/6Y1kC07/image.jpg" alt="image" border="0" className='w-full object-cover col-span-12 grid grid-cols-12' />
+                  <div className='col-span-12 grid grid-cols-12 flex items-center justify-end p-2'>
+                    <p className='text-xl text-bold col-span-4'>시선분석 전</p>
+                    <div className='col-span-4' />
+                    <button className='rounded-[20px] border-[1.5px] border-[#19ab93] col-span-4'>DOWNLOAD ↓</button>
+                  </div>
+                  <div className='col-span-12 grid grid-cols-12'>
+                    <p className='text-xl text-bold col-span-12'>시선 분석 전 매대 사진입니다. 다운로드를 원하시면 버튼을 눌러주세요.</p>
+                  </div>
+                </div>
+                <div className='hiden md:block col-span-0 md:col-span-1' />
+                <div className="rounded-[10px] col-span-12 h-full md:col-span-4 grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
+                  <img src="https://i.ibb.co/61WLv05/image.jpg" alt="image" border="0" className='w-full object-cover col-span-12 grid grid-cols-12' />
+                  <div className='col-span-12 grid grid-cols-12 flex items-center justify-end p-2'>
+                    <p className='text-xl text-bold col-span-4'>시선분석 후</p>
+                    <div className='col-span-4' />
+                    <button className='rounded-[20px] border-[1.5px] border-[#19ab93] col-span-4'>DOWNLOAD ↓</button>
+                  </div>
+                  <div className='col-span-12 grid grid-cols-12'>
+                    <p className='text-xl text-bold col-span-12'>
+                      시선 분석 후 매대 사진입니다. 색깔이 있는 곳이 고객들의
+                      시선이 많이 머무는 곳입니다. 다운로드를 원하시면 버튼을
+                      눌러주세요.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className='col-span-12'>
                 <p>

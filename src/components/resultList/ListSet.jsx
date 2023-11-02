@@ -20,13 +20,13 @@ const data = [
 const List = () => {
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="w-[auto] md:w-[70%] rounded-2xl dark:bg-gradient-[#0a0a0a] bg-gradient-[#fff] p-4">
-        <div className="container mx-auto grid grid-cols-12 md:col-span-8 gap-4 max-w-screen-xl h-full p-4">
-          <div className="col-span-12 grid grid-cols-12 rounded-[10px] md:col-span-12 bg-white rounded shadow border border-[#DEE2E7] p-3">
-            <div className="col-span-12 grid grid-cols-12 md:col-span-12 gap-2 p-4">
-              <div className="col-span-4 p-4" />
-              <p className="col-span-4 font-bold text-2xl md:col-span-4 text-center p-4">시선 분석 결과</p>
-              <div className="col-span-4 p-4" />
+      <div className="w-[auto] md:w-[70%] rounded-2xl dark:bg-gradient-[#0a0a0a] bg-gradient-[#fff]">
+        <div className="container mx-auto grid grid-cols-12 md:col-span-8 gap-4 max-w-screen-xl h-full p-1">
+          <div className="col-span-12 grid grid-cols-12 rounded-[10px] md:col-span-12 bg-white rounded shadow border border-[#DEE2E7] p-1">
+            <div className="col-span-12 grid grid-cols-12 md:col-span-12 gap-2 p-2">
+              <div className="col-span-4 p-2" />
+              <p className="col-span-4 font-bold text-2xl md:col-span-4 text-center p-2">시선 분석 결과</p>
+              <div className="col-span-4 p-2" />
             </div>
             <div className="col-span-12 grid grid-cols-12 gap-4 p-2">
               <div className="col-span-2 flex items-center p-1" />

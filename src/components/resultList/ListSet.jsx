@@ -14,7 +14,7 @@ const data = [
     title: '시선분석 후',
     buttonText: 'DOWNLOAD ↓',
     description: '시선 분석 후 매대 사진입니다. 색깔이 있는 곳이 고객들의 시선이 많이 머무는 곳입니다. 다운로드를 원하시면 버튼을 눌러주세요.',
-  },
+  }
 ];
 
 // 컴포넌트로 추출된 상단 부분
@@ -79,9 +79,9 @@ function DateAndData({ date, data }) {
             주요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해보세요.
           </p>
         </div>
-      <div className='col-span-12 grid grid-cols-12 gap-4'>
-        <button className='bg-[#46cfb9] col-span-12 text-[15px] font-semibold text-center text-white'>매대상품배치 하기</button>
-      </div>
+        <div className='col-span-12 grid grid-cols-12 gap-4'>
+          <button className='bg-[#46cfb9] col-span-12 text-[15px] font-semibold text-center text-white'>매대상품배치 하기</button>
+        </div>
       </div>
     </div></>
   );
@@ -101,7 +101,7 @@ const List = () => {
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   );
 }
 

@@ -38,7 +38,7 @@ function StoreSelection() {
       </button>
       <div className='col-span-4' />
       <div className='flex items-center justify-end col-span-2'>
-        <p className="text-right p-2 text-lg text-bold">↓ 최신순</p>
+        <p className="text-right p-1 text-2xl text-bold">↓ 최신순</p>
       </div>
     </div>
   );

@@ -20,6 +20,8 @@ const Test = () => {
         }
     }
 
+
+
     useEffect(() => {
         printImg();
 
@@ -32,9 +34,15 @@ const Test = () => {
             <h1>이미지 출력 / 다운로드 테스트</h1>
             <div>
                 <h3>이미지1</h3>
-                <img src={img.beforeimg} />
-                {/* <img src={img[1].beforeimg} /> */}
-                
+                {/* <img src={img.beforeimg} /> */}
+                {img.length > 0 && img[0].beforeimg && (
+                <>
+                    <img src={img[0].beforeimg} alt="Image" />
+                    <a href={img[0].beforeimg} download="image.jpg">
+                        <button>Download Image</button>
+                    </a>
+                </>
+            )}
 
             </div>
 
@@ -43,5 +51,4 @@ const Test = () => {
         </div>
     )
 }
-
 export default Test

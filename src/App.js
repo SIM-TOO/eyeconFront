@@ -18,7 +18,7 @@ import { AddressContext } from './context/AddressContext';
 import { useState } from 'react';
 import CoinCheck from './components/payPage/CoinCheck';
 import Test from './components/testPage/Test';
-
+import ProductTest from './components/testPage/ProductTest';
 function App() {
 
   // 로그인 상태 확인 & 코인 상태 확인
@@ -62,6 +62,7 @@ function App() {
                   <Route path="/mainpay" element={<MainPageAfterPay />} />
                   <Route path="/mypage" element={<MyPage />} />
                   <Route path="/test" element={<Test />} />
+                  <Route path="/producttest" element={<ProductTest />} />
 
                 </>
               ) :

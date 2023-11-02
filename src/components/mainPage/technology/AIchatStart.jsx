@@ -4,6 +4,7 @@ import lottieJson from "../../../lottie/eyeconhello.json";
 
 const AIchatStart = ({ onButtonClick }) => {
     return (
+
         <div className="font-Pretendard h-[100%] col-span-12 md:col-span-7 p-3 flex flex-col items-center justify-center">
             {/* 이미지 */}
             <StartRobot className='max-w-full max-h-full' />
@@ -16,11 +17,12 @@ const AIchatStart = ({ onButtonClick }) => {
                     onClick={onButtonClick}
                     // 맨위로 선언(로티로 인한 가려짐 방지)
                     style={{ zIndex: 999 }} >
-                    <p className='text-white text-ml font-bold cursor-pointer '>챗봇과 시선분석 시작하기</p><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" className='ml-5 w-[15px] animate-pulse'/><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" className='w-[15px] animate-pulse'/>
+                    <p className='text-white text-ml font-bold cursor-pointer '>챗봇과 시선분석 시작하기</p><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='ml-5 w-[15px] animate-pulse'/><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='w-[15px] animate-pulse'/>
                 </div>
                 <div className="col-span-2" />
             </div>
         </div>
+
     )
 }
 

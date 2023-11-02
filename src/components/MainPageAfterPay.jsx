@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import HeaderAfter from "./HeaderAfter";
 import MainPay from "./payPage/MainPay";
 import PayHistory from "./payPage/PayHistory";
-import axios from "axios";
 import { TokenRefresherContext } from "../context/TokenRefresherContext";
 
 
@@ -74,7 +73,7 @@ function MainPageAfterPay() {
 
     // 함수 실행
     HistoryData();
-  }, []);
+  }, [TokenRefresher]);
 
 
 

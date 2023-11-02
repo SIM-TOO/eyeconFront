@@ -76,13 +76,24 @@ const C02Pay = ({ handleButtonClick }) => {
         </button>
         <p className="col-span-3" />
         <p className="col-span-12" />
+
+       
+          <p className="col-span-3" />
+          <button className=" md:hidden h-[60px] col-span-6 justify-center items-center rounded-lg bg-gray-500">
+            <Link to="/mainpay" className="text-lg font-semibold text-center text-white">
+              서비스 결제하기
+            </Link>
+          </button>
+          <p className="col-span-3" />
+          <p className="col-span-12" />
+     
       </div>
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />
 
       {/* 이미지 */}
-      <div className="rounded-[10px] font-Pretendard h-full col-span-12 grid grid-cols-12  md:col-span-4 p-3 bg-white rounded shadow border border-[#DEE2E7]">
+      <div className="md:block hidden rounded-[10px] font-Pretendard h-full col-span-12 grid grid-cols-12  md:col-span-4 p-3 bg-white rounded shadow border border-[#DEE2E7]">
         <p className="col-span-12 text-2xl font-bold text-[#505050] text-center p-3 ">
           추가 서비스 이용 방법
         </p>
@@ -108,6 +119,9 @@ const C02Pay = ({ handleButtonClick }) => {
         </button>
         <p className="col-span-3" />
         <p className="col-span-12" />
+
+     
+
       </div>
 
       {/* 여백용 박스 */}

@@ -77,7 +77,7 @@ function MainPageAfterPay() {
 
 
   return (
-    <div className="h-screen bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')] dark:bg-[src('./assets/servicemain.png').default]">
+    <div className="h-screen bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')] dark:bg-[url('https://i.ibb.co/PD92ZQZ/1.png')]">
 
       {/* 헤더 */}
       <HeaderAfter />
@@ -87,7 +87,7 @@ function MainPageAfterPay() {
         <label className="relative inline-flex items-center cursor-pointer" style={{ transform: "translateY(150%)", zIndex: 999 }} >
           <input type="checkbox" value="" className="sr-only peer" checked={showMainPay} onChange={handleToggle} />
           <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-          <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{showMainPay ? "결제화면" : "결제내역"}</span>
+          <span className="select-none ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{showMainPay ? "결제화면" : "결제내역"}</span>
         </label>
         
         {/* 내부박스 */}

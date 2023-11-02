@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import firebaseApp from "../../../Firebase";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL, upload, uploadBytesResumable } from "firebase/storage";
 import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
 
 
@@ -28,7 +28,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       console.log("이미지 데이터", uploadedImage);
 
 
-      // 파이어 베이스
+      // 파이어 베이스에 before이미지 저장
       let beforeimgUrl;
       const imageRef = ref(storage, `images/${Date.now()}`);
       // `images === 참조값이름(폴더이름), / 뒤에는 파일이름 어떻게 지을지
@@ -39,31 +39,46 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
         beforeimgUrl = result;
       }
 
+      // beforeimage를 spring-> flask로 보내고 히트맵 이미지(base64)를 반환받는 함수
       const sendImage = async () => {
         await beforeimg();
-        const resultImage = await TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimgUrl })
-          .then(res => res.blob())
-          .then(blob => {const file = new File([blob], "image.jpg", {type: 'image/jpeg'})
-           const snapshot = uploadedImage(imageRef,file);
-           const result = getDownloadURL(snapshot.ref);
-           console.log("result : " ,result)
-        })
+        await TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimgUrl })
+          .then(async res => {
+            // base64로 넘어온 히트맵 이미지를 localStorage에 담음
+            let base64Image = `data:image/*;base64,${res.data}`;
+            localStorage.setItem('resultImageData', base64Image);
+            
+            // Base64 데이터를 Blob으로 변환
+            let fetchResponse = await fetch(base64Image);
+            let blob = await fetchResponse.blob();
+
+            // Firebase Storage에 히트맵이미지(Blob형태) 업로드 --시작
+            let storageRef = ref(storage, `images/hitmap_${Date.now()}`); 
+            let metadata = {
+              contentType: 'image/jpeg',
+            };
+            
+            const uploadResultImage = async () => {
+              const snapshot = await uploadBytesResumable(storageRef, blob,metadata);
+              const result = await getDownloadURL(snapshot.ref);
+              console.log('resultimage', result);
+              await TokenRefresher.post(`${url}/flask/saveAfterImage`, {resultname: result})
+              
+            }
+            await uploadResultImage();
+            // Firebase Storage에 히트맵이미지(Blob형태) 업로드 --끝
+
+            // 이걸 설정해 줘야 C05Result.jsx로 넘어가는거 같아서 해줬음
+            onUploadComplete(true);
+  
+          })
           .catch(error => {
             console.log("전송을 실패 했습니다 에러 내용 :", error);
             onUploadComplete(false);
             return null
           });
 
-        // console.log("결과물 : ", resultImage.blob())
-        // let base64Image = "data:image/jpeg;base64," + resultImage; // 여기에 실제 base64 데이터를 넣으세요.
-
-        // // base64 데이터를 Blob 객체로 변환
-        // let fetchResponse = await fetch(base64Image);
-        // let blob = await fetchResponse.blob();
-
-        // imageRef.put(blob).then((snapshot) => {
-        //   console.log('Uploaded a blob or file!');
-        // });
+      
         // resultImage.then(data => {
         //   if (data !== null) {
         //     // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행합니다.
@@ -79,19 +94,6 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       }
 
       sendImage();
-
-
-      // console.log("결과물 : ", resultImage)
-      // resultImage.then(data => {
-      //   if (data !== null) {
-      //     // 데이터가 유효한 경우 로컬 스토리지에 저장 등의 처리를 수행     
-      //     localStorage.setItem('resultImageData', data);
-      //   } else {
-      //     // 데이터가 실패한 경우 로컬 스토리지에 저장하지 않습니다.
-      //     // 또는 필요한 다른 처리를 수행합니다.
-      //   }
-      // })
-
 
     }
   }, [TokenRefresher, onUploadComplete, uploadedImage, uploadedImageSend]);

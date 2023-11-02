@@ -20,7 +20,7 @@ const data = [
 const List = () => {
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="w-[auto] md:w-[70%] rounded-2xl dark:bg-gradient-[#0a0a0a] bg-gradient-[#fff]">
+      <div className="w-[100%] md:w-[70%] rounded-2xl dark:bg-gradient-[#0a0a0a] bg-gradient-[#fff]">
         <div className="container mx-auto grid grid-cols-12 md:col-span-8 gap-4 max-w-screen-xl h-full p-1">
           <div className="col-span-12 grid grid-cols-12 rounded-[10px] md:col-span-12 bg-white rounded shadow border border-[#DEE2E7] p-1">
             <div className="col-span-12 grid grid-cols-12 md:col-span-12 gap-2 p-2">
@@ -35,13 +35,13 @@ const List = () => {
               </button>
               <div className='col-span-4'/>
               <div className='flex items-center justify-end col-span-2'>
-              <p className="text-right p-2">↓ 최신순</p>
+              <p className="text-right p-2 text-lg text-bold">↓ 최신순</p>
               </div>
             </div>
             {dates.map((date, index) => (
               <div className='col-span-12 grid grid-cols-12'>
                 <div className='col-span-2' />
-                <div key={index} className="col-span-8 grid grid-cols-8 rounded-[10px] bg-white rounded shadow border border-[#DEE2E7] p-2 flex items-center justify-center">
+                <div key={index} className="col-span-8 grid grid-cols-8 rounded-[10px] bg-white rounded shadow border border-[#DEE2E7] p-1 flex items-center justify-center">
                   <div className="col-span-8 grid grid-cols-8 gap-4 p-2">
                     <p className="col-span-4 p-2 text-bold text-2xl">{date}</p>
                     <div className="col-span-4 p-2" />
@@ -49,7 +49,7 @@ const List = () => {
                   <div className="col-span-12 grid grid-cols-12">
                     {data.map((item, index) => (
                       <div key={index} className="col-span-12 md:col-span-6 p-2">
-                        <div className="rounded-[10px] h-full grid grid-cols-12 p-3 bg-white rounded shadow border border-[#DEE2E7]">
+                        <div className="rounded-[10px] h-full grid grid-cols-12 p-5 bg-white rounded shadow border border-[#DEE2E7]">
                           <img src={item.image} alt="이미지" className="w-full object-cover col-span-12 grid grid-cols-12" />
                           <div className="col-span-12 grid grid-cols-12 flex items-center justify-end p-2">
                             <p className="text-xl text-bold col-span-4">{item.title}</p>
@@ -69,6 +69,9 @@ const List = () => {
                       현재 광주 동구 충장로 상권의 경우 40대 남성을 주 대상으로 하고 있습니다.
                       주요 연령대와 성별을 대상으로 한 매대 시선 분석 결과를 활용해 마케팅에 활용해보세요.
                     </p>
+                  <div className='col-span-12 grid grid-cols-12 gap-4'>
+                    <button className='bg-[#46cfb9] col-span-12 text-[15px] font-semibold text-center text-white'>매대상품배치 하기</button>
+                  </div>
                   </div>
                 </div>
               </div>

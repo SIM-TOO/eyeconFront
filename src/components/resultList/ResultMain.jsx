@@ -1,23 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ResultMain = () => {
     const [fileOrderList, setfileOrderList] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedStore, setSelectedStore] = useState(null);
 
-    // 임시용 데이터(테스트용)(결과 조회용)
-    const [resultList, setResultList] = useState([
-        { id: 1, data: "2023-11-02", beforeimg: 'https://i.ibb.co/n1prKVV/20160305-192947.jpg', hitmap: 'https://i.ibb.co/61WLv05/image.jpg', content: 'SMHRD편의점 결과 내용 1번 입니다.', storeName: 'SMHRD편의점' },
-        { id: 2, data: "2023-11-03", beforeimg: '', hitmap: '', content: 'SMHRD마트 결과 내용 2번 입니다.', storeName: 'SMHRD마트' },
-        { id: 3, data: "2023-11-04", beforeimg: '', hitmap: '', content: 'SMHRD편의점 2호 결과 내용 3번 입니다.', storeName: 'SMHRD편의점 2호' },
-    ]);
+    // 결과데이터
+    const [resultList, setResultList] = useState([]);
+    // 가게데이터
+    const [storeList, setStoreList] = useState([]);
 
-    // 임시용 데이터(테스트용)(가게 id와 가게 이름 조회용)
-    const storeList = [
-        { id: 1, storeName: 'SMHRD편의점' },
-        { id: 2, storeName: 'SMHRD마트' },
-        { id: 3, storeName: 'SMHRD편의점 2호' }
-    ];
+    // 테스트용
+    useEffect(() => {
+        const testStore = [
+            { id: 1, storeName: 'SMHRD편의점' },
+            { id: 2, storeName: 'SMHRD마트' },
+            { id: 3, storeName: 'SMHRD편의점 2호' }
+        ];
+        const testResult = [
+            { id: 1, data: "2023-11-02", beforeimg: 'https://i.ibb.co/n1prKVV/20160305-192947.jpg', hitmap: 'https://i.ibb.co/61WLv05/image.jpg', content: 'SMHRD편의점 결과 내용 1번 입니다.', storeName: 'SMHRD편의점' },
+            { id: 2, data: "2023-11-03", beforeimg: '', hitmap: '', content: 'SMHRD마트 결과 내용 2번 입니다.', storeName: 'SMHRD마트' },
+            { id: 3, data: "2023-11-04", beforeimg: '', hitmap: '', content: 'SMHRD편의점 2호 결과 내용 3번 입니다.', storeName: 'SMHRD편의점 2호' }
+        ];
+        setStoreList(testStore);
+        setResultList(testResult);
+    }, []);
+
+
+    // 백엔드 함수 가져오기 함수? 2개 받아와짐?
+    // useEffect(() => {
+    //     // url 주소
+    //     const url = process.env.REACT_APP_MASTER_URL;      
+    //     fetch(url??)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             setResultList(data.resultData);
+    //             setStoreList(data.storeData);
+    //         })
+    //         .catch((error) => {
+    //             console.error('결과데이터 가져오기 실패:', error);
+    //         });
+    // }, []);
+
+
+
+
 
     // 드롭다운의 항목(가게 리스트)
     const handleSelect = (storeName) => {
@@ -113,7 +140,9 @@ const ResultMain = () => {
                                 </div>
                                 <div className="w-full flex justify-between items-center p-3">
                                     <span className="text-xl font-bold p-3">시선분석 전</span>
-                                    <button className="rounded-3xl border-[2px] border-[#19ab93] p-2">Download ↓</button>
+                                    <a href={item.beforeimg} download="image.jpg">
+                                        <button className="rounded-3xl border-[2px] border-[#19ab93] p-2">Download ↓</button>
+                                    </a>
                                 </div>
                                 <div className="w-full p-3">
                                     시선 분석 전 매대 사진입니다.<br />
@@ -134,9 +163,9 @@ const ResultMain = () => {
                                 </div>
                                 <div className="w-full flex justify-between items-center p-3">
                                     <span className="text-xl font-bold">시선분석 후</span>
-                                    <button className="rounded-3xl border-[2px] border-[#19ab93] p-3">
-                                        Download ↓
-                                    </button>
+                                    <a href={item.hitmap} download="image.jpg">
+                                        <button className="rounded-3xl border-[2px] border-[#19ab93] p-2">Download ↓</button>
+                                    </a>
                                 </div>
                                 <div className="w-full p-3">
                                     시선 분석 후 매대 사진입니다.<br />

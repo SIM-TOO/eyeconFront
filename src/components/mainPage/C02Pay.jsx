@@ -31,7 +31,7 @@ const C02Pay = ({ handleButtonClick }) => {
 
 
   return (
-    <div className="font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]">
+    <div className="font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl md:h-[100%]">
 
       {/* 여백용 박스 */}
       <div className="col-span-12 p-3" />
@@ -77,16 +77,16 @@ const C02Pay = ({ handleButtonClick }) => {
         <p className="col-span-3" />
         <p className="col-span-12" />
 
-       
-          <p className="col-span-3" />
-          <button className=" md:hidden h-[60px] col-span-6 justify-center items-center rounded-lg bg-gray-500">
-            <Link to="/mainpay" className="text-lg font-semibold text-center text-white">
-              서비스 결제하기
-            </Link>
-          </button>
-          <p className="col-span-3" />
-          <p className="col-span-12" />
-     
+
+        <p className="col-span-3" />
+        <button className=" md:hidden h-[60px] col-span-6 justify-center items-center rounded-lg bg-gray-500">
+          <Link to="/mainpay" className="text-lg font-semibold text-center text-white">
+            서비스 결제하기
+          </Link>
+        </button>
+        <p className="col-span-3" />
+        <p className="col-span-12" />
+
       </div>
 
       {/* 여백용 박스 */}
@@ -112,15 +112,17 @@ const C02Pay = ({ handleButtonClick }) => {
 
         {/* 버튼 */}
         <p className="col-span-3" />
-        <button className="h-[60px] col-span-6 justify-center items-center rounded-lg bg-gray-500">
-          <Link to="/mainpay" className="text-lg font-semibold text-center text-white">
+        <p className="col-span-12" />
+        <p className="col-span-3" />
+        <button className="h-[60px] col-span-8 justify-center items-center p-10 whitespace-nowrap">
+          <Link to="/mainpay" className="text-lg font-semibold text-center text-white bg-gray-500 py-4 px-20 rounded-lg">
             서비스 결제하기
           </Link>
         </button>
         <p className="col-span-3" />
         <p className="col-span-12" />
 
-     
+
 
       </div>
 

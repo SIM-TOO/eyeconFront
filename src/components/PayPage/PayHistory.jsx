@@ -28,7 +28,7 @@ const PayHistory = ({ paymentHistory }) => {
                     <>
                         <div key={index} className="text-gray-500 col-span-6 md:col-span-2">{payment.date}</div>
                         <div className="text-gray-500 col-span-6 md:col-span-2">{payment.time}</div>
-                        <div className="text-gray-600 col-span-12 md:col-span-2">{payment.coin_id === 0 ? "BASIC" : payment.coin_id === 1 ? "PREMIUM" : payment.coin_id === 2 ? "PRO" : ""}</div>
+                        <div className="text-gray-600 col-span-12 md:col-span-2">{payment.coinId === 0 ? "BASIC" : payment.coinId === 1 ? "PREMIUM" : payment.coinId === 2 ? "PRO" : ""}</div>
                         <div className="text-gray-600 col-span-4 md:col-span-2">{payment.coin}</div>
                         <div className="text-gray-600 col-span-4 md:col-span-2">{payment.price}</div>
                         <div className="text-gray-600 col-span-4 md:col-span-2">{payment.finance}</div>

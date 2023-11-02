@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HeaderAfter from "./HeaderAfter";
 import MainPay from "./payPage/MainPay";
 import PayHistory from "./payPage/PayHistory";
 import axios from "axios";
+import { TokenRefresherContext } from "../context/TokenRefresherContext";
 
 
 function MainPageAfterPay() {
 
   // 토클 상태 확인용
   const [showMainPay, setShowMainPay] = useState(false);
+
+  const TokenRefresher = useContext(TokenRefresherContext);
 
   const handleToggle = () => {
     setShowMainPay(!showMainPay);
@@ -44,7 +47,7 @@ function MainPageAfterPay() {
     const HistoryData = async () => {
       try {
         // 실제 사용 주소 추가 필요
-        const response = await axios.get(`${url}/test`);
+        const response = await TokenRefresher.get(`${url}/verify/`);
 
         // 확인용
         console.log("확인용 response : ", response)

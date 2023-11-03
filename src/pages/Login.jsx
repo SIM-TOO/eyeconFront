@@ -1,6 +1,6 @@
 import React from "react";
-import UserHeader from "./userPage/UserHeader";
-import UserImage from "./userPage/UserImage";
+import UserHeader from "../components/userPage/UserHeader";
+import UserImage from "../components/userPage/UserImage";
 import useUserLogin from "../hook/userPage/useUserLogin";
 
 const Login = () => {

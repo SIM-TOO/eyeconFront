@@ -1,16 +1,16 @@
 import React from "react";
-import Header from "./Header";
-import PlanCard from "./payPage/PlanCard";
-import PayImg from "./payPage/PayImg";
+import Header from "../components/Header";
+import PlanCard from "../components/payPage/PlanCard";
+import PayImg from "../components/payPage/PayImg";
 
 function Pay() {
   return (
     <div className="dark:bg-gray-800">
-      {/* 헤더 */}
+
       <Header></Header>
       <PayImg></PayImg>
       <PlanCard></PlanCard>
-   
+
     </div>
   );
 }

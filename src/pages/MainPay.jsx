@@ -89,7 +89,6 @@ function MainPageAfterPay() {
         {/* 내부 박스 */}
         <div className={" w-[95%] md:w-[70%] md:h-[90%] p-3 rounded-2xl"} style={{ background: "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)", boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)" }}>
 
-
           {/* 버튼 박스 */}
           <div className="flex flex-col items-center">
             <label className="relative inline-flex items-center cursor-pointer" style={{ zIndex: 2 }} >

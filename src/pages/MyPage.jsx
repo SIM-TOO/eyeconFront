@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./HeaderAfter";
-import MyPage from './myPage/MyFixTest'
+import Header from "../components/HeaderAfter";
+import MyPage from '../components/myPage/MyFixTest'
 
 
 

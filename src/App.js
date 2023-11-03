@@ -15,10 +15,12 @@ import Join from './pages/Join'
 import Pay from './pages/Pay'
 
 // 페이지 컴포넌트
-import MainPageAfter from './components/MainPageAfter';
-import ResultPage from './components/ResultPage';
+import MainPageAfter from './pages/MainPageAfter';
+import ResultPage from './pages/ResultPage';
+import MyPage from './pages/MyPage';
+
+// ??
 import MainPageAfterPay from './components/MainPageAfterPay';
-import MyPage from './components/MyPage';
 import CoinCheck from './components/payPage/CoinCheck';
 
 // 기능 컴포넌트

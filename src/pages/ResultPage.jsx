@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderAfter from './HeaderAfter';
-import ResultMain from './resultList/ResultMain';
+import HeaderAfter from '../components/HeaderAfter';
+import ResultMain from '../components/resultList/ResultMain';
 
 function ResultPage() {
 

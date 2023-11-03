@@ -4,7 +4,6 @@ import MainPay from "../components/payPage/MainPay";
 import PayHistory from "../components/payPage/PayHistory";
 import { TokenRefresherContext } from "../context/TokenRefresherContext";
 
-
 function MainPageAfterPay() {
 
   // 토클 상태 확인용
@@ -17,27 +16,6 @@ function MainPageAfterPay() {
   };
 
   const [paymentHistoryData, setPaymentHistoryData] = useState([]);
-
-  // 테스트용 이상없음
-  // const paymentHistoryData = [
-  //   {
-  //     date: '2023-11-01',
-  //     time: '22:47:16',
-  //     coin_id: 1,
-  //     coin: 3,
-  //     price: 100,
-  //     finance: '신한카드',
-  //   },
-  //   {
-  //     date: '2023-10-31',
-  //     time: '22:47:16',
-  //     coin_id: 2,
-  //     coin: 3,
-  //     price: 100,
-  //     finance: '국민KB카드',
-  //   }
-  // ];
-
 
   useEffect(() => {
     // url 주소값
@@ -76,9 +54,6 @@ function MainPageAfterPay() {
     HistoryData();
   }, [TokenRefresher]);
 
-
-
-
   return (
     <div className="h-screen bg-no-repeat bg-cover md:bg-[url('https://i.ibb.co/Q8M7ycH/Kakao-Talk-20231018-121457122.png')] dark:bg-[url('https://i.ibb.co/PD92ZQZ/1.png')]">
 
@@ -100,7 +75,8 @@ function MainPageAfterPay() {
           </div>
 
           <div className={`${showMainPay ? '' : 'flex flex-col justify-center items-center'}`}>
-            {/* 결제와 결제내역 변경용  */}
+
+            {/* 결제와 결제내역 변경용 itemsPerPage에 페이지당 보여줄 숫자 입력  */}
             {showMainPay ? <PayHistory paymentHistory={paymentHistoryData} itemsPerPage={5} /> : <MainPay />}
           </div>
         </div>

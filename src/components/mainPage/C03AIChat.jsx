@@ -32,10 +32,11 @@ const C03AIChat = ({ handleButtonClick }) => {
         chatHandleSubmit,
     } = useChat(initialMessage);
 
-
+    // 서버 데이터 의존성 확인용
     console.log(waitingForResponse);
-    // start 컴포넌트와 AIChat 컴포넌트 변경
-    //  체인지 함수
+
+
+    //  체인지 함수 채팅 시작전 컴포넌트에서 채팅 컴포넌트 변경
     const { showAIchatStart, showAIchat, changeButtonClick } = useChatChange();
 
     //  엔터키를 채팅 전송으로 할당
@@ -80,7 +81,9 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
-            {showAIchat && < AIchat messages={messages} test={waitingForResponse} />}
+            
+            {/* 의존성 베열 추가 */}
+            {showAIchat && < AIchat messages={messages} dependency={waitingForResponse} />}
 
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />

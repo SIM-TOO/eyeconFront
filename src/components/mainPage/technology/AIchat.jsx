@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import Lottie from "react-lottie-player";
 import lottieJson from "../../../lottie/robotIcon.json";
 
-function AIchat({ messages, test }) {
+function AIchat({ messages, dependency }) {
     const chatRef = useRef(null);
 
 
@@ -13,7 +13,8 @@ function AIchat({ messages, test }) {
         }
     }, [messages]);
 
-    console.log({ test })
+    //서버 데이터 도착 확인용
+    console.log("서버 데이터 도착 확인 : ", { dependency })
 
     return (
         // 채팅창 내부
@@ -28,7 +29,9 @@ function AIchat({ messages, test }) {
 
                     {/* 채팅 메시지 박스, 타이핑 효과  */}
                     <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-200 text-black max-w-[180px] md:max-w-[500px] text-left' : 'text-left bg-blue-500 text-white max-w-[200px] md:max-w-[500px]'}`}>
-                        {test ? (
+
+                        {/* 서버 데이터 도착 확인용  */}
+                        {dependency ? (
                             msg.content
                         ) : (
                             <>

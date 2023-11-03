@@ -32,6 +32,8 @@ const C03AIChat = ({ handleButtonClick }) => {
         chatHandleSubmit,
     } = useChat(initialMessage);
 
+
+    console.log(waitingForResponse);
     // start 컴포넌트와 AIChat 컴포넌트 변경
     //  체인지 함수
     const { showAIchatStart, showAIchat, changeButtonClick } = useChatChange();
@@ -78,7 +80,8 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
-            {showAIchat && < AIchat messages={messages} />}
+            {showAIchat && < AIchat messages={messages} test={waitingForResponse} />}
+
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
 
@@ -90,8 +93,9 @@ const C03AIChat = ({ handleButtonClick }) => {
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
                     <p className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
-                        서비스를 위해 챗봇 이콘이와 함께 대화를 시작해보세요.
+                        서비스를 위해 내 가게를 선택 후 대화하기 버튼을 눌러주세요
                     </p>}
+
                 {showAIchat &&
                     <div className="h-[100%] w-[100%] grid grid-cols-12 p-3 ">
                         <input

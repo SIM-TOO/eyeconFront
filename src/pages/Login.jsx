@@ -19,8 +19,8 @@ const Login = () => {
               alt=""
               className="absolute top-0 left-0 z-10 hidden md:block dark:hidden"
             />
-             <img src="https://i.ibb.co/ZNvzZMz/Group-624891.png" alt="" className="absolute top-0 left-0 z-10 block dark:hidden md:hidden hidden"/>
-           
+            <img src="https://i.ibb.co/ZNvzZMz/Group-624891.png" alt="" className="absolute top-0 left-0 z-10 block dark:hidden md:hidden hidden" />
+
             {/* </Link> */}
             <UserImage />
           </div>

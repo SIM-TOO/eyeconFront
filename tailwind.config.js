@@ -11,6 +11,8 @@ module.exports = {
 
       keyframes: {
 
+     
+
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
@@ -46,6 +48,7 @@ module.exports = {
         typing: "typing 3s steps(30)  alternate, blink .7s infinite",
         typing2: "typing 1s steps(30)  alternate, blink .7s infinite",
         wiggle: 'wiggle 2s ease-in-out infinite',
+        ping: "ping 3s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
     },
   },

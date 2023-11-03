@@ -22,12 +22,12 @@ const PayHistory = ({ paymentHistory, itemsPerPage }) => {
   if (remainingPayments > 0 && currentPage === totalPages) {
     for (let i = 0; i < remainingPayments; i++) {
       currentPayments.push({
-        date: '',
-        time: '',
+        date: <span className="text-transparent">-</span>,
+        time: ' ',
         coinId: -1, // 빈 결제 내역을 식별하기 위한 값 (실제 결제 내역과 중복되지 않는 값)
-        coin: '',
-        price: '',
-        finance: '',
+        coin: ' ',
+        price: ' ',
+        finance: ' ',
       });
     }
   }

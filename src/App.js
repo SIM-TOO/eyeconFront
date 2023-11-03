@@ -28,6 +28,7 @@ import Place from './methodes/Place'
 import Test from './components/testPage/Test';
 import ProductTest from './components/testPage/ProductTest';
 import ProductTest02 from './components/testPage/ProductTest02';
+import ProductTest03 from './components/testPage/ProductTest03';
 
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
                   <Route path="/test" element={<Test />} />
                   <Route path="/producttest" element={<ProductTest />} />
                   <Route path="/producttest02" element={<ProductTest02 />} />
+                  <Route path="/producttest03" element={<ProductTest03 />} />
 
                 </>
               ) :

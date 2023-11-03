@@ -9,7 +9,7 @@ const useChatChange = () => {
         setAIchatStart(false);
         setAIchat(true);
 
-        // 데이터 전송 함수 사용할때 주석 풀것
+        // 데이터 전송 함수 실행 부분
         sendDataToServer();
     };
 

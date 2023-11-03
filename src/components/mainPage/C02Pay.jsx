@@ -62,6 +62,7 @@ const C02Pay = ({ handleButtonClick }) => {
           시선분석 서비스를 이용하기 위해서는 코인이 1개 필요합니다. <br />코인사용
           버튼을 누르면 시선 분석이 시작됩니다
         </p>
+        
         <p className="col-span-12 p-3" />
 
         {/* 버튼 */}
@@ -97,13 +98,15 @@ const C02Pay = ({ handleButtonClick }) => {
         <p className="col-span-12 text-2xl font-bold text-[#505050] text-center p-3 ">
           추가 서비스 이용 방법
         </p>
-        <img src="https://i.ibb.co/vmWSTyD/content-inside.jpg" alt="content-inside" className="h-[150px] col-span-12 mx-auto p-3" />
-
+        <img src="https://i.ibb.co/pZFGctp/Group-624919.png" alt="content-inside" className="h-[150px] col-span-12 mx-auto p-3 mb-" />
+        <p className="col-span-12 p-3" />
         {/* 줄 */}
         <div className="col-span-12 h-[2px] bg-[#e4e4e4] " />
 
+
         {/* 내용 */}
         <p className="col-span-12 p-3" />
+        
         <p className="col-span-12 text-center p-3 text-lg">
           잔여 코인이 부족하거나 <br />
           추가적인 서비스 결제가 필요하세요?
@@ -114,10 +117,11 @@ const C02Pay = ({ handleButtonClick }) => {
         <p className="col-span-3" />
         <p className="col-span-12" />
         <p className="col-span-3" />
-        <button className="h-[60px] col-span-8 justify-center items-center p-10 whitespace-nowrap">
+        <button className="h-[60px] col-span-8 justify-center items-center p-3 whitespace-nowrap">
           <Link to="/mainpay" className="text-lg font-semibold text-center text-white bg-gray-500 py-4 px-20 rounded-lg">
             서비스 결제하기
           </Link>
+          
         </button>
         <p className="col-span-3" />
         <p className="col-span-12" />

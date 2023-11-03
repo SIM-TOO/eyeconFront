@@ -14,8 +14,10 @@ function IntroPage() {
 
   return (
     <div>
-      <Header/> 
+      <Header/>
+      <div className='md:block hidden'>
       <Slider/>
+      </div> 
       <Intro01/>
       <Intro02/>
       <Intro03/>

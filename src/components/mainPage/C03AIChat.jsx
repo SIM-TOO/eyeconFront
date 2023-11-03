@@ -32,6 +32,8 @@ const C03AIChat = ({ handleButtonClick }) => {
         chatHandleSubmit,
     } = useChat(initialMessage);
 
+
+    console.log(waitingForResponse);
     // start 컴포넌트와 AIChat 컴포넌트 변경
     //  체인지 함수
     const { showAIchatStart, showAIchat, changeButtonClick } = useChatChange();

@@ -60,6 +60,7 @@ const useChat = (initialMessage) => {
       setMessages((prevMessages) => prevMessages.filter((message) => message !== loadingMessage));
       setWaitingForResponse(false);
 
+      console.log(waitingForResponse)
       // 서버 응답
       setMessages((prevMessages) => [...prevMessages, serverMessage]);
 

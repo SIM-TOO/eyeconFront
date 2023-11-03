@@ -12,7 +12,7 @@ import './index.css';
 import IntroPage from './pages/IntroPage';
 import Login from './pages/Login'
 import Join from './pages/Join'
-import Pay from './components/Pay'
+import Pay from './pages/Pay'
 
 // 페이지 컴포넌트
 import MainPageAfter from './components/MainPageAfter';

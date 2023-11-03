@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import Lottie from "react-lottie-player";
 import lottieJson from "../../../lottie/robotIcon.json";
 
-function AIchat({ messages }) {
+function AIchat({ messages, test }) {
     const chatRef = useRef(null);
 
 
@@ -13,10 +13,12 @@ function AIchat({ messages }) {
         }
     }, [messages]);
 
+    console.log({ test })
 
     return (
         // 채팅창 내부
         <div ref={chatRef} className="h-[100%] md:h-[80%] col-span-12 md:col-span-7 flex flex-col overflow-y-auto md:mt-20">
+
             {/* 채팅창 */}
             {messages.map((msg, index) => (
                 <div key={index} className={`flex ${msg.isMine ? 'justify-end' : 'justify-start'} mb-4 `}>
@@ -25,9 +27,18 @@ function AIchat({ messages }) {
                     {!msg.isMine && <RobotIcon className="rounded-full mr-3" />}
 
                     {/* 채팅 메시지 박스, 타이핑 효과  */}
-                    <div className={`p-4 rounded-lg  ${msg.isMine ? 'bg-gray-200 text-black max-w-[180px] md:max-w-[500px] text-left' : 'text-left bg-blue-500 text-white max-w-[200px] md:max-w-[500px]'}`}>
-                    {/* {msg.content} */}
-                        <AnimatedText text={msg.content} />
+                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-200 text-black max-w-[180px] md:max-w-[500px] text-left' : 'text-left bg-blue-500 text-white max-w-[200px] md:max-w-[500px]'}`}>
+                        {test ? (
+                            msg.content
+                        ) : (
+                            <>
+                                {index === messages.length - 1 ? (
+                                    <AnimatedText text={msg.content} />
+                                ) : (
+                                    msg.content
+                                )}
+                            </>
+                        )}
                     </div>
 
                     {/* 프로필 이미지 */}

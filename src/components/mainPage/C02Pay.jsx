@@ -58,9 +58,13 @@ const C02Pay = ({ handleButtonClick }) => {
 
         {/* 내용 */}
         <p className="col-span-12 p-3" />
-        <p className="col-span-12 text-left p-3 text-center text-lg">
+        <p className="col-span-12 text-left p-3 text-center text-lg md:block hidden">
           시선분석 서비스를 이용하기 위해서는 코인이 1개 필요합니다. <br />코인사용
           버튼을 누르면 시선 분석이 시작됩니다
+        </p>
+        <p className="col-span-12 text-left p-3 text-center text-lg md:hidden block">
+          시선분석을 위해 <br />코인 1개가 필요합니다.<br />
+        추가 결제를 위해서는 <br />버튼을 눌러주세요.
         </p>
         
         <p className="col-span-12 p-3" />
@@ -68,7 +72,7 @@ const C02Pay = ({ handleButtonClick }) => {
         {/* 버튼 */}
         <p className="col-span-3" />
         <button
-          className="animate-bounce3 h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]"
+          className="animate-bounce3 h-[50px] md:h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]"
           onClick={() => modifiedHandleButtonClick(6)}
         >
           <p className="text-lg font-semibold text-center text-white">
@@ -115,17 +119,17 @@ const C02Pay = ({ handleButtonClick }) => {
 
         {/* 버튼 */}
         <p className="col-span-3" />
-        <p className="col-span-12" />
+
+      
         <p className="col-span-3" />
-        <button className="h-[60px] col-span-8 justify-center items-center p-3 whitespace-nowrap">
+        <p className="col-span-12" />
+        
+        <button className="mt-10 h-[60px] col-span-8 justify-center items-center p-3 whitespace-nowrap">
           <Link to="/mainpay" className="text-lg font-semibold text-center text-white bg-gray-500 py-4 px-20 rounded-lg">
             서비스 결제하기
           </Link>
           
         </button>
-        <p className="col-span-3" />
-        <p className="col-span-12" />
-
 
 
       </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../../lottie/eyeconhello.json";
 import lottieJson2 from "../../../lottie/animationstore.json";
+import lottieJson3 from "../../../lottie/nextprocess.json";
+
 function AIchatStart({ onButtonClick }) {
 
 
@@ -59,17 +61,6 @@ function AIchatStart({ onButtonClick }) {
             <div className='w-[100%] grid grid-cols-12 p-3'>
                 <div className="col-span-12 p-3" />
                 <div className="col-span-3" />
-                {selectedStore && (
-                    <div className="col-span-12 md:col-span-7 flex justify-center whitespace-nowrap items-center p-3 rounded-lg bg-[#40c3ae] cursor-pointer "
-                        onClick={() => {
-                            onButtonClick();
-                            toggleDropdown(); // 드롭다운을 닫는다
-                        }}
-                        style={{ zIndex: 999 }}
-                    >
-                        <p className='text-white text-ml font-bold cursor-pointer whitespace-nowrap '>챗봇과 시선분석 시작하기</p><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='ml-5 w-[15px] animate-pulse' /><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='w-[15px] animate-pulse' /><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='w-[15px] animate-pulse' />
-                    </div>
-                )}
 
             </div>
 
@@ -78,7 +69,7 @@ function AIchatStart({ onButtonClick }) {
                 onClick={toggleDropdown}
                 id="dropdownDefaultButton"
                 data-dropdown-toggle="dropdown"
-                className="md:ml-10 relative flex w-[300px] h-[50px] text-white  text-center bg-blue-800  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="whitespace-nowrap md:ml-10 relative flex w-[300px] h-[50px] text-white  text-center bg-gray-600  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
             >
                 <p className="ml-[70px]">
@@ -99,6 +90,18 @@ function AIchatStart({ onButtonClick }) {
                         d="m1 1 4 4 4-4"
                     />
                 </svg>
+                {selectedStore && (
+                    <div className="animate-pulse col-span-12 md:col-span-1 flex justify-center whitespace-nowrap items-center p-3 rounded-lg cursor-pointer  "
+                        onClick={() => {
+                            onButtonClick();
+                            toggleDropdown(); // 드롭다운을 닫는다
+                        }}
+                        style={{ zIndex: 999 }}
+                    >
+                        챗봇과 대화하기
+
+                    </div>
+                )}
             </button>
 
 
@@ -157,5 +160,7 @@ function StoreRobot() {
         />
     );
 }
+
+
 
 export default AIchatStart;

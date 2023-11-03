@@ -81,7 +81,7 @@ const MyPageAdd = () => {
             </div>
           </div>
         </div>
-      </form>
+      </form> 
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import HeaderAfter from "./HeaderAfter";
-import MainPay from "./payPage/MainPay";
-import PayHistory from "./payPage/PayHistory";
-import { TokenRefresherContext } from "../context/TokenRefresherContext";
+import HeaderAfter from "../HeaderAfter";
+import MainPay from "./MainPay";
+import PayHistory from "./PayHistory";
+import { TokenRefresherContext } from "../../context/TokenRefresherContext";
 
 
 function MainPageAfterPay() {

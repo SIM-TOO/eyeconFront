@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import accessReducer from './store/accessCKSlice';
+import accessReducer from './accessCKSlice';
 
 const store = configureStore({
   reducer: {

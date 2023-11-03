@@ -5,7 +5,7 @@ import { Provider, useDispatch, useSelector } from 'react-redux';
 import { setAccessCK } from './store/accessCKSlice';
 import { AddressContext } from './context/AddressContext';
 import { useState } from 'react';
-import store from './store';
+import store from './store/store';
 import './index.css';
 
 // 페이지 컴포넌트
@@ -20,7 +20,7 @@ import ResultPage from './pages/ResultPage';
 import MyPage from './pages/MyPage';
 
 // ??
-import MainPageAfterPay from './components/MainPageAfterPay';
+import MainPageAfterPay from './components/payPage/MainPageAfterPay';
 import CoinCheck from './components/payPage/CoinCheck';
 
 // 기능 컴포넌트

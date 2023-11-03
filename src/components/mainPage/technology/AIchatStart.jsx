@@ -1,57 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../../lottie/eyeconhello.json";
-
+import lottieJson2 from "../../../lottie/animationstore.json";
 function AIchatStart({ onButtonClick }) {
 
-    //임시 가게 리스트 생성
+
+
     const [storeList, setStoreList] = useState([]);
-    /* 내가 선택한 가게 */
     const [selectedStore, setSelectedStore] = useState(null);
-
-
-    //드롭다운 박스 생성
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [robotComponent, setRobotComponent] = useState("StoreRobot"); // 로봇 컴포넌트 상태
 
-    // 드롭다운의 항목(가게 리스트)
+
+
+    //내 가게 선택 가게 선택 시 드롭다운 사라지고 버튼 뜨고 로봇 전환
     const handleSelect = (storeName) => {
         setSelectedStore(storeName);
-        setIsDropdownOpen(false);
+        closeDropdown();
+        setRobotComponent("StartRobot"); // 드롭다운 선택 시 로봇 전환
     };
 
-    //드롭다운 여는 event
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
-    // 드롭다운 닫음
 
     const closeDropdown = () => {
         setIsDropdownOpen(false);
     };
 
-
-    
-    //가게 데이터셋
     useEffect(() => {
         const testStore = [
             { id: 1, storeName: '아이콘편의점' },
             { id: 2, storeName: '안녕편의점' },
-        ]; setStoreList(testStore);
+        ];
+        setStoreList(testStore);
     }, []);
 
 
-    //드롭다운 후 버튼 등장 근데 사라지진 않는디요
+
     const handleSelectButton = (storeName) => {
         setSelectedStore(storeName);
-        closeDropdown(); 
+        closeDropdown();
+        setRobotComponent("StartRobot"); // 드롭다운 선택 시 로봇 전환
     };
 
-
+    const dropdownClass = isDropdownOpen ? 'hidden' : 'block';
 
     return (
         <div className="font-Pretendard h-[100%] col-span-12 md:col-span-7 p-3 flex flex-col items-center justify-center">
             {/* 이미지 */}
-            <StartRobot className='max-w-full max-h-full' />
+            {robotComponent === "StoreRobot" ? (
+                <StoreRobot className='max-w-full max-h-full' />
+            ) : (
+                <StartRobot />
+            )}
 
             {/* 대화 시작하기 버튼 */}
             <div className='w-[100%] grid grid-cols-12 p-3'>
@@ -65,25 +67,25 @@ function AIchatStart({ onButtonClick }) {
                         }}
                         style={{ zIndex: 999 }}
                     >
-                        <p className='text-white text-ml font-bold cursor-pointer whitespace-nowrap '>챗봇과 시선분석 시작하기</p><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='ml-5 w-[15px] animate-pulse' /><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='w-[15px] animate-pulse' />
+                        <p className='text-white text-ml font-bold cursor-pointer whitespace-nowrap '>챗봇과 시선분석 시작하기</p><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='ml-5 w-[15px] animate-pulse' /><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='w-[15px] animate-pulse' /><img src="https://i.ibb.co/x84Y2BV/icon-Angle-Double-Right.png" alt='' className='w-[15px] animate-pulse' />
                     </div>
                 )}
 
             </div>
 
             {/* 드롭다운 버튼 */}
-
             <button
                 onClick={toggleDropdown}
                 id="dropdownDefaultButton"
                 data-dropdown-toggle="dropdown"
-                className="w-[250px] text-white text-center bg-[#46cfb9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="md:ml-10 relative flex w-[300px] h-[50px] text-white  text-center bg-blue-800  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
             >
-
-                {selectedStore || '내 가게 선택 '}
+                <p className="ml-[70px]">
+                    {selectedStore || '내 가게 선택하기 '}
+                </p>
                 <svg
-                    className="w-2.5 h-2.5 ml-2.5"
+                    className="w-3.5 h-3.5 ml-2.5 animate-pulse"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -102,7 +104,7 @@ function AIchatStart({ onButtonClick }) {
 
             {/* 드롭다운 메뉴 */}
             {isDropdownOpen && (
-                <div id="dropdown" className="z-10 absolute right-100 top-[75%] mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                <div id="dropdown" className="text-center z-10 absolute right-100 top-[75%] mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                         <li
                             key="showAll"
@@ -139,6 +141,18 @@ function StartRobot() {
             loop
             animationData={lottieJson}
             speed={2.5}
+            play
+        />
+    );
+}
+
+function StoreRobot() {
+    return (
+        <Lottie
+            className='translate3d-10-55-0 w-[50%]'
+            loop
+            animationData={lottieJson2}
+            speed={1.5}
             play
         />
     );

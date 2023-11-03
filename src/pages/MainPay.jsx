@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import HeaderAfter from "../HeaderAfter";
-import MainPay from "./MainPay";
-import PayHistory from "./PayHistory";
-import { TokenRefresherContext } from "../../context/TokenRefresherContext";
+import HeaderAfter from "../components/HeaderAfter";
+import MainPay from "../components/payPage/MainPay";
+import PayHistory from "../components/payPage/PayHistory";
+import { TokenRefresherContext } from "../context/TokenRefresherContext";
 
 
 function MainPageAfterPay() {
@@ -83,6 +83,7 @@ function MainPageAfterPay() {
 
       {/* 헤더 */}
       <HeaderAfter />
+
       <div className="flex flex-col items-center" >
 
         {/* 내부 박스 */}
@@ -104,6 +105,7 @@ function MainPageAfterPay() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

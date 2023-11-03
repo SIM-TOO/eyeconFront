@@ -79,6 +79,7 @@ const C03AIChat = ({ handleButtonClick }) => {
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
             {showAIchat && < AIchat messages={messages} />}
+            
             {/* 여백용 박스 */}
             <div className="hidden md:block col-span-0 md:col-span-1" />
 

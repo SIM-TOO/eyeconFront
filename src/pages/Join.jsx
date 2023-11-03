@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import UserHeader from './userPage/UserHeader';
-import UserImage from './userPage/UserImage';
+import UserHeader from '../components/userPage/UserHeader';
+import UserImage from '../components/userPage/UserImage';
 
 import useUserIdCK from '../hook/userPage/useUserIdCK';
 import useUserPWCK from '../hook/userPage/useUserPWCK';

@@ -1,25 +1,34 @@
 import { Routes, Route } from 'react-router-dom';
-import MainPage from './components/MainPage'
-import Join from './components/Join'
-import Pay from './components/Pay'
-import Login from './components/Login'
-import Place from './methodes/Place'
-import './index.css';
-import MainPageAfter from './components/MainPageAfter';
-import ResultPage from './components/ResultPage';
-import MainPageAfterPay from './components/MainPageAfterPay';
-import MyPage from './components/MyPage';
 import { TokenRefresherContext } from './context/TokenRefresherContext';
 import TokenRefresher from './hook/userPage/TokenRefresher';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { setAccessCK } from './store/accessCKSlice';
-import store from './store';
 import { AddressContext } from './context/AddressContext';
 import { useState } from 'react';
+import store from './store';
+import './index.css';
+
+// 페이지 컴포넌트
+import IntroPage from './pages/IntroPage';
+import Login from './pages/Login'
+import Join from './pages/Join'
+import Pay from './components/Pay'
+
+// 페이지 컴포넌트
+import MainPageAfter from './components/MainPageAfter';
+import ResultPage from './components/ResultPage';
+import MainPageAfterPay from './components/MainPageAfterPay';
+import MyPage from './components/MyPage';
 import CoinCheck from './components/payPage/CoinCheck';
+
+// 기능 컴포넌트
+import Place from './methodes/Place'
+
+// 테스트 컴포넌트
 import Test from './components/testPage/Test';
 import ProductTest from './components/testPage/ProductTest';
 import ProductTest02 from './components/testPage/ProductTest02';
+
 
 function App() {
 
@@ -49,7 +58,7 @@ function App() {
           <AddressContext.Provider value={inAddressContext}>
             <Routes>
               {/* 기본적으로 접근 가능한 페이지 */}
-              <Route path="/" element={<MainPage />} />
+              <Route path="/" element={<IntroPage />} />
               <Route path="/pay" element={<Pay />} />
               <Route path="/place" element={<Place />} />
               <Route path="/coincheck" element={<CoinCheck />} />
@@ -57,8 +66,8 @@ function App() {
               {loginCKData === 'Exist' ? (
                 <>
                   {/* 로그인 정보 있을 경우 접근 가능 */}
-                  <Route path="/join" element={<MainPage />} />
-                  <Route path="/login" element={<MainPage />} />
+                  <Route path="/join" element={<IntroPage />} />
+                  <Route path="/login" element={<IntroPage />} />
                   <Route path="/result" element={<ResultPage />} />
                   <Route path="/main" element={<MainPageAfter />} />
                   <Route path="/mainpay" element={<MainPageAfterPay />} />

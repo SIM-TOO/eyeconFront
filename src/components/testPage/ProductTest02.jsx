@@ -52,6 +52,7 @@ const ProductTest02 = () => {
     
             // 캔버스에 이미지 추가
             canvas.add(img);
+            canvas.renderAll();
         });
     });  
     

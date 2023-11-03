@@ -107,7 +107,7 @@ function AIchatStart({ onButtonClick }) {
 
             {/* 드롭다운 메뉴 */}
             {isDropdownOpen && (
-                <div id="dropdown" className="text-center z-10 absolute right-100 top-[75%] mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                <div id="dropdown" className="text-center z-10 absolute right-[30%] top-[68%] mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                         <li
                             key="showAll"

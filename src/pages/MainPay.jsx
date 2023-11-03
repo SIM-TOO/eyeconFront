@@ -16,6 +16,8 @@ function MainPageAfterPay() {
     setShowMainPay(!showMainPay);
   };
 
+  const [paymentHistoryData, setPaymentHistoryData] = useState([]);
+
   // 테스트용 이상없음
   // const paymentHistoryData = [
   //   {
@@ -33,10 +35,9 @@ function MainPageAfterPay() {
   //     coin: 3,
   //     price: 100,
   //     finance: '국민KB카드',
-  //   },
+  //   }
   // ];
 
-  const [paymentHistoryData, setPaymentHistoryData] = useState([]);
 
   useEffect(() => {
     // url 주소값
@@ -100,7 +101,7 @@ function MainPageAfterPay() {
 
           <div className={`${showMainPay ? '' : 'flex flex-col justify-center items-center'}`}>
             {/* 결제와 결제내역 변경용  */}
-            {showMainPay ? <PayHistory paymentHistory={paymentHistoryData} /> : <MainPay />}
+            {showMainPay ? <PayHistory paymentHistory={paymentHistoryData} itemsPerPage={5} /> : <MainPay />}
           </div>
         </div>
       </div>

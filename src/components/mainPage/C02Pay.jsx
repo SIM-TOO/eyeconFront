@@ -42,7 +42,7 @@ const C02Pay = ({ handleButtonClick }) => {
 
         {/* 잔여코인 확인 */}
         <p className="col-span-12 text-2xl font-bold text-left text-[#505050]  p-3 text-center">
-          <img src="https://i.ibb.co/CbxhQmw/icon-check-circle-1.png" alt="" className="w-8 inline-block mr-2" />
+          <img src="https://i.ibb.co/CbxhQmw/icon-check-circle-1.png" alt="" className="animate-pulse w-8 inline-block mr-2" />
           잔여코인 확인
         </p>
 

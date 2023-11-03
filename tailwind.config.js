@@ -5,13 +5,16 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      Pretendard: ["Pretendard-Regular"]
+      Pretendard: ["Pretendard-Regular"],
+      Partial: ['PartialSansKR-Regular']
     },
+
+
     extend: {
 
       keyframes: {
 
-     
+
 
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },

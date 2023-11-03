@@ -54,7 +54,7 @@ function IntroSlider() {
 
     return (
         <Swiper
-            style={{ height: "700px" }}
+            style={{ height: "700px", marginTop: "5%"}}
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{
@@ -67,7 +67,7 @@ function IntroSlider() {
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
             onAutoplayTimeLeft={onAutoplayTimeLeft}
-            className="mySwiper mt-10"
+            className="mySwiper"
         >
 
             <SwiperSlide><div className="dark:bg-[#8C8C8C] bg-[#F8F8F8] w-full h-full">

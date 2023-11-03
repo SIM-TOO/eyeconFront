@@ -18,17 +18,16 @@ const Intro01 = () => {
         </div>
 
         <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl font-Pretendard ">
+
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
-       
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-20 ">
               <span className="text-4xl md:text-6xl font-bold ">
                 WELCOME TO <br />
                 EYECON
               </span>
               <span className="relative">
-                <p className="relative z-10 text-4xl md:text-6xl font-bold">
-                  {" "}
+                <p className="relative text-4xl md:text-6xl font-bold">
                   with AI CHATBOT
                 </p>
                 <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
@@ -43,7 +42,7 @@ const Intro01 = () => {
             </div>
 
             {/* 두번째 줄 내용 겹치는 박스 */}
-            <div className="py-5 md:py-40 p-6 sm:p-3 text-base sm:text-lg  ">
+            <div className=" py-5 md:py-40 p-6 sm:p-3 text-base sm:text-lg  ">
               <p className="text-2xl font-semibold"> WHERE THE EYES GO, SALES ARE THERE</p>
               시선 분석 AI를 통해 매대를 정밀하게 분석하고<br />
               소비자의 시선을 예측해보세요. <br />소비자의 시선이 향하는 곳에 매출이
@@ -79,7 +78,7 @@ const Intro01 = () => {
       <div className="md:block hidden">
 
         {/* 슬라이더 자리 */}
-        <Slider />
+      
       </div>
     </div>
   );

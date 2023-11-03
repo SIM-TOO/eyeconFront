@@ -23,9 +23,13 @@ const C05Result = ({ handleButtonClick }) => {
   const {
     inputValue,
     setInputValue,
+    waitingForResponse,
     messages,
     chatHandleSubmit,
   } = useChat(initialMessage);
+
+  console.log(waitingForResponse)
+
 
   // 엔터키 할당
   const chatHandleKeyDown = (e) => {
@@ -84,7 +88,8 @@ const C05Result = ({ handleButtonClick }) => {
       </div>
 
       {/* 내용 박스 */}
-      < AIchat messages={messages} />
+      {/* AI 채팅 의존성 배열 추가 */}
+      < AIchat messages={messages} dependency={waitingForResponse} />
 
       {/* 여백용 박스 */}
       <div className="hidden md:block col-span-0 md:col-span-1" />

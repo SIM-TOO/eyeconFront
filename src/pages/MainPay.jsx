@@ -16,6 +16,8 @@ function MainPageAfterPay() {
     setShowMainPay(!showMainPay);
   };
 
+  const [paymentHistoryData, setPaymentHistoryData] = useState([]);
+
   // 테스트용 이상없음
   // const paymentHistoryData = [
   //   {
@@ -33,10 +35,9 @@ function MainPageAfterPay() {
   //     coin: 3,
   //     price: 100,
   //     finance: '국민KB카드',
-  //   },
+  //   }
   // ];
 
-  const [paymentHistoryData, setPaymentHistoryData] = useState([]);
 
   useEffect(() => {
     // url 주소값
@@ -89,10 +90,9 @@ function MainPageAfterPay() {
         {/* 내부 박스 */}
         <div className={" w-[95%] md:w-[70%] md:h-[90%] p-3 rounded-2xl"} style={{ background: "linear-gradient(179.97deg, #fff 0.05%, rgba(255,255,255,0) 99.98%)", boxShadow: "0px 4px 30px 0 rgba(190,190,190,0.47)" }}>
 
-
           {/* 버튼 박스 */}
           <div className="flex flex-col items-center">
-            <label className="relative inline-flex items-center cursor-pointer" style={{ zIndex: 999 }} >
+            <label className="relative inline-flex items-center cursor-pointer" style={{ zIndex: 2 }} >
               <input type="checkbox" value="" className="sr-only peer" checked={showMainPay} onChange={handleToggle} />
               <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
               <span className="select-none ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{showMainPay ? "결제화면" : "결제내역"}</span>
@@ -101,7 +101,7 @@ function MainPageAfterPay() {
 
           <div className={`${showMainPay ? '' : 'flex flex-col justify-center items-center'}`}>
             {/* 결제와 결제내역 변경용  */}
-            {showMainPay ? <PayHistory paymentHistory={paymentHistoryData} /> : <MainPay />}
+            {showMainPay ? <PayHistory paymentHistory={paymentHistoryData} itemsPerPage={5} /> : <MainPay />}
           </div>
         </div>
       </div>

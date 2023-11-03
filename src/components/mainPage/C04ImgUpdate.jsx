@@ -17,7 +17,8 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
     if (success) {
       handleButtonClick(5);
     } else {
-      // 일단 실패해도 넘어가자! ^^ 나중에 4로 바꿀것
+      //  실패시 작동하는 곳
+      alert("업로드에 실패 했습니다. 그러나 넘어가게 할것입니다. 나중에 수정하세요!")
       handleButtonClick(5);
     }
   };

@@ -4,8 +4,9 @@ import { fabric } from 'fabric';
 const ProductTest02 = () => {
     const canvas = new fabric.Canvas('canvas');
     
-    const product ={ '1':'https://img.danawa.com/prod_img/500000/763/904/img/904763_1.jpg?_v=20200616095718',
-                '2':'https://msimage.lottechilsung.co.kr/goods/31/12/84/93/16580_N_N_600.jpg',
+    const product ={ '1':'https://i.ibb.co/v3mmYvJ/3-01.png',
+                '2':'https://i.ibb.co/ThhcY4N/048-80.png',
+                '3':'https://i.ibb.co/G0V0msy/33-01.png'
                 
     }
 
@@ -29,39 +30,42 @@ const ProductTest02 = () => {
         selectable: false 
       });
       canvas.add(rect);
+      canvas.renderAll();
 }
 
-  const createProduct=()=>{
-    Object.keys(product).forEach((key) => {
-        fabric.Image.fromURL(product[key], function(img) {
-            // 필요한 경우 옵션을 설정
-            img.set({
-                left: 100,
-                top: 100,
-                angle: 0,
-                padding: 10,
-                cornersize: 10,
-                hasRotatingPoint:true,
-                selectable: true,
-                hasControls: false, // 이미지의 회전과 크기 조정을 제한함
-                hasBorders: false // 이미지의 테두리를 제거함
-            });    
-            // 이미지 크기 조정
-            img.scaleToWidth(200);
-            img.scaleToHeight(200);
-    
-            // 캔버스에 이미지 추가
-            canvas.add(img);
-        });
-    });  
-    
-  }
+const createProduct=()=>{
+    for(let i = 0; i < 10; i++) { // 10번 반복
+        Object.keys(product).forEach((key) => {
+            fabric.Image.fromURL(product[key], function(img) {
+                // 필요한 경우 옵션을 설정
+                img.set({
+                    left: 100,
+                    top: 100,
+                    angle: 0,
+                    padding: 10,
+                    cornersize: 10,
+                    hasRotatingPoint:true,
+                    selectable: true,
+                    hasControls: false, // 이미지의 회전과 크기 조정을 제한함
+                    hasBorders: false // 이미지의 테두리를 제거함
+                });    
+                // 이미지 크기 조정
+                img.scaleToWidth(100);
+                img.scaleToHeight(100);
+        
+                // 캔버스에 이미지 추가
+                canvas.add(img);
+                canvas.renderAll();
+            });
+        });  
+    }
+}
 
 
     useEffect(() => {        
         setBg();
         createProduct();
-
+        canvas.renderAll();
     }, []);
 
     return (

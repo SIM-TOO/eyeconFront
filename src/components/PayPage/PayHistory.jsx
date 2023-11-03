@@ -17,6 +17,21 @@ const PayHistory = ({ paymentHistory, itemsPerPage }) => {
     setCurrentPage(pageNumber);
   };
 
+  // 빈칸으로 버튼 위치 고정 시키는 위한 틀?
+  const remainingPayments = itemsPerPage - currentPayments.length;
+  if (remainingPayments > 0 && currentPage === totalPages) {
+    for (let i = 0; i < remainingPayments; i++) {
+      currentPayments.push({
+        date: '',
+        time: '',
+        coinId: -1, // 빈 결제 내역을 식별하기 위한 값 (실제 결제 내역과 중복되지 않는 값)
+        coin: '',
+        price: '',
+        finance: '',
+      });
+    }
+  }
+
   return (
     <div className="font-Pretendard text-center container grid grid-cols-12 p-3 gap-4">
       {/* 여백용 박스 */}

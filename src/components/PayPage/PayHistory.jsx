@@ -23,11 +23,11 @@ const PayHistory = ({ paymentHistory, itemsPerPage }) => {
     for (let i = 0; i < remainingPayments; i++) {
       currentPayments.push({
         date: '',
-        time: '',
+        time: ' ',
         coinId: -1, // 빈 결제 내역을 식별하기 위한 값 (실제 결제 내역과 중복되지 않는 값)
-        coin: '',
-        price: '',
-        finance: '',
+        coin: <p className="text-transparent pointer-events-none user-select-none">-</p>,
+        price: ' ',
+        finance: ' ',
       });
     }
   }

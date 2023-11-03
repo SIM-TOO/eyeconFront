@@ -91,7 +91,7 @@ const C03AIChat = ({ handleButtonClick }) => {
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
                     <p className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
-                        서비스 시작 전 내 가게를 먼저 선택해주세요.
+                        서비스를 위해 내 가게를 선택 후 대화하기 버튼을 눌러주세요
                     </p>}
                     
                     

@@ -118,32 +118,7 @@ module.exports = {
             transform: 'translateY(-85.71%)',
           },
         },
-        'text-slide-7': {
-          '0%, 11.43%': {
-            transform: 'translateY(0%)',
-          },
-          '14.28%, 25.71%': {
-            transform: 'translateY(-12.5%)',
-          },
-          '28.57%, 40%': {
-            transform: 'translateY(-25%)',
-          },
-          '42.85%, 54.28%': {
-            transform: 'translateY(-37.5%)',
-          },
-          '57.14%, 68.57%': {
-            transform: 'translateY(-50%)',
-          },
-          '71.42%, 82.85%': {
-            transform: 'translateY(-62.5%)',
-          },
-          '85.71%, 97.14%': {
-            transform: 'translateY(-75%)',
-          },
-          '100%': {
-            transform: 'translateY(-87.5%)',
-          },
-        },
+        
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
@@ -180,13 +155,13 @@ module.exports = {
         typing2: "typing 1s steps(30)  alternate, blink .7s infinite",
         wiggle: 'wiggle 2s ease-in-out infinite',
         ping: "ping 3s cubic-bezier(0, 0, 0.2, 1) infinite",
-        'text-slide': 'text-slide 10s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+        'text-slide': 'text-slide 8s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-2': 'text-slide-2 5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-4': 'text-slide-4 10s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-5': 'text-slide-5 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-6': 'text-slide-6 15s cubic-bezier(0.83, 0, 0.17, 1) infinite',
-        'text-slide-7': 'text-slide-7 17.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+       
 
       },
     },

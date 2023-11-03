@@ -50,7 +50,7 @@ const Intro01 = () => {
             </div>
 
             {/* 두번째 줄 내용 겹치는 박스 */}
-            <div className=" py-5 p-6 sm:p-3 text-base sm:text-lg  ">
+            <div className=" py-5 text-gray-700 p-6 sm:p-3 text-base sm:text-lg  ">
               <p className="md:text-xl font-semibold mb-2"> WHERE THE EYES GO, SALES ARE THERE</p>
               시선 분석 AI를 통해 매대를 정밀하게 분석하고<br />
               소비자의 시선을 예측해보세요. <br />소비자의 시선이 향하는 곳에 매출이

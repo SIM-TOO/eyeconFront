@@ -52,7 +52,7 @@ function Header() {
 
   return (
     <div>
-      <header className="dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard  ">
+      <header className="shadow-sm dark:bg-gray-800 fixed top-0 z-50 w-full bg-white p-5 text-white font-Pretendard  ">
         <nav>
           <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl ">
             {/* 로고 */}

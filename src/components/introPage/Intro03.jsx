@@ -7,7 +7,7 @@ const Intro03 = () => {
                 {/* 디자인용 박스*/}
                 <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3 dark:text-[#F2F2F2]">
                     <div className="col-span-3 md:col-span-5" />
-                    <div className="col-span-6 md:col-span-2 border border-[#696c73] rounded-lg">
+                    <div className=" col-span-6 md:col-span-2 border border-[#696c73] rounded-lg">
                         <p className="text-center whitespace-nowrap text-sm  md:text-2xl font-bold text-[#696c73] py-[15px] p-2 ">
                             OUR SERVICES
                         </p>

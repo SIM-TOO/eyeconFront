@@ -81,7 +81,7 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             {/* 내용 박스 */}
             {showAIchatStart && <AIchatStart onButtonClick={changeButtonClick} />}
-            
+
             {/* 의존성 베열 추가 */}
             {showAIchat && < AIchat messages={messages} dependency={waitingForResponse} />}
 
@@ -95,21 +95,23 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="text-base md:text-xl h-[100px] overflow-hidden col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
-                    <p className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
-                        서비스를 위해 내 가게를 선택 후 대화하기 버튼을 눌러주세요
-                    </p>}
+                    <div className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
+                        <p className='md:block hidden'>서비스를 위해 내 가게를 선택 후 대화하기 버튼을 눌러주세요</p>
+                        <p className='block md:hidden'>서비스를 위해 내 가게를 선택 후<br /> 대화하기 버튼을 눌러주세요</p>
+                    </div>
+                }
 
                 {showAIchat &&
-                    <div className="h-[100%] w-[100%] grid grid-cols-12 p-3 ">
+                    <div className="h-[100%] w-[100%] grid grid-cols-12 p-3 mr-10 md:mr-0 hover:bg-gray-100 ">
                         <input
                             type="text"
-                            className='col-span-11 bg-transparent focus:outline-none '
+                            className='ml-5 col-span-11 bg-transparent focus:outline-none '
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={chatHandleKeyDown}
                         />
                         <button
-                            className='col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
+                            className='mr-20 col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
                             onClick={chatHandleSubmit}
                         >
                             <img src="https://i.ibb.co/0YLQ66v/Vector.png" alt="Vector" border="0" />

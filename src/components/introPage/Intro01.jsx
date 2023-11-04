@@ -33,13 +33,13 @@ const Intro01 = () => {
               </span>
             </div>
 
-            <div class="md:mt-20 md:p-0 p-5 font-extrabold text-3xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-500 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in <span class="text-blue-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
-              <ul class="block animate-text-slide-5 text-left leading-tight [&_li]:block">
+            <div className="md:mt-20 md:p-0 p-5 font-extrabold text-3xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-500 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in <span class="text-blue-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
+              <ul className="block animate-text-slide-5 text-left leading-tight [&_li]:block">
                 <li>Eye-tracking</li>
                 <li>chatGPT</li>
                 <li>Placement</li>
                 <li>Plan-O-Gram</li>
-                <li>eCommerce</li>
+                <li>Commerce</li>
                 <li aria-hidden="true">Finance</li>
               </ul>
             </span></div>
@@ -50,7 +50,7 @@ const Intro01 = () => {
             </div>
 
             {/* 두번째 줄 내용 겹치는 박스 */}
-            <div className=" py-5 text-gray-700 p-6 sm:p-3 text-base sm:text-lg  ">
+            <div className=" py-5 dark:text-gray-400 text-gray-600 p-6 sm:p-3 text-base sm:text-lg  ">
               <p className="md:text-xl font-semibold mb-2"> WHERE THE EYES GO, SALES ARE THERE</p>
               시선 분석 AI를 통해 매대를 정밀하게 분석하고<br />
               소비자의 시선을 예측해보세요. <br />소비자의 시선이 향하는 곳에 매출이
@@ -66,9 +66,9 @@ const Intro01 = () => {
 
             {/* 버튼 만드는 자리 */}
             <div className="container mx-auto grid grid-cols-12 ">
-              <div className="col-span-4 md:col-span-8  whitespace-nowrap"></div>
+              <div className="col-span-3 md:col-span-6  whitespace-nowrap"></div>
               <Link
-                className="col-span-6 md:col-span-4 text-sm md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap z-10"
+                className="hover:bg-blue-500 col-span-6 md:col-span-4 text-sm md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap z-10"
                 to="/login"
               >
                 Get started

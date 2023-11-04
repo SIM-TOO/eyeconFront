@@ -37,13 +37,13 @@ const Intro04 = () => {
                 <div className="col-span-12 md:col-span-6">
                     <div className=' grid grid-cols-4'>
                         {/* 첫번째 */}
-                        <div className="col-span-1 p-2"><img className="animate-bounce2" src="https://i.ibb.co/dQGPp8B/pic1.png" alt="pic1" border="0" /></div>
+                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/dQGPp8B/pic1.png" alt="pic1" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p className='text-xl font-bold'>우수한 사용성</p>
                             <p>eyecon 서비스는 가게를 운영하는 업주라면 누구든 쉽게 이용할 수 있는 서비스입니다. 사진 업로드 한번이면 어디서나 서비스 이용이 가능합니다.</p>
                         </div>
                         {/* 두번째 */}
-                        <div className="col-span-1 p-2"><img className="animate-bounce2" src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" /></div>
+                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p className='text-xl font-bold'>데이터 기반</p>
                             <p>고객의 시선 분석은 데이터를 기반으로 합니다. 수 많은 고객들의
@@ -51,7 +51,7 @@ const Intro04 = () => {
                             </p>
                         </div>
                         {/* 세번째 */}
-                        <div className="col-span-1 p-2 "><img className="animate-bounce2" src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" /></div>
+                        <div className="col-span-1 p-2 "><img src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p className='text-xl font-bold'>매출 향상</p>
                             <p> 고객의 시선을 분석해 최적의 매대 배치는 매출 향상에 도움이 되며 많은 사용자가 인정한 효과적인 마케팅 방법 중 하나입니다.

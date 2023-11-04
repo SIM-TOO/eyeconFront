@@ -14,7 +14,7 @@ const C00Loading = () => {
           animationData={lottieJson}
           play
           option={{ speed: 0.3 }}
-          style={{ position: 'absolute', top: '0', left: '0', width: '100%', maxWidth: '1400px', borderRadius: '1%', overflow: 'hidden' }}
+          style={{ opacity: 0.7, position: 'absolute', top: '0', left: '0', width: '100%', maxWidth: '1400px', borderRadius: '1%', overflow: 'hidden' }}
         />
      
       </div>

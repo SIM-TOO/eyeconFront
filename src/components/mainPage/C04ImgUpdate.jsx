@@ -118,7 +118,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
 function Robot() {
   return (
     <Lottie
-      className='translate3d-10-55-0'
+      className='translate3d-10-55-0 animate-wiggle'
       loop
       animationData={lottieJson}
       play

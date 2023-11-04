@@ -64,7 +64,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
               const snapshot = await uploadBytesResumable(storageRef, blob,metadata);
               const result = await getDownloadURL(snapshot.ref);
               console.log('resultimage', result);
-              await TokenRefresher.post(`${url}/flask/saveAfterImage`, {resultname: result})
+              await TokenRefresher.post(`${url}/flask/saveAfterImage`, {hitmap: result})
               
             }
             await uploadResultImage();

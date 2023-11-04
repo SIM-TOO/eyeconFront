@@ -4,7 +4,12 @@ import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
 import Slider from './Slider'
 
+
+
 const Intro01 = () => {
+
+
+
   return (
     <div className="dark:bg-gray-800 dark:text-[#F2F2F2]">
 

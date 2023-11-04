@@ -45,11 +45,15 @@ function App() {
   //console.log("현재 리덕스 값",loginCKData)
 
   const [company, setCompany] = useState({})
+  const [storeName, setStoreName] = useState([])
   // postContext에 담길 데이터  
   const inAddressContext = {
     // 주소
     company: company,
-    setCompany: setCompany
+    setCompany: setCompany,
+    // 가게이름
+    storeName : storeName,
+    setStoreName : setStoreName
   }
 
   return (

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { TokenRefresherContext } from '../../context/TokenRefresherContext';
+import axios from 'axios';
 
 const ResultMain = () => {
     const [fileOrderList, setfileOrderList] = useState(true);
@@ -11,36 +13,43 @@ const ResultMain = () => {
     const [storeList, setStoreList] = useState([]);
 
     // 테스트용
-    useEffect(() => {
-        const testStore = [
-            { id: 1, storeName: 'SMHRD편의점' },
-            { id: 2, storeName: 'SMHRD마트' },
-            { id: 3, storeName: 'SMHRD편의점 2호' }
-        ];
-        const testResult = [
-            { id: 1, data: "2023-11-02", beforeimg: 'https://i.ibb.co/n1prKVV/20160305-192947.jpg', hitmap: 'https://i.ibb.co/61WLv05/image.jpg', content: 'SMHRD편의점 결과 내용 1번 입니다.', storeName: 'SMHRD편의점' },
-            { id: 2, data: "2023-11-03", beforeimg: '', hitmap: '', content: 'SMHRD마트 결과 내용 2번 입니다.', storeName: 'SMHRD마트' },
-            { id: 3, data: "2023-11-04", beforeimg: '', hitmap: '', content: 'SMHRD편의점 2호 결과 내용 3번 입니다.', storeName: 'SMHRD편의점 2호' }
-        ];
-        setStoreList(testStore);
-        setResultList(testResult);
-    }, []);
+    // useEffect(() => {
+    //     const testStore = [
+    //         { id: 1, storeName: 'SMHRD편의점' },
+    //         { id: 2, storeName: 'SMHRD마트' },
+    //         { id: 3, storeName: 'SMHRD편의점 2호' }
+    //     ];
+    //     const testResult = [
+    //         { id: 1, data: "2023-11-02", beforeimg: 'https://i.ibb.co/n1prKVV/20160305-192947.jpg', hitmap: 'https://i.ibb.co/61WLv05/image.jpg', content: 'SMHRD편의점 결과 내용 1번 입니다.', storeName: 'SMHRD편의점' },
+    //         { id: 2, data: "2023-11-03", beforeimg: '', hitmap: '', content: 'SMHRD마트 결과 내용 2번 입니다.', storeName: 'SMHRD마트' },
+    //         { id: 3, data: "2023-11-04", beforeimg: '', hitmap: '', content: 'SMHRD편의점 2호 결과 내용 3번 입니다.', storeName: 'SMHRD편의점 2호' }
+    //     ];
+    //     setStoreList(testStore);
+    //     setResultList(testResult);
+    // }, []);
 
 
     // 백엔드 함수 가져오기 함수? 2개 받아와짐?
-    // useEffect(() => {
-    //     // url 주소
-    //     const url = process.env.REACT_APP_MASTER_URL;      
-    //     fetch(url??)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             setResultList(data.resultData);
-    //             setStoreList(data.storeData);
-    //         })
-    //         .catch((error) => {
-    //             console.error('결과데이터 가져오기 실패:', error);
-    //         });
-    // }, []);
+    // url 주소
+    const url = process.env.REACT_APP_MASTER_URL;
+    axios.defaults.withCredentials = true;
+    const TokenRefresher = useContext(TokenRefresherContext);   
+    useEffect(() => {
+        try {
+            const response = TokenRefresher.get(`${url}/flask/printImg`)
+            .then((response) => {
+                setResultList(response.data.resultData);
+                console.log(resultList);
+                // setStoreList(response.data.storeData);
+            })
+            .catch((error) => {
+                console.error('결과데이터 가져오기 실패:', error);
+            });
+            
+        } catch (error) {
+            console.error("에러 내용:", error);
+        }
+    }, []);
 
 
 
@@ -96,7 +105,7 @@ const ResultMain = () => {
                                 </div>
 
                                 {/* 스토어 이름 불러오는 map함수 */}
-                                {storeList.map((item) => (
+                                {/* {storeList.map((item) => (
                                     <div
                                         key={item.id}
                                         className={`p-2 hover:bg-gray-100 cursor-pointer ${selectedStore === item.storeName ? 'bg-gray-100' : ''}`}
@@ -104,7 +113,7 @@ const ResultMain = () => {
                                     >
                                         {item.storeName}
                                     </div>
-                                ))}
+                                ))} */}
                             </div>
                         )}
                     </div>

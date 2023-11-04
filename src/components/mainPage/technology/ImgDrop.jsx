@@ -4,6 +4,7 @@ import { useDropzone } from 'react-dropzone';
 import firebaseApp from "../../../Firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
+import { AddressContext } from '../../../context/AddressContext';
 
 
 function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadComplete }) {
@@ -11,6 +12,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
   const [imageStyle, setImageStyle] = useState("w-auto h-full");
   axios.defaults.withCredentials = true;
   const TokenRefresher = useContext(TokenRefresherContext);
+  const { storeName } = useContext(AddressContext); // AIchatStart에서 storeName을 가져옴
   useEffect(() => {
     if (uploadedImage === null) {
       setImageSrc(null); // 업로드된 이미지가 없으면 미리보기 이미지 초기화
@@ -42,7 +44,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       // beforeimage를 spring-> flask로 보내고 히트맵 이미지(base64)를 반환받는 함수
       const sendImage = async () => {
         await beforeimg();
-        await TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimgUrl })
+        await TokenRefresher.post(`${url}/flask/sendImg`, { 'beforeimg': beforeimgUrl, 'storeName':storeName })
           .then(async res => {
             // base64로 넘어온 히트맵 이미지를 localStorage에 담음
             let base64Image = `data:image/*;base64,${res.data}`;

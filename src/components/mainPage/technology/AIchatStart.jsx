@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../../lottie/eyeconhello.json";
 import lottieJson2 from "../../../lottie/animationstore.json";
 import lottieJson3 from "../../../lottie/nextprocess.json";
+import { TokenRefresherContext } from '../../../context/TokenRefresherContext';
+import axios from 'axios';
+import { AddressContext } from '../../../context/AddressContext';
 
 function AIchatStart({ onButtonClick }) {
 
@@ -12,7 +15,10 @@ function AIchatStart({ onButtonClick }) {
     const [selectedStore, setSelectedStore] = useState(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [robotComponent, setRobotComponent] = useState("StoreRobot"); // 로봇 컴포넌트 상태
-
+    const { setStoreName: setStoreName } = useContext(AddressContext);
+    // context에 가게이름 저장 -> Imgdrop에서 꺼내려고 함
+    setStoreName(selectedStore);
+    
 
 
     //내 가게 선택 가게 선택 시 드롭다운 사라지고 버튼 뜨고 로봇 전환
@@ -29,13 +35,31 @@ function AIchatStart({ onButtonClick }) {
     const closeDropdown = () => {
         setIsDropdownOpen(false);
     };
+   // 가게 이름 불러오는 메소드
+    const url = process.env.REACT_APP_MASTER_URL;
+    axios.defaults.withCredentials = true;
+    const TokenRefresher = useContext(TokenRefresherContext);
+   
+
+
+
+    const findStore = () => {
+        try {
+            const response = TokenRefresher.get(`${url}/store/findStore`)
+            .then((response)=>{
+                console.log('응답 데이터',response.data);
+                setStoreList(response.data);
+                // const storeNames = response.data.map(item => item.storeName); // 응답 데이터에서 storeName만 추출
+                // setStoreName(storeNames); // storeName을 context에 저장
+            })
+        } catch (error) {
+            console.error("에러 내용:", error);
+        }
+    };
+
 
     useEffect(() => {
-        const testStore = [
-            { id: 1, storeName: '아이콘편의점' },
-            { id: 2, storeName: '안녕편의점' },
-        ];
-        setStoreList(testStore);
+        findStore();
     }, []);
 
 
@@ -69,7 +93,7 @@ function AIchatStart({ onButtonClick }) {
                 onClick={toggleDropdown}
                 id="dropdownDefaultButton"
                 data-dropdown-toggle="dropdown"
-                className="whitespace-nowrap md:ml-10 relative flex w-[300px] h-[50px] text-white  text-center bg-gray-600  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="whitespace-nowrap md:ml-10 relative flex w-[320px] h-[50px] text-white  text-center bg-gray-600  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button"
             >
                 <p className="ml-[70px]">
@@ -84,9 +108,9 @@ function AIchatStart({ onButtonClick }) {
                 >
                     <path
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="m1 1 4 4 4-4"
                     />
                 </svg>

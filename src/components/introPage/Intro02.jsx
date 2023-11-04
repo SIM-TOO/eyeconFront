@@ -77,7 +77,7 @@ const Intro02 = () => {
                 </div>
             </div>
 
-            <div className="dark:text-[#F2F2F2] container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3 text-right">
+            <div className="dark:text-[#F2F2F2] container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl text-right">
                 <div className="col-span-6" />
 
                 <div className="col-span-6">
@@ -107,7 +107,7 @@ const Intro02 = () => {
                             Our Service Process that
                         </p>
 
-                        <p className="relative z-10 text-3xl md:text-6xl font-bold">we apply</p>
+                        <p className="relative z-10 text-xl md:text-6xl font-bold">we apply</p>
                     </span>
 
 

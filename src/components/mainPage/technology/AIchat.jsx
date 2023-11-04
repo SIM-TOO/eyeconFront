@@ -47,7 +47,7 @@ function AIchat({ messages, dependency }) {
                     </div>
 
                     {/* 프로필 이미지 */}
-                    {msg.isMine && <GuestIcon className="w-10 h-10 rounded-full ml-3" />}
+                    {msg.isMine && <GuestIcon className="w-10 h-10 rounded-full mr-3" />}
                 </div>
             ))}
         </div>
@@ -69,7 +69,7 @@ function RobotIcon() {
 function GuestIcon() {
     return (
         <Lottie
-            className='w-[70px] h-[60px] ' // 크기를 10px로 조절하고, animate-pulse를 사용하여 느린 펄스 애니메이션을 적용
+            className='w-[70px] h-[60px] mr- ' // 크기를 10px로 조절하고, animate-pulse를 사용하여 느린 펄스 애니메이션을 적용
             loop
             animationData={lottieJson2}
             option={{ speed: 0.2 }}

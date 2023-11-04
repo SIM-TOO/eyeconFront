@@ -2,7 +2,7 @@ import React from 'react'
 import Lottie from 'react-lottie-player';
 import lottieJson from '../../lottie/loading.json';
 import lottieJson2 from '../../lottie/mobileLoading.json';
-import lottieJson3 from '../../lottie/loading5.json';
+
 
 const C00Loading = () => {
   return (
@@ -16,13 +16,7 @@ const C00Loading = () => {
           option={{ speed: 0.3 }}
           style={{ position: 'absolute', top: '0', left: '0', width: '100%', maxWidth: '1400px', borderRadius: '1%', overflow: 'hidden' }}
         />
-        <Lottie
-          loop
-          animationData={lottieJson3}
-          play
-          option={{ speed: 0.2 }}
-          style={{ opacity: 0.8, position: 'absolute', top: '150px', left: '480px', zIndex: '999', width: '100%', maxWidth: '400px', borderRadius: '1%', overflow: 'hidden' }}
-        />
+     
       </div>
 
       {/* 모바일 로딩 화면 */}

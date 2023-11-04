@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { fabric } from 'fabric';
+import axios from 'axios';
 
 function App() {
-  useEffect(() => {
+  useEffect(() => {   
       const canvas = new fabric.Canvas('canvas');
 
       // 캔버스의 너비와 높이의 20%, 40%를 계산합니다.

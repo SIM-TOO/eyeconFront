@@ -102,16 +102,16 @@ const C03AIChat = ({ handleButtonClick }) => {
                 }
 
                 {showAIchat &&
-                    <div className="h-[100%] w-[100%] grid grid-cols-12 p-3 ">
+                    <div className="h-[100%] w-[100%] grid grid-cols-12 p-3 mr-10 md:mr-0 hover:bg-gray-100 ">
                         <input
                             type="text"
-                            className='col-span-11 bg-transparent focus:outline-none '
+                            className='ml-5 col-span-11 bg-transparent focus:outline-none '
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             onKeyDown={chatHandleKeyDown}
                         />
                         <button
-                            className='col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
+                            className='mr-20 col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
                             onClick={chatHandleSubmit}
                         >
                             <img src="https://i.ibb.co/0YLQ66v/Vector.png" alt="Vector" border="0" />

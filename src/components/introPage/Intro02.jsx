@@ -10,7 +10,7 @@ const Intro02 = () => {
                 <div className="col-span-5 md:col-span-4" />
 
                 {/* 움직이는 로봇 */}
-             {/*    <div className="col-span-7 w-[70px] h-[60px] md:w-[200px] md:h-[180px] ">
+                {/*    <div className="col-span-7 w-[70px] h-[60px] md:w-[200px] md:h-[180px] ">
                     < MiniRobot />
                 </div> */}
             </div>
@@ -18,11 +18,11 @@ const Intro02 = () => {
 
             {/* hover하면 커지는 박스 4개 */}
             <section className="text-gray-700 body-font">
-                <div className="container px-5 py-24 mx-auto">
+                <div className="container px-5 py-16 mx-auto">
 
                     <div className="flex flex-wrap -m-4 text-center">
-                        <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                            <div className="border-1 border-gray-300 px-4 py-8 rounded-lg transform transition duration-500 hover:bg-gray-100  dark:hover:bg-gray-700 hover:scale-110 ">
+                        <div className="p-4 md:w-1/4 sm:w-1/2 w-full ">
+                            <div className="border-1 border-blue-300 px-4 py-8 rounded-lg transform transition duration-500 hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-110 ">
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-indigo-700 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
                                     <path d="M8 17l4 4 4-4m-4-5v9"></path>
                                     <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
@@ -66,27 +66,51 @@ const Intro02 = () => {
             </section>
 
 
-
             <div className="flex flex-row-reverse items-center">
-                <div className="w-64 md:w-auto">
+                <div className="w-64 md:w-auto md:block hidden">
                     <img
                         src="https://i.ibb.co/dQ4mzLc/image.png"
                         alt="intro3"
                         className="h-auto pointer-events-none"
                     />
+
                 </div>
             </div>
 
-            <div className="dark:text-[#F2F2F2] container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
+            <div className="dark:text-[#F2F2F2] container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3 text-right">
                 <div className="col-span-6" />
+
                 <div className="col-span-6">
-                    <span className="relative text-right p-4 sm:p-3 md:p-5">
+                    <div className="hidden md:block text-right md:mt-20 md:p-0 p-5 font-extrabold text-2xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-600 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">아이콘 서비스는 항상 더 나은 <br />서비스를 고민합니다 <span class="text-indigo-300 inline-flex flex-col h-[calc(theme(fontSize.2xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
+                        <ul className="text-right block animate-text-slide-5 leading-tight [&_li]:block">
+                            <li>상권 분석</li>
+                            <li>매대 분석</li>
+                            <li>상품 배치</li>
+                            <li>고객 분석 </li>
+                            <li>챗봇 상담</li>
+                            <li aria-hidden="true">시선 분석</li>
+                        </ul>
+                    </span></div>
+
+
+                    <span className="md:block hidden relative text-right p-4 sm:p-3 md:p-5">
                         <p className="relative z-10 text-4xl md:text-6xl font-bold">
                             Our Service <br /> Process that
                         </p>
-                        <div className="absolute w-[0px] sm:w-[100px] md:w-[350px] h-[20px] bg-[#15c3a7] left-[280px] top-[80px] rounded-full md:block hidden"></div>
+
                         <p className="relative z-10 text-4xl md:text-6xl font-bold">we apply</p>
                     </span>
+
+
+                    <span className="block md:hidden relative text-right p-4 sm:p-3 md:p-5">
+                        <p className="relative z-10 text-3xl font-bold">
+                            Our Service Process that
+                        </p>
+
+                        <p className="relative z-10 text-3xl md:text-6xl font-bold">we apply</p>
+                    </span>
+
+
                 </div>
             </div>
         </div>

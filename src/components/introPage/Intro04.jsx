@@ -7,7 +7,7 @@ const Intro04 = () => {
             <div className="w-[50px] h-[45px] md:w-[100px] md:h-[90px]" />
 
             {/* 타이틀 이미지 */}
-            <div className="w-64 md:w-auto relative">
+            <div className="w-64 md:w-auto relative md:block hidden">
                 <img
                     src="https://i.ibb.co/yFd8xnM/AI.png"
                     alt="intro4"
@@ -17,11 +17,11 @@ const Intro04 = () => {
 
 
             {/* 컨테이너 박스 */}
-            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4">
-                <div className="col-span-12 md:relative md:top-[-70px]">
+            <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-4">
+                <div className="col-span-12 md:relative md:top-[20px]">
                     <span className="relative">
                         <span className="relative z-10 text-4xl md:text-6xl font-bold p-3">AI CHATBOT <br /> <span className=' p-3'>그리고 시선분석</span></span>
-                        <div className="absolute w-[50px] md:w-[400px] h-[20px] bg-[#15c3a7] top-[72px] rounded-full md:block hidden"></div>
+
                     </span>
                     <p className="col-span-12 p-3" >
                         <br />

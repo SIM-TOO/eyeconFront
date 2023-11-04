@@ -38,8 +38,8 @@ const ResultMain = () => {
         try {
             const response = TokenRefresher.get(`${url}/flask/printImg`)
             .then((response) => {
-                setResultList(response.data.resultData);
-                console.log(resultList);
+                setResultList(response.data);
+                console.log('결과 리스트: ',resultList);
                 // setStoreList(response.data.storeData);
             })
             .catch((error) => {

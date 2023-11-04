@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import Lottie from "react-lottie-player";
 import lottieJson from "../../../lottie/robotIcon.json";
+import lottieJson2 from "../../../lottie/guesticon.json";
+
 
 function AIchat({ messages, dependency }) {
     const chatRef = useRef(null);
@@ -28,7 +30,7 @@ function AIchat({ messages, dependency }) {
                     {!msg.isMine && <RobotIcon className="rounded-full mr-3" />}
 
                     {/* 채팅 메시지 박스, 타이핑 효과  */}
-                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-200 text-black max-w-[180px] md:max-w-[500px] text-left' : 'text-left bg-blue-500 text-white max-w-[200px] md:max-w-[500px]'}`}>
+                    <div className={`p-4 rounded-lg ${msg.isMine ? 'bg-gray-500 text-white max-w-[180px] md:max-w-[500px] text-left' : 'text-left bg-blue-500 text-white max-w-[200px] md:max-w-[500px]'}`}>
 
                         {/* 서버 데이터 도착 확인용  */}
                         {dependency ? (
@@ -45,7 +47,7 @@ function AIchat({ messages, dependency }) {
                     </div>
 
                     {/* 프로필 이미지 */}
-                    {msg.isMine && <img src="https://i.ibb.co/16HBSrZ/Ellipse-455.png" alt="Profile" className="w-10 h-10 rounded-full ml-3" />}
+                    {msg.isMine && <GuestIcon className="w-10 h-10 rounded-full ml-3" />}
                 </div>
             ))}
         </div>
@@ -56,9 +58,21 @@ function AIchat({ messages, dependency }) {
 function RobotIcon() {
     return (
         <Lottie
-            className='w-[60px] h-[60px] animate-pulse' // 크기를 10px로 조절하고, animate-pulse를 사용하여 느린 펄스 애니메이션을 적용
+            className='w-[60px] h-[60px] ' // 크기를 10px로 조절하고, animate-pulse를 사용하여 느린 펄스 애니메이션을 적용
             loop
             animationData={lottieJson}
+            play
+        />
+    );
+}
+
+function GuestIcon() {
+    return (
+        <Lottie
+            className='w-[70px] h-[60px] ' // 크기를 10px로 조절하고, animate-pulse를 사용하여 느린 펄스 애니메이션을 적용
+            loop
+            animationData={lottieJson2}
+            option={{ speed: 0.2 }}
             play
         />
     );

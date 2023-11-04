@@ -15,22 +15,22 @@ module.exports = {
       keyframes: {
         'text-slide': {
           '0%, 16%': {
-              transform: 'translateY(0%)',
+            transform: 'translateY(0%)',
           },
           '20%, 36%': {
-              transform: 'translateY(-16.66%)',
+            transform: 'translateY(-16.66%)',
           },
           '40%, 56%': {
-              transform: 'translateY(-33.33%)',
+            transform: 'translateY(-33.33%)',
           },
           '60%, 76%': {
-              transform: 'translateY(-50%)',
+            transform: 'translateY(-50%)',
           },
           '80%, 96%': {
-              transform: 'translateY(-66.66%)',
+            transform: 'translateY(-66.66%)',
           },
           '100%': {
-              transform: 'translateY(-83.33%)',
+            transform: 'translateY(-83.33%)',
           },
         },
         'text-slide-2': {
@@ -118,7 +118,7 @@ module.exports = {
             transform: 'translateY(-85.71%)',
           },
         },
-        
+
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
@@ -161,21 +161,25 @@ module.exports = {
         'text-slide-4': 'text-slide-4 10s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-5': 'text-slide-5 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
         'text-slide-6': 'text-slide-6 15s cubic-bezier(0.83, 0, 0.17, 1) infinite',
-       
+
 
       },
     },
   },
-  plugins: [
-    function ({ addUtilities, theme, variants }) {
-      const values = theme('translate3d');
-      const newUtilities = Object.keys(values).reduce((acc, key) => {
-        acc[`.translate3d-${key}`] = {
-          transform: `translate3d(${values[key]})`
-        };
-        return acc;
-      }, {});
-      addUtilities(newUtilities, variants('translate3d'));
-    },
-  ],
+  plugins:
+
+  
+
+    [
+      function ({ addUtilities, theme, variants }) {
+        const values = theme('translate3d');
+        const newUtilities = Object.keys(values).reduce((acc, key) => {
+          acc[`.translate3d-${key}`] = {
+            transform: `translate3d(${values[key]})`
+          };
+          return acc;
+        }, {});
+        addUtilities(newUtilities, variants('translate3d'));
+      }, 
+    ],
 };

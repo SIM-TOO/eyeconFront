@@ -16,13 +16,14 @@ function UserImage() {
           className="absolute top-20 left-0"
         />
       </div>
+      
       <div className="md:hidden items-center ml-40">
         <Lottie
           loop
           animationData={lottieJson3}
           play
           option={{ speed: 0.2 }}
-          style={{ width: "100%", maxWidth: "250px" }}
+          style={{ width: "100%", maxWidth: "200px" }}
           className="absolute left-20"
         />
       </div>

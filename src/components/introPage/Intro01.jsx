@@ -69,7 +69,7 @@ const Intro01 = () => {
             {/* 버튼 만드는 자리 */}
             <div className="container mx-auto grid grid-cols-12 ">
               <div className="col-span-3 md:col-span-6  whitespace-nowrap"></div>
-            
+
               <Link
                 className="hover:bg-blue-500 col-span-6 md:col-span-4 text-sm md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap z-10"
                 to="/login"
@@ -78,16 +78,7 @@ const Intro01 = () => {
               </Link>
             </div>
           </div>
-          {/*        <div class="font-extrabold text-3xl md:text-4xl [text-wrap:balance] bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in <span class="text-indigo-500 inline-flex flex-col">
-              <ul class="block animate-text-slide text-left leading-tight [&_li]:block">
-                <li>IT</li>
-                <li>Tech</li>
-                <li>AI</li>
-                <li>Computer</li>
-                <li>eCommerce</li>
-                <li aria-hidden="true">Finance</li>
-              </ul>
-            </span></div> */}
+
 
           {/* 모바일이 사라짐 */}
           <div className="col-span-6 md:block hidden">

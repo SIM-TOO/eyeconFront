@@ -95,10 +95,10 @@ const C03AIChat = ({ handleButtonClick }) => {
             <div className="text-base md:text-xl h-[100px] overflow-hidden col-span-12 md:col-span-10 bg-neutral-100 p-3 flex flex-col items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] "
                 style={{ filter: "drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))" }}>
                 {showAIchatStart &&
-                    <p className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
+                    <div className="text-center text-black animate-typing overflow-hidden md:whitespace-nowrap whitespace-pre-wrap">
                         <p className='md:block hidden'>서비스를 위해 내 가게를 선택 후 대화하기 버튼을 눌러주세요</p>
                         <p className='block md:hidden'>서비스를 위해 내 가게를 선택 후<br /> 대화하기 버튼을 눌러주세요</p>
-                    </p>
+                    </div>
                 }
 
                 {showAIchat &&

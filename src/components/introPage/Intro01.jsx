@@ -69,6 +69,7 @@ const Intro01 = () => {
             {/* 버튼 만드는 자리 */}
             <div className="container mx-auto grid grid-cols-12 ">
               <div className="col-span-3 md:col-span-6  whitespace-nowrap"></div>
+            
               <Link
                 className="hover:bg-blue-500 col-span-6 md:col-span-4 text-sm md:text-2xl text-center text-white px-[35px] py-[15px] rounded-[10px] bg-[#15c3a7] whitespace-nowrap z-10"
                 to="/login"

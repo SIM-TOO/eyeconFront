@@ -18,7 +18,7 @@ function AIchatStart({ onButtonClick }) {
     const { setStoreName: setStoreName } = useContext(AddressContext);
     // context에 가게이름 저장 -> Imgdrop에서 꺼내려고 함
     setStoreName(selectedStore);
-    
+
 
 
     //내 가게 선택 가게 선택 시 드롭다운 사라지고 버튼 뜨고 로봇 전환
@@ -35,23 +35,23 @@ function AIchatStart({ onButtonClick }) {
     const closeDropdown = () => {
         setIsDropdownOpen(false);
     };
-   // 가게 이름 불러오는 메소드
+    // 가게 이름 불러오는 메소드
     const url = process.env.REACT_APP_MASTER_URL;
     axios.defaults.withCredentials = true;
     const TokenRefresher = useContext(TokenRefresherContext);
-   
+
 
 
 
     const findStore = () => {
         try {
             const response = TokenRefresher.get(`${url}/store/findStore`)
-            .then((response)=>{
-                console.log('응답 데이터',response.data);
-                setStoreList(response.data);
-                // const storeNames = response.data.map(item => item.storeName); // 응답 데이터에서 storeName만 추출
-                // setStoreName(storeNames); // storeName을 context에 저장
-            })
+                .then((response) => {
+                    console.log('응답 데이터', response.data);
+                    setStoreList(response.data);
+                    // const storeNames = response.data.map(item => item.storeName); // 응답 데이터에서 storeName만 추출
+                    // setStoreName(storeNames); // storeName을 context에 저장
+                })
         } catch (error) {
             console.error("에러 내용:", error);
         }
@@ -89,74 +89,75 @@ function AIchatStart({ onButtonClick }) {
             </div>
 
             {/* 드롭다운 버튼 */}
-            <button
-                onClick={toggleDropdown}
-                id="dropdownDefaultButton"
-                data-dropdown-toggle="dropdown"
-                className="whitespace-nowrap md:ml-10 relative flex w-[320px] h-[50px] text-white  text-center bg-gray-600  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                type="button"
-            >
-                <p className="ml-[70px]">
-                    {selectedStore || '내 가게 선택하기 '}
-                </p>
-                <svg
-                    className="w-3.5 h-3.5 ml-2.5 animate-pulse"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 10 6"
+            <div className="relative"> {/* 상대 위치를 가지는 컨테이너를 추가하세요 */}
+                {/* 드롭다운 버튼 */}
+                <button
+                    onClick={toggleDropdown}
+                    id="dropdownDefaultButton"
+                    data-dropdown-toggle="dropdown"
+                    className="whitespace-nowrap relative flex w-[340px] h-[50px] text-white  text-center bg-gray-600  hover:bg-[#46cfb9] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-content-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="button"
                 >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="m1 1 4 4 4-4"
-                    />
-                </svg>
-                {selectedStore && (
-                    <div className="animate-pulse col-span-12 md:col-span-1 flex justify-center whitespace-nowrap items-center p-3 rounded-lg cursor-pointer  "
-                        onClick={() => {
-                            onButtonClick();
-                            toggleDropdown(); // 드롭다운을 닫는다
-                        }}
-                        style={{ zIndex: 999 }}
+                    <p className="ml-[90px]">
+                        {selectedStore || '내 가게 선택하기 '}
+                    </p>
+                    <svg
+                        className="w-3.5 h-3.5 ml-2.5 animate-pulse"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
                     >
-                        챗봇과 대화하기
+                        <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="m1 1 4 4 4-4"
+                        />
+                    </svg>
+                    {selectedStore && (
+                        <div className="animate-pulse col-span-12 md:col-span-1 flex justify-center whitespace-nowrap items-center p-3 rounded-lg cursor-pointer"
+                            onClick={() => {
+                                onButtonClick();
+                                toggleDropdown(); // 드롭다운을 닫는다
+                            }}
+                            style={{ zIndex: 999 }}
+                        >
+                            챗봇과 대화하기
+                        </div>
+                    )}
+                </button>
 
+                {/* 드롭다운 메뉴 */}
+                {isDropdownOpen && (
+                    <div id="dropdown" className="text-center w-[340px] z-10 absolute top-[100%] mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                            <li
+                                key="showAll"
+                                className={`p-2 text-center hover-bg-gray-100 cursor-pointer ${!selectedStore ? 'bg-gray-100' : ''}`}
+                                onClick={() => {
+                                    setSelectedStore(null);
+                                    setIsDropdownOpen(false);
+                                }}
+                            >
+                                모두 표시
+                            </li>
+
+                            {/* 스토어 이름 불러오는 map함수 */}
+                            {storeList.map((item) => (
+                                <li
+                                    key={item.id}
+                                    className={`p-2 hover:bg-gray-100 cursor-pointer ${selectedStore === item.storeName ? 'bg-gray-100' : ''}`}
+                                    onClick={() => handleSelect(item.storeName)}
+                                >
+                                    {item.storeName}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 )}
-            </button>
-
-
-            {/* 드롭다운 메뉴 */}
-            {isDropdownOpen && (
-                <div id="dropdown" className="text-center z-10 absolute right-[30%] top-[68%] mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                        <li
-                            key="showAll"
-                            className={`p-2 text-center hover:bg-gray-100 cursor-pointer ${!selectedStore ? 'bg-gray-100' : ''}`}
-                            onClick={() => {
-                                setSelectedStore(null);
-                                setIsDropdownOpen(false);
-                            }}
-                        >
-                            모두 표시
-                        </li>
-
-                        {/* 스토어 이름 불러오는 map함수 */}
-                        {storeList.map((item) => (
-                            <li
-                                key={item.id}
-                                className={`p-2 hover:bg-gray-100 cursor-pointer ${selectedStore === item.storeName ? 'bg-gray-100' : ''}`}
-                                onClick={() => handleSelect(item.storeName)}
-                            >
-                                {item.storeName}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+            </div>
         </div>
     );
 }

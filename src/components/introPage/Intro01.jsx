@@ -31,6 +31,8 @@ const Intro01 = () => {
      
             </div>
 
+            {/* 움직이는 글자 애니메이션 */}
+
             <div className="md:mt-20 md:p-0 p-5 font-extrabold text-3xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-500 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in <span class="text-blue-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
               <ul className="block animate-text-slide-5 text-left leading-tight [&_li]:block">
                 <li>Eye-tracking</li>

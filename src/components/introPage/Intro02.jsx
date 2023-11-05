@@ -8,10 +8,9 @@ const Intro02 = () => {
       {/* 색깔있는 박스 위치 */}
       <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
         <div className="col-span-5 md:col-span-4" />
-
       </div>
 
-      {/* hover하면 커지는 박스 4개 */}
+      {/* 메인 애니메이션 아래 네개 박스 */}
       <section className="text-gray-700 body-font">
         <div className="container px-5 py-2 md:py-16 mx-auto">
           <div className="flex flex-wrap -m-4 text-center">
@@ -111,6 +110,7 @@ const Intro02 = () => {
       <div className="dark:text-[#F2F2F2] container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl text-right">
         <div className="col-span-6" />
 
+        {/* 움직이는 글자  */}
         <div className="col-span-6">
           <div className="hidden md:block text-right md:mt-20 md:p-0 p-5 font-extrabold text-2xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-600 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">
             아이콘 서비스는 항상 더 나은 <br />
@@ -137,12 +137,12 @@ const Intro02 = () => {
             </p>
           </span>
 
-          <span className="block md:hidden relative text-right p-4 sm:p-3 md:p-5">
-            <p className="relative z-10 text-3xl font-bold">
+          <span className="block md:hidden relative text-right p-4 md:p-5">
+            <p className="relative z-10 md:text-3xl text-4xl font-bold">
               Our Service Process that
             </p>
 
-            <p className="relative z-10 text-xl md:text-6xl font-bold">
+            <p className="relative z-10 text-4xl md:text-3xl font-bold">
               we apply
             </p>
           </span>

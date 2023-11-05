@@ -59,6 +59,8 @@ const Intro04 = () => {
                         </div>
                     </div>
                 </div>
+
+            /
                 {/* 이미지 */}
                 <div className="col-span-5 md:block hidden transition duration-300 hover:opacity-70">
                     <img

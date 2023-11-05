@@ -30,6 +30,7 @@ import ProductTest from './components/testPage/ProductTest';
 import ProductTest02 from './components/testPage/ProductTest02';
 import ProductTest03 from './components/testPage/ProductTest03';
 import ResultList from './components/resultPage/ResultMoveList';
+import ResultMoveList from './components/resultPage/ResultMoveList';
 
 
 function App() {
@@ -75,14 +76,15 @@ function App() {
                   <Route path="/join" element={<Intro />} />
                   <Route path="/login" element={<Intro />} />
                   <Route path="/result" element={<ResultPage />} />
+                  <Route path="/product" element={<ResultMoveList />} />
                   <Route path="/main" element={<Main />} />
                   <Route path="/mainpay" element={<MainPay />} />
                   <Route path="/mypage" element={<MyPage />} />
+                  <Route path="/producttest02" element={<ProductTest02 />} />
                   
                   {/* 테스트 용 나중에 삭제 필요 */}
                   <Route path="/test" element={<Test />} />
                   <Route path="/producttest" element={<ProductTest />} />    
-                  <Route path="/producttest02" element={<ProductTest02 />} />
                   <Route path="/producttest03" element={<ProductTest03 />} />
 
                 </>

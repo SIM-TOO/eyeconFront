@@ -14,8 +14,8 @@ const ResultMoveList = ({ beforeimg, hitmap , onImageNull}) => {
       받아온 hitmap
       <img src={hitmap} alt="테스트" />
 
-      {/* 이거왜 작동안함?? */}
-      {/* <ProductTest02 /> */}
+
+      <ProductTest02 beforeimg={beforeimg} hitmap={hitmap} />
     </div>
 
   )

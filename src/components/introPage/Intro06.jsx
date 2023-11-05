@@ -81,7 +81,7 @@ const Intro06 = () => {
                       Ryu Sangji
                     </h5>
                     <p class="text-sm text-gray-600">
-                     프로젝트하다가 갑자기 꽂혀서 <br/>이거 하고있는 우리 팀소개가 제일 재밌는 1인 <br/>곧 프젝끝나서 신이난 사람
+                     프로젝트하다가 갑자기 꽂혀서 <br/>이거 하고있는 우리 팀소개가 제일 재밌는 1인 곧 프젝끝나서 신이난 사람
                     </p>
                   </div>
                   <Link to="/main"
@@ -131,7 +131,7 @@ const Intro06 = () => {
                       Lee Dongyoung
                     </h5>
                     <p className="text-sm text-gray-600">
-                      조용히 코딩의 세계를 정복하고 있는 데이터 디자인반 코딩 천재 <br/>그런데 잠도 많고 <br/>좀 거친 초코소년
+                      조용히 코딩의 세계를 정복하고 있는 데이터 디자인반 코딩 천재 <br/>그런데 잠도 많고 좀 거친 초코소년
                     </p>
                   </div>
                   <Link to="/main"

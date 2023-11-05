@@ -54,9 +54,16 @@ const C03AIChat = ({ handleButtonClick }) => {
         <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
             {/* 모바일 버튼 */}
-            <div className="col-span-2 md:hidden block"/>
-            <button className='block md:hidden col-span-8 md:col-span-0 p-3 text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"> ' onClick={() => handleButtonClick(4)}>
-                <span className='inline-block text-gray-700 text-base whitespace-nowrap '>시선분석 바로가기<img className="animate-pulse inline-block ml-2 w-3" src="https://i.ibb.co/sJJB3Nh/icon-arrow-right.png" /></span>
+            <div className="col-span-0 md:hidden block" />
+
+            <button className="block md:hidden col-span-10 md:col-span-0 inline-block text-white bg-gray-400 rounded-lg text-sm px-5 py-2.5 text-center mb-2" onClick={() => handleButtonClick(4)}>
+                <div className='inline-block mr-4'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" className="animate-pulse w-[30px] h-[30px] inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <span className='inline-block text-base text-white whitespace-nowrap'>시선분석 바로가기<img className="animate-pulse inline-block ml-2 w-3" src="https://i.ibb.co/0Cbr629/icon-arrow-right-1.png" /></span>
             </button>
 
             {/* 여백용 박스 */}

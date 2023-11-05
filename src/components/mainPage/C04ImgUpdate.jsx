@@ -96,7 +96,7 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
         :
         (<>
           <div className="col-span-1 md:col-span-2" />
-          <button className="inline-block shadow-sm shadow-blue-500/50 col-span-5 md:col-span-3 bg-gray-600 p-3 font-semibold text-white rounded-xl"
+          <button className="mt-10 inline-block shadow-sm shadow-blue-500/50 col-span-5 md:col-span-3 bg-gray-600 p-3 font-semibold text-white rounded-xl"
             onClick={() => setUploadedImage(null)}><svg className="inline-block mr-3 w-4 h-4 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
             </svg>
@@ -104,12 +104,12 @@ const C04ImgUpdate = ({ handleButtonClick }) => {
 
           </button>
           <div className="col-span-1 md:col-span-2" />
-          <button className="inline-block animate-bounce3 col-span-5 md:col-span-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg rounded-lg p-3 font-semibold text-white rounded-xl"
+          <button className="mt-10 inline-block col-span-5 md:col-span-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg rounded-lg p-3 font-semibold text-white rounded-xl"
 
             onClick={() => setUploadedImageSend(true)}>
-            <div className='inline-block'>이미지 업로드</div><svg className="inline-block ml-5 w-5 text-white dark:text-white animate-pulse " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <div className='inline-block'>이미지 업로드<svg className="md:inline-block hidden ml-5 w-5 text-white dark:text-white animate-pulse " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
+            </svg></div>
           </button>
           <div className="col-span-1 md:col-span-2" />
         </>)

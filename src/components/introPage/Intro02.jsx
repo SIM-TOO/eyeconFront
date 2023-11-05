@@ -9,10 +9,6 @@ const Intro02 = () => {
       <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
         <div className="col-span-5 md:col-span-4" />
 
-        {/* 움직이는 로봇 */}
-        {/*    <div className="col-span-7 w-[70px] h-[60px] md:w-[200px] md:h-[180px] ">
-                    < MiniRobot />
-                </div> */}
       </div>
 
       {/* hover하면 커지는 박스 4개 */}

@@ -138,7 +138,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
   });
 
   return (
-    <div {...getRootProps()} className="col-span-12 border-2 border-gray-300 rounded-md hover:border-blue-500 cursor-pointer h-[100%] flex items-center justify-center">
+    <div {...getRootProps()} className="col-span-12 border-2 border-dotted border-gray-500 rounded-md hover:scale-110 cursor-pointer h-[100%] flex items-center justify-center">
       <input {...getInputProps()} />
       {
         imageSrc ?
@@ -147,8 +147,8 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
           </div>
           :
           <>
-            <p className="hidden md:block opacity-50 font-medium text-[#190e61] dark:text-[#FFFFFF]">
-              이미지를 드래그를 통해
+            <p className="hidden md:block opacity-100 font-bold text-lg text-[#190e61] dark:text-[#FFFFFF]">
+              이미지를 이곳에 드래그하거나 클릭하여
               <br />
               이곳에 위치시키세요
             </p>

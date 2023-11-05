@@ -142,12 +142,12 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
       <input {...getInputProps()} />
       {
         imageSrc ?
-          <div style={{ maxWidth: '25rem', maxHeight: '25rem', width: '25rem', height: '25rem' }} className="flex items-center justify-center overflow-hidden">
+          <div style={{ maxHeight: '300px', height: '300px' }} className="flex items-center justify-center overflow-hidden">
             <img src={imageSrc} alt="Uploaded Preview" className={imageStyle} />
           </div>
           :
           <>
-            <p className="hidden md:block opacity-100 font-bold text-lg text-[#190e61] dark:text-[#FFFFFF]">
+            <p className="hidden md:block opacity-100 font-bold text-lg text-gray-700 dark:text-[#FFFFFF]">
               이미지를 이곳에 드래그하거나 클릭하여
               <br />
               이곳에 위치시키세요

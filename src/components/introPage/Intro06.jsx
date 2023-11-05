@@ -14,7 +14,7 @@ const Intro06 = () => {
             <div>
               <span className="text-gray-600 text-lg font-semibold ">About us</span>
               <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">
-                Who make this website
+                Who made this website
               </h2>
             </div>
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ">
@@ -131,7 +131,7 @@ const Intro06 = () => {
                       Lee Dongyoung
                     </h5>
                     <p className="text-sm text-gray-600">
-                      조용히 코딩의 세계를 정복하고 있는 데이터 디자인반 코딩 천재 <br/>그런데 잠도 많고 좀 거친 초코소년
+                      조용히 코딩의 세계를 정복하고 있는 데이터 디자인반 코딩 천재 <br/>그런데 잠도 많고 <br/>좀 거친 초코소년
                     </p>
                   </div>
                   <Link to="/main"

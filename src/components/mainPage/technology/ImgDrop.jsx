@@ -138,7 +138,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
   });
 
   return (
-    <div {...getRootProps()} className="col-span-12 border-2 border-dotted border-gray-500 rounded-md hover:scale-110 cursor-pointer h-[100%] flex items-center justify-center">
+    <div {...getRootProps()} className="col-span-11 md:col-span-12 md:ml-0 ml-10 border-2 border-dotted border-gray-500 rounded-md hover:scale-110 cursor-pointer h-[100%] flex items-center justify-center">
       <input {...getInputProps()} />
       {
         imageSrc ?

@@ -101,13 +101,13 @@ const C05Result = ({ handleButtonClick }) => {
         <div className="h-[100%] w-[100%] grid grid-cols-12 p-3">
           <input
             type="text"
-            className='col-span-11 bg-transparent focus:outline-none'
+            className='col-span-10 md:col-span-11 bg-transparent focus:outline-none'
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={chatHandleKeyDown}
           />
           <button
-            className='col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
+            className='hover:scale-110 col-span-1 w-12 h-12 rounded-full bg-[#15c3a7] flex items-center justify-center'
             onClick={chatHandleSubmit}
           >
             <img src="https://i.ibb.co/0YLQ66v/Vector.png" alt="Vector" border="0" />

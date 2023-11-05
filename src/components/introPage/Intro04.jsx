@@ -18,7 +18,7 @@ const Intro04 = () => {
 
             {/* 컨테이너 박스 */}
             <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-4">
-                <div className="col-span-12 md:relative md:top-[20px]">
+                <div className="col-span-12 md:relative md:top-[50px]">
                     <span className="relative">
                         <span className="relative z-10 text-4xl md:text-6xl font-bold p-3">AI CHATBOT <br /> <span className=' p-3'>그리고 시선분석</span></span>
 
@@ -33,17 +33,17 @@ const Intro04 = () => {
             </div>
 
             {/* 내용 적는 곳 */}
-            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4">
+            <div className="container mx-auto grid grid-cols-12  gap-4 max-w-screen-xl p-4 mt-4">
                 <div className="col-span-12 md:col-span-6">
                     <div className=' grid grid-cols-4'>
                         {/* 첫번째 */}
-                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/dQGPp8B/pic1.png" alt="pic1" border="0" /></div>
+                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/dQGPp8B/pic1.png" className="w-[100x] transition duration-300 hover:scale-110" alt="pic1" border="0" /></div>
                         <div className="col-span-3 p-3">
                             <p className='text-xl font-bold'>우수한 사용성</p>
                             <p>eyecon 서비스는 가게를 운영하는 업주라면 누구든 쉽게 이용할 수 있는 서비스입니다. 사진 업로드 한번이면 어디서나 서비스 이용이 가능합니다.</p>
                         </div>
                         {/* 두번째 */}
-                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" /></div>
+                        <div className="col-span-1 p-2"><img src="https://i.ibb.co/tbfmptY/pic2.png" alt="pic2" border="0" className="w-[100x] transition duration-300 hover:scale-110"/></div>
                         <div className="col-span-3 p-3">
                             <p className='text-xl font-bold'>데이터 기반</p>
                             <p>고객의 시선 분석은 데이터를 기반으로 합니다. 수 많은 고객들의
@@ -51,7 +51,7 @@ const Intro04 = () => {
                             </p>
                         </div>
                         {/* 세번째 */}
-                        <div className="col-span-1 p-2 "><img src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" /></div>
+                        <div className="col-span-1 p-2 "><img src="https://i.ibb.co/Ks6J4nN/pic3.png" alt="pic3" border="0" className="w-[100x] transition duration-300 hover:scale-110"  /></div>
                         <div className="col-span-3 p-3">
                             <p className='text-xl font-bold'>매출 향상</p>
                             <p> 고객의 시선을 분석해 최적의 매대 배치는 매출 향상에 도움이 되며 많은 사용자가 인정한 효과적인 마케팅 방법 중 하나입니다.
@@ -59,12 +59,14 @@ const Intro04 = () => {
                         </div>
                     </div>
                 </div>
+
+            /
                 {/* 이미지 */}
-                <div className="col-span-6 md:block hidden">
+                <div className="col-span-5 md:block hidden transition duration-300 hover:opacity-70">
                     <img
                         src="https://i.ibb.co/8bGbrfq/Frame-627042.png"
                         alt="intro5"
-                        className="h-auto pointer-events-none"
+                        className="h-auto pointer-events-none "
                     />
                 </div>
             </div>

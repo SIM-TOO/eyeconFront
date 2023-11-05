@@ -12,10 +12,10 @@ function PlanCard() {
       <div className="col-span-0 md:col-span-1 dark:bg-gray-800 dark:text-[#F2F2F2]" />
 
       {/* 첫번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3 ">
+      <div className="col-span-11 md:col-span-3 p-3 transition duration-300 hover:scale-110">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
-            <p className="font-semibold text-left uppercase text-black px-3">
+            <p className="font-semibold text-left uppercase text-black px-3 dark:text-[#F2F2F2]">
               BASIC
             </p>
           </div>
@@ -40,10 +40,10 @@ function PlanCard() {
       </div>
 
       {/* 두번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3">
+      <div className="col-span-11 md:col-span-3 p-3 transition duration-300 hover:scale-110">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
-            <p className="font-semibold text-left uppercase text-black px-3">
+            <p className="font-semibold text-left uppercase text-black px-3 dark:text-[#F2F2F2]">
               BASIC
             </p>
           </div>
@@ -69,10 +69,10 @@ function PlanCard() {
 
 
       {/* 세번쨰 박스 */}
-      <div className="col-span-11 md:col-span-3 p-3 ">
+      <div className="col-span-11 md:col-span-3 p-3 transition duration-300 hover:scale-110">
         <div className="group rounded-lg border border-[#d9d9d9] p-5 hover:bg-[#15c3a7]">
           <div className="inline-block rounded-lg border border-[#5d6a85]">
-            <p className="font-semibold text-left uppercase text-black px-3">
+            <p className="font-semibold text-left uppercase text-black px-3 dark:text-[#F2F2F2]">
               BASIC
             </p>
           </div>

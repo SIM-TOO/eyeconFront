@@ -15,16 +15,16 @@ const Login = () => {
           <div className="relative">
             {/* <Link to="/#"> */}
             <img
-              src="https://i.ibb.co/BCP0xW5/join.png"
+              src="https://i.ibb.co/kXTgnkD/ver1.png"
               alt=""
               className="absolute top-0 left-0 z-10 hidden md:block dark:hidden"
             />
-            <img src="https://i.ibb.co/ZNvzZMz/Group-624891.png" alt="" className="absolute top-0 left-0 z-10 block dark:hidden md:hidden hidden" />
+            <img src="https://i.ibb.co/qWWsL0f/ver2.png" alt="" className="absolute top-0 left-0 z-10 block dark:block md:hidden hidden" />
 
             {/* </Link> */}
             <UserImage />
           </div>
-          <div className="mx-auto lg:mt-0 mt-40 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px] dark:text-[#F2F2F2]">
+          <div className="mx-auto lg:mt-20 mt-40 lg:p-10 lg:min-w-[600px] p-0 min-w-[300px] dark:text-[#F2F2F2]">
             <p className="text-3xl font-medium text-center md:text-left text-black p-3 dark:text-[#F2F2F2]">
               Sign in
             </p>

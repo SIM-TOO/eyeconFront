@@ -24,7 +24,7 @@ const img = () => {
             <div className="w-64 md:w-auto dark:text-[#F2F2F2]">
             <div className="h-[150px] bg-white dark:bg-gray-800"/>
                 <img
-                    src="https://i.ibb.co/5TcWgzd/price.png"
+                    src="https://i.ibb.co/TBpkqFb/price.png"
                     alt="pay1"
                     className="h-auto pointer-events-none"
                 />
@@ -33,7 +33,7 @@ const img = () => {
             <div className="container mx-auto grid grid-cols-12 max-w-screen-xl font-Pretendard dark:text-[#F2F2F2]">
                 <div className="col-span-12 md:col-span-5">
                     {/* 첫번째 줄 내용 겹치는 박스 */}
-                    <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5">
+                    <div className="box md:absolute md:top-60 relative p-6 sm:p-3 md:p-5">
                         <p className="text-4xl md:text-7xl font-bold">REASONABLE<br />
                             GOOD<br />
                             PRICE</p>

@@ -151,7 +151,7 @@ const ResultMain = ({onImageMove}) => {
                                     </div>
                                 </div>
                                 <div className="w-full flex justify-between items-center p-3">
-                                    <span className="text-xl font-bold p-3">시선분석 전</span>
+                                    <span className="text-xl font-bold p-1">시선분석 전</span>
                                     <a href={item.beforeimg} download="image.jpg">
                                         <button className="rounded-3xl border-[2px] border-[#19ab93] p-2 text-sm font-bold">Download ↓</button>
                                     </a>

@@ -1,84 +1,78 @@
 import React from 'react'
 
-const Intro03 = () => {
+const intro3 = () => {
     return (
-        <div className='dark:text-[#F2F2F2]'>
-            <div className="font-Pretendard dark:bg-gray-800 dark:text-[#F2F2F2]">
-                {/* 디자인용 박스*/}
-                <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3 dark:text-[#F2F2F2]">
-                    <div className="col-span-3 md:col-span-5" />
-                    <div className=" col-span-6 md:col-span-2 border border-[#696c73] rounded-lg">
-                        <p className="text-center whitespace-nowrap text-sm  md:text-2xl font-bold text-[#696c73] py-[15px] p-2 ">
-                            OUR SERVICES
-                        </p>
-                    </div>
-                    <div className="col-span-3 md:col-span-5" />
-
-                    {/* 글씨칸*/}
-                    <div className="col-span-2 " />
-                    <div className="col-span-8 ">
-                        <p className="text-2xl md:text-7xl font-bold text-center text-[#37383c] p-3 whitespace-nowrap dark:text-[#F2F2F2] ">
-                            Who We Serve
-                        </p>
-                    </div>
-                    <div className="col-span-2 " />
-
-
-                    {/* 박스칸*/}
-                    <div className='text-center md:text-left col-span-12 md:col-span-6 p-6 sm:p-3 '>
-
-                        <img
-                            src="https://i.ibb.co/g6B2pn5/icon1.png"
-                            alt="green1"
-                            className="mx-auto md:mx-0 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0" data-taos-offset="300"
-
-                        />
-                        <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3 dark:text-[#F2F2F2]">
-                            시선분석AI {/* 제목작성하셈 */}
-                        </p>
-                        시선 분석 모델 AI를 통해서 매대에 시선이 향할 곳을 예측합니다.  성별, 연령별 소비자의 특성을 바탕으로 소비자의 시선을  분석합니다. {/* 내용작성하셈 */}
-                    </div>
-                    <div className='text-center md:text-left col-span-12 md:col-span-6 p-6 sm:p-3 '>
-                        <img
-                            src="https://i.ibb.co/JmsQV3x/icon2.png"
-                            alt="green2"
-                            className="mx-auto md:mx-0"
-                        />
-                        <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3 dark:text-[#F2F2F2]">
-                            소매업 {/* 제목작성하셈 */}
-                        </p>
-                        <p> 대형마트, 대기업 편의점 등과 같은 대형 업체들이 주로 받는 솔루션을 합리적인 가격에 이용할 수 있습니다 </p>  {/* 내용작성하셈 */}
-                    </div>
-                    <div className=' text-center md:text-left col-span-12 md:col-span-6 p-6 sm:p-3'>
-                        <img
-                            src="https://i.ibb.co/qyfG3bk/logo3.png"
-                            alt="green3"
-                            className="mx-auto md:mx-0"
-                        />
-                        <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3 dark:text-[#F2F2F2]">
-                            chatbot {/* 제목작성하셈 */}
-                        </p>
-                        <p> eyecon은 챗봇을 활용해 AI와 실시간으로 대화하며 이용자들이 타겟으로 하는 대상과 여러 정보들을 명확히 합니다. </p>  {/* 내용작성하셈 */}
-                    </div>
-                    <div className='text-center md:text-left col-span-12 md:col-span-6 p-6 sm:p-3 '>
-                        <img
-                            src="https://i.ibb.co/CbP0kXr/logo4.png"
-                            alt="green4"
-                            className="mx-auto md:mx-0"
-                        />
-                        <p className="text-1xl md:text-4xl font-bold text-[#37383c] p-3 dark:text-[#F2F2F2]">
-                            매대분석 {/* 제목작성하셈 */}
-                        </p>
-                        <p> 우리 서비스는 가게의 매대를 분석합니다. 제품의 매출에 큰 영향을 주는 매대를 분석해 고객의 시선을 예측하고 효과적인 솔루션을 제공합니다 </p> {/* 내용작성하셈 */}
-                    </div>
-                </div>
-
-
-
-
+      <div className="mt-[-20px] dark:bg-gray-800 dark:text-[#F2F2F2] font-Pretendard xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
+        <section className="bg-gray-2 pb-10 pt-20 ">
+          <div className="container">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <SingleCard
+                image="https://i.ibb.co/JtQ8qK1/img2.png"
+                CardTitle="이미지 업로드를 통한 시선 분석"
+                CardDescription="아이콘 서비스 절차는 복잡하지 않습니다. 매장의 매대 사진 한장이면 아이콘 AI서비스가 당신의 매대를 분석해 시선이 많이 향할 곳을 정확히 예측합니다."
+              />
+              <SingleCard
+                image="https://i.ibb.co/MSyv4k4/img6.png"
+                CardTitle="효과적인 마케팅 방안"
+                CardDescription="마케팅 방법으로 어려움을 겪고 있는 소매업자 분들에게
+                최고의 대안이 될 수 있습니다. 저비용으로 가장 효과적인 마케팅 방안을
+                제시합니다."
+              />
+              <SingleCard
+                image="https://i.ibb.co/HGG0wPg/img4.jpg"
+                CardTitle="챗봇과 함께하는 상권분석"
+                CardDescription="매장 운영에 기본이 되는 매장 상권을 체계적으로 분석해보세요.
+                chatGPT 기반의 챗봇이 매장 위치, 성별, 연령대를 체계적으로 분석해
+                상권 분석 데이터를 제공합니다."
+               
+              />
             </div>
+          </div>
+        </section>
+      </div>
+    );
+  };
+  
+  export default intro3;
+  
+  const SingleCard = ({
+    image,
+    Button,
+    CardDescription,
+    CardTitle,
+    titleHref,
+    btnHref,
+  }) => {
+    return (
+      <>
+        {/*  */}
+        <div className="shadow-md dark:bg-gray-700 dark:text-[#F2F2F2] mb-10 overflow-hidden rounded-lg bg-white shadow-1 duration-300 hover:shadow-3 dark:bg-dark-2 dark:shadow-card dark:hover:shadow-3 mb-20">
+          <img src={image} alt="" className="transition duration-300 ease-in-out hover:scale-110 w-full md:h-[270px] h-[200px]" />
+          <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
+            <h3>
+              <a
+                href={titleHref ? titleHref : "/#"}
+                className="mb-4 block text-xl font-semibold text-dark hover:text-primary dark:text-white sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
+              >
+                {CardTitle}
+              </a>
+            </h3>
+            <p className="mb-7 text-base leading-relaxed text-body-color dark:text-dark-6">
+              {CardDescription}
+            </p>
+  
+            {Button && (
+              <a
+                href={btnHref ? btnHref : "#"}
+                className="inline-block rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-dark-6"
+              >
+                {Button}
+              </a>
+            )}
+          </div>
         </div>
-    )
-}
-
-export default Intro03
+        {/*  */}
+      </>
+    );
+  };
+  

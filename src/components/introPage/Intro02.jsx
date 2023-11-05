@@ -23,7 +23,7 @@ const Intro02 = () => {
                     <div className="flex flex-wrap -m-4 text-center">
                         <div className="p-4 md:w-1/4 sm:w-1/2 w-full ">
                             <div className="border-1 border-blue-300 px-4 py-8 rounded-lg transform transition duration-500 hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-110 ">
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="text-indigo-700 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
+                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-indigo-700 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
                                     <path d="M8 17l4 4 4-4m-4-5v9"></path>
                                     <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
                                 </svg>
@@ -33,7 +33,7 @@ const Intro02 = () => {
                         </div>
                         <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                             <div className="border-1 border-gray-300 px-4 py-8 rounded-lg transform transition duration-500 hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-110">
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
+                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
                                     <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
                                     <circle cx="9" cy="7" r="4"></circle>
                                     <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
@@ -44,9 +44,9 @@ const Intro02 = () => {
                         </div>
                         <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                             <div className="border-1 border-gray-300 px-4 py-8 rounded-lg transform transition duration-500 hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-110">
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="text-indigo-700 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
-                                    <path d="M3 18v-6a9 9 0 0118 0v6"></path>
-                                    <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
+                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-indigo-700 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
+                                
+                                    <path d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"></path>
                                 </svg>
                                 <h2 className="title-font font-medium text-2xl md:text-3xl text-gray-900 dark:text-[#F2F2F2]">이미지 다운로드</h2>
                                 <p className="leading-relaxed dark:text-gray-400">Files</p>
@@ -54,8 +54,8 @@ const Intro02 = () => {
                         </div>
                         <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                             <div className="border-1 border-gray-300 px-4 py-8 rounded-lg transform transition duration-500 hover:bg-gray-100 dark:hover:bg-gray-700 hover:scale-110">
-                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="text-indigo-500 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="text-indigo-500 dark:text-indigo-400 w-12 h-12 mb-3 inline-block animate-bounce3" viewBox="0 0 24 24">
+                                    <path d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"></path>
                                 </svg>
                                 <h2 className="title-font font-medium text-2xl md:text-3xl text-gray-900 dark:text-[#F2F2F2]">상권 분석 데이터</h2>
                                 <p className="leading-relaxed dark:text-gray-400">Places</p>

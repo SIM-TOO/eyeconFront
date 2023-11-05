@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import axios from 'axios';
 
-const ResultMain = () => {
+const ResultMain = ({onImageMove}) => {
     const [fileOrderList, setfileOrderList] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedStore, setSelectedStore] = useState(null);
@@ -33,27 +33,23 @@ const ResultMain = () => {
     // url 주소
     const url = process.env.REACT_APP_MASTER_URL;
     axios.defaults.withCredentials = true;
-    const TokenRefresher = useContext(TokenRefresherContext);   
+    const TokenRefresher = useContext(TokenRefresherContext);
     useEffect(() => {
         try {
             const response = TokenRefresher.get(`${url}/flask/printImg`)
-            .then((response) => {
-                setResultList(response.data);
-                console.log('결과 리스트: ',resultList);
-                // setStoreList(response.data.storeData);
-            })
-            .catch((error) => {
-                console.error('결과데이터 가져오기 실패:', error);
-            });
-            
+                .then((response) => {
+                    setResultList(response.data);
+                    console.log('결과 리스트: ', resultList);
+                    // setStoreList(response.data.storeData);
+                })
+                .catch((error) => {
+                    console.error('결과데이터 가져오기 실패:', error);
+                });
+
         } catch (error) {
             console.error("에러 내용:", error);
         }
     }, []);
-
-
-
-
 
     // 드롭다운의 항목(가게 리스트)
     const handleSelect = (storeName) => {
@@ -71,6 +67,13 @@ const ResultMain = () => {
     const filteredResultList = selectedStore
         ? resultList.filter((item) => item.storeName === selectedStore)
         : resultList;
+
+        // 이미지 정보 전달 하기!
+    const handleImageMove = (beforeimg, hitmap) => {
+        console.log(beforeimg)
+        console.log(hitmap)
+        onImageMove(beforeimg, hitmap);
+    };
 
 
     return (
@@ -189,13 +192,22 @@ const ResultMain = () => {
                             </div>
 
                             {/* 상품 배치 하기 버튼 */}
-                            <button className="col-start-2 col-end-12 bg-[#46cfb9] p-3 rounded-2xl mb-3">
-                                매대상품배치하기
+                            <button className="col-start-2 col-end-12 bg-[#46cfb9] p-3 rounded-2xl mb-3"
+                                onClick={() => handleImageMove(item.beforeimg, item.hitmap)}
+                            >
+                                {/* list 페이지 이동 */}
+                                이동하기 테스트
+
                             </button>
+
                         </div>
                     </div>
                 ))}
             </div>
+
+
+
+
         </div>
     );
 }

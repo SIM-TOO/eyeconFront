@@ -14,7 +14,7 @@ const PayLoading = ({ handleButtonClick }) => {
   }, [handleButtonClick]);
 
   return (
-    <div className="font-Pretendard flex flex-col justify-center items-center">
+    <div className="font-Pretendard flex flex-col justify-center items-center md:mt-0 mt-40">
       <div className="hidden md:block"><br /><br /><br /><br /></div>
       <Lottie
         loop
@@ -22,7 +22,7 @@ const PayLoading = ({ handleButtonClick }) => {
         play
         option={{ speed: 0.1 }}
         style={{ width: "100%", maxWidth: "400px" }}
-        className="animate-pulse"
+        className="animate-pulse md:w-[100%] w-[50%]"
       />
       <p className="text-2xl md:text-4xl font-bold text-center dark:text-[#F2F2F2]">
         코인이 사용되었습니다.

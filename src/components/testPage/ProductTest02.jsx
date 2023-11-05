@@ -5,16 +5,16 @@ import axios from 'axios';
 const ProductTest02 = () => {
 
     const [imageUrls, setImageUrls] = useState([]);
-    useEffect(() => {
-        axios.post('http://localhost:5000/slice',{ 
-            // beforeImgUrl은 result페이지에서 받아와야 됨
-           beforeImgUrl : "https://firebasestorage.googleapis.com/v0/b/eyecon-9b097.appspot.com/o/images%2F1699067778201?alt=media&token=ae991c1a-acf7-4ba9-8963-ba4d616ccb5f"})
-        .then(response => { 
-        const imageStrings = response.data;
-        const urls = imageStrings.map(imageString => `data:image/jpeg;base64,${imageString}`);
-        setImageUrls(urls);
-        });
-    }, []);    
+    // useEffect(() => {
+    //     axios.post('http://localhost:5000/slice',{ 
+    //         // beforeImgUrl은 result페이지에서 받아와야 됨
+    //        beforeImgUrl : "https://firebasestorage.googleapis.com/v0/b/eyecon-9b097.appspot.com/o/images%2F1699067778201?alt=media&token=ae991c1a-acf7-4ba9-8963-ba4d616ccb5f"})
+    //     .then(response => { 
+    //     const imageStrings = response.data;
+    //     const urls = imageStrings.map(imageString => `data:image/jpeg;base64,${imageString}`);
+    //     setImageUrls(urls);
+    //     });
+    // }, []);    
 
     const canvas = new fabric.Canvas('canvas');
     

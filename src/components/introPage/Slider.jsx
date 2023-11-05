@@ -8,7 +8,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/ChatAni.json";
 import lottieJson2 from "../../lottie/sliderani.json";
-import lottieJson3 from "../../lottie/sliderani3.json";
+import lottieJson3 from "../../lottie/slider3.json";
 
 function IntroSlider() {
     const progressCircle = useRef(null);

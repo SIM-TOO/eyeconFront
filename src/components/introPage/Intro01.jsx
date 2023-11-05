@@ -27,15 +27,8 @@ const Intro01 = () => {
 
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
-            <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-0 sm:mt-100 ">
-              <span className="text-4xl md:text-6xl font-bold ">
-                WELCOME TO <br />
-                EYECON
-              </span>
-              <span className="relative">
-
-                <div className="absolute w-[50px] md:w-[500px] h-[20px] bg-[#15c3a7] top-[66px] rounded-full md:block hidden"></div>
-              </span>
+            <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-20 sm:mt-100 ">
+     
             </div>
 
             <div className="md:mt-20 md:p-0 p-5 font-extrabold text-3xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-500 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in <span class="text-blue-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">

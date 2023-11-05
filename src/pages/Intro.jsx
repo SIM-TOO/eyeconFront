@@ -5,6 +5,7 @@ import Intro02 from "../components/introPage/Intro02";
 import Intro03 from "../components/introPage/Intro03";
 import Intro04 from "../components/introPage/Intro04";
 import Intro05 from "../components/introPage/Intro05";
+import Intro06 from "../components/introPage/Intro06";
 import Slider from "../components/introPage/Slider";
 
 function IntroPage() {
@@ -21,7 +22,8 @@ function IntroPage() {
       <Intro02 />
       <Intro03 />
       <Intro04 />
-      <Intro05 />
+      <Intro06 />
+      <Intro05 />      
     </div>
   );
 }

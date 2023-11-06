@@ -74,15 +74,19 @@ const CoinCheck = () => {
                                 <div className="-mt-1 font-sans text-sm font-semibold text-center">{remainingCoins}개</div>
                             </div>
                         </div>
+
+                        {/* 메인이동 버튼 */}
                         <Link to="/main">
-                            <div className="w-full sm:w-auto  bg-[#0BB79B] hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-6 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                            <div className="w-full sm:w-auto  bg-[#0BB79B] hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-12 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                                 <div className="text-left">
                                     <div className="mb-1 text-sm font-semibold">메인으로</div>
-                                    <div className="-mt-1 font-sans text-sm font-semibold text-center">이동</div>
+                                    <div className="-mt-1 font-sans text-sm font-semibold text-center">이동하기</div>
                                 </div>
                             </div>
                         </Link>
 
+
+                        {/* 충전금액 확인 버튼 버튼 */}
                         <div className="w-full sm:w-auto bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-8 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
                             <div className="text-left">
                                 <div className="mb-1 text-sm">충전 금액</div>

@@ -7,7 +7,7 @@ const Intro05 = () => {
             <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
 
             {/* 내용 적는 곳 */}
-            <div className='bg-gray-50 dark:bg-[#343434] '>
+            <div className='border-2 border-gray-100 dark:bg-[#343434] '>
                 <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl p-3">
 
                     {/* 여백용 박스 */}

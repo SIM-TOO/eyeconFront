@@ -83,12 +83,12 @@ const ResultMain = ({onImageMove}) => {
                 {/* 시선 분석 헤더 박스 */}
                 <div className='grid grid-cols-12 mb-3'>
                     {/* 타이틀 */}
-                    <p className="col-span-12 text-center text-xl font-bold mt-3">시선 분석 결과</p>
+                    <p className="col-span-12 text-center text-2xl font-bold mt-5">시선 분석 결과</p>
 
                     {/* 가게 드롭 박스 */}
                     <div className="col-start-1 col-end-9 md:col-start-2 md:col-end-4 relative">
                         <button
-                            className="text-center w-[70%] bg-[#46cfb9] border border-[#46cfb9] rounded-[20px] p-2 text-left"
+                            className="text-center w-[70%] bg-[#46cfb9] border border-[#46cfb9] rounded-[10px] p-2 text-left"
                             style={{ boxShadow: "0px 2px 4px 0 rgba(0,0,0,0.43)", color: "white" }}
                             onClick={() => setIsOpen(!isOpen)}
                         >
@@ -122,7 +122,7 @@ const ResultMain = ({onImageMove}) => {
                     </div>
 
                     {/* 최신순 오래된순 변경용*/}
-                    <div className="col-start-9 col-end-13 md:col-start-10 md:col-end-12">
+                    <div className="font-Pretendard col-start-9 col-end-13 md:col-start-10 md:col-end-12">
                         <p className='text-right p-2 cursor-pointer select-none' onClick={togglefileOrderList}>
                             {fileOrderList ? '↓ 최신순' : '↑ 오래된순'}
                         </p>
@@ -132,15 +132,15 @@ const ResultMain = ({onImageMove}) => {
 
 
                 {/* 결과 파일 맵함수 */}
-                {filteredResultList.map((item) => (
-                    <div className='grid grid-cols-12 mb-5'>
+                {filteredResultList.map((item, index) => (
+                    <div key={index} className='grid grid-cols-12 mb-5'>
                         <div className="rounded-2xl col-start-2 col-end-12 grid grid-cols-12 gap-3 p-3 bg-white" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
 
                             {/* 일자 표시 */}
-                            <div div className="col-span-12 ml-20 text-xl font-bold  text-[#535353]"> {item.data} </div>
+                            <div className="col-span-12 ml-20 text-xl font-bold  text-[#535353]"> {item.data} </div>
 
                             {/* 업로드 사진 */}
-                            <div className="col-start-2 col-end-7 border border-[#19AB93] rounded-2xl mr-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
+                            <div className="col-start-2 col-end-7 border border-gray-200 rounded-2xl mr-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
                                 <div className="w-full flex justify-center items-center ">
                                     <div className="h-80 w-full overflow-hidden rounded-t-2xl">
                                         <img
@@ -151,9 +151,9 @@ const ResultMain = ({onImageMove}) => {
                                     </div>
                                 </div>
                                 <div className="w-full flex justify-between items-center p-3">
-                                    <span className="text-xl font-bold p-3">시선분석 전</span>
+                                    <span className="text-xl font-bold p-1">시선분석 전</span>
                                     <a href={item.beforeimg} download="image.jpg">
-                                        <button className="rounded-3xl border-[2px] border-[#19ab93] p-2">Download ↓</button>
+                                        <button className="rounded-3xl border-[2px] border-[#19ab93] p-2 text-sm font-bold">Download ↓</button>
                                     </a>
                                 </div>
                                 <div className="w-full p-3">
@@ -163,7 +163,7 @@ const ResultMain = ({onImageMove}) => {
                             </div>
 
                             {/* 히트맵 사진 */}
-                            <div className="col-start-7 col-end-12 border border-[#19AB93] rounded-2xl ml-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
+                            <div className="col-start-7 col-end-12 border border-gray-200 rounded-2xl ml-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
                                 <div className="w-full flex justify-center items-center">
                                     <div className="h-80 w-full overflow-hidden rounded-t-2xl">
                                         <img
@@ -176,7 +176,7 @@ const ResultMain = ({onImageMove}) => {
                                 <div className="w-full flex justify-between items-center p-3">
                                     <span className="text-xl font-bold">시선분석 후</span>
                                     <a href={item.hitmap} download="image.jpg">
-                                        <button className="rounded-3xl border-[2px] border-[#19ab93] p-2">Download ↓</button>
+                                        <button className="rounded-3xl border-[2px] border-[#19ab93] p-2 text-sm font-bold">Download ↓</button>
                                     </a>
                                 </div>
                                 <div className="w-full p-3">

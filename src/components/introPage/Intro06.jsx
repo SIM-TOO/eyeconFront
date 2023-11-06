@@ -14,7 +14,7 @@ const Intro06 = () => {
             <div>
               <span className="text-gray-600 text-lg font-semibold ">About us</span>
               <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">
-                Who make this website
+                Who made this website
               </h2>
             </div>
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ">
@@ -23,6 +23,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/nR7nTHN/11.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -49,6 +50,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/dps2KV9/22.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -74,14 +76,15 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/zPd4Tvt/66-01.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
                     <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-[#0CBFA2]">
                       Ryu Sangji
                     </h5>
-                    <p class="text-sm text-gray-600">
-                     프로젝트하다가 갑자기 꽂혀서 이거 하고있는 우리 팀소개가 제일 재밌는 1인 곧 프젝끝나서 신이난 사람
+                    <p className="text-sm text-gray-600">
+                     프로젝트하다가 갑자기 꽂혀서 <br/>이거 하고있는 우리 팀소개가 제일 재밌는 1인 곧 프젝끝나서 신이난 사람
                     </p>
                   </div>
                   <Link to="/main"
@@ -99,6 +102,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/z5BGhz3/55-01.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -124,6 +128,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/bdyFY9X/44-01.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -131,7 +136,7 @@ const Intro06 = () => {
                       Lee Dongyoung
                     </h5>
                     <p className="text-sm text-gray-600">
-                      조용히 코딩의 세계를 정복하고 있는 데이터 디자인반 코딩 천재 <br/>그런데 잠도 많고 좀 거친 초코소년
+                      조용히 코딩의 세계를 정복하고 있는 데이터 디자인반 코딩 천재 <br/>그런데 잠도 많고 <br/>좀 거친 초코소년
                     </p>
                   </div>
                   <Link to="/main"

@@ -115,7 +115,7 @@ const Intro02 = () => {
           <div className="hidden md:block text-right md:mt-20 md:p-0 p-5 font-extrabold text-2xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-600 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">
             아이콘 서비스는 항상 더 나은 <br />
             서비스를 고민합니다{" "}
-            <span class="text-indigo-300 inline-flex flex-col h-[calc(theme(fontSize.2xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
+            <span className="text-indigo-300 inline-flex flex-col h-[calc(theme(fontSize.2xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
               <ul className="text-right block animate-text-slide-5 leading-tight [&_li]:block">
                 <li>상권 분석</li>
                 <li>매대 분석</li>

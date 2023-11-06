@@ -18,13 +18,13 @@ const ProductTest02 = ({ beforeimg, hitmap}) => {
     }, []);    
 
     
-    const handleCapture = () => {
-        // 캔버스 캡처 및 데이터 URL로 변환
-        const dataURL = canvasRef.current.toDataURL();
+    // const handleCapture = () => {
+    //     // 캔버스 캡처 및 데이터 URL로 변환
+    //     const dataURL = canvasRef.current.toDataURL();
     
-        // 캡처된 이미지를 새 창에서 열기
-        window.open(dataURL);
-      };
+    //     // 캡처된 이미지를 새 창에서 열기
+    //     window.open(dataURL);
+    //   };
   
     // 배경설정
 //     const setBg = () =>{

@@ -59,8 +59,15 @@ const C05Result = ({ handleButtonClick }) => {
     <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
       {/* 모바일 이동하기 버튼 */}
-      <Link to="/result" className="block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg bg-gray-300 text-black" >
-        결과페이지 이동하기
+      <Link to="/result" className="block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg text-black" >
+        <button className="block md:hidden col-span-10 md:col-span-0 inline-block text-white bg-gray-400 rounded-lg text-sm px-5 py-2.5 text-center mb-2" onClick={() => handleButtonClick(4)}>
+          <div className='inline-block mr-4'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="inline-block w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
+            </svg>
+          </div>
+          <span className='inline-block text-base text-white whitespace-nowrap'>결과페이지 바로가기<img className="animate-pulse inline-block ml-2 w-3" src="https://i.ibb.co/0Cbr629/icon-arrow-right-1.png" /></span>
+        </button>
       </Link>
 
 
@@ -80,11 +87,14 @@ const C05Result = ({ handleButtonClick }) => {
           )}
         </div>
         {/*PC화면 결과 페이지 이동 링크 */}
-        <div className="hidden md:block col-span-3 flex justify-center items-center">
-          <Link to="/result" className="rounded-lg bg-gray-300 text-black p-3">
-            결과페이지 이동하기
-          </Link>
-        </div>
+        <Link to="/result">
+          <div className="fixed hidden md:block col-span-3 flex justify-center items-center mt-[70px]" >
+            <button className="hover:scale-110 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+              <img src="https://i.ibb.co/3RMdL8K/heatmap-1.png" className="w-[40px] mr-3" />
+              <span className='inline font-gray-800 text-lg whitespace-nowrap'>결과페이지 바로가기</span><img className="ml-2 w-4" src="https://i.ibb.co/sJJB3Nh/icon-arrow-right.png" />
+            </button>
+          </div>
+        </Link>
       </div>
 
       {/* 내용 박스 */}

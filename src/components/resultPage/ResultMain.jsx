@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { TokenRefresherContext } from '../../context/TokenRefresherContext';
 import axios from 'axios';
 
-const ResultMain = ({onImageMove}) => {
+const ResultMain = ({ onImageMove }) => {
     const [fileOrderList, setfileOrderList] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedStore, setSelectedStore] = useState(null);
@@ -68,7 +68,7 @@ const ResultMain = ({onImageMove}) => {
         ? resultList.filter((item) => item.storeName === selectedStore)
         : resultList;
 
-        // 이미지 정보 전달 하기!
+    // 이미지 정보 전달 하기!
     const handleImageMove = (beforeimg, hitmap) => {
         console.log(beforeimg)
         console.log(hitmap)
@@ -88,7 +88,7 @@ const ResultMain = ({onImageMove}) => {
                     {/* 가게 드롭 박스 */}
                     <div className="col-start-1 col-end-9 md:col-start-2 md:col-end-4 relative">
                         <button
-                            className="text-center w-[70%] bg-[#46cfb9] border border-[#46cfb9] rounded-[10px] p-2 text-left"
+                            className="text-center w-[50%] md:w-[70%] bg-[#46cfb9] border border-[#46cfb9] rounded-[10px] p-2"
                             style={{ boxShadow: "0px 2px 4px 0 rgba(0,0,0,0.43)", color: "white" }}
                             onClick={() => setIsOpen(!isOpen)}
                         >
@@ -140,7 +140,7 @@ const ResultMain = ({onImageMove}) => {
                             <div className="col-span-12 ml-20 text-xl font-bold  text-[#535353]"> {item.date} </div>
 
                             {/* 업로드 사진 */}
-                            <div className="col-start-2 col-end-7 border border-gray-200 rounded-2xl mr-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
+                            <div className="col-start-1 col-end-13 md:col-start-2 md:col-end-7 border border-gray-200 rounded-2xl mr-0 md:mr-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
                                 <div className="w-full flex justify-center items-center ">
                                     <div className="h-80 w-full overflow-hidden rounded-t-2xl">
                                         <img
@@ -163,7 +163,7 @@ const ResultMain = ({onImageMove}) => {
                             </div>
 
                             {/* 히트맵 사진 */}
-                            <div className="col-start-7 col-end-12 border border-gray-200 rounded-2xl ml-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
+                            <div className="col-start-1 col-end-13 md:col-start-7 md:col-end-12 border border-gray-200 rounded-2xl ml-1 md:ml-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
                                 <div className="w-full flex justify-center items-center">
                                     <div className="h-80 w-full overflow-hidden rounded-t-2xl">
                                         <img
@@ -192,7 +192,7 @@ const ResultMain = ({onImageMove}) => {
                             </div>
 
                             {/* 상품 배치 하기 버튼 */}
-                            <button className="col-start-2 col-end-12 bg-[#46cfb9] p-3 rounded-2xl mb-3"
+                            <button className="  col-start-2 col-end-12 bg-[#46cfb9] p-3 rounded-2xl mb-3 md:block hidden"
                                 onClick={() => handleImageMove(item.beforeimg, item.hitmap)}
                             >
                                 {/* list 페이지 이동 */}

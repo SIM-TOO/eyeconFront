@@ -5,6 +5,7 @@ import axios from 'axios';
 const ProductTest02 = ({ beforeimg, hitmap}) => {
 
     const [imageUrls, setImageUrls] = useState([]);
+    const canvas = new fabric.Canvas('canvas');
     useEffect(() => {
         axios.post('http://localhost:5000/slice',{ 
             // beforeImgUrl은 result페이지에서 받아와야 됨
@@ -16,8 +17,14 @@ const ProductTest02 = ({ beforeimg, hitmap}) => {
         });
     }, []);    
 
-    const canvas = new fabric.Canvas('canvas');
     
+    // const handleCapture = () => {
+    //     // 캔버스 캡처 및 데이터 URL로 변환
+    //     const dataURL = canvasRef.current.toDataURL();
+    
+    //     // 캡처된 이미지를 새 창에서 열기
+    //     window.open(dataURL);
+    //   };
   
     // 배경설정
 //     const setBg = () =>{
@@ -63,11 +70,31 @@ const ProductTest02 = ({ beforeimg, hitmap}) => {
             canvas.sendToBack(img); // 이미지를 캔버스의 가장 아래 레이어로 보냄
           });
     }
-
+    const showHitmap = () =>{
+        fabric.Image.fromURL(`${hitmap}`, function(img) {
+            img.set({
+              left: 600,
+              top: 0,
+              angle: 0,
+              padding: 10,
+              cornersize: 10,
+              hasRotatingPoint:true,
+              selectable: false,
+              hasControls: false, // 이미지의 회전과 크기 조정을 제한함
+              hasBorders: false // 이미지의 테두리를 제거함
+            });
+      
+            img.scaleToWidth(400);
+            img.scaleToHeight(canvas.height);
+            // canvas.add(img).setActiveObject(img);
+            canvas.add(img);
+            canvas.sendToBack(img); // 이미지를 캔버스의 가장 아래 레이어로 보냄
+          });
+    }
     const showCase = ()=>{
         fabric.Image.fromURL('https://firebasestorage.googleapis.com/v0/b/eyecon-9b097.appspot.com/o/planogram%2FKakaoTalk_20231104_144127727.png?alt=media&token=af772986-fde3-4dee-b409-af24700a0dcf', function(img) {
             img.set({
-              left: 800,
+              left: 900,
               top: 0,
               angle: 0,
               padding: 10,

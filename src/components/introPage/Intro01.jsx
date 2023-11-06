@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../lottie/mainAnimation.json";
-import Slider from './Slider'
-
-
 
 const Intro01 = () => {
 
@@ -14,26 +11,18 @@ const Intro01 = () => {
     <div className="dark:bg-gray-800 dark:text-[#F2F2F2]">
 
       <div className="font-Pretendard ">
-        {/*      <div className="w-64 md:w-auto">
-          <img
-            src="https://i.ibb.co/0YBkn3z/service.png"
-            alt="intro1"
-            className="h-auto pointer-events-none "
-          />
-        </div> */}
-
-
         <div className="container mx-auto grid grid-cols-12 gap-4 max-w-screen-xl font-Pretendard ">
 
           <div className="col-span-12 md:col-span-6 ">
             {/* 첫번째 줄 내용 겹치는 박스 */}
             <div className="box md:absolute md:top-40 relative p-6 sm:p-3 md:p-5 mt-20 sm:mt-100 ">
-     
+
             </div>
 
             {/* 움직이는 글자 애니메이션 */}
 
-            <div className="md:mt-20 md:p-0 p-5 font-extrabold text-3xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-500 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in <span class="text-blue-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
+            <div className="md:mt-20 md:p-0 p-5 font-extrabold text-3xl md:text-5xl [text-wrap:balance] bg-clip-text text-gray-500 bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">Trusted by the most innovative minds in
+            <span className="text-blue-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
               <ul className="block animate-text-slide-5 text-left leading-tight [&_li]:block">
                 <li>Eye-tracking</li>
                 <li>chatGPT</li>

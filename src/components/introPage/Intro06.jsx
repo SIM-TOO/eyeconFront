@@ -23,6 +23,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/nR7nTHN/11.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -49,6 +50,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/dps2KV9/22.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -74,13 +76,14 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/zPd4Tvt/66-01.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
                     <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-[#0CBFA2]">
                       Ryu Sangji
                     </h5>
-                    <p class="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600">
                      프로젝트하다가 갑자기 꽂혀서 <br/>이거 하고있는 우리 팀소개가 제일 재밌는 1인 곧 프젝끝나서 신이난 사람
                     </p>
                   </div>
@@ -99,6 +102,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/z5BGhz3/55-01.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">
@@ -124,6 +128,7 @@ const Intro06 = () => {
                   <img
                     src="https://i.ibb.co/bdyFY9X/44-01.png"
                     className="w-[70px]"
+                    alt=""
                   />
 
                   <div className="space-y-2">

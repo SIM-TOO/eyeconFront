@@ -132,12 +132,12 @@ const ResultMain = ({onImageMove}) => {
 
 
                 {/* 결과 파일 맵함수 */}
-                {filteredResultList.map((item) => (
-                    <div className='grid grid-cols-12 mb-5'>
+                {filteredResultList.map((item, index) => (
+                    <div key={index} className='grid grid-cols-12 mb-5'>
                         <div className="rounded-2xl col-start-2 col-end-12 grid grid-cols-12 gap-3 p-3 bg-white" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>
 
                             {/* 일자 표시 */}
-                            <div div className="col-span-12 ml-20 text-xl font-bold  text-[#535353]"> {item.data} </div>
+                            <div className="col-span-12 ml-20 text-xl font-bold  text-[#535353]"> {item.date} </div>
 
                             {/* 업로드 사진 */}
                             <div className="col-start-2 col-end-7 border border-gray-200 rounded-2xl mr-5" style={{ boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)" }}>

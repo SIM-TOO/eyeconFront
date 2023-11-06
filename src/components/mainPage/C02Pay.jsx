@@ -71,7 +71,7 @@ const C02Pay = ({ handleButtonClick }) => {
         {/* 버튼 */}
         <p className="col-span-3" />
         <button
-          className="animate-bounce3 h-[50px] md:h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]"
+          className="md:mb-0 mb-5 h-[50px] md:h-[60px] col-span-6 justify-center items-center rounded-lg bg-[#40c3ae]"
           onClick={() => modifiedHandleButtonClick(6)}
         >
           <p className="text-lg font-semibold text-center text-white">

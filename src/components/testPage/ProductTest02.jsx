@@ -5,14 +5,18 @@ import axios from 'axios';
 const ProductTest02 = ({ beforeimg, hitmap}) => {
 
     const [imageUrls, setImageUrls] = useState([]);
+    // const [nonProduct, setNonProduct] = useState([]);
     useEffect(() => {
         axios.post('http://localhost:5000/slice',{ 
-            // beforeImgUrl은 result페이지에서 받아와야 됨
-           beforeImgUrl : "https://firebasestorage.googleapis.com/v0/b/eyecon-9b097.appspot.com/o/images%2F1699067778201?alt=media&token=ae991c1a-acf7-4ba9-8963-ba4d616ccb5f"})
+            
+           beforeImgUrl : beforeimg})
         .then(response => { 
-        const imageStrings = response.data;
-        const urls = imageStrings.map(imageString => `data:image/jpeg;base64,${imageString}`);
-        setImageUrls(urls);
+            const imageStrings = response.data;
+            const urls = imageStrings.map(imageString => `data:image/jpeg;base64,${imageString}`);
+            setImageUrls(urls);
+            // 원본 이미지에서 상품의 위치를 검정색으로 칠한 매대 이미지/ 일단은 주석
+            // const non_product_image = response.data.non_product_image;
+            // setNonProduct(`data:image/jpeg;base64,${non_product_image}`);
         });
     }, []);    
 

@@ -57,27 +57,27 @@ const PayHistory = ({ paymentHistory, itemsPerPage }) => {
         {/* Map함수 */}
         {currentPayments.map((payment, index) => (
           <>
-            <div key={index} className="text-gray-500 col-span-6 md:col-span-2">{payment.date}</div>
-            <div className="text-gray-500 col-span-6 md:col-span-2">{payment.time}</div>
+            <div key={index} className="dark:text-white text-gray-500 col-span-6 md:col-span-2">{payment.date}</div>
+            <div className="dark:text-white text-gray-500 col-span-6 md:col-span-2">{payment.time}</div>
 
             {/* 코인 서비스에 대한 이름? 타이틀? */}
-            <div className="text-gray-600 col-span-12 md:col-span-2">{payment.coinId === 0 ? "BASIC" : payment.coinId === 1 ? "PREMIUM" : payment.coinId === 2 ? "PRO" : ""}</div>
-            <div className="text-gray-600 col-span-4 md:col-span-2">{payment.coin}</div>
-            <div className="text-gray-600 col-span-4 md:col-span-2">{payment.price}</div>
-            <div className="text-gray-600 col-span-4 md:col-span-2">{payment.finance}</div>
-            <hr className="col-span-12 my-4" />
+            <div className="dark:text-white text-gray-600 col-span-12 md:col-span-2">{payment.coinId === 0 ? "BASIC" : payment.coinId === 1 ? "PREMIUM" : payment.coinId === 2 ? "PRO" : ""}</div>
+            <div className=" dark:text-white text-gray-600 col-span-4 md:col-span-2">{payment.coin}</div>
+            <div className="dark:text-white text-gray-600 col-span-4 md:col-span-2">{payment.price}</div>
+            <div className="dark:text-white text-gray-600 col-span-4 md:col-span-2">{payment.finance}</div>
+            <hr className="dark:text-white col-span-12 my-4" />
           </>
         ))}
       </div>
 
       {/* 페이지네이션 컴포넌트를 추가합니다. */}
       {/* 여기서 페이지 버튼 생성 코드*/}
-      <div className="col-span-12 my-4">
+      <div className="col-span-12 my-4 ">
         <ul className="flex justify-center">
           {Array.from({ length: totalPages }, (_, i) => (
             <li
               key={i}
-              className={`mx-1 cursor-pointer ${currentPage === i + 1 ? 'text-blue-500 font-bold' : 'text-gray-500'
+              className={`mx-1 cursor-pointer ${currentPage === i + 1 ? 'dark:text-green-400 text-blue-500 font-bold' : 'dark:text-white text-gray-500'
                 }`}
               onClick={() => handlePageClick(i + 1)}
             >

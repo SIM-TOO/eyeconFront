@@ -59,8 +59,16 @@ const C05Result = ({ handleButtonClick }) => {
     <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
 
       {/* 모바일 이동하기 버튼 */}
-      <Link to="/result" className="block md:hidden col-span-12 md:col-span-0 p-3 rounded-lg bg-gray-300 text-black" >
-        결과페이지 이동하기
+      <Link to="/result"  >
+      <button className="block md:hidden col-span-10 md:col-span-0 inline-block text-white bg-gray-400 rounded-lg text-sm px-5 py-2.5 text-center mb-2" onClick={() => handleButtonClick(4)}>
+                <div className='inline-block mr-4'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" className="animate-pulse w-[30px] h-[30px] inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <span className='inline-block text-base text-white whitespace-nowrap'>시선분석 바로가기<img className="animate-pulse inline-block ml-2 w-3" src="https://i.ibb.co/0Cbr629/icon-arrow-right-1.png" /></span>
+            </button>
       </Link>
 
 
@@ -80,11 +88,14 @@ const C05Result = ({ handleButtonClick }) => {
           )}
         </div>
         {/*PC화면 결과 페이지 이동 링크 */}
-        <div className="hidden md:block col-span-3 flex justify-center items-center">
-          <Link to="/result" className="rounded-lg bg-gray-300 text-black p-3">
-            결과페이지 이동하기
-          </Link>
+        <Link to="/result">
+        <div className="fixed hidden md:block col-span-3 flex justify-center items-center" style={{ position: 'absolute', top: '515px', left: '-350px', width: '100%', zIndex: 999 }}>
+          <button className="hover:scale-110 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+            <img src="https://i.ibb.co/3RMdL8K/heatmap-1.png" className="w-[40px] mr-3" />
+            <span className='inline font-gray-800 text-lg whitespace-nowrap'>결과페이지 바로가기</span><img className="ml-2 w-4" src="https://i.ibb.co/sJJB3Nh/icon-arrow-right.png" />
+          </button>
         </div>
+        </Link>
       </div>
 
       {/* 내용 박스 */}

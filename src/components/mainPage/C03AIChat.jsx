@@ -80,10 +80,10 @@ const C03AIChat = ({ handleButtonClick }) => {
                         // 응답을 기다리지 않는 경우에는 로봇 컴포넌트를 보여줍니다.
                         <Robot />
                     )}
-                    <div className="fixed hidden md:block col-span-3 flex justify-center items-center" style={{ position: 'absolute', top: '480px', left: '0', width: '100%', zIndex: 999 }}>
+                    <div className="fixed hidden md:block col-span-3 flex justify-center items-center" style={{ position: 'absolute', top: '510px', left: '0', width: '100%', zIndex: 999 }}>
                         {showAIchatStart && <></>}
                         {showAIchat && <button onClick={() => handleButtonClick(4)} className="hover:scale-110 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                            <Eyebutton />
+                            <img src="https://i.ibb.co/xz2LhwC/eye.png" className="w-[40px] mr-3" />
                             <span className='inline font-gray-800 text-lg whitespace-nowrap'>시선분석 바로가기</span><img className="ml-2 w-4" src="https://i.ibb.co/sJJB3Nh/icon-arrow-right.png" />
                         </button>}
                     </div>

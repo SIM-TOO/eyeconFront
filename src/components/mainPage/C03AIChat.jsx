@@ -58,12 +58,12 @@ const C03AIChat = ({ handleButtonClick }) => {
 
             <button className="block md:hidden col-span-10 md:col-span-0 inline-block text-white bg-gray-400 rounded-lg text-sm px-5 py-2.5 text-center mb-2" onClick={() => handleButtonClick(4)}>
                 <div className='inline-block mr-4'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" className="animate-pulse w-[30px] h-[30px] inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" className="w-[30px] inline-block">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </div>
-                <span className='inline-block text-base text-white whitespace-nowrap'>시선분석 바로가기 <img src="https://i.ibb.co/xz2LhwC/eye.png" className="w-[40px] mr-3" /></span>
+                <span className='inline-block text-base text-white whitespace-nowrap'>시선분석 바로가기</span>
             </button>
 
             {/* 여백용 박스 */}

@@ -63,7 +63,7 @@ const C03AIChat = ({ handleButtonClick }) => {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </div>
-                <span className='inline-block text-base text-white whitespace-nowrap'>시선분석 바로가기<img className="animate-pulse inline-block ml-2 w-3" src="https://i.ibb.co/0Cbr629/icon-arrow-right-1.png" /></span>
+                <span className='inline-block text-base text-white whitespace-nowrap'>시선분석 바로가기 <img src="https://i.ibb.co/xz2LhwC/eye.png" className="w-[40px] mr-3" /></span>
             </button>
 
             {/* 여백용 박스 */}

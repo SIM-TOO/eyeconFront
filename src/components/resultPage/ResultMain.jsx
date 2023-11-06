@@ -196,7 +196,7 @@ const ResultMain = ({ onImageMove }) => {
                                 onClick={() => handleImageMove(item.beforeimg, item.hitmap)}
                             >
                                 {/* list 페이지 이동 */}
-                                이동하기 테스트
+                                가상 상품 배치<img className="ml-2 w-4" src="https://i.ibb.co/sJJB3Nh/icon-arrow-right.png" />
 
                             </button>
 

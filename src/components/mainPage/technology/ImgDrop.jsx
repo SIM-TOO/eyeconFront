@@ -41,6 +41,9 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
         beforeimgUrl = result;
       }
 
+       // 이걸 설정해 줘야 C05Result.jsx로 넘어가는거 같아서 해줬음
+       onUploadComplete(true);
+
       // beforeimage를 spring-> flask로 보내고 히트맵 이미지(base64)를 반환받는 함수
       const sendImage = async () => {
         await beforeimg();
@@ -70,8 +73,7 @@ function ImgDrop({ onUploadSuccess, uploadedImage, uploadedImageSend, onUploadCo
             await uploadResultImage();
             // Firebase Storage에 히트맵이미지(Blob형태) 업로드 --끝
 
-            // 이걸 설정해 줘야 C05Result.jsx로 넘어가는거 같아서 해줬음
-            onUploadComplete(true);
+           
   
           })
           .catch(error => {

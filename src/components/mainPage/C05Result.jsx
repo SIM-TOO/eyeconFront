@@ -40,20 +40,25 @@ const C05Result = ({ handleButtonClick }) => {
 
   // 로컬 스토리지에서 결과 이미지 데이터 가져오기
   const [isLoading, setIsLoading] = useState(true);
-  const [resultImage, setResultImage] = useState(null);
+
+  const [resultImageData, setResultImageData] = useState(null); // 혹은 다른 기본값 설정
 
   useEffect(() => {
-    // 로컬 스토리지에서 데이터 가져오기
-    const resultImageData = localStorage.getItem('resultImageData');
-    console.log("데이터 받아짐?", resultImageData)
-    if (resultImageData != null) {
-      // 로컬 스토리지에 데이터가 존재하면 로딩 상태를 종료하고 이미지 데이터 설정
-      setIsLoading(false);
-      setResultImage(resultImageData);
-    } else {
-      // 로컬 스토리지에 데이터가 없으면 로딩 상태를 유지
-      setIsLoading(true);
-    }
+    // 1초에 한 번씩 실행되는 코드
+    const interval = setInterval(() => {
+      // 로컬 스토리지에서 데이터 가져오기
+      const storedResultImageData = localStorage.getItem('resultImageData');
+      console.log("데이터 받아짐?", storedResultImageData);
+      if (storedResultImageData != null) {
+        // 로컬 스토리지에 데이터가 존재하면 이미지 데이터 설정
+        setResultImageData(storedResultImageData);
+        setIsLoading(false); // 데이터가 도착한 후에 로딩 상태 해제
+        clearInterval(interval); // 데이터가 도착한 후에 interval 종료
+      }
+    }, 1000); // 1초마다 실행
+
+    // 컴포넌트 언마운트 시에 interval 정리
+    return () => clearInterval(interval);
   }, []);
   return (
     <div className='font-Pretendard text-center items-center justify-center container mx-auto grid grid-cols-12 p-3 gap-4 max-w-screen-xl h-[100%]'>
@@ -76,7 +81,7 @@ const C05Result = ({ handleButtonClick }) => {
             <Loading />
           ) : (
             // 데이터를 가져온 후 보여줄 이미지
-            <img src={resultImage} alt="resultImage" />
+            <img src={resultImageData} alt="resultImage" />
           )}
         </div>
         {/*PC화면 결과 페이지 이동 링크 */}

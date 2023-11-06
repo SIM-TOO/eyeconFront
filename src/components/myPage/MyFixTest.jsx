@@ -43,8 +43,8 @@ const MyFixTest = () => {
         
         {/* 마이페이지 시작 */}
         <p className="text-center text-2xl font-bold mt-7 mb-3">마이페이지</p>
-        <div class="container mx-auto max-w-screen-xl font-Pretendard">
-          <div class="grid grid-cols-7 lg:grid-cols-12">
+        <div className="container mx-auto max-w-screen-xl font-Pretendard">
+          <div className="grid grid-cols-7 lg:grid-cols-12">
             <div className="grid-cols-1 lg:grid-cols-1" />
             <div className="col-span-4">
               <div> 이메일 주소</div>
